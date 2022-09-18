@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-primary: 'Atma';
+  --font-secondary: 'Montserrat';
+}
+
 html {
   box-sizing: border-box;
+  overflow: hidden;
 }
 *,
 *::before,
@@ -16,7 +25,9 @@ ul {
 }
 body {
   /* background-color: #e8eaed; */
-  background-color: #e8eaed;
+  background-color: #333;
+  height: 300vh;
+  overflow: hidden;
 }
 input,
 textarea,
@@ -24,4 +35,8 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.max-width {
+  width: min(1440px, 100%);
 }

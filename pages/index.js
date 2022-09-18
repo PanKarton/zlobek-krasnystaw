@@ -1,5 +1,5 @@
-import { Header } from './index.styles';
+import HomeTemplate from '../Components/Templates/HomeTemplate/HomeTemplate';
 
 export default function Home() {
-  return <Header>Czesc</Header>;
+  return <HomeTemplate></HomeTemplate>;
 }
