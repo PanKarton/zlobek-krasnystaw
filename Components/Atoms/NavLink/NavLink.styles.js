@@ -5,6 +5,7 @@ export const StyledNavSpan = styled.span`
   font-family: var(--font-secondary);
   color: ${({ theme }) => theme.color.black};
   font-size: 1.5rem;
+  cursor: pointer;
   &::after {
     position: absolute;
     content: '';

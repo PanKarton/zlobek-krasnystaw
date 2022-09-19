@@ -13,7 +13,7 @@ export const StyledWrapper = styled.section`
   border-bottom: 2px solid #aaa;
   border-top: 2px solid #aaa;
 
-  /* translate: 100% 0; */
+  translate: 100% 0;
   transition: translate 0.25s ease-in-out;
   &.visible {
     translate: 0 0;
@@ -25,9 +25,22 @@ export const StyledWrapper = styled.section`
     padding: 0 1rem 0.5rem 1rem;
   }
 
+  /* Add some padding */
+  @media screen and (min-width: 1300px) {
+    width: 17rem;
+    /* padding-left: 3rem; */
+  }
+
   /* Hide mobile nav */
   @media screen and (min-width: 1440px) {
     display: none;
+  }
+
+  .close-button {
+    position: absolute;
+    cursor: pointer;
+    top: 1rem;
+    right: 0.75rem;
   }
 `;
 export const StyledList = styled.ul`

@@ -15,7 +15,9 @@ export const StyledNav = styled.nav`
     right: 1rem;
     height: 3rem;
     width: 5rem;
-    border: 1px solid blue;
+    @media screen and (min-width: 700px) {
+      top: 2.25rem;
+    }
     @media screen and (min-width: 1440px) {
       display: none;
     }

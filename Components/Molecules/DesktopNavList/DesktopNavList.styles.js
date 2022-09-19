@@ -61,13 +61,12 @@ export const StyledList = styled.ul`
       top: 2rem;
       left: -0.75rem;
       gap: 1rem;
-      padding: 1rem 0.75rem;
+      padding: 1rem 1.5rem 1rem 0.75rem;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
       flex-direction: column;
       scale: 1 0;
       translate: 0 -50%;
-      transition: all 0.25s ease-in-out;
     }
   }
 

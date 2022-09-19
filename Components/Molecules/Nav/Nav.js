@@ -1,22 +1,27 @@
 import MainLogo from 'Components/Atoms/MainLogo/MainLogo';
-import { useRouter } from 'next/router';
 import DesktopNavList from '../DesktopNavList/DesktopNavList';
-import MobileNavLink from '../MobileNavList/MobileNavLink';
+import MobileNavList from '../MobileNavList/MobileNavList';
 import { StyledNav } from './Nav.styles';
+import { useState } from 'react';
+import HamburgerButton from '../../Atoms/HamburgerButton/HamburgerButton';
 
 const Nav = () => {
-  const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleToggleMenu = () => setIsVisible(prevState => !prevState);
 
   return (
     <StyledNav className="max-width">
-      {/* <div className="mobile-icons-wrapper"></div> */}
+      <div className="mobile-icons-wrapper">
+        <HamburgerButton onClick={handleToggleMenu} isActive={isVisible}></HamburgerButton>
+      </div>
       <div className="ul-wrapper">
         <div className="main-logo-wrapper">
           <MainLogo />
         </div>
         <DesktopNavList />
       </div>
-      <MobileNavLink />
+      <MobileNavList isVisible={isVisible} />
     </StyledNav>
   );
 };

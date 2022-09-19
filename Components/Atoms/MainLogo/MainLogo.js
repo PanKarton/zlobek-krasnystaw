@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const MainLogo = () => (
   <h1>
-    <Link href="/home" passHref>
+    <Link href="/" passHref>
       <a>
         <div className="logo-img-wrapper">
           <Image
