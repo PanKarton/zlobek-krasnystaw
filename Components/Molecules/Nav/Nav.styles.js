@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const StyledNav = styled.nav`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
   height: 13rem;
   padding-top: 1rem;
   margin-inline: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  z-index: 2;
 
   & > .mobile-icons-wrapper {
     position: absolute;
