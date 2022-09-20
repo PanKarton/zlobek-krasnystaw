@@ -1,28 +1,33 @@
+import { theme } from 'assets/styles/theme';
+import CallMobileButton from 'Components/Atoms/CallMobileButton/CallMobileButton';
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.section`
   position: absolute;
   right: 0;
-  top: 5.5rem;
+  top: 0;
   width: 15rem;
   background-color: ${({ theme }) => theme.color.white};
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
   border-left: 2px solid #aaa;
   border-bottom: 2px solid #aaa;
-  border-top: 2px solid #aaa;
 
+  /* Hide and show menu */
   translate: 100% 0;
-  transition: translate 0.25s ease-in-out;
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
   &.visible {
+    visibility: visible;
     translate: 0 0;
   }
 
   /* Change padding for side menu */
   @media screen and (min-width: 700px) {
+    top: 5.5rem;
     border-top-left-radius: 0px;
-    padding: 0 1rem 0.5rem 1rem;
+    border-top: 2px solid #aaa;
+    padding: 0.5rem 1rem 0.75rem 1rem;
   }
 
   /* Add some padding */
@@ -36,11 +41,18 @@ export const StyledWrapper = styled.section`
     display: none;
   }
 
-  .close-button {
+  .close-button-wrapper {
     position: absolute;
     cursor: pointer;
     top: 1rem;
     right: 0.75rem;
+    @media screen and (min-width: 700px) {
+      display: none;
+    }
+    svg {
+      color: ${({ theme }) => theme.color.gray500};
+      font-size: 2rem;
+    }
   }
 `;
 export const StyledList = styled.ul`

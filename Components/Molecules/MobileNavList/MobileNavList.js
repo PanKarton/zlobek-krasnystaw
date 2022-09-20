@@ -1,9 +1,14 @@
+import CloseButton from 'Components/Atoms/CloseButton/CloseButton';
 import NavLink from 'Components/Atoms/NavLink/NavLink';
+import CallMobileButton from '../../Atoms/CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 
-const MobileNavList = ({ isVisible }) => {
+const MobileNavList = ({ isVisible, handleCloseMenu }) => {
   return (
     <StyledWrapper className={isVisible ? 'visible' : ''}>
+      <div className="close-button-wrapper">
+        <CloseButton onClick={handleCloseMenu} />
+      </div>
       <StyledList>
         <li>
           <NavLink direction="/">O nas</NavLink>
@@ -35,6 +40,9 @@ const MobileNavList = ({ isVisible }) => {
         </li>
         <li>
           <NavLink direction="kontakt">Kontakt</NavLink>
+        </li>
+        <li>
+          <CallMobileButton />
         </li>
       </StyledList>
     </StyledWrapper>
