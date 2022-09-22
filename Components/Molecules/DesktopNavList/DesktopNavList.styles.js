@@ -13,6 +13,7 @@ export const StyledWrapper = styled.section`
     align-items: center;
   }
 
+  /* Add  border radius*/
   @media screen and (min-width: 1440px) {
     border-top-right-radius: 9999px;
     border-bottom-right-radius: 9999px;
@@ -67,6 +68,10 @@ export const StyledList = styled.ul`
       flex-direction: column;
       scale: 1 0;
       translate: 0 -50%;
+      &:focus-within {
+        scale: 1 1;
+        translate: 0 0;
+      }
     }
   }
 

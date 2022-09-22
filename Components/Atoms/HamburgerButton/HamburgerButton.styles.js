@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  border: 1px solid red;
   position: absolute;
   top: 0;
   right: 0;
@@ -14,10 +13,9 @@ export const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
 
-  &:focus {
-    outline: none;
+  @media screen and (min-width: 700px) {
+    z-index: 10;
   }
 
   div {
@@ -26,7 +24,7 @@ export const StyledBurger = styled.button`
     background: ${({ theme }) => theme.color.white};
 
     @media screen and (min-width: 700px) {
-      background: ${({ theme }) => theme.color.gray300};
+      background: ${({ theme }) => theme.color.gray500};
     }
     border-radius: 10px;
     position: relative;

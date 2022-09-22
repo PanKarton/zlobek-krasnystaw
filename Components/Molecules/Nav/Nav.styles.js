@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 
 export const StyledNav = styled.nav`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
   height: 13rem;
   padding-top: 1rem;
   margin-inline: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  z-index: 2;
 
   & > .mobile-icons-wrapper {
     position: absolute;
     top: 2rem;
     right: 1rem;
     height: 3rem;
-    width: 5rem;
     @media screen and (min-width: 700px) {
       top: 2.25rem;
     }
@@ -37,8 +40,8 @@ export const StyledNav = styled.nav`
       width: 15rem;
       height: 10rem;
       position: absolute;
-      left: 0;
-      top: 0;
+      left: -0.5rem;
+      top: -1rem;
       background: url('/images/mobile-corner-logo-blob.svg');
       background-repeat: no-repeat;
       background-position: 70% 80%;
