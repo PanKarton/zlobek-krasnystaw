@@ -40,8 +40,8 @@ export const StyledNav = styled.nav`
       width: 15rem;
       height: 10rem;
       position: absolute;
-      left: 0;
-      top: 0;
+      left: -0.5rem;
+      top: -1rem;
       background: url('/images/mobile-corner-logo-blob.svg');
       background-repeat: no-repeat;
       background-position: 70% 80%;

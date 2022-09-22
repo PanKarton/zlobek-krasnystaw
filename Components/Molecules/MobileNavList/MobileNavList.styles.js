@@ -6,12 +6,12 @@ export const StyledWrapper = styled.section`
   position: absolute;
   right: 0;
   top: 0;
+  height: 100vh;
   width: 15rem;
   background-color: ${({ theme }) => theme.color.white};
-  padding: 1rem;
-  border-bottom-left-radius: 10px;
-  border-left: 2px solid #aaa;
-  border-bottom: 2px solid #aaa;
+  padding-block: 1rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid #aaa;
 
   /* Hide and show menu */
   translate: 100% 0;
@@ -25,15 +25,15 @@ export const StyledWrapper = styled.section`
   /* Change padding for side menu */
   @media screen and (min-width: 700px) {
     top: 5.5rem;
-    border-top-left-radius: 0px;
     border-top: 2px solid #aaa;
-    padding: 0.5rem 1rem 0.75rem 1rem;
+    padding: 0.5rem 1rem 1.25rem 1.5rem;
+    border-bottom-left-radius: 5px;
+    height: min-content;
   }
 
   /* Add some padding */
   @media screen and (min-width: 1300px) {
     width: 17rem;
-    /* padding-left: 3rem; */
   }
 
   /* Hide mobile nav */

@@ -1,10 +1,11 @@
 import Header from 'Components/Organisms/Header/Header';
 
-const HomeTemplate = props => (
-  <main>
+const HomeTemplate = ({ children }) => (
+  <>
     <Header />
+    <main>{children}</main>
     <footer>Footer</footer>
-  </main>
+  </>
 );
 
 export default HomeTemplate;
