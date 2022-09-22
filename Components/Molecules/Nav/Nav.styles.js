@@ -8,10 +8,52 @@ export const StyledNav = styled.nav`
   height: 13rem;
   padding-top: 1rem;
   margin-inline: auto;
+  padding-top: 1.5rem;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   z-index: 2;
+
+  & > .nav-contact-info-wrapper {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: auto;
+    gap: 13rem;
+    font-family: var(--font-secondary);
+    @media screen and (min-width: 1440px) {
+      display: flex;
+    }
+    .nav-contact-info {
+      width: 100%;
+      font-size: 16px;
+      color: ${({ theme }) => theme.color.white};
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      & svg {
+        color: ${({ theme }) => theme.color.pink};
+      }
+      &.left {
+        left: 0;
+        justify-content: flex-end;
+        gap: 1.125rem;
+      }
+      &.right {
+        right: 0;
+
+        .fb-icon {
+          margin-left: 2rem;
+        }
+      }
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
 
   & > .mobile-icons-wrapper {
     position: absolute;
