@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 50%;
   right: 0;
   translate: 0 -50%;
   display: flex;
@@ -16,6 +15,7 @@ export const StyledBurger = styled.button`
   padding: 0;
 
   @media screen and (min-width: 700px) {
+    top: 50%;
     z-index: 10;
   }
 
