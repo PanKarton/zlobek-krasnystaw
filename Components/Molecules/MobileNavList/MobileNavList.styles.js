@@ -24,7 +24,7 @@ export const StyledWrapper = styled.section`
 
   /* Change padding for side menu */
   @media screen and (min-width: 700px) {
-    top: 5.5rem;
+    top: 6rem;
     border-top: 2px solid #aaa;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
     border-bottom-left-radius: 5px;
