@@ -32,13 +32,7 @@ const OurValues = props => (
       <li>
         <ValueCell>
           <div>
-            <Image
-              src="/images/our-value1.svg"
-              alt="dłoń z sercem"
-              layout="fill"
-              width="160"
-              height="160"
-            />
+            <Image src="/images/our-value1.svg" alt="dłoń z sercem" layout="fill" />
           </div>
           <span>Szacunek i słuchanie</span>
         </ValueCell>
@@ -46,13 +40,7 @@ const OurValues = props => (
       <li>
         <ValueCell>
           <div>
-            <Image
-              src="/images/our-value2.svg"
-              alt="Książka z żarówką"
-              layout="fill"
-              width="160"
-              height="160"
-            />
+            <Image src="/images/our-value2.svg" alt="Książka z żarówką" layout="fill" />
           </div>
           <span>Edukacja i odkrywanie świata</span>
         </ValueCell>
@@ -60,13 +48,7 @@ const OurValues = props => (
       <li>
         <ValueCell>
           <div>
-            <Image
-              src="/images/our-value3.svg"
-              alt="Trzy popiersia na okręgu"
-              layout="fill"
-              width="160"
-              height="160"
-            />
+            <Image src="/images/our-value3.svg" alt="Trzy popiersia na okręgu" layout="fill" />
           </div>
           <span>Równość i przynależność</span>
         </ValueCell>
