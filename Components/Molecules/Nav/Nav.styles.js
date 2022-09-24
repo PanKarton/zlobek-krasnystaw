@@ -79,14 +79,16 @@ export const StyledNav = styled.nav`
       width: 100%;
     }
     & > .main-logo-wrapper {
-      width: 15rem;
-      height: 10rem;
+      width: 13rem;
+      height: 13rem;
       position: absolute;
       left: -0.5rem;
       top: -1rem;
-      background: url('/images/mobile-corner-logo-blob.svg');
+      background-size: 52rem;
+      background-image: url('/images/mobile-corner-logo-blob1.svg');
       background-repeat: no-repeat;
-      background-position: 70% 80%;
+      background-position-y: 5%;
+
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
