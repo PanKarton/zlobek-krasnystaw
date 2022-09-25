@@ -8,6 +8,7 @@ export const StyledFooter = styled.footer`
     display: flex;
     margin-inline: auto;
     align-items: center;
+    justify-content: center;
     padding-bottom: 2rem;
     @media screen and (min-width: 700px) {
       justify-content: center;
@@ -46,7 +47,7 @@ export const StyledFooter = styled.footer`
       display: none;
       position: relative;
       background-color: #303030;
-      width: 660px;
+      width: clamp(240px, calc(45vw - 100px), 660px);
       height: 440px;
       &::after,
       &::before {
@@ -69,6 +70,9 @@ export const StyledFooter = styled.footer`
       }
       @media screen and (min-width: 700px) {
         display: block;
+      }
+      @media screen and (min-width: 1150px) {
+        width: 660px;
       }
     }
   }
