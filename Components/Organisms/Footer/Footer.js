@@ -1,5 +1,6 @@
 import BipButton from 'Components/Atoms/BipButton/BipButton';
 import FbButton from 'Components/Atoms/FbButton/FbButton';
+import Map from 'Components/Atoms/Map/Map';
 import MainLogo from 'Components/Atoms/MainLogo/MainLogo';
 import NavContactInfo from 'Components/Molecules/NavContactInfo/NavContactInfo';
 import { StyledFooter } from './Footer.styles';
@@ -18,7 +19,9 @@ const Footer = props => (
           <BipButton />
         </section>
       </div>
-      <div className="footer-right"></div>
+      <div className="footer-right">
+        <Map />
+      </div>
     </div>
     <section className="nav-copyrights-wrapper ">
       <div className="max-width">
