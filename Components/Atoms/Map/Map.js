@@ -17,8 +17,13 @@ const Map = props => {
 
   if (!isLoaded) return <p>Ładowanie...</p>;
   return (
-    <GoogleMap zoom={14} center={coordinates} mapContainerClassName="footer-right">
-      <MarkerF position={coordinates} />
+    <GoogleMap
+      zoom={14}
+      center={coordinates}
+      clickableIcons={false}
+      mapContainerClassName="footer-right"
+    >
+      <MarkerF position={coordinates} label={{ text: 'aaaaaaaaaaa' }} />
     </GoogleMap>
   );
 };
