@@ -16,7 +16,7 @@ const Nav = () => {
     <StyledNav className="max-width">
       <div className="ul-wrapper">
         <div className="main-logo-wrapper">
-          <MainLogo />
+          <MainLogo priority />
         </div>
         <DesktopNavList />
       </div>

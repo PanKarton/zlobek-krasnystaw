@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const MainLogo = () => (
+const MainLogo = ({ priority }) => (
   <h1>
     <Link href="/" passHref>
       <a>
@@ -12,6 +12,7 @@ const MainLogo = () => (
             layout="responsive"
             width={202}
             height={99}
+            priority={priority}
           />
         </div>
       </a>

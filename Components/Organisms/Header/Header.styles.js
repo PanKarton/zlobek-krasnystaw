@@ -8,6 +8,8 @@ export const StyledHeader = styled.header`
     height: 500px;
   }
   .hero-image-wrapper {
+    position: relative;
+    height: 100%;
     z-index: -1;
   }
   .hero-text {
