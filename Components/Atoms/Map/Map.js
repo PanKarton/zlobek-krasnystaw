@@ -4,8 +4,7 @@ import { useMemo } from 'react';
 const Map = props => {
   const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   const { isLoaded } = useLoadScript({
-    // googleMapsApiKey: API_KEY,
-    googleMapsApiKey: 'AIzaSyBMGntOwF5D76lzfzJBHr-0RO4jTF11zio',
+    googleMapsApiKey: API_KEY,
   });
 
   const coordinates = useMemo(

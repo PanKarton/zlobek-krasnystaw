@@ -12,7 +12,6 @@ const MainLogo = ({ priority }) => (
             layout="responsive"
             width={202}
             height={99}
-            priority={priority}
           />
         </div>
       </a>

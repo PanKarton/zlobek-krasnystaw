@@ -50,3 +50,16 @@ a {
     width: min(1440px, 95%);
   }
 }
+
+/* Page loader */
+
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
