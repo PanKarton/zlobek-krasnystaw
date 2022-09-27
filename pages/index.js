@@ -1,4 +1,5 @@
-import OurValues from 'Components/Molecules/OurValues/OurValues';
+import AboutUsSection from 'Components/Organisms/AboutUsSection/AboutUsSection';
+import OurValues from 'Components/Organisms/OurValues/OurValues';
 import Head from 'next/head';
 import HomeTemplate from '../Components/Templates/HomeTemplate/HomeTemplate';
 
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
       <HomeTemplate>
         <OurValues />
-        <div>aaaaaaaaaa</div>
+        <AboutUsSection />
       </HomeTemplate>
     </>
   );

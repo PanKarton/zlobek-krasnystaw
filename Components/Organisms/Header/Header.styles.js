@@ -46,7 +46,7 @@ export const StyledHeader = styled.header`
       translate: -50% -50%;
     }
   }
-  .wave-wrapper {
+  .bottom-wave-wrapper {
     position: absolute;
     bottom: 0px;
     left: 0;

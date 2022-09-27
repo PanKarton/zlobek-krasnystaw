@@ -1,17 +1,14 @@
 import Nav from 'Components/Molecules/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader } from './Header.styles';
-import heroImage from '../../../public/images/hero-image2.jpg';
 
 const Header = props => (
   <StyledHeader>
     <Nav />
     <div className="hero-image-wrapper">
       <Image
-        placeholder="blur"
-        blurDataURL={heroImage}
         priority
-        src={heroImage}
+        src="/images/hero-image2.jpg"
         alt="Dziewczynka w stroju astrunauty trzymająca roślinę"
         layout="fill"
         objectFit="cover"
@@ -24,7 +21,7 @@ const Header = props => (
       </h2>
       <p>Zapraszamy dzieci w wieku od 1 do 3 lat!</p>
     </div>
-    <div className="wave-wrapper">
+    <div className="bottom-wave-wrapper">
       <Image src="/images/hero-wave.svg" alt="Biała fala dekoracyjna" layout="fill" />
     </div>
   </StyledHeader>
