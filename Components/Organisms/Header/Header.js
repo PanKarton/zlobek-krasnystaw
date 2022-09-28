@@ -8,11 +8,11 @@ const Header = props => (
     <div className="hero-image-wrapper">
       <Image
         priority
-        src="/images/hero-image2.jpg"
+        src="/images/hero-image.jpg"
         alt="Dziewczynka w stroju astrunauty trzymająca roślinę"
         layout="fill"
         objectFit="cover"
-        objectPosition="75%"
+        objectPosition="50%"
       />
     </div>
     <div className="hero-text max-width">
