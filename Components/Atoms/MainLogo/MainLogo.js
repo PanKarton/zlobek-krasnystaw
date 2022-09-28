@@ -9,9 +9,9 @@ const MainLogo = ({ priority }) => (
           <Image
             src="/images/main-logo.svg"
             alt="Logo żłobka z niebieską sową"
-            layout="responsive"
-            width={202}
-            height={99}
+            layout="fill"
+            width="100"
+            height="40"
           />
         </div>
       </a>

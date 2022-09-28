@@ -4,8 +4,10 @@ export const StyledHeader = styled.header`
   position: relative;
   width: 100vw;
   height: 771px;
-  @media screen and (max-width: 700px) {
+  margin-top: 5rem;
+  @media screen and (min-width: 700px) {
     height: 500px;
+    margin-top: 0rem;
   }
   .hero-image-wrapper {
     position: relative;

@@ -16,6 +16,7 @@ export const StyledFooter = styled.footer`
     }
     .footer-left {
       .nav-logo-wrapper {
+        position: relative;
         width: 10rem;
         margin-inline: auto;
       }

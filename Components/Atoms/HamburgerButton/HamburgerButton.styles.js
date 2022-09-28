@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  position: absolute;
-  right: 0;
-  translate: 0 -50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -22,7 +19,7 @@ export const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.color.white};
+    background: ${({ theme }) => theme.color.black};
 
     @media screen and (min-width: 700px) {
       background: ${({ theme }) => theme.color.gray500};

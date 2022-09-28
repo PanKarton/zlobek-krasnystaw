@@ -14,10 +14,13 @@ const Nav = () => {
 
   return (
     <StyledNav className="max-width">
-      <div className="ul-wrapper">
-        <div className="main-logo-wrapper">
-          <MainLogo priority />
-        </div>
+      <div className="main-logo-wrapper">
+        <MainLogo priority />
+      </div>
+      <div className="mobile-icons-wrapper">
+        <HamburgerButton onClick={handleToggleMenu} isActive={isVisible}></HamburgerButton>
+      </div>
+      {/* <div className="ul-wrapper">
         <DesktopNavList />
       </div>
       <div className="nav-contact-info-wrapper">
@@ -41,10 +44,7 @@ const Nav = () => {
             <FbButton />
           </div>
         </div>
-      </div>
-      <div className="mobile-icons-wrapper">
-        <HamburgerButton onClick={handleToggleMenu} isActive={isVisible}></HamburgerButton>
-      </div>
+      </div> */}
       <MobileNavList isVisible={isVisible} handleCloseMenu={handleCloseMenu} />
     </StyledNav>
   );
