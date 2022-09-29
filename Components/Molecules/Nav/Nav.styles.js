@@ -11,8 +11,17 @@ export const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   z-index: 99999;
+
   @media screen and (min-width: 700px) {
     background-color: transparent;
+    padding-inline: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    position: absolute;
+    left: 50%;
+    top: 3.5rem;
+    translate: -50% 0;
+    max-width: 1440px;
   }
 
   & > .main-logo-wrapper {
@@ -24,16 +33,29 @@ export const StyledNav = styled.nav`
       width: 8rem;
       aspect-ratio: 1;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 700px) {
+      justify-content: flex-start;
+      align-items: center;
+      width: 14rem;
+      aspect-ratio: 1.1;
+      padding: 1rem 0 0 1rem;
+      background-image: url('/images/mobile-corner-logo-blob1.svg');
+      background-size: auto;
+      background-repeat: no-repeat;
+      & .logo-img-wrapper {
+        width: 10rem;
+      }
     }
 
     @media screen and (min-width: 1440px) {
+      position: absolute;
       height: 11rem;
       width: 11rem;
       border-radius: 50%;
       left: 50%;
       top: 50%;
       translate: -50% -50%;
+      z-index: 99999;
       background-image: none;
       background-color: ${({ theme }) => theme.color.white};
       padding: 0;
@@ -44,7 +66,9 @@ export const StyledNav = styled.nav`
 
   & > .mobile-icons-wrapper {
     @media screen and (min-width: 700px) {
-      top: 2.25rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 2rem;
     }
     @media screen and (min-width: 1440px) {
       display: none;
@@ -53,12 +77,17 @@ export const StyledNav = styled.nav`
 
   & > .nav-contact-info-wrapper {
     display: none;
+    position: absolute;
+    bottom: 50%;
     width: 100%;
-    align-items: center;
+    height: 10rem;
+    z-index: -1;
+    align-items: flex-end;
     justify-content: space-between;
-    margin-inline: auto;
-    gap: 13rem;
+    gap: 12rem;
+    padding-bottom: 3rem;
     font-family: var(--font-secondary);
+    background-color: hsla(0, 0%, 0%, 0.2);
     @media screen and (min-width: 1440px) {
       display: flex;
     }
@@ -76,6 +105,7 @@ export const StyledNav = styled.nav`
         left: 0;
         justify-content: flex-end;
         gap: 1.125rem;
+        height: 2rem;
       }
       &.right {
         right: 0;
@@ -93,7 +123,9 @@ export const StyledNav = styled.nav`
   }
 
   & > .ul-wrapper {
+    display: none;
     @media screen and (min-width: 700px) {
+      display: block;
       width: 50%;
     }
     @media screen and (min-width: 1440px) {

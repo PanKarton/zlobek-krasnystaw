@@ -7,7 +7,7 @@ export const StyledWrapper = styled.section`
   right: 0;
   top: 0;
   height: 100vh;
-  width: 15rem;
+  width: max(13rem, 80%);
   background-color: ${({ theme }) => theme.color.white};
   padding-block: 1rem;
   padding-left: 1.5rem;

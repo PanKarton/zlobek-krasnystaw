@@ -6,26 +6,40 @@ export const StyledHeader = styled.header`
   height: 771px;
   margin-top: 5rem;
   @media screen and (min-width: 700px) {
-    height: 500px;
+    height: 80vh;
     margin-top: 0rem;
   }
+  @media screen and (min-width: 1440px) {
+    height: 100vh;
+  }
   .hero-image-wrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
+    width: 100%;
     z-index: -1;
   }
-  .hero-text {
-    position: absolute;
-    top: 55%;
-    translate: 0 -50%;
-    color: ${({ theme }) => theme.color.white};
+  .max-width-wrapper {
+    height: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     margin-inline: auto;
-    padding-inline: 1rem 3rem;
-    padding-block: 2rem;
-    background-color: hsla(0, 0%, 0%, 0.25);
+  }
+
+  .hero-text {
+    color: ${({ theme }) => theme.color.white};
+    padding-inline: 0;
+    /* padding-block: 2rem; */
+    background-color: hsla(0, 0%, 0%, 0.15);
+    /* border-radius: 10px; */
+    max-width: 55%;
 
     h2 {
-      font-size: clamp(2.25rem, 6vw, 4rem);
+      font-size: clamp(2.25rem, 100vw, 6rem);
+      font-weight: 600;
       font-family: var(--font-primary);
       line-height: 1.125;
       .text-pink {
@@ -36,16 +50,6 @@ export const StyledHeader = styled.header`
       font-size: clamp(1rem, 2.25vw, 1.5rem);
       font-family: var(--font-secondary);
       margin-top: 0.5rem;
-    }
-
-    @media screen and (min-width: 700px) {
-      background-color: transparent;
-      padding-inline: 2rem 0;
-    }
-    @media screen and (min-width: 1440px) {
-      padding-inline: 0;
-      left: 50%;
-      translate: -50% -50%;
     }
   }
   .bottom-wave-wrapper {
