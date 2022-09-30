@@ -69,6 +69,7 @@ export const StyledNav = styled.nav`
       position: absolute;
       right: 1.5rem;
       top: 2rem;
+      z-index: 9999;
     }
     @media screen and (min-width: 1440px) {
       display: none;
@@ -87,7 +88,8 @@ export const StyledNav = styled.nav`
     gap: 12rem;
     padding-bottom: 3rem;
     font-family: var(--font-secondary);
-    background-color: hsla(0, 0%, 0%, 0.2);
+    background-color: hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 0 1rem 0.5rem hsla(0, 0%, 0%, 0.15);
     @media screen and (min-width: 1440px) {
       display: flex;
     }

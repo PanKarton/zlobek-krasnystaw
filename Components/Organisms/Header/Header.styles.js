@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
   position: relative;
   width: 100vw;
-  height: 771px;
+  height: 75vh;
   margin-top: 5rem;
   @media screen and (min-width: 700px) {
     height: 80vh;
@@ -27,18 +27,23 @@ export const StyledHeader = styled.header`
     align-items: center;
     justify-content: flex-start;
     margin-inline: auto;
+    @media screen and (min-width: 700px) {
+      justify-content: center;
+    }
+    @media screen and (min-width: 1440px) {
+      justify-content: flex-start;
+    }
   }
 
   .hero-text {
     color: ${({ theme }) => theme.color.white};
-    padding-inline: 0;
-    /* padding-block: 2rem; */
     background-color: hsla(0, 0%, 0%, 0.15);
-    /* border-radius: 10px; */
-    max-width: 55%;
+    width: 80%;
+    padding: 1rem;
+    box-shadow: 0 0 1rem 0.5rem hsla(0, 0%, 0%, 0.15);
 
     h2 {
-      font-size: clamp(2.25rem, 100vw, 6rem);
+      font-size: clamp(2.25rem, 7vw, 6rem);
       font-weight: 600;
       font-family: var(--font-primary);
       line-height: 1.125;

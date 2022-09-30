@@ -6,6 +6,7 @@ export const StyledWrapper = styled.section`
   background-color: ${({ theme }) => theme.color.white};
   border-top-left-radius: 9999px;
   border-bottom-left-radius: 9999px;
+  border-bottom: 1px solid #aaa;
 
   /* Show bar */
   @media screen and (min-width: 700px) {

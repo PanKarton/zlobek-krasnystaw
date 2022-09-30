@@ -24,16 +24,16 @@ export const StyledWrapper = styled.section`
 
   /* Change padding for side menu */
   @media screen and (min-width: 700px) {
-    top: 6rem;
-    border-top: 2px solid #aaa;
+    top: 5.25rem;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
     border-bottom-left-radius: 5px;
     height: min-content;
+    width: max(25%, 15rem);
   }
 
   /* Add some padding */
   @media screen and (min-width: 1300px) {
-    width: 17rem;
+    /* width: 17rem; */
   }
 
   /* Hide mobile nav */
