@@ -1,4 +1,6 @@
-import { theme } from 'assets/styles/theme';
+import CircleBorderImage from 'Components/Atoms/CircleBorderImage/CircleBorderImage';
+import SnailIcon from 'Components/Atoms/SnailIcon/SnailIcon';
+import SunImage from 'Components/Atoms/SunImage/SunImage';
 import Image from 'next/image';
 import styled from 'styled-components';
 
@@ -67,13 +69,24 @@ const StyledSection = styled.section`
       display: none;
       width: 513px;
       aspect-ratio: 1.3;
-      background-color: #303030;
+      position: relative;
       @media screen and (min-width: 1000px) {
         display: block;
       }
       @media screen and (min-width: 1400px) {
         width: 713px;
         height: 550px;
+      }
+      .sun-wrapper {
+        position: absolute;
+        height: 150px;
+        aspect-ratio: 1.16;
+        top: 0;
+        right: 15%;
+        z-index: 3;
+        @media screen and (min-width: 1400px) {
+          height: 200px;
+        }
       }
     }
   }
@@ -119,9 +132,7 @@ const AboutUsSection = props => (
         </p>
         <ul>
           <li>
-            <div className="snail-image-wrapper">
-              <Image src="/images/snail.svg" alt="Różowy ślimak" layout="fill" />
-            </div>
+            <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
               Nemo enim ipsam voluptatem.
             </p>
@@ -144,7 +155,20 @@ const AboutUsSection = props => (
           </li>
         </ul>
       </article>
-      <div className="images-wrapper"></div>
+      <div className="images-wrapper">
+        <CircleBorderImage
+          url="/images/happy-kid3.jpg"
+          alt="Dziecko cieszące się z zabawy klockami"
+        />
+        <CircleBorderImage
+          url="/images/happy-kid1.jpg"
+          alt="Uśmiechnięte dziecko jedzące posiłek"
+        />
+        <CircleBorderImage url="/images/happy-kid2.jpg" alt="Dziecko ukladajace klocki" />
+        <div className="sun-wrapper">
+          <SunImage />
+        </div>
+      </div>
     </div>
   </StyledSection>
 );

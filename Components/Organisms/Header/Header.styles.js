@@ -5,13 +5,6 @@ export const StyledHeader = styled.header`
   width: 100vw;
   height: 75vh;
   margin-top: 5rem;
-  @media screen and (min-width: 700px) {
-    height: 80vh;
-    margin-top: 0rem;
-  }
-  @media screen and (min-width: 1440px) {
-    height: 100vh;
-  }
   .hero-image-wrapper {
     position: absolute;
     top: 0;
@@ -27,12 +20,6 @@ export const StyledHeader = styled.header`
     align-items: center;
     justify-content: flex-start;
     margin-inline: auto;
-    @media screen and (min-width: 700px) {
-      justify-content: center;
-    }
-    @media screen and (min-width: 1440px) {
-      justify-content: flex-start;
-    }
   }
 
   .hero-text {
@@ -63,8 +50,21 @@ export const StyledHeader = styled.header`
     left: 0;
     right: 0;
     aspect-ratio: 17.25;
-    @media screen and (min-width: 700px) {
+  }
+  @media screen and (min-width: 700px) {
+    height: 80vh;
+    margin-top: 0rem;
+    .max-width-wrapper {
+      justify-content: center;
+    }
+    .bottom-wave-wrapper {
       bottom: -2px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    height: 100vh;
+    .max-width-wrapper {
+      justify-content: flex-start;
     }
   }
 `;

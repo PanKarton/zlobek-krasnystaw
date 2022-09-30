@@ -6,13 +6,7 @@ const MainLogo = ({ priority }) => (
     <Link href="/" passHref>
       <a>
         <div className="logo-img-wrapper">
-          <Image
-            src="/images/main-logo.svg"
-            alt="Logo żłobka z niebieską sową"
-            layout="fill"
-            width="100"
-            height="40"
-          />
+          <Image src="/images/main-logo.svg" alt="Logo żłobka z niebieską sową" layout="fill" />
         </div>
       </a>
     </Link>

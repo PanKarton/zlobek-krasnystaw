@@ -29,11 +29,9 @@ export const StyledWrapper = styled.section`
     border-bottom-left-radius: 5px;
     height: min-content;
     width: max(25%, 15rem);
-  }
-
-  /* Add some padding */
-  @media screen and (min-width: 1300px) {
-    /* width: 17rem; */
+    .close-button-wrapper {
+      display: none;
+    }
   }
 
   /* Hide mobile nav */
@@ -46,9 +44,6 @@ export const StyledWrapper = styled.section`
     cursor: pointer;
     top: 1rem;
     right: 0.75rem;
-    @media screen and (min-width: 700px) {
-      display: none;
-    }
     svg {
       color: ${({ theme }) => theme.color.gray500};
       font-size: 2rem;
