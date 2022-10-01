@@ -58,9 +58,6 @@ export const StyledSection = styled.section`
     left: 0;
     right: 0;
     aspect-ratio: 15.28;
-    @media screen and (min-width: 700px) {
-      bottom: -2px;
-    }
   }
 `;
 

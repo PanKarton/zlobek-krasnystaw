@@ -25,6 +25,7 @@ export const StyledNav = styled.nav`
   }
 
   & > .main-logo-wrapper {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;

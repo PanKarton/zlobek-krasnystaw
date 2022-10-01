@@ -1,11 +1,12 @@
 import ImageTile from 'Components/Atoms/ImageTile/ImageTile';
-import TileTransparentLayer from 'Components/Atoms/TileTransparentLayer/TileTransparentLayer';
 import Image from 'next/image';
 import styled, { useTheme } from 'styled-components';
 
 const StyledSection = styled.section`
+  position: relative;
   background-color: ${({ theme }) => theme.color.tilesSectionBackground};
-  padding-block: 5rem;
+  padding-top: 2rem;
+  padding-bottom: clamp(5rem, 21vw, 12rem);
   padding-inline: 1rem;
   .max-width {
     margin-inline: auto;
@@ -37,20 +38,28 @@ const StyledSection = styled.section`
         align-items: flex-start;
         justify-content: center;
         flex-wrap: wrap;
-        gap: clamp(1rem ,2.5vw, 1.5rem);
+        gap: clamp(1rem, 2.5vw, 1.5rem);
         .tile-wrapper {
           width: min(calc(50% - 1rem), 21rem);
           aspect-ratio: 225/315;
           border-radius: 5px;
           overflow: hidden;
+        }
       }
     }
+  }
+  /* Blue wave divider */
+  .bottom-waves-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    aspect-ratio: 11.5;
   }
 `;
 
 const TilesSection = props => {
   const theme = useTheme();
-  console.log(theme);
 
   return (
     <StyledSection>
@@ -98,6 +107,9 @@ const TilesSection = props => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bottom-waves-wrapper">
+        <Image src="/images/blue-wave.svg" alt="Niebieska fala dekoracyjna" layout="fill" />
       </div>
     </StyledSection>
   );
