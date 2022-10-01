@@ -90,14 +90,14 @@ export const StyledNav = styled.nav`
     gap: 11rem;
     padding-bottom: 3rem;
     font-family: var(--font-secondary);
-    background-color: hsla(0, 0%, 0%, 0.35);
-    box-shadow: 0 0 1.5rem 0.5rem hsla(0, 0%, 0%, 0.45);
+    background-color: ${({ theme }) => theme.color.transparentGray};
+    box-shadow: 0 0 1.5rem 0.5rem ${({ theme }) => theme.color.darkerTransparentGray};
     @media screen and (min-width: 1440px) {
       display: flex;
     }
     .nav-contact-info {
       width: 100%;
-      font-size: 16px;
+      font-size: 1rem;
       color: ${({ theme }) => theme.color.white};
       display: flex;
       align-items: center;

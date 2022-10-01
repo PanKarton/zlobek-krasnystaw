@@ -4,6 +4,7 @@ import Map from 'Components/Atoms/Map/Map';
 import MainLogo from 'Components/Atoms/MainLogo/MainLogo';
 import NavContactInfo from 'Components/Molecules/NavContactInfo/NavContactInfo';
 import { StyledFooter } from './Footer.styles';
+import CallMobileButton from 'Components/Atoms/CallMobileButton/CallMobileButton';
 
 const Footer = props => (
   <StyledFooter>

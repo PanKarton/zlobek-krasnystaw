@@ -1,32 +1,7 @@
 import { BsCalendarDateFill } from 'react-icons/bs';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { RiMapPinFill } from 'react-icons/ri';
-import styled from 'styled-components';
-
-const StyledSection = styled.section`
-  color: ${({ theme }) => theme.color.gray500};
-  padding-left: 1rem;
-  margin-block: 2rem 1.5rem;
-  .flex-wrapper {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-  }
-  h2 {
-    font-family: var(--font-primary);
-    line-height: 1;
-  }
-  p {
-    font-family: var(--font-secondary);
-    font-size: 14px;
-  }
-  svg {
-    color: ${({ theme }) => theme.color.pink};
-  }
-  & li > * {
-    margin-top: 1rem;
-  }
-`;
+import { StyledSection } from './NavContactInfo.styles';
 
 const NavContactInfo = props => (
   <StyledSection className="nav-contact-details">

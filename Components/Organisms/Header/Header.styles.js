@@ -4,7 +4,7 @@ export const StyledHeader = styled.header`
   position: relative;
   width: 100vw;
   height: 75vh;
-  margin-top: 5rem;
+  margin-top: 3rem;
   .hero-image-wrapper {
     position: absolute;
     top: 0;
@@ -24,10 +24,10 @@ export const StyledHeader = styled.header`
 
   .hero-text {
     color: ${({ theme }) => theme.color.white};
-    background-color: hsla(0, 0%, 0%, 0.15);
+    background-color: ${({ theme }) => theme.color.lightTransparentGray};
     width: 80%;
     padding: 1rem;
-    box-shadow: 0 0 1rem 0.5rem hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 0 1rem 0.5rem ${({ theme }) => theme.color.lightTransparentGray};
 
     h2 {
       font-size: clamp(2.25rem, 7vw, 6rem);
