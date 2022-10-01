@@ -51,9 +51,13 @@ export const StyledHeader = styled.header`
     right: 0;
     aspect-ratio: 17.25;
   }
+
   @media screen and (min-width: 700px) {
-    height: 80vh;
+    height: 40rem;
     margin-top: 0rem;
+    .hero-text {
+      width: 70%;
+    }
     .max-width-wrapper {
       justify-content: center;
     }
@@ -62,9 +66,12 @@ export const StyledHeader = styled.header`
     }
   }
   @media screen and (min-width: 1440px) {
-    height: 100vh;
+    height: 90vh;
     .max-width-wrapper {
       justify-content: flex-start;
+    }
+    .hero-text {
+      padding: 2rem 1rem 2rem 2rem;
     }
   }
 `;

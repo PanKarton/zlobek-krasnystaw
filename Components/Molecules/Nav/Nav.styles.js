@@ -80,16 +80,18 @@ export const StyledNav = styled.nav`
     display: none;
     position: absolute;
     bottom: 50%;
-    width: 100%;
+    left: 50%;
+    translate: -50% 0;
+    width: 98.5%;
     height: 10rem;
     z-index: -1;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 12rem;
+    gap: 11rem;
     padding-bottom: 3rem;
     font-family: var(--font-secondary);
-    background-color: hsla(0, 0%, 0%, 0.15);
-    box-shadow: 0 0 1rem 0.5rem hsla(0, 0%, 0%, 0.15);
+    background-color: hsla(0, 0%, 0%, 0.35);
+    box-shadow: 0 0 1.5rem 0.5rem hsla(0, 0%, 0%, 0.45);
     @media screen and (min-width: 1440px) {
       display: flex;
     }
