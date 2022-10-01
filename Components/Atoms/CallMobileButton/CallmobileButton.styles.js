@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.button`
+  background-color: transparent;
+  border: none;
   display: flex;
   align-items: center;
   gap: 0.25rem;

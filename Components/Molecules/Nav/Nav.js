@@ -15,7 +15,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <div className="main-logo-wrapper">
-        <MainLogo priority />
+        <MainLogo />
       </div>
       <div className="mobile-icons-wrapper">
         <HamburgerButton onClick={handleToggleMenu} isActive={isVisible}></HamburgerButton>

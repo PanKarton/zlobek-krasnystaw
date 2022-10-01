@@ -6,21 +6,20 @@ export const StyledSection = styled.section`
   padding-inline: 1rem 2rem;
   .flex-wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-inline: auto;
-    gap: 2rem;
     padding-left: clamp(0rem, 0.5vw, 3rem);
     @media screen and (min-width: 700px) {
       padding-left: 5rem;
     }
     @media screen and (min-width: 1100px) {
-      justify-content: center;
+      justify-content: flex-start;
     }
     @media screen and (min-width: 1400px) {
-      gap: 5rem;
-    }
-    .about-us-article {
+      padding-left: 2rem;
+      justify-content: flex-start;
+      gap: 8rem;
     }
     .images-wrapper {
       display: none;
@@ -55,13 +54,10 @@ export const StyledSection = styled.section`
   }
   .bottom-wave-wrapper {
     position: absolute;
-    bottom: 0px;
+    bottom: -2px;
     left: 0;
     right: 0;
     aspect-ratio: 15.28;
-    @media screen and (min-width: 700px) {
-      bottom: -2px;
-    }
   }
 `;
 
@@ -70,20 +66,29 @@ export const StyledArticle = styled.article`
   max-width: 29rem;
   .about-us-paragraph {
     font-family: var(--font-secondary);
-    font-size: 1.25rem;
+    font-size: 1rem;
     max-width: 30ch;
     &--small {
-      font-size: 1rem;
+      font-size: 0.875rem;
+    }
+    @media screen and (min-width: 700px) {
+      font-size: 1.25rem;
+      line-height: 1.125;
+      margin-bottom: 0;
     }
   }
   h3 {
-    font-size: 2.5rem;
-    font-family: var(--font-primary);
+    color: ${({ theme }) => theme.color.gray700};
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: ${({ theme }) => theme.fontSize.sectionHeading};
     line-height: 1;
-    margin-bottom: 0.75rem;
+    max-width: 20ch;
     @media screen and (min-width: 700px) {
+      font-size: 2.5rem;
       line-height: 1.125;
-      margin-bottom: 0;
+      margin-bottom: .75rem;
+    }
     }
     .text-pink {
       color: ${({ theme }) => theme.color.pink};

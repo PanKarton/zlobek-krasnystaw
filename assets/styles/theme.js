@@ -10,8 +10,20 @@ export const theme = {
     white: '#fff',
     pink: '#FE9FBF',
     darkerPink: '#FF83AD',
+    // Tiles section
+    tilesSectionBackground: '#E8EAED',
+    transparentPink: 'hsla(340, 98%, 81%, 0.9)',
+    pinkBorder: '#E80B6F',
+    transparentPurple: 'hsla(9, 76%, 76%, 0.9)',
+    purpleBorder: '#E82300',
+    transparentOrange: 'hsla(257, 74%, 75%, 0.9)',
+    orangeBorder: '#5013E4',
+    transparentBlue: 'hsla(213, 67%, 51%, 0.9)',
+    blueBorder: '#005AC8',
   },
-  fontSize: {},
+  fontSize: {
+    sectionHeading: 'clamp(2rem, 6vw, 3rem)',
+  },
 };
 
 //  0.5rem - Footer .nav-author-signature |

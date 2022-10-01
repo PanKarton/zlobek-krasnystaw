@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  border-top: 1px solid black;
   padding-top: 2rem;
   background-color: ${({ theme }) => theme.color.white};
   & > .flex-wrapper {
