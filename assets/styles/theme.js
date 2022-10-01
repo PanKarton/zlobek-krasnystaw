@@ -20,6 +20,8 @@ export const theme = {
     orangeBorder: '#5013E4',
     transparentBlue: 'hsla(213, 67%, 51%, 0.9)',
     blueBorder: '#005AC8',
+    // Description section
+    blue: '#007DB3',
   },
   fontSize: {
     sectionHeading: 'clamp(2rem, 6vw, 3rem)',

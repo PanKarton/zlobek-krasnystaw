@@ -4,7 +4,7 @@ export const StyledSection = styled.section`
   position: relative;
   background-color: ${({ theme }) => theme.color.tilesSectionBackground};
   padding-top: 2rem;
-  padding-bottom: clamp(5rem, 21vw, 12rem);
+  padding-bottom: clamp(5rem, 18vw, 14rem);
   padding-inline: 1rem;
   .max-width {
     margin-inline: auto;
