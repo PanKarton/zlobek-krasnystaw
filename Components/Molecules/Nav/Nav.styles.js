@@ -11,6 +11,7 @@ export const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   z-index: 99999;
+  border-bottom: 1px solid #ddd;
 
   @media screen and (min-width: 700px) {
     background-color: transparent;
