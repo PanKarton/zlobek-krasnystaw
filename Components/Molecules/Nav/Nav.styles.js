@@ -36,12 +36,11 @@ export const StyledNav = styled.nav`
     @media screen and (min-width: 700px) {
       justify-content: flex-start;
       align-items: center;
-      width: 14rem;
-      aspect-ratio: 1.1;
+      width: 20rem;
+      height: 15rem;
       padding: 1rem 0 0 1rem;
-      background-image: url('/images/mobile-corner-logo-blob1.svg');
-      background-size: auto;
-      background-repeat: no-repeat;
+      background-color: white;
+      clip-path: circle(70% at 25% 0);
       & .logo-img-wrapper {
         width: 10rem;
       }
@@ -56,6 +55,7 @@ export const StyledNav = styled.nav`
       top: 50%;
       translate: -50% -50%;
       z-index: 99999;
+      clip-path: none;
       background-image: none;
       background-color: ${({ theme }) => theme.color.white};
       padding: 0;

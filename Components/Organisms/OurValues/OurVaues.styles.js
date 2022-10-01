@@ -19,7 +19,6 @@ export const StyledSection = styled.section`
       align-items: flex-start;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      translate: 0 -10%;
     }
   }
 `;
