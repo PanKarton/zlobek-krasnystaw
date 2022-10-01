@@ -3,27 +3,35 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
   position: relative;
   width: 100vw;
-  height: 771px;
-  @media screen and (max-width: 700px) {
-    height: 500px;
-  }
+  height: 75vh;
+  margin-top: 3rem;
   .hero-image-wrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
+    width: 100%;
     z-index: -1;
   }
-  .hero-text {
-    position: absolute;
-    top: 55%;
-    translate: 0 -50%;
-    color: ${({ theme }) => theme.color.white};
+  .max-width-wrapper {
+    height: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     margin-inline: auto;
-    padding-inline: 1rem 3rem;
-    padding-block: 2rem;
-    background-color: hsla(0, 0%, 0%, 0.25);
+  }
+
+  .hero-text {
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.lightTransparentGray};
+    width: 80%;
+    padding: 1rem;
+    box-shadow: 0 0 1rem 0.5rem ${({ theme }) => theme.color.lightTransparentGray};
 
     h2 {
-      font-size: clamp(2.25rem, 6vw, 4rem);
+      font-size: clamp(2.25rem, 7vw, 6rem);
+      font-weight: 600;
       font-family: var(--font-primary);
       line-height: 1.125;
       .text-pink {
@@ -35,25 +43,35 @@ export const StyledHeader = styled.header`
       font-family: var(--font-secondary);
       margin-top: 0.5rem;
     }
-
-    @media screen and (min-width: 700px) {
-      background-color: transparent;
-      padding-inline: 2rem 0;
-    }
-    @media screen and (min-width: 1440px) {
-      padding-inline: 0;
-      left: 50%;
-      translate: -50% -50%;
-    }
   }
-  .wave-wrapper {
+  .bottom-wave-wrapper {
     position: absolute;
     bottom: 0px;
     left: 0;
     right: 0;
     aspect-ratio: 17.25;
-    @media screen and (min-width: 700px) {
+  }
+
+  @media screen and (min-width: 700px) {
+    height: 40rem;
+    margin-top: 0rem;
+    .hero-text {
+      width: 70%;
+    }
+    .max-width-wrapper {
+      justify-content: center;
+    }
+    .bottom-wave-wrapper {
       bottom: -2px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    height: 90vh;
+    .max-width-wrapper {
+      justify-content: flex-start;
+    }
+    .hero-text {
+      padding: 2rem 1rem 2rem 2rem;
     }
   }
 `;

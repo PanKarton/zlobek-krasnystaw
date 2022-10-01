@@ -7,7 +7,7 @@ export const StyledWrapper = styled.section`
   right: 0;
   top: 0;
   height: 100vh;
-  width: 15rem;
+  width: max(13rem, 80%);
   background-color: ${({ theme }) => theme.color.white};
   padding-block: 1rem;
   padding-left: 1.5rem;
@@ -24,16 +24,14 @@ export const StyledWrapper = styled.section`
 
   /* Change padding for side menu */
   @media screen and (min-width: 700px) {
-    top: 6rem;
-    border-top: 2px solid #aaa;
+    top: 5.25rem;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
     border-bottom-left-radius: 5px;
     height: min-content;
-  }
-
-  /* Add some padding */
-  @media screen and (min-width: 1300px) {
-    width: 17rem;
+    width: max(25%, 15rem);
+    .close-button-wrapper {
+      display: none;
+    }
   }
 
   /* Hide mobile nav */
@@ -46,9 +44,6 @@ export const StyledWrapper = styled.section`
     cursor: pointer;
     top: 1rem;
     right: 0.75rem;
-    @media screen and (min-width: 700px) {
-      display: none;
-    }
     svg {
       color: ${({ theme }) => theme.color.gray500};
       font-size: 2rem;
