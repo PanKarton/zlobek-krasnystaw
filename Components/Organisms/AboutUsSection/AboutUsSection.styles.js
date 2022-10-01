@@ -81,10 +81,11 @@ export const StyledArticle = styled.article`
     }
   }
   h3 {
-    font-size: 2rem;
-    font-family: var(--font-primary);
+    color: ${({ theme }) => theme.color.gray700};
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: ${({ theme }) => theme.fontSize.sectionHeading};
     line-height: 1;
-    margin-bottom: 0.75rem;
     max-width: 20ch;
     @media screen and (min-width: 700px) {
       font-size: 2.5rem;

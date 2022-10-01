@@ -4,19 +4,20 @@ import Image from 'next/image';
 import styled, { useTheme } from 'styled-components';
 
 const StyledSection = styled.section`
-  height: 850px;
   background-color: ${({ theme }) => theme.color.tilesSectionBackground};
-  padding-block: 4rem;
+  padding-block: 5rem;
   padding-inline: 1rem;
   .max-width {
     margin-inline: auto;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 
     h3 {
-      font-size: 2rem;
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: ${({ theme }) => theme.fontSize.sectionHeading};
       color: ${({ theme }) => theme.color.gray700};
       font-family: var(--font-primary);
       font-weight: 600;
@@ -27,11 +28,21 @@ const StyledSection = styled.section`
     .flex-wrapper {
       width: 100%;
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      .tile {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1.5rem, 5vw, 3rem);
+      .tiles-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: clamp(1rem ,2.5vw, 1.5rem);
+        .tile-wrapper {
+          width: min(calc(50% - 1rem), 21rem);
+          aspect-ratio: 225/315;
+          border-radius: 5px;
+          overflow: hidden;
       }
     }
   }
@@ -44,38 +55,48 @@ const TilesSection = props => {
   return (
     <StyledSection>
       <div className="max-width">
-        <h3>
-          Poznajmy się <span className="pink-text">bliżej!</span>
-        </h3>
         <div className="flex-wrapper">
-          <ImageTile
-            src="/images/tile-kid1.jpg"
-            alt="Chłopiec na podłodze bawiący się klockami"
-            text="Wartość 1"
-            transparentColor={theme.color.transparentPink}
-            borderColor={theme.color.pinkBorder}
-          />
-          <ImageTile
-            src="/images/tile-kid2.jpg"
-            alt="Dziewczynka trzymająca zabawke"
-            text="Wartość 2"
-            transparentColor={theme.color.transparentPurple}
-            borderColor={theme.color.purpleBorder}
-          />
-          <ImageTile
-            src="/images/tile-kid3.jpg"
-            alt="Uśmiechnięty chłopiec"
-            text="Wartość 3"
-            transparentColor={theme.color.transparentOrange}
-            borderColor={theme.color.orangeBorder}
-          />
-          <ImageTile
-            src="/images/tile-kid4.jpg"
-            alt="Dziewczynka z pomalowanymi farbą dłońmi"
-            text="Wartość 4"
-            transparentColor={theme.color.transparentBlue}
-            borderColor={theme.color.blueBorder}
-          />
+          <h3>
+            Poznajmy się <span className="pink-text">bliżej!</span>
+          </h3>
+          <div className="tiles-wrapper">
+            <div className="tile-wrapper">
+              <ImageTile
+                src="/images/tile-kid1.jpg"
+                alt="Chłopiec na podłodze bawiący się klockami"
+                text="Wartość 1"
+                transparentColor={theme.color.transparentPink}
+                borderColor={theme.color.pinkBorder}
+              />
+            </div>
+            <div className="tile-wrapper">
+              <ImageTile
+                src="/images/tile-kid2.jpg"
+                alt="Dziewczynka trzymająca zabawke"
+                text="Wartość 2"
+                transparentColor={theme.color.transparentPurple}
+                borderColor={theme.color.purpleBorder}
+              />
+            </div>
+            <div className="tile-wrapper">
+              <ImageTile
+                src="/images/tile-kid3.jpg"
+                alt="Uśmiechnięty chłopiec"
+                text="Wartość 3"
+                transparentColor={theme.color.transparentOrange}
+                borderColor={theme.color.orangeBorder}
+              />
+            </div>
+            <div className="tile-wrapper">
+              <ImageTile
+                src="/images/tile-kid4.jpg"
+                alt="Dziewczynka z pomalowanymi farbą dłońmi"
+                text="Wartość 4"
+                transparentColor={theme.color.transparentBlue}
+                borderColor={theme.color.blueBorder}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </StyledSection>

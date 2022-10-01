@@ -4,8 +4,8 @@ import TileTransparentLayer from '../TileTransparentLayer/TileTransparentLayer';
 
 const StyledWrapper = styled.div`
   position: relative;
-  width: calc(50% - 0.5rem);
-  aspect-ratio: 225/315;
+  height: 100%;
+
   /* Drag transparent layer when on hover */
   &:hover > .content-wrapper > p,
   &:hover > .content-wrapper > .curved-image-wrapper {
@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
     height: 100%;
     inset: 0;
     overflow-x: hidden;
-    border-bottom: 3px solid ${({ borderColor }) => borderColor};
+    border-bottom: 4px solid ${({ borderColor }) => borderColor};
     p {
       position: absolute;
       width: 100%;
@@ -30,8 +30,9 @@ const StyledWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-primary);
-      font-size: 2rem;
+      font-family: var(--font-secondary);
+      font-size: clamp(1.25rem, 5vw, 2rem);
+      letter-spacing: 1px;
       font-weight: 600;
       color: ${({ theme }) => theme.color.white};
       transition: translate 0.375s ease-in-out;

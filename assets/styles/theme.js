@@ -21,7 +21,9 @@ export const theme = {
     transparentBlue: 'hsla(213, 67%, 51%, 0.9)',
     blueBorder: '#005AC8',
   },
-  fontSize: {},
+  fontSize: {
+    sectionHeading: 'clamp(2rem, 6vw, 3rem)',
+  },
 };
 
 //  0.5rem - Footer .nav-author-signature |
