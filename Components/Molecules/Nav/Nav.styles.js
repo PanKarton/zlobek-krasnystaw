@@ -16,6 +16,7 @@ export const StyledNav = styled.nav`
   @media screen and (min-width: 700px) {
     background-color: transparent;
     padding-inline: 0;
+    border-bottom: 0px;
   }
   @media screen and (min-width: 1440px) {
     position: absolute;
