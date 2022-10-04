@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
   position: relative;
-  width: 100vw;
   height: 75vh;
   margin-top: 3rem;
 
