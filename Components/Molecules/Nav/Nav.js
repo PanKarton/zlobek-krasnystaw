@@ -40,10 +40,10 @@ const Nav = () => {
             <span>Zadzwoń: 123 456 789 - dyrektor</span>
           </div>
           <span>123 456 789 - sektretariat</span>
-          <div className="fb-icon">
-            <FbButton />
-          </div>
         </div>
+      </div>
+      <div className="fb-icon">
+        <FbButton />
       </div>
       <MobileNavList isVisible={isVisible} handleCloseMenu={handleCloseMenu} />
     </StyledNav>

@@ -4,16 +4,18 @@ import { StyledList, StyledWrapper } from './DesktopNavList.styles';
 
 const DesktopNavList = props => (
   <StyledWrapper>
-    <StyledList>
+    <StyledList className="left">
       <li>
         <NavLink direction="/">O nas</NavLink>
       </li>
       <li>
         <NavLink direction="aktualnosc">Aktualności</NavLink>
       </li>
-      <li className="gallery">
+      <li>
         <NavLink direction="galeria">Galeria</NavLink>
       </li>
+    </StyledList>
+    <StyledList className="right">
       <li className="secondary-menu">
         <StyledNavSpan className="secondary-menu-trigger">Dla rodzica</StyledNavSpan>
         <ul>

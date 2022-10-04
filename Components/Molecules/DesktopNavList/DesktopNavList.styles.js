@@ -6,90 +6,98 @@ export const StyledWrapper = styled.section`
   background-color: ${({ theme }) => theme.color.white};
   border-top-left-radius: 9999px;
   border-bottom-left-radius: 9999px;
-  border-bottom: 1px solid #aaa;
+  /* border-bottom: 1px solid #aaa; */
+  border: 1px solid #aaa;
 
   /* Show bar */
   @media screen and (min-width: 700px) {
     display: flex;
     align-items: center;
+    gap: 2rem;
+    padding-left: 4rem;
   }
 
   /* Add  border radius*/
   @media screen and (min-width: 1440px) {
     border-top-right-radius: 9999px;
     border-bottom-right-radius: 9999px;
+    justify-content: space-between;
+    padding-inline: 6rem;
   }
 `;
 
 export const StyledList = styled.ul`
   position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  padding-left: 2rem;
-  gap: 2rem;
-  width: 100%;
-  /* Hide all items except for two first */
-  & > :nth-child(3),
-  & > :nth-child(4),
-  & > :nth-child(5),
-  & > :nth-child(6) {
-    display: none;
-  }
+  align-items: center;
+  justify-content: flex-start;
 
-  /* Show galery  */
-  @media screen and (min-width: 900px) {
+  &.left {
+    gap: 2rem;
+    /* Hide gallery */
     & > :nth-child(3) {
-      display: block;
+      display: none;
+      /* Show galery  */
+      @media screen and (min-width: 950px) {
+        display: block;
+      }
     }
-  }
-  /* Show secondary menu trigger  */
-  @media screen and (min-width: 1300px) {
-    & > :nth-child(4) {
-      display: block;
+    @media screen and (min-width: 1440px) {
+      gap: 6.5rem;
     }
   }
 
-  .secondary-menu {
-    position: relative;
-    &:hover > ul {
-      scale: 1 1;
-      translate: 0 0;
+  &.right {
+    gap: 3rem;
+    /* Hide all items */
+    & > :nth-child(1),
+    & > :nth-child(2),
+    & > :nth-child(3) {
+      display: none;
     }
-    ul {
-      background-color: white;
-      display: flex;
-      position: absolute;
-      top: 2rem;
-      left: -0.75rem;
-      gap: 1rem;
-      padding: 1rem 1.5rem 1rem 0.75rem;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      flex-direction: column;
-      scale: 1 0;
-      translate: 0 -50%;
-      &:focus-within {
+    /* Show secondary menu trigger  */
+    @media screen and (min-width: 1300px) {
+      & > :nth-child(1) {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      /* Show rest of the bar, rodo and contact */
+      & > :nth-child(2),
+      & > :nth-child(3) {
+        display: block;
+      }
+    }
+
+    /* Secondary menu on hover */
+    .secondary-menu,
+    .secondary-menu > ul {
+      position: relative;
+      z-index: 2;
+      &:hover > ul {
         scale: 1 1;
         translate: 0 0;
       }
-    }
-  }
-
-  @media screen and (min-width: 1440px) {
-    /* Show rest of the bar, rodo and contact */
-    & > :nth-child(5),
-    & > :nth-child(6) {
-      display: block;
-    }
-    & > :nth-child(1),
-    & > :nth-child(2) {
-      margin-right: 4rem;
-    }
-    justify-content: center;
-    padding-inline: 5rem;
-    .gallery {
-      margin-right: auto;
+      ul {
+        background-color: white;
+        display: flex;
+        position: absolute;
+        top: 1.25rem;
+        left: -0.75rem;
+        gap: 1rem;
+        padding: 2rem 1.5rem 1rem 0.75rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        flex-direction: column;
+        scale: 1 0;
+        z-index: 0;
+        translate: 0 -50%;
+        &:focus-within {
+          scale: 1 1;
+          translate: 0 0;
+        }
+      }
     }
   }
 `;

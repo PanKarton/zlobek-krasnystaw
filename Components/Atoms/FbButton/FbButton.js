@@ -14,8 +14,8 @@ const FbButton = props => {
         src="/images/facebook-icon.svg"
         alt="Ikonka facebook"
         layout="fixed"
-        width="28"
-        height="28"
+        width="36"
+        height="36"
       />
     </a>
   );
