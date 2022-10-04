@@ -13,7 +13,7 @@ export const StyledWrapper = styled.button`
   }
   a {
     font-family: var(--font-primary);
-    font-weight: 500;
+    font-weight: 400;
     color: ${({ theme }) => theme.color.black};
     font-size: 1.25rem;
     &:active {

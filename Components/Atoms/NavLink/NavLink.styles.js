@@ -5,8 +5,11 @@ export const StyledNavSpan = styled.span`
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.black};
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
+  @media screen and (min-width: 700px) {
+    font-weight: 500;
+  }
   cursor: pointer;
   &::after {
     position: absolute;

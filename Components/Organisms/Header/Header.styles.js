@@ -75,7 +75,7 @@ export const StyledHeader = styled.header`
     }
 
     h2 {
-      font-weight: 400;
+      font-weight: 500;
       font-size: clamp(1.625rem, 5vw, 2.25rem);
       .text-pink {
         color: ${({ theme }) => theme.color.textDarkPink};
