@@ -4,6 +4,8 @@ export const theme = {
     gray300: '#333',
     gray500: '#555',
     gray700: '#777',
+    textDarkGray: '#555F61',
+    textDarkPink: '#BF3160',
     lightTransparentGray: 'hsla(0, 0%, 0%, 0.25)',
     transparentGray: 'hsla(0, 0%, 0%, 0.35)',
     darkerTransparentGray: 'hsla(0, 0%, 0%, 0.45)',
