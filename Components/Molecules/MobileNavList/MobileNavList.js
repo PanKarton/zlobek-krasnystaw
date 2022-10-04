@@ -1,4 +1,5 @@
 import CloseButton from 'Components/Atoms/CloseButton/CloseButton';
+import FbButton from 'Components/Atoms/FbButton/FbButton';
 import NavLink from 'Components/Atoms/NavLink/NavLink';
 import CallMobileButton from '../../Atoms/CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
@@ -43,6 +44,11 @@ const MobileNavList = ({ isVisible, handleCloseMenu }) => {
         </li>
         <li>
           <CallMobileButton />
+        </li>
+        <li>
+          <div className="fb-icon">
+            <FbButton />
+          </div>
         </li>
       </StyledList>
     </StyledWrapper>

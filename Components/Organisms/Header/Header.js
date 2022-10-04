@@ -16,9 +16,10 @@ const Header = props => (
     </div>
     <div className="max-width-wrapper">
       <Nav />
-      <div className="hero-text">
+      <div className="hero-text-wrapper">
         <h2>
-          Zadbaj z nami o przyszłość <br /> <span className="text-pink">swojego dziecka!</span>
+          Zadbaj z nami o <br /> przyszłość <br />{' '}
+          <span className="text-pink">swojego dziecka!</span>
         </h2>
         <p>Zapraszamy dzieci w wieku od 1 do 3 lat!</p>
       </div>

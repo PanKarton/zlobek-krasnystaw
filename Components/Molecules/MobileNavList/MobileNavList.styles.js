@@ -56,6 +56,7 @@ export const StyledList = styled.ul`
   align-items: flex-start;
   justify-content: center;
   gap: 0.5rem;
+
   /* Position secondary list as part of primary one */
   & .secondary-menu {
     ul {
