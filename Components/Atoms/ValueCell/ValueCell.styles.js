@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  width: 18rem;
+  max-width: 22rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,12 +17,12 @@ export const StyledWrapper = styled.div`
     }
   }
   & > span {
-    font-size: 1.75rem;
-    color: #777777;
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.color.textDarkGray};
     font-family: var(--font-primary);
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
-    line-height: 1.25;
+    line-height: 1;
     @media screen and (min-width: 700px) {
       font-size: 2rem;
     }

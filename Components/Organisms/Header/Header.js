@@ -11,7 +11,7 @@ const Header = props => (
         alt="Dziewczynka w stroju astrunauty trzymająca roślinę"
         layout="fill"
         objectFit="cover"
-        objectPosition="50% 20%"
+        objectPosition="50%"
       />
     </div>
     <div className="max-width-wrapper">
