@@ -9,12 +9,6 @@ export const StyledSection = styled.section`
     align-items: center;
     margin-inline: auto;
     padding-inline: 1.5rem;
-    @media screen and (min-width: 700px) {
-      padding-left: 5rem;
-    }
-    @media screen and (min-width: 1100px) {
-      justify-content: flex-start;
-    }
     @media screen and (min-width: 1400px) {
       padding-left: 2rem;
       justify-content: flex-start;
@@ -63,7 +57,6 @@ export const StyledSection = styled.section`
 export const StyledArticle = styled.article`
   color: ${({ theme }) => theme.color.textDarkGray};
   max-width: 35.5rem;
-  color: ${({ theme }) => theme.color.gray700};
   font-family: var(--font-primary);
   display: flex;
   flex-direction: column;

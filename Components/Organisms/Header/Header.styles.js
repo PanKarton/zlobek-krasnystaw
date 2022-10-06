@@ -28,7 +28,7 @@ export const StyledHeader = styled.header`
       left: auto;
       right: 0;
       top: 3rem;
-      width: 83%;
+      width: 85%;
     }
     @media screen and (min-width: 1440px) {
       top: 6.5rem;

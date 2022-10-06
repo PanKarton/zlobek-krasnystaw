@@ -3,46 +3,44 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   position: relative;
   background-color: ${({ theme }) => theme.color.tilesSectionBackground};
-  padding-top: clamp(2rem, 100vw, 4rem);
-  padding-bottom: clamp(5rem, 18vw, 20rem);
-  padding-inline: 1rem;
+  padding-top: clamp(4rem, 11vw, 6rem);
+  padding-bottom: clamp(5rem, 15vw, 16rem);
   .max-width {
     position: relative;
     margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-inline: 1.5rem;
+    @media screen and (min-width: 1000px) {
+      padding-inline: 3rem;
+    }
+    @media screen and (min-width: 1440px) {
+      padding-inline: 1.5rem;
+    }
 
-    .flex-wrapper {
+    & > .flex-wrapper {
       width: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: clamp(1.5rem, 5vw, 3rem);
-      z-index: 1;
-      h3 {
-        width: 100%;
-        text-align: center;
-        font-size: ${({ theme }) => theme.fontSize.sectionHeading};
-        color: ${({ theme }) => theme.color.gray700};
-        font-family: var(--font-primary);
-        font-weight: 600;
-        .pink-text {
-          color: ${({ theme }) => theme.color.pink};
+      justify-content: center;
+      gap: clamp(3rem, 5vw, 6rem);
+      .staff-image-wrapper {
+        display: none;
+        position: relative;
+        flex-grow: 1;
+        max-width: 45rem;
+        aspect-ratio: 1.58;
+        @media screen and (min-width: 1000px) {
+          display: block;
         }
-      }
-      .tiles-wrapper {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: clamp(1rem, 100vw, 3rem);
-        .tile-wrapper {
-          width: min(calc(50% - 1rem), 15rem);
-          aspect-ratio: 225/315;
-          border-radius: 5px;
-          overflow: hidden;
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          translate: 1rem 1rem;
+          background-color: ${({ theme }) => theme.color.white};
+          z-index: 0;
         }
       }
     }
@@ -54,7 +52,7 @@ export const StyledSection = styled.section`
       height: 130%;
       width: 100%;
       @media screen and (min-width: 1000px) {
-        display: block;
+        /* display: block; */
       }
       .floating-icon-wrapper {
         position: absolute;
@@ -118,5 +116,34 @@ export const StyledSection = styled.section`
     left: 0;
     right: 0;
     aspect-ratio: 11.5;
+  }
+`;
+
+export const StyledArticle = styled.article`
+  color: ${({ theme }) => theme.color.textDarkGray};
+  font-family: var(--font-primary);
+  text-align: right;
+  max-width: 30rem;
+  @media screen and (min-width: 1440px) {
+    text-align: left;
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.75rem;
+    @media screen and (min-width: 1000px) {
+      align-items: flex-start;
+      text-align: left;
+    }
+    h3 {
+      font-size: clamp(1.75rem, 2vw, 2.25rem);
+      font-weight: 600;
+    }
+    p {
+      font-size: clamp(1rem, 1.125vw, 1.125rem);
+      line-height: 1.3;
+    }
   }
 `;

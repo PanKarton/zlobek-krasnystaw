@@ -28,25 +28,19 @@ const AboutUsSection = props => (
         </p>
         <ul>
           <li>
-            <div className="snail-image-wrapper">
-              <Image src="/images/snail.svg" alt="Różowy ślimak" layout="fill" />
-            </div>
+            <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
               Domową i ciepłą atmosferę
             </p>
           </li>
           <li>
-            <div className="snail-image-wrapper">
-              <Image src="/images/snail.svg" alt="Różowy ślimak" layout="fill" />
-            </div>
+            <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
               Prawidłowy rozwój psychomotoryczny i emocjonalno-społeczny
             </p>
           </li>
           <li>
-            <div className="snail-image-wrapper">
-              <Image src="/images/snail.svg" alt="Różowy ślimak" layout="fill" />
-            </div>
+            <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
               Bezpieczną i przyjazną zabawę
             </p>
