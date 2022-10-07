@@ -5,7 +5,7 @@ export const StyledSection = styled.section`
   margin-block: 2rem 1.5rem;
   font-family: var(--font-primary);
   width: 18rem;
-  @media screen and (min-width: 1500px) {
+  @media screen and (min-width: 1440px) {
     width: 34rem;
   }
   .flex-list {
@@ -13,7 +13,7 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    @media screen and (min-width: 1500px) {
+    @media screen and (min-width: 1440px) {
       flex-direction: row;
       flex-wrap: wrap;
       row-gap: 3rem;
