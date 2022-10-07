@@ -44,70 +44,6 @@ export const StyledSection = styled.section`
         }
       }
     }
-    /* Floating icons */
-    .floating-icons-wrapper {
-      display: none;
-      position: absolute;
-      top: 0;
-      height: 130%;
-      width: 100%;
-      @media screen and (min-width: 1000px) {
-        /* display: block; */
-      }
-      .floating-icon-wrapper {
-        position: absolute;
-        height: 110px;
-        aspect-ratio: 1;
-        animation: floater 8s infinite ease-in-out;
-        &:nth-child(1) {
-          top: 0;
-          right: 0;
-        }
-        &:nth-child(2) {
-          bottom: -5%;
-          right: 5%;
-          animation-delay: 1s;
-        }
-        &:nth-child(3) {
-          top: -5%;
-          left: 20%;
-          height: 130px;
-          animation-delay: 2s;
-        }
-        &:nth-child(4) {
-          height: 140px;
-          left: -5%;
-          top: 15%;
-          animation-delay: 3s;
-        }
-        &:nth-child(5) {
-          bottom: 5%;
-          left: 0;
-          animation-delay: 4s;
-        }
-      }
-
-      @keyframes floater {
-        0% {
-          translate: 0 0;
-        }
-        20% {
-          translate: 5% 5%;
-        }
-        40% {
-          translate: -5% 0%;
-        }
-        60% {
-          translate: 0 -5%;
-        }
-        80% {
-          translate: 5% 0;
-        }
-        100% {
-          translate: 0 0;
-        }
-      }
-    }
   }
   /* Blue wave divider */
   .bottom-waves-wrapper {
@@ -116,6 +52,116 @@ export const StyledSection = styled.section`
     left: 0;
     right: 0;
     aspect-ratio: 11.5;
+  }
+
+  /* Floating icons */
+  .floating-icons-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .floating-icon-wrapper {
+      position: absolute;
+      height: 110px;
+      aspect-ratio: 1;
+      animation: floater 10s infinite ease-in-out;
+      z-index: 9999;
+      &:nth-child(1) {
+        /* Icon C */
+        display: none;
+        top: -15%;
+        left: -5%;
+        rotate: 210deg;
+        scale: 1;
+        height: 130px;
+        @media screen and (min-width: 1440px) {
+          display: block;
+        }
+      }
+      &:nth-child(2) {
+        /* Icon O */
+        display: none;
+        bottom: -25%;
+        left: 0;
+        scale: 1;
+        animation-delay: 1s;
+        @media screen and (min-width: 1440px) {
+          display: block;
+        }
+        @media screen and (min-width: 1640px) {
+          left: -10%;
+        }
+      }
+      &:nth-child(3) {
+        /* Icon triangle */
+        display: none;
+        top: -25%;
+        right: 15%;
+        animation-delay: 2s;
+        scale: 0.5;
+        @media screen and (min-width: 1000px) {
+          display: block;
+          top: -25%;
+        }
+        @media screen and (min-width: 1150px) {
+          scale: 0.7;
+        }
+        @media screen and (min-width: 1440px) {
+          scale: 1;
+        }
+      }
+      &:nth-child(4) {
+        /* Icon diamond */
+        display: none;
+        height: 140px;
+        right: 5%;
+        bottom: -35%;
+        animation-delay: 3s;
+        scale: 0.7;
+        @media screen and (min-width: 1000px) {
+          display: block;
+        }
+        @media screen and (min-width: 1150px) {
+          scale: 0.85;
+          bottom: -20%;
+        }
+        @media screen and (min-width: 1440px) {
+          scale: 1;
+        }
+      }
+      &:nth-child(5) {
+        /* Icon cymbals */
+        display: none;
+        bottom: 5%;
+        left: 0;
+        animation-delay: 4s;
+      }
+      @media screen and (min-width: 1400px) {
+        display: block;
+      }
+    }
+
+    @keyframes floater {
+      0% {
+        translate: 0 0;
+      }
+      20% {
+        translate: 5% 5%;
+      }
+      40% {
+        translate: -5% 0%;
+      }
+      60% {
+        translate: 0 -5%;
+      }
+      80% {
+        translate: 5% 0;
+      }
+      100% {
+        translate: 0 0;
+      }
+    }
   }
 `;
 

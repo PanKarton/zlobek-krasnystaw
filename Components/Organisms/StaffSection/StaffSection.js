@@ -8,24 +8,24 @@ const TilesSection = props => {
   return (
     <StyledSection>
       <div className="max-width">
-        <div className="floating-icons-wrapper">
-          <div className="floating-icon-wrapper">
-            <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" layout="fill" />
-          </div>
-          <div className="floating-icon-wrapper">
-            <Image src="/images/floating-icon2.svg" alt="Półkole ozdobne" layout="fill" />
-          </div>
-          <div className="floating-icon-wrapper">
-            <Image src="/images/floating-icon3.svg" alt="Półkole ozdobne" layout="fill" />
-          </div>
-          <div className="floating-icon-wrapper">
-            <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" layout="fill" />
-          </div>
-          <div className="floating-icon-wrapper">
-            <Image src="/images/floating-icon5.svg" alt="Półkole ozdobne" layout="fill" />
-          </div>
-        </div>
         <div className="flex-wrapper">
+          <div className="floating-icons-wrapper">
+            <div className="floating-icon-wrapper">
+              <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" layout="fill" />
+            </div>
+            <div className="floating-icon-wrapper">
+              <Image src="/images/floating-icon2.svg" alt="Półkole ozdobne" layout="fill" />
+            </div>
+            <div className="floating-icon-wrapper">
+              <Image src="/images/floating-icon5.svg" alt="Półkole ozdobne" layout="fill" />
+            </div>
+            <div className="floating-icon-wrapper">
+              <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" layout="fill" />
+            </div>
+            <div className="floating-icon-wrapper">
+              <Image src="/images/floating-icon3.svg" alt="Półkole ozdobne" layout="fill" />
+            </div>
+          </div>
           <div className="staff-image-wrapper">
             <Image
               src="/images/staff.jpg"
