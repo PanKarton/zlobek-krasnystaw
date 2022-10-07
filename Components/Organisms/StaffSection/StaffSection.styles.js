@@ -70,13 +70,17 @@ export const StyledSection = styled.section`
       &:nth-child(1) {
         /* Icon C */
         display: none;
-        top: -15%;
+        top: -20%;
         left: -5%;
         rotate: 210deg;
         scale: 1;
         height: 130px;
         @media screen and (min-width: 1440px) {
           display: block;
+        }
+        @media screen and (min-width: 1640px) {
+          top: -28%;
+          left: -8%;
         }
       }
       &:nth-child(2) {
@@ -114,7 +118,7 @@ export const StyledSection = styled.section`
       &:nth-child(4) {
         /* Icon diamond */
         display: none;
-        height: 140px;
+        height: 150px;
         right: 5%;
         bottom: -35%;
         animation-delay: 3s;
@@ -129,16 +133,6 @@ export const StyledSection = styled.section`
         @media screen and (min-width: 1440px) {
           scale: 1;
         }
-      }
-      &:nth-child(5) {
-        /* Icon cymbals */
-        display: none;
-        bottom: 5%;
-        left: 0;
-        animation-delay: 4s;
-      }
-      @media screen and (min-width: 1400px) {
-        display: block;
       }
     }
 

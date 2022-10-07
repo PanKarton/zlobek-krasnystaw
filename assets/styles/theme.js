@@ -5,6 +5,7 @@ export const theme = {
     gray500: '#555',
     gray700: '#777',
     textDarkGray: '#555F61',
+    textDarkerGray: '#424A4C',
     textDarkPink: '#BF3160',
     lightTransparentGray: 'hsla(0, 0%, 0%, 0.25)',
     transparentGray: 'hsla(0, 0%, 0%, 0.35)',
@@ -23,7 +24,7 @@ export const theme = {
     transparentBlue: 'hsla(213, 67%, 51%, 0.9)',
     blueBorder: '#005AC8',
     // Description section
-    blue: '#007DB3',
+    blue: '#79C9EC',
   },
   fontSize: {
     sectionHeading: 'clamp(2rem, 6vw, 3rem)',

@@ -56,7 +56,6 @@ export const StyledSection = styled.section`
 
 export const StyledArticle = styled.article`
   color: ${({ theme }) => theme.color.textDarkGray};
-  max-width: 35.5rem;
   font-family: var(--font-primary);
   display: flex;
   flex-direction: column;

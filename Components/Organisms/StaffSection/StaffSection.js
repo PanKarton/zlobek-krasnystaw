@@ -22,9 +22,6 @@ const TilesSection = props => {
             <div className="floating-icon-wrapper">
               <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" layout="fill" />
             </div>
-            <div className="floating-icon-wrapper">
-              <Image src="/images/floating-icon3.svg" alt="Półkole ozdobne" layout="fill" />
-            </div>
           </div>
           <div className="staff-image-wrapper">
             <Image
