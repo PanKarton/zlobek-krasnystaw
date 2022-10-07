@@ -50,7 +50,7 @@ export const StyledArticle = styled.article`
       line-height: 1.5;
       letter-spacing: 1px;
       @media screen and (min-width: 1440px) {
-        line-height: 1.8;
+        line-height: 2;
       }
     }
   }

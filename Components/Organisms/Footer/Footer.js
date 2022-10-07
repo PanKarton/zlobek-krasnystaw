@@ -1,24 +1,13 @@
-import BipButton from 'Components/Atoms/BipButton/BipButton';
 import FbButton from 'Components/Atoms/FbButton/FbButton';
 import Map from 'Components/Atoms/Map/Map';
-import MainLogo from 'Components/Atoms/MainLogo/MainLogo';
-import NavContactInfo from 'Components/Molecules/NavContactInfo/NavContactInfo';
+import FooterContactInfo from 'Components/Molecules/FooterContactInfo/FooterContactInfo';
 import { StyledFooter } from './Footer.styles';
-import CallMobileButton from 'Components/Atoms/CallMobileButton/CallMobileButton';
 
 const Footer = props => (
   <StyledFooter>
     <div className="flex-wrapper max-width">
       <div className="footer-left">
-        <div className="nav-logo-wrapper">
-          <MainLogo />
-        </div>
-        <NavContactInfo />
-        <section className="nav-bip-wrapper">
-          <h2>Bądź z nami</h2>
-          <p>Informacje i aktualności </p>
-          <BipButton />
-        </section>
+        <FooterContactInfo />
       </div>
       <div className="footer-right">
         <Map />

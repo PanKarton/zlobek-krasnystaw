@@ -3,7 +3,7 @@ import Header from 'Components/Organisms/Header/Header';
 
 const HomeTemplate = ({ children }) => (
   <>
-    <Header />
+    {/* <Header /> */}
     <main>{children}</main>
     <Footer />
   </>

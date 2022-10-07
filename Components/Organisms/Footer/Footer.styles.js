@@ -13,35 +13,6 @@ export const StyledFooter = styled.footer`
       justify-content: center;
       gap: 5rem;
     }
-    .footer-left {
-      .nav-logo-wrapper {
-        position: relative;
-        width: 10rem;
-        margin-inline: auto;
-      }
-      .nav-bip-wrapper {
-        border-block: 1px solid #ccc;
-        padding-block: 1.5rem;
-        padding-left: 2.25rem;
-        color: ${({ theme }) => theme.color.gray500};
-        @media screen and (min-width: 700px) {
-          border-bottom: none;
-        }
-        h2 {
-          font-family: var(--font-primary);
-          line-height: 1;
-        }
-        p {
-          font-family: var(--font-secondary);
-        }
-        .nav-bip-image-wrapper {
-          margin-top: 0.75rem;
-          position: relative;
-          width: 12rem;
-          aspect-ratio: 2.73;
-        }
-      }
-    }
 
     .footer-right {
       display: none;
