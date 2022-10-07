@@ -30,7 +30,7 @@ export const StyledNav = styled.nav`
     justify-content: flex-start;
     align-items: flex-start;
     @media screen and (min-width: 1440px) {
-      border: 2px solid #aaa;
+      border: 1px solid #aaa;
       &::before {
         content: '';
         position: absolute;

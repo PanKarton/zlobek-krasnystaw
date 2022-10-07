@@ -2,30 +2,54 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.color.blue};
-  color: ${({ theme }) => theme.color.white};
-  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+  padding-inline: 1.5rem;
+  @media screen and (min-width: 1000px) {
+    padding-inline: 3rem;
+  }
   .max-width {
     margin-inline: auto;
+    & > .flex-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .description-image-wrapper {
+        display: none;
+        position: relative;
+        flex-grow: 1;
+        max-width: 36.5rem;
+        aspect-ratio: 1.5;
+        @media screen and (min-width: 1000px) {
+          display: block;
+        }
+      }
+    }
   }
-  article {
-    padding-top: 1.5rem;
-    padding-bottom: clamp(2rem, 100vw, 4rem);
-    padding-inline: 1rem;
+`;
+
+export const StyledArticle = styled.article`
+  color: ${({ theme }) => theme.color.textDarkerGray};
+  font-family: var(--font-primary);
+  max-width: 440px;
+  @media screen and (min-width: 1440px) {
+    max-width: 42rem;
+  }
+  .flex-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-end;
+    text-align: left;
+    gap: 1rem;
     h3 {
-      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-      font-family: var(--font-primary);
+      font-size: clamp(1.75rem, 2vw, 2.25rem);
+      font-weight: 600;
     }
     p {
-      margin-top: 1rem;
-      font-family: var(--font-secondary);
-      font-size: clamp(1rem, 2.2vw, 1.5rem);
-      line-height: 1.4;
+      font-size: clamp(1rem, 1.125vw, 1.125rem);
+      line-height: 1.5;
       letter-spacing: 1px;
-      max-width: 70ch;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 1440px) {
         line-height: 1.8;
       }
     }

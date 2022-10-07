@@ -20,33 +20,29 @@ const AboutUsSection = props => (
     <div className="flex-wrapper max-width">
       <StyledArticle>
         <h3>
-          Sed ut perspiciatis unde <span className="text-pink">omnis iste</span>
+          Czego nauczy się z nami <span className="text-pink">Twój maluch?</span>
         </h3>
         <p className="about-us-paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
+          Przede wszystkim panowania nad emocjami oraz poprawnego życia w społeczeństwie. Ponadto
+          dokładamy wszelkich starań, aby zapewnić:
         </p>
         <ul>
           <li>
             <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
-              Nemo enim ipsam voluptatem.
+              Domową i ciepłą atmosferę
             </p>
           </li>
           <li>
-            <div className="snail-image-wrapper">
-              <Image src="/images/snail.svg" alt="Różowy ślimak" layout="fill" />
-            </div>
+            <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
-              Nemo enim ipsam voluptatem.
+              Prawidłowy rozwój psychomotoryczny i emocjonalno-społeczny
             </p>
           </li>
           <li>
-            <div className="snail-image-wrapper">
-              <Image src="/images/snail.svg" alt="Różowy ślimak" layout="fill" />
-            </div>
+            <SnailIcon />
             <p className="about-us-paragraph  about-us-paragraph--small">
-              Nemo enim ipsam voluptatem.
+              Bezpieczną i przyjazną zabawę
             </p>
           </li>
         </ul>

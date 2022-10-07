@@ -3,19 +3,12 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   position: relative;
   padding-block: 3rem 7rem;
-  padding-inline: 1rem 2rem;
   .flex-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-inline: auto;
-    padding-left: clamp(0rem, 0.5vw, 3rem);
-    @media screen and (min-width: 700px) {
-      padding-left: 5rem;
-    }
-    @media screen and (min-width: 1100px) {
-      justify-content: flex-start;
-    }
+    padding-inline: 1.5rem;
     @media screen and (min-width: 1400px) {
       padding-left: 2rem;
       justify-content: flex-start;
@@ -62,49 +55,51 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.gray700};
-  max-width: 29rem;
+  color: ${({ theme }) => theme.color.textDarkGray};
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 440px;
+
+  h3 {
+    max-width: 400px;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    .text-pink {
+      color: ${({ theme }) => theme.color.textDarkPink};
+    }
+  }
+
   .about-us-paragraph {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
+    font-weight: 500;
     font-size: 1rem;
-    max-width: 30ch;
+    line-height: 1.3;
     &--small {
       font-size: 0.875rem;
     }
     @media screen and (min-width: 700px) {
-      font-size: 1.25rem;
+      font-size: 1rem;
       line-height: 1.125;
       margin-bottom: 0;
     }
   }
-  h3 {
-    color: ${({ theme }) => theme.color.gray700};
-      font-family: var(--font-primary);
-      font-weight: 600;
-      font-size: ${({ theme }) => theme.fontSize.sectionHeading};
-    line-height: 1;
-    max-width: 20ch;
-    @media screen and (min-width: 700px) {
-      font-size: 2.5rem;
-      line-height: 1.125;
-      margin-bottom: .75rem;
-    }
-    }
-    .text-pink {
-      color: ${({ theme }) => theme.color.pink};
-    }
-  }
+
   ul {
-    margin-top: 2rem;
-    & > * + * {
-      margin-top: 1rem;
-    }
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     li {
       display: flex;
       align-items: baseline;
       gap: 0.375rem;
       .snail-image-wrapper {
-        width: 30px;
+        min-width: 30px;
         height: 17px;
         position: relative;
       }

@@ -44,9 +44,9 @@ a {
   width: 100%;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1300px) {
   .max-width {
-    width: min(1440px, 95%);
+    width: min(1300px, 95%);
   }
 }
 
