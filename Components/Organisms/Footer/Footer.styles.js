@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  padding-top: 2rem;
   background-color: ${({ theme }) => theme.color.white};
   & > .flex-wrapper {
+    padding-block: 3rem;
     display: flex;
     margin-inline: auto;
     align-items: center;
     justify-content: center;
-    padding-bottom: 2rem;
     @media screen and (min-width: 700px) {
       justify-content: center;
       gap: 5rem;
+    }
+    @media screen and (min-width: 1150px) {
+      padding-block: 5rem;
     }
 
     .footer-right {
@@ -49,19 +51,18 @@ export const StyledFooter = styled.footer`
   }
   .nav-copyrights-wrapper {
     position: relative;
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 0.25rem;
-    @media screen and (min-width: 700px) {
-      border-top: 1px solid #aaa;
-      padding-top: 1.5rem;
-    }
+    padding-block: 1.5rem;
+    display: flex;
+    border-top: 1px solid #aaa;
+    align-items: center;
     & > .max-width {
       margin-inline: auto;
+      padding-inline: 1.5rem;
       .flex-wrapper {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        gap: 1rem;
         @media screen and (min-width: 700px) {
           flex-direction: row;
           align-items: center;
@@ -73,16 +74,15 @@ export const StyledFooter = styled.footer`
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-family: var(--font-primary);
       h2 {
         font-size: 1.125rem;
-        font-family: var(--font-secondary);
         font-weight: 400;
         color: ${({ theme }) => theme.color.pink};
       }
     }
     .nav-copyrights {
-      margin-top: 0.5rem;
-      font-family: var(--font-secondary);
+      font-family: var(--font-primary);
       font-size: 1rem;
       .text-pink {
         color: ${({ theme }) => theme.color.pink};
@@ -91,9 +91,8 @@ export const StyledFooter = styled.footer`
     .nav-author-signature {
       display: block;
       text-align: right;
-      font-family: var(--font-secondary);
+      font-family: var(--font-primary);
       font-size: 0.5rem;
-      margin-block: 0.5rem;
       a {
         color: ${({ theme }) => theme.color.pink};
       }
