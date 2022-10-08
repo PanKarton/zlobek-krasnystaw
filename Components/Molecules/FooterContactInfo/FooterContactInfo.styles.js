@@ -69,6 +69,10 @@ export const StyledSection = styled.section`
           aspect-ratio: 3;
           width: 75%;
           margin-top: 0.75rem;
+          a {
+            display: block;
+            height: 100%;
+          }
         }
       }
     }

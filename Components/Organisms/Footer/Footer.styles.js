@@ -57,7 +57,7 @@ export const StyledFooter = styled.footer`
     align-items: center;
     & > .max-width {
       margin-inline: auto;
-      padding-inline: 1.5rem;
+      padding-inline: 2.5rem 1.5rem;
       .flex-wrapper {
         display: flex;
         flex-direction: column;
@@ -85,15 +85,6 @@ export const StyledFooter = styled.footer`
       font-family: var(--font-primary);
       font-size: 1rem;
       .text-pink {
-        color: ${({ theme }) => theme.color.pink};
-      }
-    }
-    .nav-author-signature {
-      display: block;
-      text-align: right;
-      font-family: var(--font-primary);
-      font-size: 0.5rem;
-      a {
         color: ${({ theme }) => theme.color.pink};
       }
     }

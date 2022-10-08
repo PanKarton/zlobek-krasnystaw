@@ -10,7 +10,7 @@ export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 99999;
+  z-index: 1;
 
   @media screen and (min-width: 700px) {
     background-color: transparent;
@@ -69,7 +69,7 @@ export const StyledNav = styled.nav`
       left: 50%;
       top: 50%;
       translate: -50% -50%;
-      z-index: 99999;
+      z-index: 2;
       clip-path: none;
       background-image: none;
       background-color: ${({ theme }) => theme.color.white};
@@ -83,7 +83,7 @@ export const StyledNav = styled.nav`
     @media screen and (min-width: 700px) {
       position: absolute;
       right: 1.5rem;
-      top: 2rem;
+      top: 2.1rem;
       z-index: 9999;
     }
     @media screen and (min-width: 1440px) {
@@ -139,6 +139,7 @@ export const StyledNav = styled.nav`
   & > .fb-icon {
     display: none;
     position: absolute;
+    height: 2.25rem;
     right: 2rem;
     top: 50%;
     translate: 0 -50%;

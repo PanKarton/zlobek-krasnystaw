@@ -26,17 +26,6 @@ const Footer = props => (
             zastrzeżone.
           </p>
         </div>
-        <p className="nav-author-signature">
-          Wykonane przez{' '}
-          <a
-            href="https://github.com/PanKarton"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Przycisk przekierowujący do profilu github autora strony"
-          >
-            Arkadiusz Piersiak.
-          </a>
-        </p>
       </div>
     </section>
   </StyledFooter>
