@@ -17,6 +17,30 @@ export const StyledHeader = styled.header`
     height: 59rem;
   }
 
+  .skip-button-wrapper {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #aaa;
+    background-color: ${({ theme }) => theme.color.white};
+
+    /* Hide button when not focused */
+    translate: 0 -100%;
+    transition: translate 0.25s ease-in-out;
+    /* Show button when a is focused */
+    &:has(a:focus) {
+      translate: 0 0;
+    }
+    a {
+      display: block;
+      height: 100%;
+      color: black;
+      font-family: var(--font-primary);
+    }
+  }
+
   .hero-image-wrapper {
     position: absolute;
     top: 0;

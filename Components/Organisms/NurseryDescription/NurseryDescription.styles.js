@@ -17,8 +17,7 @@ export const StyledSection = styled.section`
       .description-image-wrapper {
         display: none;
         position: relative;
-        flex-grow: 1;
-        max-width: 36.5rem;
+        width: 513px;
         aspect-ratio: 1.5;
         @media screen and (min-width: 1000px) {
           display: block;
@@ -50,7 +49,7 @@ export const StyledArticle = styled.article`
       line-height: 1.5;
       letter-spacing: 1px;
       @media screen and (min-width: 1440px) {
-        line-height: 1.8;
+        line-height: 2;
       }
     }
   }

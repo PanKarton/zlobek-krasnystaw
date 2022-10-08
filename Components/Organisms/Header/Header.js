@@ -4,6 +4,9 @@ import { StyledHeader } from './Header.styles';
 
 const Header = props => (
   <StyledHeader>
+    <div className="skip-button-wrapper">
+      <a href="#main-content">Przejdź do głównej treści</a>
+    </div>
     <div className="hero-image-wrapper">
       <Image
         priority

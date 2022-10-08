@@ -22,6 +22,7 @@ export const StyledSection = styled.section`
         flex-direction: row;
         align-items: baseline;
         justify-content: space-between;
+        padding-inline: 3.5rem;
         li {
           width: max-content;
           margin-inline: auto;

@@ -28,11 +28,13 @@ export const StyledSection = styled.section`
       .staff-image-wrapper {
         display: none;
         position: relative;
-        flex-grow: 1;
-        max-width: 45rem;
+        width: 423px;
         aspect-ratio: 1.58;
         @media screen and (min-width: 1000px) {
           display: block;
+        }
+        @media screen and (min-width: 1400px) {
+          flex-grow: 1;
         }
         &::before {
           content: '';
