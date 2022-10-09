@@ -110,11 +110,9 @@ export const StyledHeader = styled.header`
 
   .max-width-wrapper {
     height: 100%;
-    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-inline: auto;
 
     @media screen and (min-width: 700px) {
       justify-content: flex-start;

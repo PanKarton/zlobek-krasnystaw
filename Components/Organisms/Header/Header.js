@@ -27,7 +27,7 @@ const Header = ({ isSecondary }) => {
           objectPosition="50% 100%"
         />
       </div>
-      <div className="max-width-wrapper">
+      <div className="max-width-1440">
         <Nav />
       </div>
       <div className="bottom-wave-wrapper">

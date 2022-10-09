@@ -40,14 +40,13 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.max-width {
-  width: 100%;
+.max-width-1300 {
+  width: min(1300px, calc(100% - 3rem));
+  margin-inline: auto;
 }
-
-@media screen and (min-width: 1300px) {
-  .max-width {
-    width: min(1300px, 95%);
-  }
+.max-width-1440 {
+  width: min(1440px, calc(100% - 3rem));
+  margin-inline: auto;
 }
 
 /* Page loader */

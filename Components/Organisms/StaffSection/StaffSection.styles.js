@@ -6,13 +6,11 @@ export const StyledSection = styled.section`
   padding-top: clamp(5rem, 8vw, 9rem);
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
-  .max-width {
+  .max-width-1300 {
     position: relative;
-    margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-inline: 1.5rem;
     @media screen and (min-width: 1000px) {
       padding-inline: 3rem;
     }

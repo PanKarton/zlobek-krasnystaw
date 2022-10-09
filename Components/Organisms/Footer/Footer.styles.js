@@ -6,7 +6,6 @@ export const StyledFooter = styled.footer`
   & > .flex-wrapper {
     padding-block: 3rem;
     display: flex;
-    margin-inline: auto;
     align-items: center;
     justify-content: center;
     @media screen and (min-width: 700px) {
@@ -56,9 +55,9 @@ export const StyledFooter = styled.footer`
     display: flex;
     border-top: 1px solid #aaa;
     align-items: center;
-    & > .max-width {
+    & > .max-width-1300 {
       margin-inline: auto;
-      padding-inline: 2.5rem 1.5rem;
+      padding-inline: 1rem 0.5rem;
       .flex-wrapper {
         display: flex;
         flex-direction: column;

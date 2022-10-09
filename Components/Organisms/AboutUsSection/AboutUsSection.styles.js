@@ -7,8 +7,6 @@ export const StyledSection = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline: auto;
-    padding-inline: 1.5rem;
     padding-block: 3rem 8rem;
     @media screen and (min-width: 1187px) {
       padding-block: 0rem 8rem;
