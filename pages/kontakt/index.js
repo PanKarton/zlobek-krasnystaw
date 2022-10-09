@@ -5,20 +5,20 @@ import styled from 'styled-components';
 const StyledSection = styled.section`
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  padding-block: 6rem;
   .flex-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 10rem;
   }
 `;
 
 const StyledArticle = styled.article`
-  border: 1px solid black;
   max-width: 463px;
   ul {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     li {
       .li-flex-wrapper {
         display: flex;
@@ -42,6 +42,93 @@ const StyledArticle = styled.article`
         }
       }
     }
+  }
+`;
+
+const StyledContactFormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+  .heading-wrapper {
+    color: ${({ theme }) => theme.color.textDarkGray};
+    font-family: var(--font-primary);
+    h3 {
+      font-size: 2.25rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-left: 2px;
+      margin-top: 0.25rem;
+    }
+  }
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const StyledInput = styled.input`
+  width: 100%;
+  height: 3.25rem;
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 1rem;
+  color: ${({ theme }) => theme.color.textDarkGray};
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.textDarkGray};
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &:focus {
+    outline: 1px solid #aaa;
+  }
+`;
+const StyledTextArea = styled.textarea`
+  width: 100%;
+  height: 14rem;
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 1rem;
+  color: ${({ theme }) => theme.color.textDarkGray};
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  resize: none;
+  &::placeholder {
+    color: ${({ theme }) => theme.color.textDarkGray};
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &:focus {
+    outline: 1px solid #aaa;
+  }
+`;
+
+const StyledButton = styled.button`
+  width: 100%;
+  background-color: ${({ theme }) => theme.color.blue};
+  color: ${({ theme }) => theme.color.textDarkGray};
+  font-size: 1.25rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  border: none;
+  padding-block: 1rem;
+  &:hover {
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.color.blueLightHover};
+    color: ${({ theme }) => theme.color.textDarkGrayHover};
   }
 `;
 
@@ -97,7 +184,22 @@ const Contact = () => (
             </li>
           </ul>
         </StyledArticle>
-        <div className="contact-form"></div>
+        <StyledContactFormWrapper>
+          <div className="heading-wrapper">
+            <h3>Formularz kontaktowy</h3>
+            <p>Problem? Rozwiażmy go razem</p>
+          </div>
+          <StyledForm>
+            <StyledInput name="email" id="email" type="text" placeholder="Twój email" />
+            <StyledTextArea
+              name="message"
+              id="message"
+              type="text"
+              placeholder="W czym możemy pomóc?"
+            />
+            <StyledButton type="submit">Wyślij</StyledButton>
+          </StyledForm>
+        </StyledContactFormWrapper>
       </div>
     </StyledSection>
   </SecondaryTemplate>
