@@ -17,7 +17,7 @@ const AboutUsSection = props => (
         objectFit="cover"
       />
     </div>
-    <div className="flex-wrapper max-width">
+    <div className="flex-wrapper max-width-1300">
       <StyledArticle>
         <h3>
           Czego nauczy się z nami <span className="text-pink">Twój maluch?</span>

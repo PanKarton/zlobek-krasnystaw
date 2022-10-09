@@ -2,14 +2,17 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   position: relative;
-  padding-block: 3rem 7rem;
+
   .flex-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline: auto;
-    padding-inline: 1.5rem;
+    padding-block: 3rem 8rem;
+    @media screen and (min-width: 1187px) {
+      padding-block: 0rem 8rem;
+    }
     @media screen and (min-width: 1400px) {
+      padding-block: 3rem 10rem;
       padding-left: 2rem;
       justify-content: flex-start;
       gap: 8rem;
@@ -41,8 +44,7 @@ export const StyledSection = styled.section`
   }
   .stars-background-wrapper {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    inset: 0% 0 5% 0;
     z-index: -1;
   }
   .bottom-wave-wrapper {

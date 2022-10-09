@@ -7,7 +7,7 @@ const TilesSection = props => {
 
   return (
     <StyledSection>
-      <div className="max-width">
+      <div className="max-width-1300">
         <div className="flex-wrapper">
           <div className="floating-icons-wrapper">
             <div className="floating-icon-wrapper">

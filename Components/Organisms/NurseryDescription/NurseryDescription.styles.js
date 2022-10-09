@@ -4,12 +4,10 @@ export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.color.blue};
   padding-top: 5rem;
   padding-bottom: 6rem;
-  padding-inline: 1.5rem;
   @media screen and (min-width: 1000px) {
     padding-inline: 3rem;
   }
-  .max-width {
-    margin-inline: auto;
+  .max-width-1300 {
     & > .flex-wrapper {
       display: flex;
       align-items: center;
