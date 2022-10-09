@@ -5,6 +5,7 @@ export const StyledNav = styled.nav`
   width: 100vw;
   height: 5rem;
   top: 0;
+  left: 0;
   background-color: white;
   padding-inline: 1.5rem;
   display: flex;
