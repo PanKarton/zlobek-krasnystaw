@@ -16,8 +16,8 @@ export const StyledWrapper = styled.section`
   /* Hide and show menu */
   translate: 100% 0;
   visibility: hidden;
-  transition: all 0.25s ease-in-out;
   &.visible {
+    transition: all 0.25s ease-in-out;
     visibility: visible;
     translate: 0 0;
   }

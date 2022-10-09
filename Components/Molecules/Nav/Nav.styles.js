@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledNav = styled.nav`
   position: fixed;
   width: 100vw;
-  height: 6rem;
+  height: 5rem;
   top: 0;
   background-color: white;
   padding-inline: 1.5rem;
@@ -15,6 +15,7 @@ export const StyledNav = styled.nav`
   @media screen and (min-width: 700px) {
     background-color: transparent;
     padding-inline: 0;
+    height: 6rem;
   }
   @media screen and (min-width: 1440px) {
     position: absolute;
@@ -29,19 +30,6 @@ export const StyledNav = styled.nav`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    @media screen and (min-width: 1440px) {
-      border: 1px solid #aaa;
-      &::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        translate: -50% -50%;
-        width: 110%;
-        height: 4.4rem;
-        background-color: white;
-      }
-    }
 
     & .logo-img-wrapper {
       position: relative;
@@ -53,7 +41,7 @@ export const StyledNav = styled.nav`
       align-items: center;
       width: 20rem;
       height: 15rem;
-      padding: 1rem 0 0 1rem;
+      padding: 1rem 0 0 1.5rem;
       background-color: white;
       clip-path: circle(70% at 25% 0);
       & .logo-img-wrapper {
@@ -65,6 +53,7 @@ export const StyledNav = styled.nav`
       position: absolute;
       height: 11rem;
       width: 11rem;
+      border: 1px solid #aaa;
       border-radius: 50%;
       left: 50%;
       top: 50%;
@@ -76,6 +65,17 @@ export const StyledNav = styled.nav`
       padding: 0;
       justify-content: center;
       align-items: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        width: 110%;
+        height: 4.4rem;
+        background-color: white;
+      }
     }
   }
 
@@ -83,7 +83,8 @@ export const StyledNav = styled.nav`
     @media screen and (min-width: 700px) {
       position: absolute;
       right: 1.5rem;
-      top: 2.1rem;
+      top: 50%;
+      translate: 0 -50%;
       z-index: 9999;
     }
     @media screen and (min-width: 1440px) {

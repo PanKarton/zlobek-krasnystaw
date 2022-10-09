@@ -2,23 +2,14 @@ import Nav from 'Components/Molecules/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader } from './Header.styles';
 
-const Header = props => (
-  <StyledHeader>
-    <div className="skip-button-wrapper">
-      <a href="#main-content">Przejdź do głównej treści</a>
-    </div>
-    <div className="hero-image-wrapper">
-      <Image
-        priority
-        src="/images/hero-image.jpg"
-        alt="Dziewczynka w stroju astrunauty trzymająca roślinę"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="50%"
-      />
-    </div>
-    <div className="max-width-wrapper">
-      <Nav />
+const Header = ({ isSecondary }) => {
+  const heroImageURL = isSecondary ? '/images/hero-image-secondary.jpg' : '/images/hero-image.jpg';
+
+  return (
+    <StyledHeader isSecondary={isSecondary}>
+      <div className="skip-button-wrapper">
+        <a href="#main-content">Przejdź do głównej treści</a>
+      </div>
       <div className="hero-text-wrapper">
         <h2>
           Zadbaj z nami o <br /> przyszłość <br />{' '}
@@ -26,11 +17,24 @@ const Header = props => (
         </h2>
         <p>Zapraszamy dzieci w wieku od 1 do 3 lat!</p>
       </div>
-    </div>
-    <div className="bottom-wave-wrapper">
-      <Image src="/images/hero-wave.svg" alt="Biała fala dekoracyjna" layout="fill" />
-    </div>
-  </StyledHeader>
-);
+      <div className="hero-image-wrapper">
+        <Image
+          priority
+          src={heroImageURL}
+          alt="Chłopiec bawiący się klockami na stole"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="50% 100%"
+        />
+      </div>
+      <div className="max-width-wrapper">
+        <Nav />
+      </div>
+      <div className="bottom-wave-wrapper">
+        <Image src="/images/hero-wave.svg" alt="Biała fala dekoracyjna" layout="fill" />
+      </div>
+    </StyledHeader>
+  );
+};
 
 export default Header;

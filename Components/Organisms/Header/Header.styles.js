@@ -2,19 +2,19 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
   position: relative;
-  height: 75vh;
+  height: ${({ isSecondary }) => (isSecondary ? '15rem' : '75vh')};
   margin-top: 3rem;
+  overflow: hidden;
 
   @media screen and (min-width: 700px) {
-    height: 40rem;
+    height: ${({ isSecondary }) => (isSecondary ? '18rem' : '90vh')};
     margin-top: 0rem;
     .bottom-wave-wrapper {
       bottom: -2px;
     }
   }
-
   @media screen and (min-width: 1440px) {
-    height: 59rem;
+    height: ${({ isSecondary }) => (isSecondary ? '26.5rem' : '90vh')};
   }
 
   .skip-button-wrapper {
@@ -43,40 +43,32 @@ export const StyledHeader = styled.header`
 
   .hero-image-wrapper {
     position: absolute;
-    top: 0;
+    top: 0%;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: -1;
+    overflow: hidden;
     @media screen and (min-width: 700px) {
       left: auto;
       right: 0;
       top: 3rem;
-      width: 85%;
+      width: ${({ isSecondary }) => (isSecondary ? '100%' : '85%')};
     }
     @media screen and (min-width: 1440px) {
       top: 6.5rem;
-    }
-  }
-  .max-width-wrapper {
-    height: 100%;
-    max-width: 1440px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-inline: auto;
-
-    @media screen and (min-width: 700px) {
-      justify-content: flex-start;
-    }
-
-    @media screen and (min-width: 1440px) {
-      justify-content: flex-start;
-      position: relative;
+      span {
+        translate: ${({ isSecondary }) => (isSecondary ? '0 -6rem' : '0')};
+      }
     }
   }
 
   .hero-text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    display: ${({ isSecondary }) => (isSecondary ? 'none' : 'block')};
     width: min(calc(100% - 3rem), 30rem);
     text-align: center;
     color: ${({ theme }) => theme.color.textDarkGray};
@@ -85,16 +77,18 @@ export const StyledHeader = styled.header`
     padding-block: clamp(1.5rem, 5vw, 2rem);
     padding-inline: 2rem;
 
-    @media screen and (min-width: 1440px) {
-      position: absolute;
-      top: 50%;
+    @media screen and (min-width: 700px) {
       left: 0;
       translate: 0 -50%;
+    }
+
+    @media screen and (min-width: 1440px) {
       width: max-content;
       padding-inline: 4rem;
     }
     @media screen and (min-width: 1600px) {
-      left: -5%;
+      left: 50%;
+      translate: -100% -40%;
     }
 
     h2 {
@@ -113,6 +107,25 @@ export const StyledHeader = styled.header`
       margin-top: 1rem;
     }
   }
+
+  .max-width-wrapper {
+    height: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+
+    @media screen and (min-width: 700px) {
+      justify-content: flex-start;
+    }
+
+    @media screen and (min-width: 1440px) {
+      justify-content: flex-start;
+      position: relative;
+    }
+  }
+
   .bottom-wave-wrapper {
     position: absolute;
     bottom: 0px;

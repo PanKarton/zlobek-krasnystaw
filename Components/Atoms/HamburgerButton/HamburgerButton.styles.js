@@ -20,10 +20,6 @@ export const StyledBurger = styled.button`
     width: 2rem;
     height: 0.25rem;
     background: ${({ theme }) => theme.color.black};
-
-    @media screen and (min-width: 700px) {
-      background: ${({ theme }) => theme.color.gray500};
-    }
     border-radius: 10px;
     position: relative;
     transform-origin: 1px;

@@ -9,7 +9,7 @@ const DesktopNavList = props => (
         <NavLink direction="/">O nas</NavLink>
       </li>
       <li>
-        <NavLink direction="aktualnosc">Aktualności</NavLink>
+        <NavLink direction="aktualnosci">Aktualności</NavLink>
       </li>
       <li>
         <NavLink direction="galeria">Galeria</NavLink>

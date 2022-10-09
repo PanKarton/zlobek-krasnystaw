@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.color.white};
+  border-top: 1px solid #aaa;
   & > .flex-wrapper {
     padding-block: 3rem;
     display: flex;
@@ -20,7 +21,7 @@ export const StyledFooter = styled.footer`
       display: none;
       position: relative;
       background-color: #303030;
-      width: clamp(240px, calc(45vw - 100px), 660px);
+      width: 440px;
       height: 440px;
       &::after,
       &::before {
@@ -41,7 +42,7 @@ export const StyledFooter = styled.footer`
         bottom: -1rem;
         right: -1rem;
       }
-      @media screen and (min-width: 700px) {
+      @media screen and (min-width: 900px) {
         display: block;
       }
       @media screen and (min-width: 1150px) {
