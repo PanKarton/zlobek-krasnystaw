@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.color.blue};
   padding-top: 5rem;
-  padding-bottom: 6rem;
+  /* Padding top + blue wave layer height - 100vw/11.5 - wave height based on its aspect ratio | /3.5 - most blue wave layer aspect.ratio */
+  padding-bottom: calc(5rem + calc(100vw / 11.5 / 3.5));
   @media screen and (min-width: 1000px) {
     padding-inline: 3rem;
   }
@@ -47,7 +48,7 @@ export const StyledArticle = styled.article`
       line-height: 1.5;
       letter-spacing: 1px;
       @media screen and (min-width: 1440px) {
-        line-height: 2;
+        line-height: 1.5;
       }
     }
   }
