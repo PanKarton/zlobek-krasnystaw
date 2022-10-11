@@ -49,7 +49,7 @@ const AboutUsSection = props => (
       </StyledArticle>
       <div className="images-wrapper">
         <CircleBorderImage
-          url="/images/happy-kid3.jpg"
+          url="/images/happy-kid31.jpg"
           alt="Dziecko cieszące się z zabawy klockami"
         />
         <CircleBorderImage

@@ -22,16 +22,20 @@ export const StyledCirculareWrapper = styled.div`
     bottom: 0;
     left: 0;
     z-index: 1;
+    line-height: 40px;
+    text-align: left;
   }
   &:nth-child(2) {
     height: 90%;
     top: 0;
     left: 40%;
     translate: -50% 0;
+    line-height: 200px;
   }
   &:nth-child(3) {
     height: 60%;
     right: 0;
     bottom: 10%;
+    line-height: 200px;
   }
 `;
