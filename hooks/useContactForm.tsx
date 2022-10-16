@@ -8,7 +8,7 @@ type Props = {
   messageTextAreaRef: React.RefObject<HTMLTextAreaElement>;
 };
 
-type HookReturnType = {
+type HookReturnTypes = {
   isLoading: boolean;
   submitMessage: string;
   onSubmit: () => Promise<void>;
@@ -19,7 +19,7 @@ const useContactForm = (
   nameInputRef: Props['nameInputRef'],
   emailInputRef: Props['emailInputRef'],
   messageTextAreaRef: Props['messageTextAreaRef'],
-): HookReturnType => {
+): HookReturnTypes => {
   const [isLoading, setIsLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
