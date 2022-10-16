@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import React from 'react';
 
-const FbButton = props => {
+const FbButton: React.FC = () => {
   const FB_URL = 'https://www.facebook.com/profile.php?id=100064091741121';
 
   return (

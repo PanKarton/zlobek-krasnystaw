@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+type Props = {
+  type: 'submit' | 'reset' | 'button';
+};
+
+export const StyledButton = styled.button<Props>`
   width: 100%;
   height: 3.5rem;
   background-color: ${({ theme }) => theme.color.blue};

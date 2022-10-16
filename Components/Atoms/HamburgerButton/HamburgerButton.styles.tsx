@@ -1,6 +1,7 @@
+import { Props as HamburgerProps } from './HamburgerButton';
 import styled from 'styled-components';
 
-export const StyledBurger = styled.button`
+export const StyledBurger = styled.button<HamburgerProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -1,7 +1,13 @@
 import Image from 'next/image';
+import React from 'react';
 import { StyledCirculareWrapper } from './CircleBorderImage.styles';
 
-const CircleBorderImage = ({ url, alt }) => (
+type Props = {
+  url: string;
+  alt: string;
+};
+
+const CircleBorderImage: React.FC<Props> = ({ url, alt }) => (
   <StyledCirculareWrapper>
     <div className="image-wrapper">
       <Image src={url} alt={alt} layout="fill" />

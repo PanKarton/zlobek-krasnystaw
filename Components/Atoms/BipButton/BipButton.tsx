@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import React from 'react';
 
-const BipButton = props => (
+const BipButton: React.FC = () => (
   <a
     href="https://zmkrasnystaw.bip.lubelskie.pl/index.php?id=6"
     target="_blank"
