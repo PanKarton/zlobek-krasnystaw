@@ -1,17 +1,14 @@
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import { StyledButton } from './FormButton.styles';
 
-export const FormButton = styled.button`
-  width: 100%;
-  background-color: ${({ theme }) => theme.color.blue};
-  color: ${({ theme }) => theme.color.textDarkGray};
-  font-size: 1.25rem;
-  font-family: var(--font-primary);
-  font-weight: 500;
-  border: none;
-  padding-block: 1rem;
-  &:hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.color.blueLightHover};
-    color: ${({ theme }) => theme.color.textDarkGrayHover};
-  }
-`;
+const FormButton = ({ type, isLoading }) => {
+  return <StyledButton type={type}>{isLoading ? <LoadingSpinner /> : 'Wyślij'}</StyledButton>;
+};
+
+FormButton.propTypes = {
+  type: PropTypes.string,
+  isLoading: PropTypes.bool,
+};
+
+export default FormButton;

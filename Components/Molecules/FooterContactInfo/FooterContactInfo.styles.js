@@ -55,6 +55,7 @@ export const StyledSection = styled.section`
       }
       /* BIP */
       .nav-bip-wrapper {
+        position: relative;
         border-top: 1px solid #aaa;
         width: 100%;
         margin-top: 0.25rem;
@@ -71,6 +72,7 @@ export const StyledSection = styled.section`
           margin-top: 0.75rem;
           a {
             display: block;
+            position: relative;
             height: 100%;
           }
         }
