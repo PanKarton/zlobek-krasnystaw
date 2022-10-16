@@ -1,7 +1,6 @@
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import styled from 'styled-components';
 
-const StyledSpinnerWrapper = styled.div`
+export const StyledSpinnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,11 +15,3 @@ const StyledSpinnerWrapper = styled.div`
     }
   }
 `;
-
-const LoadingSpinner = () => (
-  <StyledSpinnerWrapper>
-    <AiOutlineLoading3Quarters />
-  </StyledSpinnerWrapper>
-);
-
-export default LoadingSpinner;

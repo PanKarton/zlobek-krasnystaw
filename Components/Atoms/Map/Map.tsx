@@ -1,8 +1,8 @@
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
-const Map = props => {
-  const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+const Map: React.FC = () => {
+  const API_KEY: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: API_KEY,
   });

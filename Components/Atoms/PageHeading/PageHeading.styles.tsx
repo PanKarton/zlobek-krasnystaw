@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledPageHeading = styled.h2`
+export const StyledPageHeading = styled.h2`
   display: block;
   width: min(1440px, calc(100% - 2.75rem));
   margin-top: 3rem;
@@ -21,7 +21,3 @@ const StyledPageHeading = styled.h2`
     padding-left: 0.5rem;
   }
 `;
-
-export const PageHeading = ({ headingText }) => (
-  <StyledPageHeading>{headingText}</StyledPageHeading>
-);
