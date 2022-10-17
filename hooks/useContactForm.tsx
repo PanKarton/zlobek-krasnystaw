@@ -24,7 +24,6 @@ const useContactForm = (
   const [isLoading, setIsLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  // Clear inputs function
   const clearInputs = useCallback(() => {
     // Return if any ref.current is null
     if (nameInputRef.current === null || emailInputRef.current === null || messageTextAreaRef.current === null) return;
@@ -37,26 +36,24 @@ const useContactForm = (
   //   Submit function that sends email and clears inputs
   const onSubmit: SubmitHandler<FormValues> = useCallback(async () => {
     try {
-      // Return if any ref.current is null
       if (formRef.current === null) return;
 
       // Start loading animation
       setIsLoading(() => true);
+
       // env data
       const serviceId = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID as string;
       const templateId = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID as string;
       const publicKey = process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY as string;
 
-      //   Send email
+      //   Send an email
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 
-      //   Clear inputs
       clearInputs();
 
       // Stop loading animation
       setIsLoading(() => false);
 
-      // Display confirmation message
       setSubmitMessage('Dziękujemy za wiadomość :)');
     } catch (err) {
       // Stop loading animation
