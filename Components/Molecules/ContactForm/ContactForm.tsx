@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 import FormButton from 'Components/Atoms/FormButton/FormButton';
 import { useForm } from 'react-hook-form';
 
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);

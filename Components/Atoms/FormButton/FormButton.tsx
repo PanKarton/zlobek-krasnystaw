@@ -7,7 +7,7 @@ type Props = {
   isLoading: boolean;
 };
 
-const FormButton: React.FC<Props> = ({ type, isLoading }) => {
+const FormButton = ({ type, isLoading }: Props) => {
   return <StyledButton type={type}>{isLoading ? <LoadingSpinner /> : 'Wyślij'}</StyledButton>;
 };
 

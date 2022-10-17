@@ -5,6 +5,6 @@ type Props = {
   onClick: () => void;
 };
 
-const CloseButton: React.FC<Props> = ({ onClick }) => <IoMdClose onClick={onClick} />;
+const CloseButton = ({ onClick }: Props) => <IoMdClose onClick={onClick} />;
 
 export default CloseButton;

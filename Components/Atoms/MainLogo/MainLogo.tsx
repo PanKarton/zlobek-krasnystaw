@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const MainLogo: React.FC = () => (
+const MainLogo = () => (
   <h1>
     <Link href="/" passHref>
       <a>

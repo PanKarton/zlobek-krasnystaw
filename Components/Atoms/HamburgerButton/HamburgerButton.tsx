@@ -6,13 +6,8 @@ export type Props = {
   isActive: boolean;
 };
 
-const HamburgerButton: React.FC<Props> = ({ onClick, isActive }) => (
-  <StyledBurger
-    onClick={onClick}
-    isActive={isActive}
-    tabIndex={0}
-    aria-label="Przycisk włączajacy i wyłączający menu"
-  >
+const HamburgerButton = ({ onClick, isActive }: Props) => (
+  <StyledBurger onClick={onClick} isActive={isActive} tabIndex={0} aria-label="Przycisk włączajacy i wyłączający menu">
     <div />
     <div />
     <div />

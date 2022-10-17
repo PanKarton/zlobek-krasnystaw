@@ -5,6 +5,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-const ValueCell: React.FC<Props> = ({ children }) => <StyledWrapper>{children}</StyledWrapper>;
+const ValueCell = ({ children }: Props) => <StyledWrapper>{children}</StyledWrapper>;
 
 export default ValueCell;

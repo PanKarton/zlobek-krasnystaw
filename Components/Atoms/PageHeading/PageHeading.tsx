@@ -5,6 +5,4 @@ type Props = {
   headingText: string;
 };
 
-export const PageHeading: React.FC<Props> = ({ headingText }) => (
-  <StyledPageHeading>{headingText}</StyledPageHeading>
-);
+export const PageHeading = ({ headingText }: Props) => <StyledPageHeading>{headingText}</StyledPageHeading>;

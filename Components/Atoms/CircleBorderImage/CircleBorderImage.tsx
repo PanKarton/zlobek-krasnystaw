@@ -7,7 +7,7 @@ type Props = {
   alt: string;
 };
 
-const CircleBorderImage: React.FC<Props> = ({ url, alt }) => (
+const CircleBorderImage = ({ url, alt }: Props) => (
   <StyledCirculareWrapper>
     <div className="image-wrapper">
       <Image src={url} alt={alt} layout="fill" />

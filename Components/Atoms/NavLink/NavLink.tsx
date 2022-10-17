@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const NavLink: React.FC<Props> = ({ children, direction }) => (
+const NavLink = ({ children, direction }: Props) => (
   <Link href={`${direction}`} passHref>
     <a>
       <StyledNavSpan>{children}</StyledNavSpan>
