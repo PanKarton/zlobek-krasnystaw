@@ -9,9 +9,9 @@ type Props = {
   messageTextAreaRef: React.RefObject<HTMLTextAreaElement>;
 };
 
-type FormValues = {
-  form_name: string;
-  form_email: string;
+export type FormValues = {
+  from_name: string;
+  from_email: string;
   message: string;
 };
 

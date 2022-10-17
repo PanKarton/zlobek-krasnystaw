@@ -1,7 +1,7 @@
 import { StyledInput } from 'Components/Atoms/FormInput/FormInput';
 import { StyledTextArea } from 'Components/Atoms/FormTextArea/FormTextArea';
 import { StyledForm } from './ContactForm.styles';
-import useContactForm from 'hooks/useContactForm';
+import useContactForm, { FormValues } from 'hooks/useContactForm';
 import React, { useRef } from 'react';
 import FormButton from 'Components/Atoms/FormButton/FormButton';
 import { useForm } from 'react-hook-form';
@@ -11,7 +11,7 @@ const ContactForm = () => {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const messageTextAreaRef = useRef<HTMLTextAreaElement>(null);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<FormValues>();
 
   const { isLoading, submitMessage, onSubmit } = useContactForm(formRef, nameInputRef, emailInputRef, messageTextAreaRef);
 
