@@ -10,6 +10,10 @@ type Props = {
   messageTextAreaRef: React.RefObject<HTMLTextAreaElement>;
 };
 
+type State =
+  | { isLoading: false; message: '' | 'Dziękujemy za wiadomość :)' | 'Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)' }
+  | { isLoading: true; message: '' };
+
 export type FormValues = {
   from_name: string;
   from_email: string;
@@ -22,8 +26,7 @@ const useContactForm = (
   emailInputRef: Props['emailInputRef'],
   messageTextAreaRef: Props['messageTextAreaRef'],
 ) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitState, setSubmitState] = useState<State>({ isLoading: false, message: '' });
 
   const clearInputs = useCallback(() => {
     if (nameInputRef.current === null || emailInputRef.current === null || messageTextAreaRef.current === null) return;
@@ -41,23 +44,19 @@ const useContactForm = (
       const templateId = getEnv(process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID);
       const publicKey = getEnv(process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY);
 
-      setIsLoading(() => true);
+      setSubmitState({ isLoading: true, message: '' });
 
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 
       clearInputs();
-
-      setIsLoading(() => false);
-
-      setSubmitMessage('Dziękujemy za wiadomość :)');
+      setSubmitState(() => ({ isLoading: false, message: 'Dziękujemy za wiadomość :)' }));
     } catch (e) {
-      setIsLoading(() => false);
-      setSubmitMessage('Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)');
+      setSubmitState(() => ({ isLoading: false, message: 'Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)' }));
       console.log(e);
     }
   }, [formRef, clearInputs]);
 
-  return { isLoading, submitMessage, onSubmit };
+  return { submitState, onSubmit };
 };
 
 export default useContactForm;

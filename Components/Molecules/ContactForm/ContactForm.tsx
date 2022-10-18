@@ -13,7 +13,7 @@ const ContactForm = () => {
   const messageTextAreaRef = useRef<HTMLTextAreaElement>(null);
   const { register, handleSubmit } = useForm<FormValues>();
 
-  const { isLoading, submitMessage, onSubmit } = useContactForm(formRef, nameInputRef, emailInputRef, messageTextAreaRef);
+  const { submitState, onSubmit } = useContactForm(formRef, nameInputRef, emailInputRef, messageTextAreaRef);
 
   //   TRZEBA OGARNAC COS Z ANTYSPAMEM
 
@@ -22,8 +22,8 @@ const ContactForm = () => {
       <StyledInput {...register('from_name')} id="name" type="text" placeholder="Twoje imię" ref={nameInputRef} />
       <StyledInput {...register('from_email')} id="email" type="email" placeholder="Twój email" ref={emailInputRef} />
       <StyledTextArea {...register('message')} id="message" placeholder="W czym możemy pomóc?" ref={messageTextAreaRef} />
-      {submitMessage && <p className="submit-message">{submitMessage}</p>}
-      <FormButton type="submit" isLoading={isLoading} />
+      {submitState.message && <p className="submit-message">{submitState.message}</p>}
+      <FormButton type="submit" isLoading={submitState.isLoading} />
     </StyledForm>
   );
 };
