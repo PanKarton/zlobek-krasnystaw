@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import { getEnv } from 'helpers/getEnv';
 import React, { useCallback, useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
 
@@ -25,7 +26,6 @@ const useContactForm = (
   const [submitMessage, setSubmitMessage] = useState('');
 
   const clearInputs = useCallback(() => {
-    // Return if any ref.current is null
     if (nameInputRef.current === null || emailInputRef.current === null || messageTextAreaRef.current === null) return;
 
     nameInputRef.current.value = '';
@@ -33,34 +33,27 @@ const useContactForm = (
     messageTextAreaRef.current.value = '';
   }, [nameInputRef, emailInputRef, messageTextAreaRef]);
 
-  //   Submit function that sends email and clears inputs
   const onSubmit: SubmitHandler<FormValues> = useCallback(async () => {
     try {
       if (formRef.current === null) return;
 
-      // Start loading animation
+      const serviceId = getEnv(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID);
+      const templateId = getEnv(process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID);
+      const publicKey = getEnv(process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY);
+
       setIsLoading(() => true);
 
-      // env data
-      const serviceId = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID as string;
-      const templateId = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID as string;
-      const publicKey = process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY as string;
-
-      //   Send an email
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 
       clearInputs();
 
-      // Stop loading animation
       setIsLoading(() => false);
 
       setSubmitMessage('Dziękujemy za wiadomość :)');
-    } catch (err) {
-      // Stop loading animation
+    } catch (e) {
       setIsLoading(() => false);
-
-      // Display error message
       setSubmitMessage('Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)');
+      console.log(e);
     }
   }, [formRef, clearInputs]);
 
