@@ -5,7 +5,10 @@ export const StyledSection = styled.section`
   margin-block: 2rem 1.5rem;
   font-family: var(--font-primary);
   width: 18rem;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 700px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1550px) {
     width: 34rem;
   }
   .flex-list {
@@ -13,9 +16,22 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 700px) {
       flex-direction: row;
       flex-wrap: wrap;
+      li {
+        flex: 1 0 47%;
+      }
+    }
+    @media screen and (min-width: 900px) {
+      flex-direction: column;
+      row-gap: 1rem;
+      li {
+        flex: 1 0 99%;
+      }
+    }
+    @media screen and (min-width: 1550px) {
+      flex-direction: row;
       row-gap: 3rem;
       li {
         flex: 1 0 47%;
@@ -25,10 +41,12 @@ export const StyledSection = styled.section`
       /* Typography for bip and contact */
       h3 {
         font-size: 28px;
+        line-height: 1.2;
         font-weight: 500;
       }
       p {
         font-size: 16px;
+        line-height: 1.5;
       }
 
       & > .flex-wrapper {

@@ -6,4 +6,6 @@ type Props = {
   className?: string;
 };
 
-export const PageHeading = ({ headingText, className }: Props) => <StyledPageHeading className={className}>{headingText}</StyledPageHeading>;
+export const PageHeading = ({ headingText, className }: Props) => (
+  <StyledPageHeading className={`${className} max-width-1440`}>{headingText}</StyledPageHeading>
+);

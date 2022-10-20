@@ -24,7 +24,8 @@ const ContactSection = () => (
                 <Image src="/images/contact-icon-pin.svg" alt="ikonka pinezki na niebieskim kwiatku" layout="fill" />
               </div>
               <div className="content">
-                <p>Złobek Miejski 22-300 Krasnystaw</p>
+                <p>Żłobek Miejski</p>
+                <p> 22-300 Krasnystaw</p>
                 <p>ul. Poniatowskiego 48</p>
               </div>
             </div>

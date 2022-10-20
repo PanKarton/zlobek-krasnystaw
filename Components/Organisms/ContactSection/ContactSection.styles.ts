@@ -3,11 +3,22 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   display: flex;
   justify-content: center;
-  padding-block: 6rem;
   .flex-wrapper {
+    padding-block: 4rem;
     display: flex;
-    justify-content: space-between;
-    gap: 10rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    @media screen and (min-width: 1150px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 5rem;
+    }
+    @media screen and (min-width: 1550px) {
+      gap: 14.5rem;
+      padding-block: 6rem;
+    }
   }
 `;
 
@@ -24,7 +35,7 @@ export const StyledArticle = styled.article`
         gap: 0.75rem;
         .icon-wrapper {
           position: relative;
-          width: 4.5rem;
+          width: clamp(2.5rem, 9vw, 4.5rem);
           aspect-ratio: 1;
         }
         .content {
@@ -32,7 +43,7 @@ export const StyledArticle = styled.article`
             display: block;
             font-family: var(--font-primary);
             color: ${({ theme }) => theme.color.textDarkGray};
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2.75vw, 1.5rem);
           }
           p + p {
             margin-top: 0.25rem;
@@ -46,11 +57,16 @@ export const StyledArticle = styled.article`
 export const StyledContactFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  align-items: center;
   gap: 1rem;
+  width: 100%;
+  @media screen and (min-width: 1550px) {
+    flex-basis: 50%;
+  }
   .heading-wrapper {
     color: ${({ theme }) => theme.color.textDarkGray};
     font-family: var(--font-primary);
+    width: min(100%, 55rem);
     h3 {
       font-size: 2.25rem;
       font-weight: 500;

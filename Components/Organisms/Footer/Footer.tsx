@@ -5,7 +5,7 @@ import { StyledFooter } from './Footer.styles';
 
 const Footer = () => (
   <StyledFooter>
-    <div className="flex-wrapper max-width-1300">
+    <div className="flex-wrapper max-width-1440">
       <div className="footer-left">
         <FooterContactInfo />
       </div>
@@ -14,7 +14,7 @@ const Footer = () => (
       </div>
     </div>
     <section className="nav-copyrights-wrapper ">
-      <div className="max-width-1300">
+      <div className="max-width-1440">
         <div className="flex-wrapper">
           <div className="nav-facebook-wrapper">
             <FbButton />

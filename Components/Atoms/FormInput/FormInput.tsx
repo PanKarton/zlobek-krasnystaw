@@ -10,14 +10,10 @@ export const StyledInput = styled.input`
   font-family: var(--font-primary);
   font-size: 1rem;
   font-weight: 500;
-
-  &::placeholder {
-    color: ${({ theme }) => theme.color.textDarkGray};
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    font-weight: 500;
-  }
   &:focus {
     outline: 1px solid #aaa;
+  }
+  &:invalid {
+    border: 2px solid red;
   }
 `;

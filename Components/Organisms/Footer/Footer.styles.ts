@@ -4,16 +4,21 @@ export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.color.white};
   border-top: 1px solid #aaa;
   & > .flex-wrapper {
-    padding-block: 3rem;
+    padding-block: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    @media screen and (min-width: 700px) {
-      justify-content: center;
-      gap: 5rem;
-    }
+    gap: 3rem;
     @media screen and (min-width: 1150px) {
       padding-block: 5rem;
+    }
+    .footer-left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      @media screen and (min-width: 1550px) {
+        justify-content: flex-start;
+      }
     }
 
     .footer-right {
@@ -45,6 +50,9 @@ export const StyledFooter = styled.footer`
         display: block;
       }
       @media screen and (min-width: 1150px) {
+        width: 540px;
+      }
+      @media screen and (min-width: 1550px) {
         width: 660px;
       }
     }
@@ -55,9 +63,7 @@ export const StyledFooter = styled.footer`
     display: flex;
     border-top: 1px solid #aaa;
     align-items: center;
-    & > .max-width-1300 {
-      margin-inline: auto;
-      padding-inline: 1rem 0.5rem;
+    & > .max-width-1440 {
       .flex-wrapper {
         display: flex;
         flex-direction: column;
@@ -78,14 +84,14 @@ export const StyledFooter = styled.footer`
       h2 {
         font-size: 1.125rem;
         font-weight: 400;
-        color: ${({ theme }) => theme.color.pink};
+        color: ${({ theme }) => theme.color.textDarkPink};
       }
     }
     .nav-copyrights {
       font-family: var(--font-primary);
       font-size: 1rem;
       .text-pink {
-        color: ${({ theme }) => theme.color.pink};
+        color: ${({ theme }) => theme.color.textDarkPink};
       }
     }
   }

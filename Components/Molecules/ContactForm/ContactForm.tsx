@@ -19,9 +19,18 @@ const ContactForm = () => {
 
   return (
     <StyledForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-      <StyledInput {...register('from_name')} id="name" type="text" placeholder="Twoje imię" ref={nameInputRef} />
-      <StyledInput {...register('from_email')} id="email" type="email" placeholder="Twój email" ref={emailInputRef} />
-      <StyledTextArea {...register('message')} id="message" placeholder="W czym możemy pomóc?" ref={messageTextAreaRef} />
+      <label>
+        Twoje imię:
+        <StyledInput aria-invalid={true} {...register('from_name', { required: true })} id="name" type="text" ref={nameInputRef} />
+      </label>
+      <label>
+        Twój email:
+        <StyledInput {...register('from_email')} id="email" type="email" ref={emailInputRef} />
+      </label>
+      <label>
+        W czym możemy pomóc?
+        <StyledTextArea {...register('message')} id="message" ref={messageTextAreaRef} />
+      </label>
       {submitState.message && <p className="submit-message">{submitState.message}</p>}
       <FormButton type="submit" isLoading={submitState.isLoading} />
     </StyledForm>

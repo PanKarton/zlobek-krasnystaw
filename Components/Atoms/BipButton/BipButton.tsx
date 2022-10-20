@@ -7,7 +7,7 @@ const BipButton = () => (
     target="_blank"
     rel="noreferrer"
     aria-label="Przycisk przekierowujący do biuletynu informacji publicznej">
-    <div className="nav-bip-image-wrapper" style={{ position: 'relative' }}>
+    <div className="nav-bip-image-wrapper" style={{ position: 'relative', height: '100%' }}>
       <Image src="/images/bip.jpg" alt="Czerwono białe logo biuletynu informacji publicznej" layout="fill" />
     </div>
   </a>
