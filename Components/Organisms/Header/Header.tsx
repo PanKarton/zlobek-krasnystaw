@@ -2,7 +2,11 @@ import Nav from 'Components/Molecules/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader } from './Header.styles';
 
-const Header = ({ isSecondary }) => {
+export type Props = {
+  isSecondary?: boolean;
+};
+
+const Header = ({ isSecondary }: Props) => {
   const heroImageURL = isSecondary ? '/images/hero-image-secondary.jpg' : '/images/hero-image.jpg';
 
   return (
@@ -12,20 +16,12 @@ const Header = ({ isSecondary }) => {
       </div>
       <div className="hero-text-wrapper">
         <h2>
-          Zadbaj z nami o <br /> przyszłość <br />{' '}
-          <span className="text-pink">swojego dziecka!</span>
+          Zadbaj z nami o <br /> przyszłość <br /> <span className="text-pink">swojego dziecka!</span>
         </h2>
         <p>Zapraszamy dzieci w wieku od 1 do 3 lat!</p>
       </div>
       <div className="hero-image-wrapper">
-        <Image
-          priority
-          src={heroImageURL}
-          alt="Chłopiec bawiący się klockami na stole"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="50% 100%"
-        />
+        <Image priority src={heroImageURL} alt="Chłopiec bawiący się klockami na stole" layout="fill" objectFit="cover" objectPosition="50% 100%" />
       </div>
       <div className="max-width-1440">
         <Nav />

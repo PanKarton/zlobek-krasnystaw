@@ -1,5 +1,3 @@
-import { theme } from 'assets/styles/theme';
-import CallMobileButton from 'Components/Atoms/CallMobileButton/CallMobileButton';
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.section`

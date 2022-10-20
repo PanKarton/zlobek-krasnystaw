@@ -3,7 +3,7 @@ import Map from 'Components/Atoms/Map/Map';
 import FooterContactInfo from 'Components/Molecules/FooterContactInfo/FooterContactInfo';
 import { StyledFooter } from './Footer.styles';
 
-const Footer = props => (
+const Footer = () => (
   <StyledFooter>
     <div className="flex-wrapper max-width-1300">
       <div className="footer-left">
@@ -21,9 +21,7 @@ const Footer = props => (
             <h2>Odwiedź nas na Facebooku :)</h2>
           </div>
           <p className="nav-copyrights">
-            Copyright 2021 &copy; |{' '}
-            <span className="text-pink">Żłobek Miejski w Krasnymstawie</span> | Wszelkie prawa
-            zastrzeżone.
+            Copyright 2021 &copy; | <span className="text-pink">Żłobek Miejski w Krasnymstawie</span> | Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

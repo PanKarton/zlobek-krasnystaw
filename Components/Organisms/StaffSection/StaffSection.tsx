@@ -1,10 +1,7 @@
 import Image from 'next/image';
-import { useTheme } from 'styled-components';
 import { StyledArticle, StyledSection } from './StaffSection.styles';
 
-const TilesSection = props => {
-  const theme = useTheme();
-
+const TilesSection = () => {
   return (
     <StyledSection>
       <div className="max-width-1300">
@@ -24,21 +21,15 @@ const TilesSection = props => {
             </div>
           </div>
           <div className="staff-image-wrapper">
-            <Image
-              src="/images/staff.jpg"
-              alt="Opiekunka bawiąca się z dwójką dzieci"
-              layout="fill"
-            />
+            <Image src="/images/staff.jpg" alt="Opiekunka bawiąca się z dwójką dzieci" layout="fill" />
           </div>
           <StyledArticle>
             <div className="flex-wrapper">
               <h3>Nasza kadra</h3>
+              <p>To drużyna doświadczonych specjalistów doskonale rozumiejących potrzeby malucha.</p>
               <p>
-                To drużyna doświadczonych specjalistów doskonale rozumiejących potrzeby malucha.
-              </p>
-              <p>
-                Skutecznie i z pasją nauczą jak radzić sobie z emocjami, zachęcą do odkrywania
-                świata poprzez zabawę oraz zadbają o przyjazną i bezpieczną atmosferę w grupie.
+                Skutecznie i z pasją nauczą jak radzić sobie z emocjami, zachęcą do odkrywania świata poprzez zabawę oraz zadbają o przyjazną i
+                bezpieczną atmosferę w grupie.
               </p>
             </div>
           </StyledArticle>

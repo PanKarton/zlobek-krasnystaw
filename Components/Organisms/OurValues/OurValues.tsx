@@ -2,7 +2,7 @@ import ValueCell from 'Components/Atoms/ValueCell/ValueCell';
 import Image from 'next/image';
 import { StyledSection } from './OurVaues.styles';
 
-const OurValues = props => (
+const OurValues = () => (
   <StyledSection>
     <div className="max-width">
       <ul>

@@ -2,7 +2,7 @@ import NavLink from 'Components/Atoms/NavLink/NavLink';
 import { StyledNavSpan } from 'Components/Atoms/NavLink/NavLink.styles';
 import { StyledList, StyledWrapper } from './DesktopNavList.styles';
 
-const DesktopNavList = props => (
+const DesktopNavList = () => (
   <StyledWrapper>
     <StyledList className="left">
       <li>

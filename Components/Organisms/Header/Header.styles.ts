@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Props } from './Header';
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.header<Props>`
   position: relative;
   height: ${({ isSecondary }) => (isSecondary ? '15rem' : '75vh')};
   margin-top: 3rem;

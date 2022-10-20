@@ -2,7 +2,7 @@ import ContactForm from 'Components/Molecules/ContactForm/ContactForm';
 import Image from 'next/image';
 import { StyledArticle, StyledContactFormWrapper, StyledSection } from './ContactSection.styles';
 
-const ContactSection = props => (
+const ContactSection = () => (
   <StyledSection>
     <div className="flex-wrapper max-width-1440">
       <StyledArticle>
@@ -10,11 +10,7 @@ const ContactSection = props => (
           <li>
             <div className="li-flex-wrapper">
               <div className="icon-wrapper">
-                <Image
-                  src="/images/contact-icon-phone.svg"
-                  alt="ikonka słuchawki telefonu na niebieskim kwiatku"
-                  layout="fill"
-                />
+                <Image src="/images/contact-icon-phone.svg" alt="ikonka słuchawki telefonu na niebieskim kwiatku" layout="fill" />
               </div>
               <div className="content">
                 <p>123 456 789 - dyrektor</p>
@@ -25,11 +21,7 @@ const ContactSection = props => (
           <li>
             <div className="li-flex-wrapper">
               <div className="icon-wrapper">
-                <Image
-                  src="/images/contact-icon-pin.svg"
-                  alt="ikonka pinezki na niebieskim kwiatku"
-                  layout="fill"
-                />
+                <Image src="/images/contact-icon-pin.svg" alt="ikonka pinezki na niebieskim kwiatku" layout="fill" />
               </div>
               <div className="content">
                 <p>Złobek Miejski 22-300 Krasnystaw</p>
@@ -40,11 +32,7 @@ const ContactSection = props => (
           <li>
             <div className="li-flex-wrapper">
               <div className="icon-wrapper">
-                <Image
-                  src="/images/contact-icon-mail.svg"
-                  alt="ikonka koperty na niebieskim kwiatku"
-                  layout="fill"
-                />
+                <Image src="/images/contact-icon-mail.svg" alt="ikonka koperty na niebieskim kwiatku" layout="fill" />
               </div>
               <div className="content">
                 <p>zlobek.krasnystaw@gmail.pl</p>
