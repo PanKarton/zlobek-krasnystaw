@@ -9,11 +9,14 @@ export const StyledInput = styled.input`
   color: ${({ theme }) => theme.color.textDarkGray};
   font-family: var(--font-primary);
   font-size: 1rem;
+  border-radius: 3px;
   font-weight: 500;
   &:focus {
     outline: 1px solid #aaa;
   }
-  &:invalid {
+  &.invalid {
     border: 2px solid red;
+    outline: none;
+    background-color: hsla(0, 100%, 50%, 0.05);
   }
 `;

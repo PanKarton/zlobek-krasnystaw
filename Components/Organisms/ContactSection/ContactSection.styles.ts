@@ -43,7 +43,7 @@ export const StyledArticle = styled.article`
             display: block;
             font-family: var(--font-primary);
             color: ${({ theme }) => theme.color.textDarkGray};
-            font-size: clamp(1rem, 2.75vw, 1.5rem);
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
           }
           p + p {
             margin-top: 0.25rem;

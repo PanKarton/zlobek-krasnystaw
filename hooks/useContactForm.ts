@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { getEnv } from 'helpers/getEnv';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
 
 type Props = {
@@ -25,6 +25,7 @@ const useContactForm = (
   nameInputRef: Props['nameInputRef'],
   emailInputRef: Props['emailInputRef'],
   messageTextAreaRef: Props['messageTextAreaRef'],
+  errors: unknown,
 ) => {
   const [submitState, setSubmitState] = useState<State>({ isLoading: false, message: '' });
 
@@ -35,8 +36,6 @@ const useContactForm = (
     emailInputRef.current.value = '';
     messageTextAreaRef.current.value = '';
   }, [nameInputRef, emailInputRef, messageTextAreaRef]);
-
-  // const check
 
   const onSubmit: SubmitHandler<FormValues> = useCallback(async () => {
     try {
