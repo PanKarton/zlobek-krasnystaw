@@ -6,15 +6,15 @@ export const StyledSection = styled.section`
   padding-top: clamp(5rem, 8vw, 9rem);
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
-  .max-width-1300 {
+  .max-width-1440 {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     @media screen and (min-width: 1000px) {
-      padding-inline: 3rem;
+      /* padding-inline: 3rem; */
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1550px) {
       padding-inline: 1.5rem;
     }
 
@@ -32,7 +32,7 @@ export const StyledSection = styled.section`
         @media screen and (min-width: 1000px) {
           display: block;
         }
-        @media screen and (min-width: 1400px) {
+        @media screen and (min-width: 1550px) {
           flex-grow: 1;
         }
         &::before {
@@ -66,54 +66,49 @@ export const StyledSection = styled.section`
       position: absolute;
       height: 110px;
       aspect-ratio: 1;
-      animation: floater 10s infinite ease-in-out;
+      animation: floater 15s infinite ease-in-out;
       z-index: 9999;
       &:nth-child(1) {
         /* Icon C */
         display: none;
-        top: -20%;
+        top: -35%;
         left: -5%;
         rotate: 210deg;
-        scale: 1;
+        scale: 0.75;
         height: 130px;
-        @media screen and (min-width: 1440px) {
-          display: block;
-        }
         @media screen and (min-width: 1640px) {
-          top: -28%;
-          left: -8%;
+          display: block;
+          top: -20%;
+          left: -6%;
         }
       }
       &:nth-child(2) {
         /* Icon O */
         display: none;
-        bottom: -25%;
-        left: 0;
-        scale: 1;
+        bottom: -40%;
+        left: -10%;
+        scale: 0.75;
         animation-delay: 1s;
-        @media screen and (min-width: 1440px) {
-          display: block;
-        }
         @media screen and (min-width: 1640px) {
-          left: -10%;
+          display: block;
+          bottom: -20%;
+          left: -5%;
         }
       }
       &:nth-child(3) {
         /* Icon triangle */
         display: none;
         top: -25%;
-        right: 15%;
+        right: 0%;
         animation-delay: 2s;
         scale: 0.5;
         @media screen and (min-width: 1000px) {
           display: block;
           top: -25%;
         }
-        @media screen and (min-width: 1150px) {
+        @media screen and (min-width: 1550px) {
           scale: 0.7;
-        }
-        @media screen and (min-width: 1440px) {
-          scale: 1;
+          top: 0;
         }
       }
       &:nth-child(4) {
@@ -121,18 +116,18 @@ export const StyledSection = styled.section`
         display: none;
         height: 150px;
         right: 5%;
-        bottom: -35%;
+        bottom: -50%;
         animation-delay: 3s;
         scale: 0.7;
         @media screen and (min-width: 1000px) {
           display: block;
         }
         @media screen and (min-width: 1150px) {
-          scale: 0.85;
-          bottom: -20%;
+          bottom: -40%;
         }
-        @media screen and (min-width: 1440px) {
-          scale: 1;
+        @media screen and (min-width: 1550px) {
+          scale: 0.85;
+          bottom: -10%;
         }
       }
     }
@@ -164,8 +159,12 @@ export const StyledArticle = styled.article`
   color: ${({ theme }) => theme.color.textDarkGray};
   font-family: var(--font-primary);
   text-align: right;
-  max-width: 30rem;
-  @media screen and (min-width: 1440px) {
+  max-width: 31.25rem;
+  @media screen and (min-width: 1000px) {
+    max-width: 20rem;
+  }
+  @media screen and (min-width: 1550px) {
+    max-width: 31.25rem;
     text-align: left;
   }
   .flex-wrapper {
@@ -184,7 +183,8 @@ export const StyledArticle = styled.article`
     }
     p {
       font-size: clamp(1rem, 1.125vw, 1.125rem);
-      line-height: 1.3;
+      font-weight: 500;
+      line-height: 1.8;
     }
   }
 `;

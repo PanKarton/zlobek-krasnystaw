@@ -14,15 +14,17 @@ export const StyledCirculareWrapper = styled.div`
     position: relative;
     width: 95%;
     aspect-ratio: 1;
-    border-radius: 50%;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    img {
+      border-radius: 50%;
+    }
   }
   &:nth-child(1) {
     height: 50%;
     bottom: 0;
     left: 0;
     z-index: 1;
-    line-height: 40px;
     text-align: left;
   }
   &:nth-child(2) {
@@ -30,12 +32,10 @@ export const StyledCirculareWrapper = styled.div`
     top: 0;
     left: 40%;
     translate: -50% 0;
-    line-height: 200px;
   }
   &:nth-child(3) {
     height: 60%;
     right: 0;
     bottom: 10%;
-    line-height: 200px;
   }
 `;

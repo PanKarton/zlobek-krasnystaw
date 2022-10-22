@@ -4,7 +4,7 @@ import { StyledSection } from './OurVaues.styles';
 
 const OurValues = () => (
   <StyledSection>
-    <div className="max-width">
+    <div className="max-width-1440">
       <ul>
         <li>
           <ValueCell>

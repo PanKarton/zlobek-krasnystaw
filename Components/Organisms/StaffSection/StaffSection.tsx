@@ -4,7 +4,7 @@ import { StyledArticle, StyledSection } from './StaffSection.styles';
 const TilesSection = () => {
   return (
     <StyledSection>
-      <div className="max-width-1300">
+      <div className="max-width-1440">
         <div className="flex-wrapper">
           <div className="floating-icons-wrapper">
             <div className="floating-icon-wrapper">

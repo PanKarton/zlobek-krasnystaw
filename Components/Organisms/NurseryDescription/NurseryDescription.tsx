@@ -8,7 +8,7 @@ const NurseryDescription = () => {
 
   return (
     <StyledSection>
-      <div className="max-width-1300">
+      <div className="max-width-1440">
         <div className="flex-wrapper">
           <StyledArticle>
             <div className="flex-wrapper">
