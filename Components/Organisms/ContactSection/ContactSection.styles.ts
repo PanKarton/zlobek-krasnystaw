@@ -58,7 +58,7 @@ export const StyledContactFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5 rem;
   width: 100%;
   @media screen and (min-width: 1550px) {
     flex-basis: 50%;
@@ -68,7 +68,7 @@ export const StyledContactFormWrapper = styled.div`
     font-family: var(--font-primary);
     width: min(100%, 55rem);
     h3 {
-      font-size: 2.25rem;
+      font-size: clamp(1.75rem, 2.25vw, 2rem);
       font-weight: 500;
       line-height: 1;
     }

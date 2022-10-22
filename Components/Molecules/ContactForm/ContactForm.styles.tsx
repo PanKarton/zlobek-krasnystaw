@@ -20,7 +20,8 @@ export const StyledForm = styled.form`
     gap: 0.5rem;
     margin-top: 0.25rem;
   }
-  .submit-message {
+  .submit-message,
+  .error-message {
     text-align: center;
     font-family: var(--font-primary);
     font-size: 1rem;
