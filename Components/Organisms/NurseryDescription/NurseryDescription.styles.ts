@@ -8,15 +8,15 @@ export const StyledSection = styled.section`
   @media screen and (min-width: 1000px) {
     padding-inline: 3rem;
   }
-  .max-width-1300 {
+  .max-width-1440 {
     & > .flex-wrapper {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       .description-image-wrapper {
         display: none;
         position: relative;
-        width: 513px;
+        flex-grow: 1;
         aspect-ratio: 1.5;
         @media screen and (min-width: 1000px) {
           display: block;
@@ -30,7 +30,7 @@ export const StyledArticle = styled.article`
   color: ${({ theme }) => theme.color.textDarkerGray};
   font-family: var(--font-primary);
   max-width: 440px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1550px) {
     max-width: 42rem;
   }
   .flex-wrapper {
@@ -45,11 +45,9 @@ export const StyledArticle = styled.article`
     }
     p {
       font-size: clamp(1rem, 1.125vw, 1.125rem);
-      line-height: 1.5;
+      line-height: 1.8;
+      font-weight: 500;
       letter-spacing: 1px;
-      @media screen and (min-width: 1440px) {
-        line-height: 1.5;
-      }
     }
   }
 `;
