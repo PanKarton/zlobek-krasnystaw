@@ -5,7 +5,6 @@ import useContactForm, { FormValues } from 'hooks/useContactForm';
 import React, { useEffect, useRef } from 'react';
 import FormButton from 'Components/Atoms/FormButton/FormButton';
 import { useForm } from 'react-hook-form';
-import { hasSubscribers } from 'diagnostics_channel';
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -31,8 +30,6 @@ const ContactForm = () => {
   useEffect(() => {
     if (isSubmitSuccessful) reset();
   }, [isSubmitSuccessful, reset]);
-
-  //   TRZEBA OGARNAC COS Z ANTYSPAMEM
 
   return (
     <StyledForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>

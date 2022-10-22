@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 import { getEnv } from 'helpers/getEnv';
-import React, { useCallback, useEffect, useState } from 'react';
-import { FieldErrorsImpl, SubmitHandler } from 'react-hook-form';
+import React, { useCallback, useState } from 'react';
+import { SubmitHandler } from 'react-hook-form';
 
 type Props = {
   formRef: React.RefObject<HTMLFormElement>;
