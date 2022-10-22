@@ -45,8 +45,27 @@ a {
   margin-inline: auto;
 }
 .max-width-1440 {
-  width: min(1440px, calc(100% - 3rem));
+  width: min(100%, 40rem);
   margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media screen and (min-width: 900px) {
+  .max-width-1440 {
+    width: min(1440px, 800px);
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .max-width-1440 {
+    width: min(1440px, 960px);
+  }
+}
+
+@media screen and (min-width: 1550px) {
+  .max-width-1440 {
+    width: 1440px;
+    padding-left: 0.5rem;
+  }
 }
 
 /* Page loader */
