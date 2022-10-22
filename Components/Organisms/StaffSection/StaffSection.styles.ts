@@ -183,7 +183,8 @@ export const StyledArticle = styled.article`
     }
     p {
       font-size: clamp(1rem, 1.125vw, 1.125rem);
-      line-height: 1.3;
+      font-weight: 500;
+      line-height: 1.8;
     }
   }
 `;

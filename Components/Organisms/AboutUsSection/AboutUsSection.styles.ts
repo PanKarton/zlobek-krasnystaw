@@ -82,12 +82,13 @@ export const StyledArticle = styled.article`
   .about-us-paragraph {
     font-family: var(--font-primary);
     font-size: clamp(1rem, 1.125vw, 1.25rem);
-    line-height: 1.4;
+    line-height: 1.8;
+    font-weight: 500;
     &--small {
       font-size: clamp(1rem, 1.125vw, 1.125rem);
     }
     @media screen and (min-width: 700px) {
-      line-height: 1.5;
+      /* line-height: 1.5; */
       margin-bottom: 0;
     }
   }
