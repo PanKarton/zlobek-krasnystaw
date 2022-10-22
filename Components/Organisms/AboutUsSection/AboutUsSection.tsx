@@ -12,7 +12,7 @@ const AboutUsSection = () => (
     <div className="stars-background-wrapper">
       <Image src="/images/stars-background.svg" alt="Tło sekcji z szarymi gwiazdami" layout="fill" objectFit="cover" />
     </div>
-    <div className="flex-wrapper max-width-1300">
+    <div className="flex-wrapper max-width-1440">
       <StyledArticle>
         <h3>
           Czego nauczy się z nami <span className="text-pink">Twój maluch?</span>
@@ -36,7 +36,7 @@ const AboutUsSection = () => (
         </ul>
       </StyledArticle>
       <div className="images-wrapper">
-        <CircleBorderImage url="/images/happy-kid31.jpg" alt="Dziecko cieszące się z zabawy klockami" />
+        <CircleBorderImage url="/images/happy-kid3.jpg" alt="Dziecko cieszące się z zabawy klockami" />
         <CircleBorderImage url="/images/happy-kid1.jpg" alt="Uśmiechnięte dziecko jedzące posiłek" />
         <CircleBorderImage url="/images/happy-kid2.jpg" alt="Dziecko ukladajace klocki" />
         <div className="sun-wrapper">

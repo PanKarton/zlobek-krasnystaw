@@ -3,11 +3,9 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.color.white};
   padding-bottom: 2rem;
-  & > .max-width {
-    margin-inline: auto;
+  & > .max-width-1440 {
     display: flex;
     justify-content: center;
-    padding-inline: 1.5rem;
     & > ul {
       width: 100%;
       display: flex;
@@ -22,7 +20,6 @@ export const StyledSection = styled.section`
         flex-direction: row;
         align-items: baseline;
         justify-content: space-between;
-        padding-inline: 3.5rem;
         li {
           width: max-content;
           margin-inline: auto;

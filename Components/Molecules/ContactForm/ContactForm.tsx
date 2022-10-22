@@ -1,7 +1,7 @@
 import { StyledInput } from 'Components/Atoms/FormInput/FormInput';
 import { StyledTextArea } from 'Components/Atoms/FormTextArea/FormTextArea';
 import { StyledForm } from './ContactForm.styles';
-import useContactForm, { FormValues } from 'hooks/useContactForm';
+import useContactForm, { FormValues } from 'Components/Molecules/ContactForm/useContactForm';
 import React, { useEffect, useRef } from 'react';
 import FormButton from 'Components/Atoms/FormButton/FormButton';
 import { useForm } from 'react-hook-form';

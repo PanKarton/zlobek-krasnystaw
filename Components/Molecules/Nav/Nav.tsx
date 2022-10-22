@@ -3,7 +3,7 @@ import DesktopNavList from '../DesktopNavList/DesktopNavList';
 import MobileNavList from '../MobileNavList/MobileNavList';
 import { StyledNav } from './Nav.styles';
 import HamburgerButton from '../../Atoms/HamburgerButton/HamburgerButton';
-import useHamburgerNav from '../../../hooks/useHamburgerNav';
+import useHamburgerNav from './useHamburgerNav';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { FaEnvelope } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';

@@ -8,7 +8,7 @@ type Props = {
 
 const HomeTemplate = ({ children }: Props) => (
   <>
-    <Header />
+    {/* <Header /> */}
     <main id="main-content">{children}</main>
     <Footer />
   </>
