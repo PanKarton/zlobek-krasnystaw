@@ -6,7 +6,8 @@ export const theme = {
       primary: '#2D2D2F',
       primaryLightHover: '#3D3D3F',
       accentPrimary: '#BF3160',
-      darkGrayHover: '#3D3D3F',
+      accentSecondary: '#2D79D6',
+      accentSecondaryLightHover: '#5693de',
     },
     icons: {
       primary: '#FE9FBF',
@@ -23,6 +24,7 @@ export const theme = {
     background: {
       staffSection: '#e8eaed',
       nurserySection: '#79C9EC',
+      imageTransparentHover: 'hsla(0, 100%, 100%, 0.1)',
     }, // ================
 
     textDarkGray: 'red',

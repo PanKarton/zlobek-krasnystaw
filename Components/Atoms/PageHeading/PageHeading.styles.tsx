@@ -4,6 +4,7 @@ export const StyledPageHeading = styled.h2`
   display: block;
   margin-top: 3rem;
   margin-inline: auto;
+  margin-bottom: 4rem;
   font-family: var(--font-primary);
   font-size: ${({ theme }) => theme.fontSize.pageHeadingRegular};
   color: ${({ theme }) => theme.color.text.primary};

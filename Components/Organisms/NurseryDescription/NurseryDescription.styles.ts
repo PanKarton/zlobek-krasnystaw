@@ -12,7 +12,7 @@ export const StyledSection = styled.section`
     & > .flex-wrapper {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       .description-image-wrapper {
         display: none;
         position: relative;
@@ -29,7 +29,7 @@ export const StyledSection = styled.section`
 export const StyledArticle = styled.article`
   color: ${({ theme }) => theme.color.text.primary};
   font-family: var(--font-primary);
-  max-width: 440px;
+  max-width: 500px;
   @media screen and (min-width: 1550px) {
     max-width: 42rem;
   }

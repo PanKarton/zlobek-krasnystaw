@@ -11,12 +11,6 @@ export const StyledSection = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    @media screen and (min-width: 1000px) {
-      /* padding-inline: 3rem; */
-    }
-    @media screen and (min-width: 1550px) {
-      padding-inline: 1.5rem;
-    }
 
     & > .flex-wrapper {
       width: 100%;
@@ -24,16 +18,20 @@ export const StyledSection = styled.section`
       align-items: center;
       justify-content: center;
       gap: clamp(3rem, 5vw, 6rem);
+      @media screen and (min-width: 1150px) {
+        justify-content: flex-start;
+      }
       .staff-image-wrapper {
         display: none;
         position: relative;
         width: 423px;
         aspect-ratio: 1.58;
         @media screen and (min-width: 1000px) {
+          justify-content: flex-start;
           display: block;
         }
         @media screen and (min-width: 1550px) {
-          flex-grow: 1;
+          flex-grow: 0.5;
         }
         &::before {
           content: '';

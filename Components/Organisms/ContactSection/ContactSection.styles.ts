@@ -4,7 +4,7 @@ export const StyledSection = styled.section`
   display: flex;
   justify-content: center;
   .flex-wrapper {
-    padding-block: 4rem;
+    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@ export const StyledSection = styled.section`
     }
     @media screen and (min-width: 1550px) {
       gap: 14.5rem;
-      padding-block: 6rem;
+      padding-bottom: 6rem;
     }
   }
 `;
