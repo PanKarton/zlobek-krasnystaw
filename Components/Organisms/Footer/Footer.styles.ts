@@ -84,14 +84,14 @@ export const StyledFooter = styled.footer`
       h2 {
         font-size: 1.125rem;
         font-weight: 400;
-        color: ${({ theme }) => theme.color.textDarkPink};
+        color: ${({ theme }) => theme.color.text.accentPrimary};
       }
     }
     .nav-copyrights {
       font-family: var(--font-primary);
       font-size: 1rem;
       .text-pink {
-        color: ${({ theme }) => theme.color.textDarkPink};
+        color: ${({ theme }) => theme.color.text.accentPrimary};
       }
     }
   }

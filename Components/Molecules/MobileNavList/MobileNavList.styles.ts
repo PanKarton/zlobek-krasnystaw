@@ -10,6 +10,7 @@ export const StyledWrapper = styled.section`
   padding-block: 1.5rem;
   padding-left: 1.5rem;
   border-left: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 
   /* Hide and show menu */
   translate: 100% 0;
@@ -43,7 +44,7 @@ export const StyledWrapper = styled.section`
     top: 1rem;
     right: 0.75rem;
     svg {
-      color: ${({ theme }) => theme.color.gray500};
+      color: ${({ theme }) => theme.color.icons.closeNav};
       font-size: 2rem;
     }
   }
@@ -69,12 +70,6 @@ export const StyledList = styled.ul`
   }
 
   /* Hide news and home page  */
-  @media screen and (min-width: 700px) {
-    & > :nth-child(1),
-    & > :nth-child(2) {
-      display: none;
-    }
-  }
   @media screen and (min-width: 700px) {
     & > :nth-child(1),
     & > :nth-child(2) {

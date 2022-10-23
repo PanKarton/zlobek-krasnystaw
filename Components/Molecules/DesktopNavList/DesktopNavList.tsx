@@ -20,16 +20,29 @@ const DesktopNavList = () => (
         <StyledNavSpan className="secondary-menu-trigger">Dla rodzica</StyledNavSpan>
         <ul>
           <li>
-            <NavLink direction="rekrutacja">Rekrutacja</NavLink>
+            <NavLink hasNarrowHitbox direction="rekrutacja">
+              Rekrutacja
+            </NavLink>
           </li>
           <li>
-            <NavLink direction="dokumenty">Dokumenty</NavLink>
+            <NavLink hasNarrowHitbox direction="dokumenty">
+              Dokumenty
+            </NavLink>
           </li>
           <li>
-            <NavLink direction="wyprawka">Wyprawka</NavLink>
+            <NavLink hasNarrowHitbox direction="wyprawka">
+              Wyprawka
+            </NavLink>
           </li>
           <li>
-            <NavLink direction="oplaty">Opłaty</NavLink>
+            <NavLink hasNarrowHitbox direction="oplaty">
+              Opłaty
+            </NavLink>
+          </li>
+          <li>
+            <NavLink hasNarrowHitbox direction="jadlospis">
+              Jadłospis
+            </NavLink>
           </li>
         </ul>
       </li>

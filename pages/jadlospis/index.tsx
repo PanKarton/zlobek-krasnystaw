@@ -1,5 +1,9 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
-const News = props => <SecondaryTemplate heading="Nasze nowości"></SecondaryTemplate>;
+const News = () => (
+  <SecondaryTemplate heading="Jadłospis">
+    <p></p>
+  </SecondaryTemplate>
+);
 
 export default News;

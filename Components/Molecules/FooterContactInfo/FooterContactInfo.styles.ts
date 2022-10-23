@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
-  color: ${({ theme }) => theme.color.textDarkerGray};
+  color: ${({ theme }) => theme.color.text.primary};
   margin-block: 2rem 1.5rem;
   font-family: var(--font-primary);
   width: 18rem;
@@ -56,7 +56,7 @@ export const StyledSection = styled.section`
         .icon-wrapper {
           flex-basis: 1rem;
           svg {
-            color: ${({ theme }) => theme.color.pink};
+            color: ${({ theme }) => theme.color.icons.primary};
             font-size: 1.5rem;
           }
           &--pin {
