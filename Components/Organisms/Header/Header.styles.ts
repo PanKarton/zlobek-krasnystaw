@@ -1,3 +1,4 @@
+import { log } from 'console';
 import styled from 'styled-components';
 import { Props } from './Header';
 
