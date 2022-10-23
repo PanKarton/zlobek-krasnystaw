@@ -72,7 +72,7 @@ export const StyledHeader = styled.header<Props>`
     display: ${({ isSecondary }) => (isSecondary ? 'none' : 'block')};
     width: min(calc(100% - 3rem), 30rem);
     text-align: center;
-    color: ${({ theme }) => theme.color.textDarkGray};
+    color: ${({ theme }) => theme.color.text.primary};
     font-family: var(--font-primary);
     background-color: ${({ theme }) => theme.color.white};
     padding-block: clamp(1.5rem, 5vw, 2rem);
@@ -96,7 +96,7 @@ export const StyledHeader = styled.header<Props>`
       font-weight: 500;
       font-size: clamp(1.625rem, 5vw, 2.25rem);
       .text-pink {
-        color: ${({ theme }) => theme.color.textDarkPink};
+        color: ${({ theme }) => theme.color.text.accentPrimary};
       }
       @media screen and (min-width: 1440px) {
         font-size: clamp(2.25rem, 4vw, 5rem);
@@ -104,6 +104,7 @@ export const StyledHeader = styled.header<Props>`
     }
     p {
       font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 500;
       line-height: 1.4;
       margin-top: 1rem;
     }

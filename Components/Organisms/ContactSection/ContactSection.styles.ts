@@ -32,7 +32,7 @@ export const StyledArticle = styled.article`
       .li-flex-wrapper {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 1rem;
         .icon-wrapper {
           position: relative;
           width: clamp(2.5rem, 9vw, 4.5rem);
@@ -42,7 +42,7 @@ export const StyledArticle = styled.article`
           p {
             display: block;
             font-family: var(--font-primary);
-            color: ${({ theme }) => theme.color.textDarkGray};
+            color: ${({ theme }) => theme.color.text.primary};
             font-size: clamp(1rem, 1.5vw, 1.5rem);
           }
           p + p {
@@ -58,13 +58,13 @@ export const StyledContactFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5 rem;
+  gap: 0.5rem;
   width: 100%;
   @media screen and (min-width: 1550px) {
     flex-basis: 50%;
   }
   .heading-wrapper {
-    color: ${({ theme }) => theme.color.textDarkGray};
+    color: ${({ theme }) => theme.color.text.primary};
     font-family: var(--font-primary);
     width: min(100%, 55rem);
     h3 {

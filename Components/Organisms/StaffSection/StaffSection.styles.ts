@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   position: relative;
-  background-color: ${({ theme }) => theme.color.tilesSectionBackground};
+  background-color: ${({ theme }) => theme.color.background.staffSection};
   padding-top: clamp(5rem, 8vw, 9rem);
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
@@ -156,7 +156,7 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.textDarkGray};
+  color: ${({ theme }) => theme.color.text.primary};
   font-family: var(--font-primary);
   text-align: right;
   max-width: 31.25rem;

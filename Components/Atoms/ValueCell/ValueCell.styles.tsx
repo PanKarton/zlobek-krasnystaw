@@ -18,7 +18,7 @@ export const StyledWrapper = styled.div`
   }
   & > span {
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.color.textDarkGray};
+    color: ${({ theme }) => theme.color.text.primary};
     font-family: var(--font-primary);
     font-weight: 500;
     text-align: center;

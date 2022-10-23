@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
-  background-color: ${({ theme }) => theme.color.blue};
+  background-color: ${({ theme }) => theme.color.background.nurserySection};
   padding-top: 5rem;
   /* Padding top + blue wave layer height - 100vw/11.5 - wave height based on its aspect ratio | /3.5 - most blue wave layer aspect.ratio */
   padding-bottom: calc(5rem + calc(100vw / 11.5 / 3.5));
@@ -27,7 +27,7 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.textDarkerGray};
+  color: ${({ theme }) => theme.color.text.primary};
   font-family: var(--font-primary);
   max-width: 440px;
   @media screen and (min-width: 1550px) {

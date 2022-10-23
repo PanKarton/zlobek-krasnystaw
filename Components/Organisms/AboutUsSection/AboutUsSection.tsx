@@ -14,9 +14,9 @@ const AboutUsSection = () => (
     </div>
     <div className="flex-wrapper max-width-1440">
       <StyledArticle>
-        <h3>
+        <h2>
           Czego nauczy się z nami <span className="text-pink">Twój maluch?</span>
-        </h3>
+        </h2>
         <p className="about-us-paragraph">
           Przede wszystkim panowania nad emocjami oraz poprawnego życia w społeczeństwie. Ponadto dokładamy wszelkich starań, aby zapewnić:
         </p>

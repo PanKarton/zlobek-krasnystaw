@@ -13,7 +13,7 @@ export const StyledForm = styled.form`
     position: relative;
     display: flex;
     flex-direction: column;
-    color: ${({ theme }) => theme.color.textDarkGray};
+    color: ${({ theme }) => theme.color.text.primary};
     font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 500;
@@ -26,7 +26,7 @@ export const StyledForm = styled.form`
     font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 500;
-    color: ${({ theme }) => theme.color.textDarkGray};
+    color: ${({ theme }) => theme.color.text.primary};
   }
   button {
     margin-top: auto;

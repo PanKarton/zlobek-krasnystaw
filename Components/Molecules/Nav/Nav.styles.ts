@@ -121,7 +121,7 @@ export const StyledNav = styled.nav`
       gap: 3rem;
       padding-bottom: 0.25rem;
       & svg {
-        color: ${({ theme }) => theme.color.pink};
+        color: ${({ theme }) => theme.color.icons.primary};
       }
       &.left {
         left: 0;

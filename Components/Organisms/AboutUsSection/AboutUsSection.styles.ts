@@ -13,7 +13,6 @@ export const StyledSection = styled.section`
     }
     @media screen and (min-width: 1550px) {
       padding-block: 3rem 10rem;
-      padding-left: 2rem;
       justify-content: flex-start;
       gap: 8rem;
     }
@@ -60,7 +59,7 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.textDarkGray};
+  color: ${({ theme }) => theme.color.text.primary};
   font-family: var(--font-primary);
   display: flex;
   flex-direction: column;
@@ -69,13 +68,13 @@ export const StyledArticle = styled.article`
   gap: 0.75rem;
   max-width: 500px;
 
-  h3 {
+  h2 {
     max-width: 400px;
     font-weight: 600;
     font-size: clamp(1.75rem, 1.75vw, 2rem);
     line-height: 1.2;
     .text-pink {
-      color: ${({ theme }) => theme.color.textDarkPink};
+      color: ${({ theme }) => theme.color.text.accentPrimary};
     }
   }
 
@@ -88,7 +87,6 @@ export const StyledArticle = styled.article`
       font-size: clamp(1rem, 1.125vw, 1.125rem);
     }
     @media screen and (min-width: 700px) {
-      /* line-height: 1.5; */
       margin-bottom: 0;
     }
   }

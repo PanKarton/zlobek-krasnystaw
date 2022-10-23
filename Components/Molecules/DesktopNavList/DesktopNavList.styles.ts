@@ -79,13 +79,15 @@ export const StyledList = styled.ul`
         translate: 0 0;
       }
       ul {
-        background-color: white;
+        border: 1px solid #aaa;
+        border-top: none;
+        background-color: ${({ theme }) => theme.color.white};
         display: flex;
         position: absolute;
-        top: 1.25rem;
-        left: -0.75rem;
-        gap: 1rem;
-        padding: 2rem 1.5rem 1rem 0.75rem;
+        top: 2.875rem;
+        left: -1.25rem;
+        gap: 1.5rem;
+        padding: 0 3rem 1.5rem 1.25rem;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         flex-direction: column;

@@ -5,12 +5,13 @@ import { StyledNavSpan } from './NavLink.styles';
 type Props = {
   direction: string;
   children: React.ReactNode;
+  hasNarrowHitbox?: boolean;
 };
 
-const NavLink = ({ children, direction }: Props) => (
+const NavLink = ({ children, direction, hasNarrowHitbox }: Props) => (
   <Link href={`${direction}`} passHref>
     <a>
-      <StyledNavSpan>{children}</StyledNavSpan>
+      <StyledNavSpan hasNarrowHitbox={hasNarrowHitbox}>{children}</StyledNavSpan>
     </a>
   </Link>
 );
