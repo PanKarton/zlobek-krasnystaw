@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledPageHeading = styled.h2`
+  position: relative;
+  left: -4px;
   display: block;
   margin-top: 3rem;
   margin-inline: auto;

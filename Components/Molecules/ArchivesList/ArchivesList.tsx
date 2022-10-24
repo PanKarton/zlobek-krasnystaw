@@ -1,3 +1,4 @@
+import TextButton from 'Components/Atoms/TextButton/TextButton';
 import { StyledWrapper } from './ArchivesList.styles';
 
 const ArchivesList = () => (
@@ -11,7 +12,7 @@ const ArchivesList = () => (
         <li className="archives__list-item">maj 2022</li>
         <li className="archives__list-item">kwiecień 2022</li>
       </ul>
-      <button className="archives__load-btn">Więcej....</button>
+      <TextButton className="archives__load-btn">Więcej...</TextButton>
     </div>
   </StyledWrapper>
 );
