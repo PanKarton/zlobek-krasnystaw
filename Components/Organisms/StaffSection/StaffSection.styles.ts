@@ -154,8 +154,6 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.text.primary};
-  font-family: var(--font-primary);
   text-align: right;
   max-width: 31.25rem;
   @media screen and (min-width: 1000px) {

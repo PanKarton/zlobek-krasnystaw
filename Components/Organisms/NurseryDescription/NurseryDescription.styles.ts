@@ -27,8 +27,6 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.text.primary};
-  font-family: var(--font-primary);
   max-width: 500px;
   @media screen and (min-width: 1550px) {
     max-width: 42rem;
@@ -39,11 +37,5 @@ export const StyledArticle = styled.article`
     justify-content: flex-end;
     text-align: left;
     gap: 1rem;
-    p {
-      font-size: clamp(1rem, 1.125vw, 1.125rem);
-      line-height: 1.8;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
   }
 `;

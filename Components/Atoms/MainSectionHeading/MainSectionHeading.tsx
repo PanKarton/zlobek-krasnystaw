@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const StyledHeading = styled.h3`
+  font-family: var(--font-primary);
+  color: ${({ theme }) => theme.color.text.primary};
   font-weight: 600;
   font-size: ${({ theme }) => theme.fontSize.text3XL};
   line-height: ${({ theme }) => theme.lineHeight.text3XL};

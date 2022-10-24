@@ -74,12 +74,12 @@ export const StyledContactFormWrapper = styled.div`
     font-family: var(--font-primary);
     width: min(100%, 55rem);
     h3 {
-      font-size: clamp(1.75rem, 2.25vw, 2rem);
+      font-size: ${({ theme }) => theme.fontSize.text4XL};
+      line-height: ${({ theme }) => theme.lineHeight.text2xL};
       font-weight: 500;
-      line-height: 1;
     }
     p {
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
       margin-left: 2px;
       margin-top: 0.25rem;

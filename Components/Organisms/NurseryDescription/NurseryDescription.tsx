@@ -1,4 +1,5 @@
 import MainSectionHeading from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
+import MainSectionParagraph from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection } from './NurseryDescription.styles';
 
@@ -14,8 +15,8 @@ const NurseryDescription = () => {
           <StyledArticle>
             <div className="flex-wrapper">
               <MainSectionHeading>O nas słów kilka</MainSectionHeading>
-              <p>{descriptionOne}</p>
-              <p>{descriptionTwo}</p>
+              <MainSectionParagraph>{descriptionOne}</MainSectionParagraph>
+              <MainSectionParagraph>{descriptionTwo}</MainSectionParagraph>
             </div>
           </StyledArticle>
           <div className="description-image-wrapper">

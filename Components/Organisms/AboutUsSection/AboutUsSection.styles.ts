@@ -59,8 +59,6 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.text.primary};
-  font-family: var(--font-primary);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
