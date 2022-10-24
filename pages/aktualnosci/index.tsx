@@ -7,6 +7,7 @@ const StyledSection = styled.section`
   padding-bottom: 8rem;
   & > .flex-wrapper {
     display: flex;
+    flex-direction: column;
   }
 `;
 

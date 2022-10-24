@@ -40,13 +40,14 @@ export const StyledSection = styled.section`
     li {
       /* Typography for bip and contact */
       h3 {
-        font-size: 28px;
-        line-height: 1.2;
+        font-size: ${({ theme }) => theme.fontSize.text3XL};
+        line-height: ${({ theme }) => theme.lineHeight.text9XL};
         font-weight: 500;
+        margin-bottom: 0.5rem;
       }
       p {
-        font-size: 16px;
-        line-height: 1.5;
+        font-size: ${({ theme }) => theme.fontSize.textBase};
+        line-height: ${({ theme }) => theme.lineHeight.textBase};
       }
 
       & > .flex-wrapper {
@@ -57,11 +58,11 @@ export const StyledSection = styled.section`
           flex-basis: 1rem;
           svg {
             color: ${({ theme }) => theme.color.icons.primary};
-            font-size: 1.5rem;
+            font-size: ${({ theme }) => theme.fontSize.text2XL};
           }
           &--pin {
             svg {
-              font-size: 1.625rem;
+              font-size: ${({ theme }) => theme.fontSize.text2XL};
             }
           }
         }
@@ -76,7 +77,6 @@ export const StyledSection = styled.section`
         position: relative;
         border-top: 1px solid #aaa;
         width: 100%;
-        margin-top: 0.25rem;
         padding-top: 1rem;
         margin-left: 1.75rem;
         @media screen and (min-width: 1400px) {

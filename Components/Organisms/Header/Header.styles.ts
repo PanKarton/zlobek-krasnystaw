@@ -1,4 +1,3 @@
-import { log } from 'console';
 import styled from 'styled-components';
 import { Props } from './Header';
 
@@ -77,7 +76,7 @@ export const StyledHeader = styled.header<Props>`
     font-family: var(--font-primary);
     background-color: ${({ theme }) => theme.color.white};
     padding-block: clamp(1.5rem, 5vw, 2rem);
-    padding-inline: 2rem;
+    padding-inline: 1rem;
 
     @media screen and (min-width: 700px) {
       left: 0;
@@ -95,19 +94,31 @@ export const StyledHeader = styled.header<Props>`
 
     h2 {
       font-weight: 500;
-      font-size: clamp(1.625rem, 5vw, 2.25rem);
+      font-size: ${({ theme }) => theme.fontSize.text3XL};
       .text-pink {
         color: ${({ theme }) => theme.color.text.accentPrimary};
       }
+      @media screen and (min-width: 700px) {
+        font-size: ${({ theme }) => theme.fontSize.text4XL};
+      }
+      @media screen and (min-width: 1000px) {
+        font-size: ${({ theme }) => theme.fontSize.text5XL};
+      }
       @media screen and (min-width: 1440px) {
-        font-size: clamp(2.25rem, 4vw, 5rem);
+        font-size: ${({ theme }) => theme.fontSize.text7XL};
       }
     }
     p {
-      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-size: ${({ theme }) => theme.fontSize.textBase};
+      line-height: ${({ theme }) => theme.lineHeight.textBase};
       font-weight: 500;
-      line-height: 1.4;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      @media screen and (min-width: 700px) {
+        font-size: ${({ theme }) => theme.fontSize.textLG};
+      }
+      @media screen and (min-width: 1440px) {
+        font-size: ${({ theme }) => theme.fontSize.text2XL};
+      }
     }
   }
 

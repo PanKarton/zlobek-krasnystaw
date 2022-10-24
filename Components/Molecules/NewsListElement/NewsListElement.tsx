@@ -5,13 +5,21 @@ import styled from 'styled-components';
 const StyledArticle = styled.article`
   .flex-wrapper {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
+    @media screen and (min-width: 1150px) {
+      flex-direction: row;
+    }
   }
   .news-article__img-wrapper {
     position: relative;
-    width: 400px;
+    width: min(100%, 400px);
     aspect-ratio: 1.61;
     background-color: #aaa;
+    @media screen and (min-width: 1150px) {
+      width: 400px;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -28,7 +36,7 @@ const StyledArticle = styled.article`
     max-width: 40rem;
     .news-article__heading > h3 {
       font-family: inherit;
-      font-size: clamp(1.75rem, 2vw, 1.75rem);
+      font-size: ${({ theme }) => theme.fontSize.text3XL};
       font-weight: 600;
       color: ${({ theme }) => theme.color.text.primary};
       &:hover {
@@ -38,7 +46,7 @@ const StyledArticle = styled.article`
     .news-article__paragraph {
       color: ${({ theme }) => theme.color.text.primary};
       margin-top: 0.25rem;
-      font-size: clamp(1rem, 1.125vw, 1rem);
+      font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
       line-height: 1.4;
     }
@@ -59,7 +67,7 @@ const StyledArticle = styled.article`
         cursor: pointer;
       }
       svg {
-        font-size: 1.5rem;
+        font-size: ${({ theme }) => theme.fontSize.text2XL};
       }
     }
   }

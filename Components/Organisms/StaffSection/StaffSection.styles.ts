@@ -54,7 +54,7 @@ export const StyledSection = styled.section`
   }
 
   /* Floating icons */
-  .floating-icons-wrapper {
+  .floating-icons-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -174,15 +174,6 @@ export const StyledArticle = styled.article`
     @media screen and (min-width: 1000px) {
       align-items: flex-start;
       text-align: left;
-    }
-    h3 {
-      font-size: clamp(1.75rem, 2vw, 2.25rem);
-      font-weight: 600;
-    }
-    p {
-      font-size: clamp(1rem, 1.125vw, 1.125rem);
-      font-weight: 500;
-      line-height: 1.8;
     }
   }
 `;

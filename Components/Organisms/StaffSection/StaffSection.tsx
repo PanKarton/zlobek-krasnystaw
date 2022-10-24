@@ -1,3 +1,5 @@
+import MainSectionHeading from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
+import MainSectionParagraph from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection } from './StaffSection.styles';
 
@@ -6,7 +8,7 @@ const TilesSection = () => {
     <StyledSection>
       <div className="max-width-1440">
         <div className="flex-wrapper">
-          <div className="floating-icons-wrapper">
+          <div className="floating-icons-container">
             <div className="floating-icon-wrapper">
               <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" layout="fill" />
             </div>
@@ -25,12 +27,12 @@ const TilesSection = () => {
           </div>
           <StyledArticle>
             <div className="flex-wrapper">
-              <h3>Nasza kadra</h3>
-              <p>To drużyna doświadczonych specjalistów doskonale rozumiejących potrzeby malucha.</p>
-              <p>
+              <MainSectionHeading>Nasza kadra</MainSectionHeading>
+              <MainSectionParagraph>To drużyna doświadczonych specjalistów doskonale rozumiejących potrzeby malucha.</MainSectionParagraph>
+              <MainSectionParagraph>
                 Skutecznie i z pasją nauczą jak radzić sobie z emocjami, zachęcą do odkrywania świata poprzez zabawę oraz zadbają o przyjazną i
                 bezpieczną atmosferę w grupie.
-              </p>
+              </MainSectionParagraph>
             </div>
           </StyledArticle>
         </div>

@@ -70,22 +70,9 @@ export const StyledArticle = styled.article`
 
   h2 {
     max-width: 400px;
-    font-weight: 600;
-    font-size: clamp(1.75rem, 1.75vw, 2rem);
-    line-height: 1.2;
-    .text-pink {
-      color: ${({ theme }) => theme.color.text.accentPrimary};
-    }
   }
 
   .about-us-paragraph {
-    font-family: var(--font-primary);
-    font-size: clamp(1rem, 1.125vw, 1.25rem);
-    line-height: 1.8;
-    font-weight: 500;
-    &--small {
-      font-size: clamp(1rem, 1.125vw, 1.125rem);
-    }
     @media screen and (min-width: 700px) {
       margin-bottom: 0;
     }

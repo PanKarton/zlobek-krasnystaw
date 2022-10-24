@@ -39,10 +39,6 @@ export const StyledArticle = styled.article`
     justify-content: flex-end;
     text-align: left;
     gap: 1rem;
-    h3 {
-      font-size: clamp(1.75rem, 2vw, 2.25rem);
-      font-weight: 600;
-    }
     p {
       font-size: clamp(1rem, 1.125vw, 1.125rem);
       line-height: 1.8;

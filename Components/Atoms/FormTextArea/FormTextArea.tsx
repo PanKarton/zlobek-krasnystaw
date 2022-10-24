@@ -8,7 +8,8 @@ export const StyledTextArea = styled.textarea`
   padding: 1rem;
   color: ${({ theme }) => theme.color.text.primary};
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.textBase};
+
   font-weight: 500;
   resize: none;
 

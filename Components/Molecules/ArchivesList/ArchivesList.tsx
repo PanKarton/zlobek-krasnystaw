@@ -5,7 +5,7 @@ const StyledWrapper = styled.div`
     font-family: var(--font-primary);
     color: ${({ theme }) => theme.color.text.primary};
     &__heading {
-      font-size: clamp(1.75rem, 2vw, 1.75rem);
+      font-size: ${({ theme }) => theme.fontSize.text3XL};
       font-weight: 600;
     }
     &__list {
@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
     }
 
     &__list-item {
-      font-size: 1.125rem;
+      font-size: ${({ theme }) => theme.fontSize.textLG};
       font-weight: 500;
       position: relative;
       &::before {
@@ -38,7 +38,7 @@ const StyledWrapper = styled.div`
       border: none;
       color: ${({ theme }) => theme.color.text.accentSecondary};
       font-family: inherit;
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 600;
       &:hover {
         cursor: pointer;

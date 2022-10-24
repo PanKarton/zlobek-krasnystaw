@@ -45,7 +45,7 @@ export const StyledWrapper = styled.section`
     right: 0.75rem;
     svg {
       color: ${({ theme }) => theme.color.icons.closeNav};
-      font-size: 2rem;
+      font-size: ${({ theme }) => theme.fontSize.text3XL};
     }
   }
 `;

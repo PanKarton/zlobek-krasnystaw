@@ -8,14 +8,11 @@ import { useForm } from 'react-hook-form';
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const nameInputRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
-  const messageTextAreaRef = useRef<HTMLTextAreaElement>(null);
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitSuccessful, isDirty },
+    formState: { errors, isSubmitSuccessful },
     clearErrors,
   } = useForm<FormValues>({
     defaultValues: {
@@ -25,7 +22,7 @@ const ContactForm = () => {
     },
   });
 
-  const { submitState, onSubmit, clearErrorMessage } = useContactForm(formRef, nameInputRef, emailInputRef, messageTextAreaRef);
+  const { submitState, onSubmit, clearErrorMessage } = useContactForm(formRef);
 
   useEffect(() => {
     if (isSubmitSuccessful) reset();
@@ -71,7 +68,7 @@ const ContactForm = () => {
           className={errors.message ? 'invalid' : ''}
         />
       </label>
-      {submitState.message ? <p className="submit-message">{submitState.message} </p> : null}
+      {submitState.message && <p className="submit-message">{submitState.message} </p>}
       {Object.keys(errors).length > 0 && <p className="error-message">Uzupełnij brakujące pola :)</p>}
       <FormButton type="submit" isLoading={submitState.isLoading} />
     </StyledForm>
