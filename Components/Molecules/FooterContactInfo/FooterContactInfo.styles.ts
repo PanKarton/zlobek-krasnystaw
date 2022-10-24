@@ -48,6 +48,7 @@ export const StyledSection = styled.section`
       p {
         font-size: ${({ theme }) => theme.fontSize.textBase};
         line-height: ${({ theme }) => theme.lineHeight.textBase};
+        font-weight: 500;
       }
 
       & > .flex-wrapper {

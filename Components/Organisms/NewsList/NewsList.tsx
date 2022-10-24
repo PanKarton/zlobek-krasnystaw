@@ -1,12 +1,5 @@
 import NewsListElement from 'Components/Molecules/NewsListElement/NewsListElement';
-import styled from 'styled-components';
-
-const StyledList = styled.ul`
-  flex-grow: 1;
-  & > * + * {
-    margin-top: 2rem;
-  }
-`;
+import { StyledList } from './NewsList.styles';
 
 const NewsList = () => (
   <StyledList>

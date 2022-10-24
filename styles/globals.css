@@ -71,21 +71,6 @@ a {
   }
 }
 
-/* Section heading */
-
-.section-heading {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 600;
-}
-
-@media screen and (min-width: 1550px) {
-  .section-heading {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-}
-
 /* Page loader */
 
 #loader-wrapper {
