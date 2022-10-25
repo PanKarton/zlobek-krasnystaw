@@ -4,13 +4,13 @@ import { StyledList } from './NewsList.styles';
 const NewsList = () => (
   <StyledList>
     <li>
-      <NewsListElement />
+      <NewsListElement postId="postJeden" />
     </li>
     <li>
-      <NewsListElement />
+      <NewsListElement postId="postDwa" />
     </li>
     <li>
-      <NewsListElement />
+      <NewsListElement postId="postTrzy" />
     </li>
   </StyledList>
 );

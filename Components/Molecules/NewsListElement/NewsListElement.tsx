@@ -2,22 +2,26 @@ import Link from 'next/link';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { StyledArticle } from './NewsListElement.styles';
 
-const NewsListElement = () => (
+type Props = {
+  postId: string;
+};
+
+const NewsListElement = ({ postId }: Props) => (
   <StyledArticle className="news-article">
     <div className="flex-wrapper">
-      <Link href="/aktualnosci/post">
+      <Link href={`/aktualnosci/${postId}`}>
         <a>
           <div className="news-article__img-wrapper"></div>
         </a>
       </Link>
       <div className="news-article__lead">
-        <Link href="/aktualnosci/post">
+        <Link href={`/aktualnosci/${postId}`}>
           <a className="news-article__heading">
-            <h3>Wycieczka do Hajduszoboszlo</h3>
+            <h3>Wycieczka do Hajduszoboszlo </h3>
           </a>
         </Link>
         <p className="news-article__paragraph">Krotki paragraf opisujacy po krótce temat posta, lub zawierajacy słowa kluczowe tematyki wpisu. </p>
-        <Link href="/aktualnosci/post">
+        <Link href={`/aktualnosci/${postId}`}>
           <a className="news-article__read-more">
             Czytaj cały post <BiRightArrowAlt />
           </a>
