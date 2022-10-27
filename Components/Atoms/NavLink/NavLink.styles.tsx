@@ -8,7 +8,7 @@ export const StyledNavSpan = styled.span<Props>`
   position: relative;
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.black};
-  font-size: 1.125rem;
+  font-size: ${({ theme }) => theme.fontSize.textLG};
   font-weight: 400;
   text-transform: uppercase;
   padding-block: ${({ hasNarrowHitbox }) => (hasNarrowHitbox ? '0' : '1.5rem')};

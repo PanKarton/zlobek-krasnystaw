@@ -6,6 +6,6 @@ type Props = {
   children: ReactNode;
 };
 
-const AppProvider = ({ children }: Props) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+const AppProvider = ({ children }: Props) => <ThemeProvider theme={theme}>{children} </ThemeProvider>;
 
 export default AppProvider;

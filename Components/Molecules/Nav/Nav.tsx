@@ -29,17 +29,16 @@ const Nav = () => {
             <AiFillClockCircle />
             <span>Poniedziałek - Piątek 6:00 - 16:00</span>
           </div>
+        </div>
+        <div className="nav-contact-info right">
           <div>
             <FaEnvelope />
             <span>Napisz: zlobek.krasnystaw@gmail.pl</span>
           </div>
-        </div>
-        <div className="nav-contact-info right">
           <div>
             <BsFillTelephoneFill />
-            <span>Zadzwoń: 123 456 789 - dyrektor</span>
+            <span>Zadzwoń: 82 576 31 82</span>
           </div>
-          <span>123 456 789 - sektretariat</span>
         </div>
       </div>
       <div className="fb-icon">

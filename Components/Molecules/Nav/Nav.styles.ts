@@ -113,7 +113,7 @@ export const StyledNav = styled.nav`
     }
     .nav-contact-info {
       width: 100%;
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
       color: ${({ theme }) => theme.color.black};
       display: flex;

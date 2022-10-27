@@ -9,7 +9,7 @@ type Props = {
 };
 
 const NavLink = ({ children, direction, hasNarrowHitbox }: Props) => (
-  <Link href={`${direction}`} passHref>
+  <Link href={`/${direction}`} passHref>
     <a>
       <StyledNavSpan hasNarrowHitbox={hasNarrowHitbox}>{children}</StyledNavSpan>
     </a>

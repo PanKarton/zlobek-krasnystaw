@@ -15,7 +15,7 @@ export const StyledForm = styled.form`
     flex-direction: column;
     color: ${({ theme }) => theme.color.text.primary};
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     gap: 0.5rem;
     margin-top: 0.25rem;
@@ -24,7 +24,7 @@ export const StyledForm = styled.form`
   .error-message {
     text-align: center;
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     color: ${({ theme }) => theme.color.text.primary};
   }

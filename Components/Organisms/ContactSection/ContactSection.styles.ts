@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
   .flex-wrapper {
-    padding-block: 4rem;
+    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +18,7 @@ export const StyledSection = styled.section`
     }
     @media screen and (min-width: 1550px) {
       gap: 14.5rem;
-      padding-block: 6rem;
+      padding-bottom: 6rem;
     }
   }
 `;
@@ -43,7 +44,13 @@ export const StyledArticle = styled.article`
             display: block;
             font-family: var(--font-primary);
             color: ${({ theme }) => theme.color.text.primary};
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            font-size: ${({ theme }) => theme.fontSize.textBase};
+            @media screen and (min-width: 700px) {
+              font-size: ${({ theme }) => theme.fontSize.textLG};
+            }
+            @media screen and (min-width: 1150px) {
+              font-size: ${({ theme }) => theme.fontSize.textXL};
+            }
           }
           p + p {
             margin-top: 0.25rem;
@@ -68,12 +75,12 @@ export const StyledContactFormWrapper = styled.div`
     font-family: var(--font-primary);
     width: min(100%, 55rem);
     h3 {
-      font-size: clamp(1.75rem, 2.25vw, 2rem);
+      font-size: ${({ theme }) => theme.fontSize.text4XL};
+      line-height: ${({ theme }) => theme.lineHeight.text2xL};
       font-weight: 500;
-      line-height: 1;
     }
     p {
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
       margin-left: 2px;
       margin-top: 0.25rem;

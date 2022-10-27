@@ -12,7 +12,7 @@ export const StyledSection = styled.section`
     & > .flex-wrapper {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       .description-image-wrapper {
         display: none;
         position: relative;
@@ -27,9 +27,7 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  color: ${({ theme }) => theme.color.text.primary};
-  font-family: var(--font-primary);
-  max-width: 440px;
+  max-width: 500px;
   @media screen and (min-width: 1550px) {
     max-width: 42rem;
   }
@@ -39,15 +37,5 @@ export const StyledArticle = styled.article`
     justify-content: flex-end;
     text-align: left;
     gap: 1rem;
-    h3 {
-      font-size: clamp(1.75rem, 2vw, 2.25rem);
-      font-weight: 600;
-    }
-    p {
-      font-size: clamp(1rem, 1.125vw, 1.125rem);
-      line-height: 1.8;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
   }
 `;

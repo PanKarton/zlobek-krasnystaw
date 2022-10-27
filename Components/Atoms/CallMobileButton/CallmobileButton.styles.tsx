@@ -15,7 +15,7 @@ export const StyledWrapper = styled.button`
     font-family: var(--font-primary);
     font-weight: 400;
     color: ${({ theme }) => theme.color.black};
-    font-size: 1.25rem;
+    font-size: ${({ theme }) => theme.fontSize.textLG};
     &:active {
       color: ${({ theme }) => theme.color.text.accentPrimary};
     }

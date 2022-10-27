@@ -82,14 +82,14 @@ export const StyledFooter = styled.footer`
       gap: 0.5rem;
       font-family: var(--font-primary);
       h2 {
-        font-size: 1.125rem;
+        font-size: ${({ theme }) => theme.fontSize.textLG};
         font-weight: 400;
         color: ${({ theme }) => theme.color.text.accentPrimary};
       }
     }
     .nav-copyrights {
       font-family: var(--font-primary);
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fontSize.textBase};
       .text-pink {
         color: ${({ theme }) => theme.color.text.accentPrimary};
       }

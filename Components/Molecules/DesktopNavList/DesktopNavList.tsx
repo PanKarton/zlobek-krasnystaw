@@ -6,7 +6,7 @@ const DesktopNavList = () => (
   <StyledWrapper>
     <StyledList className="left">
       <li>
-        <NavLink direction="/">O nas</NavLink>
+        <NavLink direction="">O nas</NavLink>
       </li>
       <li>
         <NavLink direction="aktualnosci">Aktualności</NavLink>

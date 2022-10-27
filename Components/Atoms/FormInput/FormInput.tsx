@@ -8,7 +8,7 @@ export const StyledInput = styled.input`
   padding: 1rem;
   color: ${({ theme }) => theme.color.text.primary};
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.textBase};
   border-radius: 3px;
   font-weight: 500;
 

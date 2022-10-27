@@ -44,6 +44,9 @@ a {
 *::after:focus {
   outline: 1px solid #aaa;
 }
+
+/* Max width */
+
 .max-width-1440 {
   width: min(100%, 40rem);
   margin-inline: auto;
@@ -64,6 +67,7 @@ a {
 @media screen and (min-width: 1550px) {
   .max-width-1440 {
     width: 1440px;
+    padding-inline: 0;
   }
 }
 

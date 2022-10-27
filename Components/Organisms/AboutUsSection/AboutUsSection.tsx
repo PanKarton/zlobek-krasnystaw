@@ -1,4 +1,6 @@
 import CircleBorderImage from 'Components/Atoms/CircleBorderImage/CircleBorderImage';
+import MainSectionHeading from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
+import MainSectionParagraph from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
 import SnailIcon from 'Components/Atoms/SnailIcon/SnailIcon';
 import SunImage from 'Components/Atoms/SunImage/SunImage';
 import Image from 'next/image';
@@ -14,24 +16,24 @@ const AboutUsSection = () => (
     </div>
     <div className="flex-wrapper max-width-1440">
       <StyledArticle>
-        <h2>
+        <MainSectionHeading>
           Czego nauczy się z nami <span className="text-pink">Twój maluch?</span>
-        </h2>
-        <p className="about-us-paragraph">
+        </MainSectionHeading>
+        <MainSectionParagraph>
           Przede wszystkim panowania nad emocjami oraz poprawnego życia w społeczeństwie. Ponadto dokładamy wszelkich starań, aby zapewnić:
-        </p>
+        </MainSectionParagraph>
         <ul>
           <li>
             <SnailIcon />
-            <p className="about-us-paragraph  about-us-paragraph--small">Domową i ciepłą atmosferę</p>
+            <MainSectionParagraph>Domową i ciepłą atmosferę</MainSectionParagraph>
           </li>
           <li>
             <SnailIcon />
-            <p className="about-us-paragraph  about-us-paragraph--small">Prawidłowy rozwój psychomotoryczny i emocjonalno-społeczny</p>
+            <MainSectionParagraph>Prawidłowy rozwój psychomotoryczny i emocjonalno-społeczny</MainSectionParagraph>
           </li>
           <li>
             <SnailIcon />
-            <p className="about-us-paragraph  about-us-paragraph--small">Bezpieczną i przyjazną zabawę</p>
+            <MainSectionParagraph>Bezpieczną i przyjazną zabawę</MainSectionParagraph>
           </li>
         </ul>
       </StyledArticle>
