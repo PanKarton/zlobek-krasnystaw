@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-const StyledSection = styled.section`
+export const StyledSection = styled.section`
   padding-bottom: 5rem;
 `;
 
-const StyledArticle = styled.article`
+export const StyledArticle = styled.article`
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -17,8 +17,12 @@ const StyledArticle = styled.article`
   }
   .flex-wrapper {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 2rem;
+    @media screen and (min-width: 700px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
     .img-wrapper {
       background-color: #ddd;
       flex-basis: 35%;
@@ -37,7 +41,6 @@ const StyledArticle = styled.article`
     flex-direction: column;
     gap: 1rem;
     p {
-      font-family: var(--font-primary);
       font-size: ${({ theme }) => theme.fontSize.textBase};
       line-height: ${({ theme }) => theme.lineHeight.textLG};
       font-weight: 500;
@@ -52,40 +55,3 @@ const StyledArticle = styled.article`
     }
   }
 `;
-
-type Props = {
-  articleData: {
-    id: string;
-    title: string;
-    subTitle: string;
-    content: string[];
-    imgUrl?: string;
-    date: {
-      day: string;
-      dayNum: string;
-      month: string;
-      year: string;
-      dateMs: number;
-    };
-  };
-};
-
-const NewsSection = ({ articleData: { title, date, content, imgUrl } }: Props) => (
-  <StyledSection>
-    <div className="flex-wrapper max-width-1440">
-      <StyledArticle>
-        <p className="date">{`${date.day}, ${date.dayNum} ${date.month} ${date.year}`}</p>
-        <div className="flex-wrapper">
-          {imgUrl && <div className="img-wrapper"></div>}
-          <div className="content-wrapper">
-            {content.map((paragraph: string, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-      </StyledArticle>
-    </div>
-  </StyledSection>
-);
-
-export default NewsSection;
