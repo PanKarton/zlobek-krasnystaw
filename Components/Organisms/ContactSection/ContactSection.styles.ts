@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
   .flex-wrapper {
     padding-bottom: 4rem;
     display: flex;

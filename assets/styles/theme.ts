@@ -25,15 +25,7 @@ export const theme = {
       staffSection: '#e8eaed',
       nurserySection: '#79C9EC',
       imageTransparentHover: 'hsla(0, 100%, 100%, 0.1)',
-    }, // ================
-
-    textDarkGray: 'red',
-    textDarkPink: 'royalblue',
-
-    darkerPink: 'yellow',
-    lightTransparentGray: 'green',
-    darkerTransparentGray: 'green', // lightTransparentGray: 'hsla(0, 0%, 0%, 0.25)', // darkerTransparentGray: 'hsla(0, 0%, 0%, 0.45)',
-    transparentGray: 'hsla(0, 0%, 0%, 0.35)', // Description section
+    },
   },
   fontSize: {
     pageHeadingRegular: '100rem',

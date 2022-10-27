@@ -17,7 +17,7 @@ const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
       </div>
       <StyledList>
         <li>
-          <NavLink hasNarrowHitbox direction="/">
+          <NavLink hasNarrowHitbox direction="">
             O nas
           </NavLink>
         </li>

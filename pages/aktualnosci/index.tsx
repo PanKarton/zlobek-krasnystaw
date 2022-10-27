@@ -5,8 +5,9 @@ import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryT
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  padding-bottom: 2rem;
   position: relative;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
   & > .flex-wrapper {
     display: flex;
     flex-direction: column;
