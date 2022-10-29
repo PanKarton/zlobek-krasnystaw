@@ -1,9 +1,11 @@
 import NewsListSection from 'Components/Organisms/NewsListSection/NewsListSection';
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
+import { getEnv } from 'helpers/getEnv';
 
-const News = () => {
+const News = (googleApiKey: string) => {
   return (
     <SecondaryTemplate heading="Nasze nowości">
+      <p>{googleApiKey}</p>
       <NewsListSection />
     </SecondaryTemplate>
   );
@@ -12,10 +14,8 @@ const News = () => {
 export default News;
 
 export async function getStaticProps() {
-  const googleApiKey = process.env.CZESC;
+  const googleApiKey = getEnv(process.env.CZESC);
   console.log(`Google klucz api to =======> ${googleApiKey}`);
-  const testVariable = process.env.TEST_VARIABLE;
-  console.log(`Google klucz api to =======> ${testVariable}`);
   return {
     props: {
       googleApiKey,
