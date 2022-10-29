@@ -4,13 +4,14 @@ import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
+  googleApiKey: string;
 };
 
-const HomeTemplate = ({ children }: Props) => (
+const HomeTemplate = ({ children, googleApiKey }: Props) => (
   <>
     <Header />
     <main id="main-content">{children}</main>
-    <Footer />
+    <Footer googleApiKey={googleApiKey} />
   </>
 );
 
