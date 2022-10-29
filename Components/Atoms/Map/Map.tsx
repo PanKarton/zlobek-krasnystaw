@@ -6,6 +6,8 @@ type Props = {
 };
 
 const Map = ({ googleApiKey }: Props) => {
+  console.log(googleApiKey);
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: googleApiKey,
   });
