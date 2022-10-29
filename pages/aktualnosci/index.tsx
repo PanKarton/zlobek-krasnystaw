@@ -2,12 +2,15 @@ import NewsListSection from 'Components/Organisms/NewsListSection/NewsListSectio
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { getEnv } from 'helpers/getEnv';
 
-const News = (googleApiKey: string) => (
-  <SecondaryTemplate heading="Nasze nowości">
-    <p>{googleApiKey}</p>
-    <NewsListSection />
-  </SecondaryTemplate>
-);
+const News = (props) => {
+  console.log(props);
+
+  return (
+    <SecondaryTemplate heading="Nasze nowości">
+      <NewsListSection />
+    </SecondaryTemplate>
+  );
+};
 
 export default News;
 
