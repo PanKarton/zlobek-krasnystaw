@@ -6,13 +6,12 @@ import { StyledSection } from './NewsListSection.styles';
 
 const NewsListSection = () => (
   <StyledSection>
-    <StarsBackground>
-      <div className="flex-wrapper max-width-1440">
-        <NewsList />
-        <TextButton>Załaduj więcej...</TextButton>
-        <ArchivesList />
-      </div>
-    </StarsBackground>
+    <StarsBackground />
+    <div className="flex-wrapper max-width-1440">
+      <NewsList />
+      <TextButton>Załaduj więcej...</TextButton>
+      <ArchivesList />
+    </div>
   </StyledSection>
 );
 

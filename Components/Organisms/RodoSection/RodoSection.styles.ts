@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
+  position: relative;
   padding-block: 2rem 5rem;
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.text.primary};

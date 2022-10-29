@@ -19,21 +19,20 @@ type Props = {
 };
 const NewsPost = ({ articleData }: Props) => (
   <StyledSection>
-    <StarsBackground>
-      <div className="flex-wrapper max-width-1440">
-        <StyledArticle>
-          <p className="date">{`${articleData.date.day}, ${articleData.date.dayNum} ${articleData.date.month} ${articleData.date.year}`}</p>
-          <div className="flex-wrapper">
-            {articleData.imgUrl && <div className="img-wrapper"></div>}
-            <div className="content-wrapper">
-              {articleData.content.map((paragraph: string, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
+    <StarsBackground />
+    <div className="flex-wrapper max-width-1440">
+      <StyledArticle>
+        <p className="date">{`${articleData.date.day}, ${articleData.date.dayNum} ${articleData.date.month} ${articleData.date.year}`}</p>
+        <div className="flex-wrapper">
+          {articleData.imgUrl && <div className="img-wrapper"></div>}
+          <div className="content-wrapper">
+            {articleData.content.map((paragraph: string, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
           </div>
-        </StyledArticle>
-      </div>
-    </StarsBackground>
+        </div>
+      </StyledArticle>
+    </div>
   </StyledSection>
 );
 
