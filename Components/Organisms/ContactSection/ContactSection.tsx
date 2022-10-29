@@ -15,8 +15,7 @@ const ContactSection = () => (
                   <Image src="/images/contact-icon-phone.svg" alt="ikonka słuchawki telefonu na niebieskim kwiatku" layout="fill" />
                 </div>
                 <div className="content">
-                  <p>123 456 789 - dyrektor</p>
-                  <p>123 456 789 - sekretariat</p>
+                  <p>82 576 31 82 - kontakt telefoniczny</p>
                 </div>
               </div>
             </li>
