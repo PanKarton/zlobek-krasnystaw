@@ -2,7 +2,7 @@ import NewsListSection from 'Components/Organisms/NewsListSection/NewsListSectio
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { getEnv } from 'helpers/getEnv';
 
-const News = (props) => {
+const News = (props: string | undefined) => {
   console.log(props);
 
   return (
