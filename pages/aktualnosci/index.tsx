@@ -12,7 +12,7 @@ const News = () => {
 export default News;
 
 export async function getStaticProps() {
-  const googleApiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const googleApiKey = process.env.CZESC;
   console.log(`Google klucz api to =======> ${googleApiKey}`);
   return {
     props: {
