@@ -1,6 +1,12 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import NewsPost from 'Components/Organisms/NewsPost/NewsPost';
-const News = () => {
+import { getEnv } from 'helpers/getEnv';
+
+type Props = {
+  googleApiKey: string;
+};
+
+const News = ({ googleApiKey }: Props) => {
   const article = {
     id: '3',
     title: 'Tajemniczy post o nie wiem czym',
@@ -21,10 +27,20 @@ const News = () => {
   };
 
   return (
-    <SecondaryTemplate heading={article.title}>
+    <SecondaryTemplate googleApiKey={googleApiKey} heading={article.title}>
       <NewsPost articleData={article} />
     </SecondaryTemplate>
   );
 };
 
 export default News;
+
+export async function getStaticProps() {
+  const googleApiKey = getEnv(process.env.CZESC);
+  console.log(`Google klucz api to =======> ${googleApiKey}`);
+  return {
+    props: {
+      googleApiKey,
+    },
+  };
+}

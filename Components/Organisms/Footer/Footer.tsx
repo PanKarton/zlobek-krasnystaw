@@ -3,13 +3,19 @@ import Map from 'Components/Atoms/Map/Map';
 import FooterContactInfo from 'Components/Molecules/FooterContactInfo/FooterContactInfo';
 import { StyledFooter } from './Footer.styles';
 
-const Footer = () => (
+type Props = {
+  googleApiKey: string;
+};
+
+const Footer = ({ googleApiKey }: Props) => (
   <StyledFooter>
     <div className="flex-wrapper max-width-1440">
       <div className="footer-left">
         <FooterContactInfo />
       </div>
-      <div className="footer-right">{/* <Map /> */}</div>
+      <div className="footer-right">
+        <Map googleApiKey={googleApiKey} />
+      </div>
     </div>
     <section className="nav-copyrights-wrapper ">
       <div className="max-width-1440">

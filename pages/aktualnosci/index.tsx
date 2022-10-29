@@ -8,8 +8,7 @@ type Props = {
 
 const News = ({ googleApiKey }: Props) => {
   return (
-    <SecondaryTemplate heading="Nasze nowości">
-      <p>{googleApiKey}</p>
+    <SecondaryTemplate googleApiKey={googleApiKey} heading="Nasze nowości">
       <NewsListSection />
     </SecondaryTemplate>
   );
