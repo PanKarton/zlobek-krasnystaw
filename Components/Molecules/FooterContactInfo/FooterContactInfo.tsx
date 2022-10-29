@@ -37,6 +37,7 @@ const FooterContactInfo = () => (
           </div>
           <div className="text-wrapper">
             <h3>Kontakt</h3>
+            <p>Zadzwoń:</p>
             <p>tel. 82 576 31 82</p>
           </div>
         </div>
