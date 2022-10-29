@@ -35,6 +35,13 @@ const News = ({ googleApiKey }: Props) => {
 
 export default News;
 
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    fallback: false,
+  };
+}
+
 export async function getStaticProps() {
   const googleApiKey = getEnv(process.env.CZESC);
   console.log(`Google klucz api to =======> ${googleApiKey}`);
