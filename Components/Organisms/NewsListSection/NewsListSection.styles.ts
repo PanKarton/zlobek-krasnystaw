@@ -4,7 +4,7 @@ export const StyledSection = styled.section`
   position: relative;
   margin-top: 4rem;
   padding-bottom: 2rem;
-  & > .flex-wrapper {
+  & > div > .flex-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
