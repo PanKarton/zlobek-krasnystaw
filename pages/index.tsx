@@ -23,8 +23,7 @@ export default function Home({ googleApiKey }: Props) {
 }
 
 export async function getStaticProps() {
-  const googleApiKey = getEnv(process.env.CZESC);
-  console.log(`Google klucz api to =======> ${googleApiKey}`);
+  const googleApiKey = getEnv(process.env.GOOGLE_MAPS_API_KEY);
   return {
     props: {
       googleApiKey,
