@@ -37,7 +37,7 @@ export default News;
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    paths: [{ params: { postId: '1' } }, { params: { postId: '2' } }],
     fallback: false,
   };
 }
