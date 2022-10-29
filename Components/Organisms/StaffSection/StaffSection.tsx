@@ -1,6 +1,6 @@
 import MainSectionHeading from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
 import MainSectionParagraph from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
-import Image from 'next/image';
+import Image from 'next/Image';
 import { StyledArticle, StyledSection } from './StaffSection.styles';
 
 const TilesSection = () => {
