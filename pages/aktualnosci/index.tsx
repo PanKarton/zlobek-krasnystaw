@@ -12,7 +12,7 @@ const News = (googleApiKey: string) => (
 export default News;
 
 export async function getStaticProps() {
-  const googleApiKey = getEnv(process.env.GOOGLE_MAPS_API_KEY);
+  const googleApiKey = process.env.GOOGLE_MAPS_API_KEY;
 
   return {
     props: {
