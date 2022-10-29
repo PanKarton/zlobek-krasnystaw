@@ -5,7 +5,7 @@ import Link from 'next/link';
 const MainLogo = () => (
   <h1>
     <Link href="/" passHref>
-      <a>
+      <a href="!#">
         <div className="logo-img-wrapper">
           <Image src="/images/main-logo.svg" alt="Logo żłobka z niebieską sową" layout="fill" />
         </div>
