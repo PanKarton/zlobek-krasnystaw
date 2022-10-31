@@ -1,13 +1,7 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import NewsPost from 'Components/Organisms/NewsPost/NewsPost';
-import { getEnvVariable } from 'helpers/getEnvVariable';
-import { getEnv } from 'helpers/getEnv';
 
-type Props = {
-  googleApiKey: string;
-};
-
-const News = ({ googleApiKey }: Props) => {
+const NewsArticle = () => {
   const article = {
     id: '3',
     title: 'Tajemniczy post o nie wiem czym',
@@ -28,25 +22,17 @@ const News = ({ googleApiKey }: Props) => {
   };
 
   return (
-    <SecondaryTemplate googleApiKey={googleApiKey} heading={article.title}>
+    <SecondaryTemplate heading={article.title}>
       <NewsPost articleData={article} />
     </SecondaryTemplate>
   );
 };
 
-export default News;
+export default NewsArticle;
 
 export async function getStaticPaths() {
   return {
     paths: [{ params: { postId: '1' } }, { params: { postId: '2' } }],
     fallback: false,
-  };
-}
-
-export async function getStaticProps() {
-  return {
-    props: {
-      googleApiKey: getEnvVariable(process.env.GOOGLE_MAPS_API_KEY),
-    },
   };
 }

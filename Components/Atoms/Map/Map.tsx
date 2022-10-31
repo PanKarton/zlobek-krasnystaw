@@ -1,13 +1,10 @@
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 import React, { useMemo } from 'react';
 
-type Props = {
-  googleApiKey: string;
-};
-
-const Map = ({ googleApiKey }: Props) => {
+const Map = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: googleApiKey,
+    googleMapsApiKey: getEnvVariable(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY),
   });
 
   const coordinates = useMemo(
