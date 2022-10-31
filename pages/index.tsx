@@ -3,6 +3,7 @@ import NurseryDescription from 'Components/Organisms/NurseryDescription/NurseryD
 import OurValues from 'Components/Organisms/OurValues/OurValues';
 import StaffSection from 'Components/Organisms/StaffSection/StaffSection';
 import { getEnv } from 'helpers/getEnv';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 import HomeTemplate from '../Components/Templates/HomeTemplate/HomeTemplate';
 
 type Props = {
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export default function Home({ googleApiKey }: Props) {
+  console.log(googleApiKey);
+
   return (
     <>
       <HomeTemplate googleApiKey={googleApiKey}>
@@ -23,7 +26,15 @@ export default function Home({ googleApiKey }: Props) {
 }
 
 export async function getStaticProps() {
-  const googleApiKey = getEnv(process.env.GOOGLE_MAPS_API_KEY);
+  const nodeEnv = getEnv('NODE_ENV');
+
+  let googleApiKey = '';
+  if (nodeEnv === 'development') {
+    googleApiKey = getEnvVariable(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+  } else if (nodeEnv === 'production') {
+    googleApiKey = getEnvVariable(process.env.GOOGLE_MAPS_API_KEY);
+  }
+
   return {
     props: {
       googleApiKey,

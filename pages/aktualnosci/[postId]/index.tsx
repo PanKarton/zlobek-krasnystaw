@@ -1,5 +1,6 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import NewsPost from 'Components/Organisms/NewsPost/NewsPost';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 import { getEnv } from 'helpers/getEnv';
 
 type Props = {
@@ -43,7 +44,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-  const googleApiKey = getEnv(process.env.GOOGLE_MAPS_API_KEY);
+  const nodeEnv = getEnv('NODE_ENV');
+
+  let googleApiKey = '';
+  if (nodeEnv === 'development') {
+    googleApiKey = getEnvVariable(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+  } else if (nodeEnv === 'production') {
+    googleApiKey = getEnvVariable(process.env.GOOGLE_MAPS_API_KEY);
+  }
+
   return {
     props: {
       googleApiKey,

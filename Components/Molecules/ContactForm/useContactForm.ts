@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { getEnv } from 'helpers/getEnv';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 import React, { useCallback, useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
 
@@ -24,9 +24,9 @@ const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
     try {
       if (formRef.current === null) return;
 
-      const serviceId = getEnv(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID);
-      const templateId = getEnv(process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID);
-      const publicKey = getEnv(process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY);
+      const serviceId = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID);
+      const templateId = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID);
+      const publicKey = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY);
 
       setSubmitState({ isLoading: true, message: '' });
 
