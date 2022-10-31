@@ -18,18 +18,9 @@ const News = ({ googleApiKey }: Props) => {
 export default News;
 
 export async function getStaticProps() {
-  const nodeEnv = getEnv('NODE_ENV');
-
-  let googleApiKey = '';
-  if (nodeEnv === 'development') {
-    googleApiKey = getEnvVariable(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
-  } else if (nodeEnv === 'production') {
-    googleApiKey = getEnvVariable(process.env.GOOGLE_MAPS_API_KEY);
-  }
-
   return {
     props: {
-      googleApiKey,
+      googleApiKey: getEnvVariable(process.env.GOOGLE_MAPS_API_KEY),
     },
   };
 }

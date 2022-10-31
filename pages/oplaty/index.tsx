@@ -4,13 +4,12 @@ import { getEnvVariable } from 'helpers/getEnvVariable';
 
 type Props = {
   googleApiKey: string;
-  value: string;
 };
 
-const Contact = ({ googleApiKey, value }: Props) => (
+const Contact = ({ googleApiKey }: Props) => (
   <SecondaryTemplate googleApiKey={googleApiKey} heading="Informacje o opłatach">
     <section>
-      <p>{value}</p>
+      <p>{googleApiKey}</p>
     </section>
   </SecondaryTemplate>
 );
@@ -18,22 +17,9 @@ const Contact = ({ googleApiKey, value }: Props) => (
 export default Contact;
 
 export async function getStaticProps() {
-  const nodeEnv = getEnv('NODE_ENV');
-
-  let googleApiKey = '';
-  let value = '';
-  if (nodeEnv === 'development') {
-    googleApiKey = getEnvVariable(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
-    value = getEnvVariable(process.env.NEXT_PUBLIC_A);
-  } else if (nodeEnv === 'production') {
-    googleApiKey = getEnvVariable(process.env.GOOGLE_MAPS_API_KEY);
-    value = getEnvVariable(process.env.B);
-  }
-
   return {
     props: {
-      googleApiKey,
-      value,
+      googleApiKey: getEnvVariable(process.env.GOOGLE_MAPS_API_KEY),
     },
   };
 }
