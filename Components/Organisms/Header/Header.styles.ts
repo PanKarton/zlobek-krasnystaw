@@ -48,7 +48,7 @@ export const StyledHeader = styled.header<Props>`
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    /* z-index: 0; */
     overflow: hidden;
     @media screen and (min-width: 700px) {
       left: auto;
@@ -140,12 +140,9 @@ export const StyledHeader = styled.header<Props>`
 
   .bottom-wave-wrapper {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     right: 0;
     aspect-ratio: 17.25;
-    @media screen and (min-width: 700px) {
-      bottom: -2px;
-    }
   }
 `;

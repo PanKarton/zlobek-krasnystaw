@@ -21,7 +21,7 @@ export const StyledNav = styled.nav`
   @media screen and (min-width: 1440px) {
     position: absolute;
     left: 50%;
-    top: 3.5rem;
+    top: 3rem;
     translate: -50% 0;
     max-width: 1440px;
   }

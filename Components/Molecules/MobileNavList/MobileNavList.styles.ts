@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.section`
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   height: 100vh;

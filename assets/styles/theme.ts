@@ -27,6 +27,7 @@ export const theme = {
       nurserySection: '#79C9EC',
       imageTransparentHover: 'hsla(0, 100%, 100%, 0.1)',
     },
+    pageErrorTheme: '#115A78',
   },
   fontSize: {
     pageHeadingRegular: '100rem',
