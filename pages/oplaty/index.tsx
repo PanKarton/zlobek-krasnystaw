@@ -27,7 +27,7 @@ export async function getStaticProps() {
     value = getEnvVariable(process.env.NEXT_PUBLIC_A);
   } else if (nodeEnv === 'production') {
     googleApiKey = getEnvVariable(process.env.GOOGLE_MAPS_API_KEY);
-    value = getEnvVariable(process.env.A);
+    value = getEnvVariable(process.env.B);
   }
 
   return {
