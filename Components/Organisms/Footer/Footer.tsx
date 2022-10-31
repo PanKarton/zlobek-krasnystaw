@@ -9,7 +9,9 @@ const Footer = () => (
       <div className="footer-left">
         <FooterContactInfo />
       </div>
-      <div className="footer-right">{/* <Map /> */}</div>
+      <div className="footer-right">
+        <Map />
+      </div>
     </div>
     <section className="nav-copyrights-wrapper ">
       <div className="max-width-1440">

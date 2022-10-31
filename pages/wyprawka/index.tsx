@@ -1,8 +1,9 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
-const Layette = () => (
+const Recruitment = () => (
   <SecondaryTemplate heading="Wyprawka dla malucha">
     <section></section>
   </SecondaryTemplate>
 );
-export default Layette;
+
+export default Recruitment;

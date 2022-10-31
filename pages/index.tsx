@@ -4,6 +4,10 @@ import OurValues from 'Components/Organisms/OurValues/OurValues';
 import StaffSection from 'Components/Organisms/StaffSection/StaffSection';
 import HomeTemplate from '../Components/Templates/HomeTemplate/HomeTemplate';
 
+type Props = {
+  googleApiKey: string;
+};
+
 export default function Home() {
   return (
     <>

@@ -1,6 +1,7 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import NewsPost from 'Components/Organisms/NewsPost/NewsPost';
-const News = () => {
+
+const NewsArticle = () => {
   const article = {
     id: '3',
     title: 'Tajemniczy post o nie wiem czym',
@@ -27,4 +28,17 @@ const News = () => {
   );
 };
 
-export default News;
+export default NewsArticle;
+
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { postId: '1' } }, { params: { postId: '2' } }],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}

@@ -1,9 +1,9 @@
 import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
-const News = () => (
+const Menu = () => (
   <SecondaryTemplate heading="Jadłospis">
-    <p></p>
+    <section></section>
   </SecondaryTemplate>
 );
 
-export default News;
+export default Menu;

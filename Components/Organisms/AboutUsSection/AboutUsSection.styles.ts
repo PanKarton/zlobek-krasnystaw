@@ -34,7 +34,6 @@ export const StyledSection = styled.section`
         aspect-ratio: 1.16;
         top: 0;
         right: 15%;
-        z-index: 3;
         @media screen and (min-width: 1150px) {
           height: 150px;
         }
