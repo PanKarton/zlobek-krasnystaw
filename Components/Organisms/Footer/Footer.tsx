@@ -1,9 +1,9 @@
-import FbButton from 'Components/Atoms/FbButton/FbButton';
-import Map from 'Components/Atoms/Map/Map';
-import FooterContactInfo from 'Components/Molecules/FooterContactInfo/FooterContactInfo';
+import { FbButton } from 'Components/Atoms/FbButton/FbButton';
+import { Map } from 'Components/Atoms/Map/Map';
+import { FooterContactInfo } from 'Components/Molecules/FooterContactInfo/FooterContactInfo';
 import { StyledFooter } from './Footer.styles';
 
-const Footer = () => (
+export const Footer = () => (
   <StyledFooter>
     <div className="flex-wrapper max-width-1440">
       <div className="footer-left">
@@ -28,5 +28,3 @@ const Footer = () => (
     </section>
   </StyledFooter>
 );
-
-export default Footer;

@@ -1,5 +1,5 @@
-import NewsListSection from 'Components/Organisms/NewsListSection/NewsListSection';
-import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
+import { NewsListSection } from 'Components/Organisms/NewsListSection/NewsListSection';
+import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const News = () => {
   return (
@@ -8,5 +8,4 @@ const News = () => {
     </SecondaryTemplate>
   );
 };
-
 export default News;

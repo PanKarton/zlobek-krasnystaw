@@ -6,6 +6,4 @@ type Props = {
   className?: string;
 };
 
-const TextButton = ({ children, className }: Props) => <StyledButton className={className}>{children}</StyledButton>;
-
-export default TextButton;
+export const TextButton = ({ children, className }: Props) => <StyledButton className={className}>{children}</StyledButton>;

@@ -1,7 +1,7 @@
-import TextButton from 'Components/Atoms/TextButton/TextButton';
+import { TextButton } from 'Components/Atoms/TextButton/TextButton';
 import { StyledWrapper } from './ArchivesList.styles';
 
-const ArchivesList = () => (
+export const ArchivesList = () => (
   <StyledWrapper>
     <div className="archives">
       <h3 className="archives__heading">Archiwum</h3>
@@ -16,5 +16,3 @@ const ArchivesList = () => (
     </div>
   </StyledWrapper>
 );
-
-export default ArchivesList;

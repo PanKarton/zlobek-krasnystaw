@@ -2,7 +2,7 @@ import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import React, { useMemo } from 'react';
 
-const Map = () => {
+export const Map = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: getEnvVariable(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY),
   });
@@ -22,5 +22,3 @@ const Map = () => {
     </GoogleMap>
   );
 };
-
-export default Map;

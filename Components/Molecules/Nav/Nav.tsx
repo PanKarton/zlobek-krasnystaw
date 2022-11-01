@@ -1,16 +1,18 @@
-import MainLogo from 'Components/Atoms/MainLogo/MainLogo';
-import DesktopNavList from '../DesktopNavList/DesktopNavList';
-import MobileNavList from '../MobileNavList/MobileNavList';
+import { MainLogo } from 'Components/Atoms/MainLogo/MainLogo';
+import { DesktopNavList } from '../DesktopNavList/DesktopNavList';
+import { MobileNavList } from '../MobileNavList/MobileNavList';
 import { StyledNav } from './Nav.styles';
-import HamburgerButton from '../../Atoms/HamburgerButton/HamburgerButton';
-import useHamburgerNav from './useHamburgerNav';
+import { HamburgerButton } from '../../Atoms/HamburgerButton/HamburgerButton';
+import { useHamburgerNav } from './useHamburgerNav';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { FaEnvelope } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
-import FbButton from 'Components/Atoms/FbButton/FbButton';
+import { FbButton } from 'Components/Atoms/FbButton/FbButton';
+import { useFetchContactInfo } from 'hooks/useFetchContactInfo';
 
-const Nav = () => {
+export const Nav = () => {
   const { isVisible, handleToggleMenu, handleCloseMenu } = useHamburgerNav();
+  const { openDays, openHours, phoneNumber, email } = useFetchContactInfo();
 
   return (
     <StyledNav>
@@ -27,17 +29,17 @@ const Nav = () => {
         <div className="nav-contact-info left">
           <div>
             <AiFillClockCircle />
-            <span>Poniedziałek - Piątek 6:00 - 16:00</span>
+            <span>{`${openDays} ${openHours.openTime} - ${openHours.closeTime}`}</span>
           </div>
         </div>
         <div className="nav-contact-info right">
           <div>
             <FaEnvelope />
-            <span>Napisz: zlobek.krasnystaw@gmail.pl</span>
+            <span>{`Napisz: ${email}`}</span>
           </div>
           <div>
             <BsFillTelephoneFill />
-            <span>Zadzwoń: 82 576 31 82</span>
+            <span>{`Zadzwoń: ${phoneNumber}`}</span>
           </div>
         </div>
       </div>
@@ -48,5 +50,3 @@ const Nav = () => {
     </StyledNav>
   );
 };
-
-export default Nav;

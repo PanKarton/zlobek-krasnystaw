@@ -1,8 +1,8 @@
-import ErrorPageButton from 'Components/Atoms/ErrorPageButton/ErrorPageButton';
-import StarsBackground from 'Components/Atoms/StarsBackground/StarsBackground';
+import { ErrorPageButton } from 'Components/Atoms/ErrorPageButton/ErrorPageButton';
+import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { StyledArticle, StyledSection } from './ErrorPageSection.styles';
 
-const ErrorPageSection = () => (
+export const ErrorPageSection = () => (
   <StyledSection>
     <StarsBackground />
     <StyledArticle>
@@ -17,5 +17,3 @@ const ErrorPageSection = () => (
     </StyledArticle>
   </StyledSection>
 );
-
-export default ErrorPageSection;

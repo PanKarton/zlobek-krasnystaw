@@ -1,4 +1,4 @@
-import Nav from 'Components/Molecules/Nav/Nav';
+import { Nav } from 'Components/Molecules/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader } from './Header.styles';
 
@@ -6,7 +6,7 @@ export type Props = {
   isSecondary?: boolean;
 };
 
-const Header = ({ isSecondary }: Props) => {
+export const Header = ({ isSecondary }: Props) => {
   const heroImageURL = isSecondary ? '/images/hero-image-secondary.jpg' : '/images/hero-image.jpg';
 
   return (
@@ -34,5 +34,3 @@ const Header = ({ isSecondary }: Props) => {
     </StyledHeader>
   );
 };
-
-export default Header;

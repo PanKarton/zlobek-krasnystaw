@@ -1,4 +1,4 @@
-import StarsBackground from 'Components/Atoms/StarsBackground/StarsBackground';
+import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { StyledArticle, StyledSection } from './NewsPost.styles';
 
 type Props = {
@@ -17,7 +17,7 @@ type Props = {
     };
   };
 };
-const NewsPost = ({ articleData }: Props) => (
+export const NewsPost = ({ articleData }: Props) => (
   <StyledSection>
     <StarsBackground />
     <div className="flex-wrapper max-width-1440">
@@ -35,5 +35,3 @@ const NewsPost = ({ articleData }: Props) => (
     </div>
   </StyledSection>
 );
-
-export default NewsPost;

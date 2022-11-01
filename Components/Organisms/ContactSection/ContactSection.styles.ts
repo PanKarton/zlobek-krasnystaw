@@ -44,6 +44,7 @@ export const StyledArticle = styled.article`
             font-family: var(--font-primary);
             color: ${({ theme }) => theme.color.text.primary};
             font-size: ${({ theme }) => theme.fontSize.textBase};
+            font-weight: 500;
             @media screen and (min-width: 700px) {
               font-size: ${({ theme }) => theme.fontSize.textLG};
             }

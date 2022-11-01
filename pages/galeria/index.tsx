@@ -1,4 +1,4 @@
-import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
+import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const Gallery = () => (
   <SecondaryTemplate heading="Nasze zdjęcia">

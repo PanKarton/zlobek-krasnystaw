@@ -1,8 +1,8 @@
-import DownloadFileAnchor from 'Components/Atoms/DownloadFileAnchor/DownloadFileAnchor';
-import StarsBackground from 'Components/Atoms/StarsBackground/StarsBackground';
+import { DownloadFileAnchor } from 'Components/Atoms/DownloadFileAnchor/DownloadFileAnchor';
+import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { StyledSection } from './RodoSection.styles';
 
-const RodoSection = () => (
+export const RodoSection = () => (
   <StyledSection>
     <StarsBackground />
     <div className="flex-wrapper max-width-1440">
@@ -29,5 +29,3 @@ const RodoSection = () => (
     </div>
   </StyledSection>
 );
-
-export default RodoSection;

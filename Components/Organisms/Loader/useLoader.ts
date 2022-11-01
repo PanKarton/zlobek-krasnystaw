@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useLoader = () => {
+export const useLoader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -19,5 +19,3 @@ const useLoader = () => {
 
   return { isLoading };
 };
-
-export default useLoader;

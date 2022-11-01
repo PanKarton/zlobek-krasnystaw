@@ -13,7 +13,7 @@ export type FormValues = {
   message: string;
 };
 
-const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
+export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
   const [submitState, setSubmitState] = useState<State>({ isLoading: false, message: '' });
 
   const clearErrorMessage = useCallback(() => {
@@ -41,5 +41,3 @@ const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
 
   return { submitState, onSubmit, clearErrorMessage };
 };
-
-export default useContactForm;

@@ -1,6 +1,6 @@
-import useLoader from './useLoader';
+import { useLoader } from './useLoader';
 
-const Loader = () => {
+export const Loader = () => {
   const { isLoading } = useLoader();
 
   return (
@@ -19,4 +19,3 @@ const Loader = () => {
     </>
   );
 };
-export default Loader;

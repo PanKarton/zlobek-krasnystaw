@@ -4,7 +4,6 @@ import { Props } from './Header';
 export const StyledHeader = styled.header<Props>`
   position: relative;
   height: ${({ isSecondary }) => (isSecondary ? '15rem' : '75vh')};
-  margin-top: 3rem;
   overflow: hidden;
 
   @media screen and (min-width: 700px) {
@@ -44,11 +43,10 @@ export const StyledHeader = styled.header<Props>`
 
   .hero-image-wrapper {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    /* z-index: 0; */
     overflow: hidden;
     @media screen and (min-width: 700px) {
       left: auto;
@@ -57,7 +55,7 @@ export const StyledHeader = styled.header<Props>`
       width: ${({ isSecondary }) => (isSecondary ? '100%' : '85%')};
     }
     @media screen and (min-width: 1440px) {
-      top: 6.5rem;
+      top: 6rem;
       span {
         translate: ${({ isSecondary }) => (isSecondary ? '0 -6rem' : '0')};
       }

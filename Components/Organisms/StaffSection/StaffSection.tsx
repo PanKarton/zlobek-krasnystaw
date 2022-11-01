@@ -1,9 +1,9 @@
-import MainSectionHeading from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
-import MainSectionParagraph from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
+import { MainSectionHeading } from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
+import { MainSectionParagraph } from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection } from './StaffSection.styles';
 
-const TilesSection = () => {
+export const StaffSection = () => {
   return (
     <StyledSection>
       <div className="max-width-1440">
@@ -43,4 +43,3 @@ const TilesSection = () => {
     </StyledSection>
   );
 };
-export default TilesSection;

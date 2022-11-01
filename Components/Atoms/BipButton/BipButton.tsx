@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const BipButton = () => (
+export const BipButton = () => (
   <a
     href="https://zmkrasnystaw.bip.lubelskie.pl/index.php?id=6"
     target="_blank"
@@ -12,5 +12,3 @@ const BipButton = () => (
     </div>
   </a>
 );
-
-export default BipButton;

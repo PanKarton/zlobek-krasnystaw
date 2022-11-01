@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BsDownload } from 'react-icons/bs';
-import SuccessCheck from '../SuccessCheck/SuccessCheck';
+import { SuccessCheck } from '../SuccessCheck/SuccessCheck';
 import { StyledAnchor } from './DownloadFileAnchor.styles';
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
   href: string;
 };
 
-const DownloadFileAnchor = ({ children, href }: Props) => {
+export const DownloadFileAnchor = ({ children, href }: Props) => {
   const [isDownloaded, setIsDownloaded] = useState(false);
 
   const handleDownloadCheck = () => setIsDownloaded(true);
@@ -20,5 +20,3 @@ const DownloadFileAnchor = ({ children, href }: Props) => {
     </StyledAnchor>
   );
 };
-
-export default DownloadFileAnchor;

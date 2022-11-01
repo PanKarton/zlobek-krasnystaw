@@ -8,12 +8,10 @@ type Props = {
   hasNarrowHitbox?: boolean;
 };
 
-const NavLink = ({ children, direction, hasNarrowHitbox }: Props) => (
+export const NavLink = ({ children, direction, hasNarrowHitbox }: Props) => (
   <Link href={`/${direction}`} passHref>
     <a href="!#">
       <StyledNavSpan hasNarrowHitbox={hasNarrowHitbox}>{children}</StyledNavSpan>
     </a>
   </Link>
 );
-
-export default NavLink;

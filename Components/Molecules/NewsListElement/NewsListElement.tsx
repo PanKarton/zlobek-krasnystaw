@@ -6,7 +6,7 @@ type Props = {
   postId: string;
 };
 
-const NewsListElement = ({ postId }: Props) => (
+export const NewsListElement = ({ postId }: Props) => (
   <StyledArticle className="news-article">
     <div className="flex-wrapper">
       <Link href={`/aktualnosci/${postId}`}>
@@ -30,5 +30,3 @@ const NewsListElement = ({ postId }: Props) => (
     </div>
   </StyledArticle>
 );
-
-export default NewsListElement;

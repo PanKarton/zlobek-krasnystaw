@@ -5,6 +5,4 @@ type Props = {
   children: ReactNode | string;
 };
 
-const MainSectionParagraph = ({ children }: Props) => <StyledParagraph>{children}</StyledParagraph>;
-
-export default MainSectionParagraph;
+export const MainSectionParagraph = ({ children }: Props) => <StyledParagraph>{children}</StyledParagraph>;

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const MainLogo = () => (
+export const MainLogo = () => (
   <h1>
     <Link href="/" passHref>
       <a href="!#">
@@ -13,5 +13,3 @@ const MainLogo = () => (
     </Link>
   </h1>
 );
-
-export default MainLogo;

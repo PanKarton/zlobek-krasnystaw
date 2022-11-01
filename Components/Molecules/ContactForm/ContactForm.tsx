@@ -1,12 +1,12 @@
 import { StyledInput } from 'Components/Atoms/FormInput/FormInput';
 import { StyledTextArea } from 'Components/Atoms/FormTextArea/FormTextArea';
 import { StyledForm } from './ContactForm.styles';
-import useContactForm, { FormValues } from 'Components/Molecules/ContactForm/useContactForm';
+import { useContactForm, FormValues } from 'Components/Molecules/ContactForm/useContactForm';
 import React, { useEffect, useRef } from 'react';
-import FormButton from 'Components/Atoms/FormButton/FormButton';
+import { FormButton } from 'Components/Atoms/FormButton/FormButton';
 import { useForm } from 'react-hook-form';
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const {
     register,
@@ -74,5 +74,3 @@ const ContactForm = () => {
     </StyledForm>
   );
 };
-
-export default ContactForm;

@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 
-const useHamburgerNav = () => {
+export const useHamburgerNav = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleToggleMenu = useCallback(() => setIsVisible(prevState => !prevState), []);
+  const handleToggleMenu = useCallback(() => setIsVisible((prevState) => !prevState), []);
   const handleCloseMenu = useCallback(() => setIsVisible(false), []);
 
   return {
@@ -12,5 +12,3 @@ const useHamburgerNav = () => {
     handleCloseMenu,
   };
 };
-
-export default useHamburgerNav;

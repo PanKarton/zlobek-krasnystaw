@@ -1,13 +1,13 @@
 import { PageHeading } from 'Components/Atoms/PageHeading/PageHeading';
-import Footer from 'Components/Organisms/Footer/Footer';
-import Header from 'Components/Organisms/Header/Header';
+import { Footer } from 'Components/Organisms/Footer/Footer';
+import { Header } from 'Components/Organisms/Header/Header';
 
 type Props = {
   children: import('react').ReactNode;
   heading?: string;
 };
 
-const SecondaryTemplate = ({ children, heading }: Props) => (
+export const SecondaryTemplate = ({ children, heading }: Props) => (
   <>
     <Header isSecondary />
     <main>
@@ -17,5 +17,3 @@ const SecondaryTemplate = ({ children, heading }: Props) => (
     <Footer />
   </>
 );
-
-export default SecondaryTemplate;

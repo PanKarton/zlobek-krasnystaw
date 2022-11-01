@@ -1,5 +1,5 @@
-import RodoSection from 'Components/Organisms/RodoSection/RodoSection';
-import SecondaryTemplate from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
+import { RodoSection } from 'Components/Organisms/RodoSection/RodoSection';
+import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const Contact = () => (
   <SecondaryTemplate heading="Ochrona danych osobowych">

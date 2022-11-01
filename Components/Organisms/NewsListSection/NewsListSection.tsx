@@ -1,10 +1,10 @@
-import StarsBackground from 'Components/Atoms/StarsBackground/StarsBackground';
-import TextButton from 'Components/Atoms/TextButton/TextButton';
-import ArchivesList from 'Components/Molecules/ArchivesList/ArchivesList';
-import NewsList from 'Components/Organisms/NewsList/NewsList';
+import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
+import { TextButton } from 'Components/Atoms/TextButton/TextButton';
+import { ArchivesList } from 'Components/Molecules/ArchivesList/ArchivesList';
+import { NewsList } from 'Components/Organisms/NewsList/NewsList';
 import { StyledSection } from './NewsListSection.styles';
 
-const NewsListSection = () => (
+export const NewsListSection = () => (
   <StyledSection>
     <StarsBackground />
     <div className="flex-wrapper max-width-1440">
@@ -14,5 +14,3 @@ const NewsListSection = () => (
     </div>
   </StyledSection>
 );
-
-export default NewsListSection;

@@ -5,6 +5,4 @@ type Props = {
   onClick: () => void;
 };
 
-const CloseButton = ({ onClick }: Props) => <IoMdClose onClick={onClick} />;
-
-export default CloseButton;
+export const CloseButton = ({ onClick }: Props) => <IoMdClose onClick={onClick} />;

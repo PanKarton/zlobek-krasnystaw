@@ -1,7 +1,7 @@
-import CloseButton from 'Components/Atoms/CloseButton/CloseButton';
-import FbButton from 'Components/Atoms/FbButton/FbButton';
-import NavLink from 'Components/Atoms/NavLink/NavLink';
-import CallMobileButton from '../../Atoms/CallMobileButton/CallMobileButton';
+import { CloseButton } from 'Components/Atoms/CloseButton/CloseButton';
+import { FbButton } from 'Components/Atoms/FbButton/FbButton';
+import { NavLink } from 'Components/Atoms/NavLink/NavLink';
+import { CallMobileButton } from '../../Atoms/CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   handleCloseMenu: () => void;
 };
 
-const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
+export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
   return (
     <StyledWrapper className={isVisible ? 'visible' : ''}>
       <div className="close-button-wrapper">
@@ -82,5 +82,3 @@ const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
     </StyledWrapper>
   );
 };
-
-export default MobileNavList;

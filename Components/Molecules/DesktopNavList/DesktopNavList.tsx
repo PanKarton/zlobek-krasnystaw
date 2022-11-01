@@ -1,8 +1,8 @@
-import NavLink from 'Components/Atoms/NavLink/NavLink';
+import { NavLink } from 'Components/Atoms/NavLink/NavLink';
 import { StyledNavSpan } from 'Components/Atoms/NavLink/NavLink.styles';
 import { StyledList, StyledWrapper } from './DesktopNavList.styles';
 
-const DesktopNavList = () => (
+export const DesktopNavList = () => (
   <StyledWrapper>
     <StyledList className="left">
       <li>
@@ -55,5 +55,3 @@ const DesktopNavList = () => (
     </StyledList>
   </StyledWrapper>
 );
-
-export default DesktopNavList;
