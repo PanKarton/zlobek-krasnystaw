@@ -36,15 +36,17 @@ export const FooterContactInfo = () => {
           </div>
         </li>
         <li>
-          <div className="flex-wrapper">
-            <div className="icon-wrapper">
-              <BsFillTelephoneFill />
+          <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>
+            <div className="flex-wrapper">
+              <div className="icon-wrapper">
+                <BsFillTelephoneFill />
+              </div>
+              <div className="text-wrapper">
+                <h3>Kontakt</h3>
+                <p>{`tel. ${phoneNumber}`}</p>
+              </div>
             </div>
-            <div className="text-wrapper">
-              <h3>Kontakt</h3>
-              <p>{`tel. ${phoneNumber}`}</p>
-            </div>
-          </div>
+          </a>
         </li>
         <li>
           <section className="nav-bip-wrapper">

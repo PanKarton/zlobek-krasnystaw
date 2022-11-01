@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
-  color: ${({ theme }) => theme.color.text.primary};
   margin-block: 2rem 1.5rem;
   font-family: var(--font-primary);
   width: 18rem;
+  color: ${({ theme }) => theme.color.text.primary};
+
   @media screen and (min-width: 700px) {
     width: 100%;
   }
@@ -15,7 +16,7 @@ export const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 2rem;
     @media screen and (min-width: 700px) {
       flex-direction: row;
       flex-wrap: wrap;
@@ -39,6 +40,9 @@ export const StyledSection = styled.section`
     }
     li {
       /* Typography for bip and contact */
+      a {
+        color: inherit;
+      }
       h3 {
         font-size: ${({ theme }) => theme.fontSize.text3XL};
         line-height: ${({ theme }) => theme.lineHeight.text9XL};
@@ -51,7 +55,7 @@ export const StyledSection = styled.section`
         font-weight: 500;
       }
 
-      & > .flex-wrapper {
+      .flex-wrapper {
         display: flex;
         align-items: baseline;
         gap: 0.5rem;
@@ -78,7 +82,7 @@ export const StyledSection = styled.section`
         position: relative;
         border-top: 1px solid #aaa;
         width: 100%;
-        padding-top: 1rem;
+        padding-top: 2rem;
         margin-left: 1.75rem;
         @media screen and (min-width: 1400px) {
           border: none;

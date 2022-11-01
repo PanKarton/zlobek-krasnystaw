@@ -18,7 +18,9 @@ export const ContactSection = () => {
                   <Image src="/images/contact-icon-phone.svg" alt="ikonka słuchawki telefonu na niebieskim kwiatku" layout="fill" />
                 </div>
                 <div className="content">
-                  <p>{`tel. ${phoneNumber}`}</p>
+                  <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>
+                    <span>{`tel. ${phoneNumber}`}</span>
+                  </a>
                 </div>
               </div>
             </li>

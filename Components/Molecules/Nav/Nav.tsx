@@ -33,13 +33,17 @@ export const Nav = () => {
           </div>
         </div>
         <div className="nav-contact-info right">
-          <div>
+          <div className="flex-row">
             <FaEnvelope />
             <span>{`Napisz: ${email}`}</span>
           </div>
           <div>
-            <BsFillTelephoneFill />
-            <span>{`Zadzwoń: ${phoneNumber}`}</span>
+            <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>
+              <div className="flex-row">
+                <BsFillTelephoneFill />
+                <span>{`Zadzwoń: ${phoneNumber}`}</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

@@ -39,7 +39,8 @@ export const StyledArticle = styled.article`
           aspect-ratio: 1;
         }
         .content {
-          p {
+          p,
+          span {
             display: block;
             font-family: var(--font-primary);
             color: ${({ theme }) => theme.color.text.primary};

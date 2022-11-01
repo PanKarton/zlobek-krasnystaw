@@ -120,6 +120,9 @@ export const StyledNav = styled.nav`
       align-items: center;
       gap: 3rem;
       padding-bottom: 0.25rem;
+      & a {
+        color: inherit;
+      }
       & svg {
         color: ${({ theme }) => theme.color.icons.primary};
       }
@@ -131,7 +134,7 @@ export const StyledNav = styled.nav`
       &.right {
         right: 0;
       }
-      & > div {
+      & div.flex-row {
         display: flex;
         align-items: center;
         gap: 0.5rem;
