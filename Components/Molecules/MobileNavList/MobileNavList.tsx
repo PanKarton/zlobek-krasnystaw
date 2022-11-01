@@ -58,6 +58,11 @@ export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
                 Jadłospis
               </NavLink>
             </li>
+            <li>
+              <NavLink hasNarrowHitbox direction="kadra">
+                Nasz zespół
+              </NavLink>
+            </li>
           </ul>
         </li>
         <li>
