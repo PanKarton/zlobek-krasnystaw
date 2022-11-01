@@ -20,10 +20,10 @@ const RodoSection = () => (
           <DownloadFileAnchor href="/download/odbiór-dziecka.pdf">odbiór-dziecka.pdf (134kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/umowa-z-kontrahentem.pdf">umowa.pdf (159kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href="/download/umowa.pdf">umowa.pdf (159kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/przepisy-prawne.pdf">przepis-prawa.pdf(86kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href="/download/przepis-prawa.pdf">przepis-prawa.pdf(86kb)</DownloadFileAnchor>
         </li>
       </ul>
     </div>

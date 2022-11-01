@@ -37,8 +37,8 @@ const FooterContactInfo = () => (
           </div>
           <div className="text-wrapper">
             <h3>Kontakt</h3>
-            <p>tel. 123 456 789 - dyrektor</p>
-            <p>tel. 123 456 789 - sekretariat</p>
+            <p>tel. 82 576 31 82</p>
+            <p> Sekretariat</p>
           </div>
         </div>
       </li>
