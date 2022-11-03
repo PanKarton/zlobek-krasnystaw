@@ -9,6 +9,7 @@ export const theme = {
       accentPrimary: '#BF3160',
       accentSecondary: '#2D79D6',
       accentSecondaryLightHover: '#5693de',
+      accentTertiary: '#115A78',
     },
     icons: {
       primary: '#FE9FBF',

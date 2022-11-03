@@ -44,6 +44,11 @@ export const DesktopNavList = () => (
               Jadłospis
             </NavLink>
           </li>
+          <li>
+            <NavLink hasNarrowHitbox direction="kadra">
+              Nasz zespół
+            </NavLink>
+          </li>
         </ul>
       </li>
       <li>
