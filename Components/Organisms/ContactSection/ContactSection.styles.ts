@@ -77,7 +77,7 @@ export const StyledContactFormWrapper = styled.div`
     width: min(100%, 55rem);
     h3 {
       font-size: ${({ theme }) => theme.fontSize.text4XL};
-      line-height: ${({ theme }) => theme.lineHeight.text2xL};
+      line-height: ${({ theme }) => theme.lineHeight.text2XL};
       font-weight: 500;
     }
     p {
@@ -85,6 +85,22 @@ export const StyledContactFormWrapper = styled.div`
       font-weight: 500;
       margin-left: 2px;
       margin-top: 0.25rem;
+    }
+  }
+  .information-clause-wrapper {
+    margin-top: 1.5rem;
+    color: ${({ theme }) => theme.color.text.primary};
+    font-family: var(--font-primary);
+    width: min(100%, 55rem);
+    font-weight: 500;
+    h3 {
+      font-size: ${({ theme }) => theme.fontSize.text2XL};
+      font-weight: inherit;
+    }
+    p {
+      font-size: ${({ theme }) => theme.fontSize.textBase};
+      line-height: ${({ theme }) => theme.lineHeight.text2XL};
+      margin-top: 0.5rem;
     }
   }
 `;

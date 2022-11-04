@@ -44,7 +44,7 @@ export const StaffListPageSection = () => {
       <div className="flex-wrapper max-width-1440">
         <StaffList isDirector heading="Dyrektorzy" staffArray={directorsData} />
         <div className="list-wrapper">
-          <StaffList heading="Pracownicy obsługi" staffArray={serviceWorkersData} />
+          <StaffList heading="Pracownicy administracji i obsługi" staffArray={serviceWorkersData} />
           <p className="description">
             Pracownicy obsługi organizują jadłospis, wydawanie posiłków oraz zaopatrzenie w żywność. Ponadto dbają o czystość oraz stan techniczny
             plackówki, jak i jej wyposażenia, a co najważniejsze - o bezpieczeństwo najmłodszych.
@@ -53,7 +53,7 @@ export const StaffListPageSection = () => {
         <div className="list-wrapper">
           <StaffList heading="Opekunki" staffArray={babysittesData} />
           <p className="description">
-            Nasza załoga towspaniałe i empatyczne panie, których cechą wspólną jest kreatywność i świetne podejście do dzieci. Domowa atmosfera,
+            Nasza załoga to wspaniałe i empatyczne panie, których cechą wspólną jest kreatywność i świetne podejście do dzieci. Domowa atmosfera,
             zabawa i bezpieczeństwo to priotytety naszych opiekunek.
           </p>
         </div>
