@@ -8,6 +8,9 @@ export const StyledSection = styled.section`
   @media screen and (min-width: 1150px) {
     padding-block: 4rem 6rem;
   }
+  @media screen and (min-width: 1550px) {
+    padding-block: 4rem 9rem;
+  }
   .flex-wrapper {
     display: flex;
     flex-direction: column-reverse;
@@ -21,16 +24,25 @@ export const StyledSection = styled.section`
       gap: 10rem;
     }
     ul {
-      width: min(100%, 31rem);
+      width: 100%;
+      @media screen and (min-width: 900px) {
+        width: min(100%, 31rem);
+      }
       li + li {
         margin-top: 1rem;
       }
       li {
         p {
-          /* font-size: ${({ theme }) => theme.fontSize.textLG}; */
+          display: flex;
+          gap: 0.5rem;
           font-size: ${({ theme }) => theme.fontSize.textBase};
           line-height: ${({ theme }) => theme.lineHeight.textBase};
+          @media screen and (min-width: 900px) {
+            font-size: ${({ theme }) => theme.fontSize.textLG};
+          }
           .hour-span {
+            /* Prevents breaklines */
+            white-space: nowrap;
             font-weight: 600;
           }
         }

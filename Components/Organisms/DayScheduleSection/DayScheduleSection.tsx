@@ -14,7 +14,7 @@ export const DayScheduleSection = () => {
           {dayScheduleArray.map((activity, index) => (
             <li key={index}>
               <p>
-                <span className="hour-span">{activity.hours}</span> - {activity.name}
+                <span className="hour-span">{activity.hours}</span> - <span>{activity.name}</span>
               </p>
             </li>
           ))}
