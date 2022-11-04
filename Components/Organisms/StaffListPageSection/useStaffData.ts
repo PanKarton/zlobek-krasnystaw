@@ -12,10 +12,10 @@ export const useStaffData = () => {
     { name: 'Joanna Kaźmierczak', job: 'intendentka' },
     { name: 'Edyta Hawryluk', job: 'kucharka' },
     { name: 'Zbigniew Rokosz', job: 'konserwator' },
-    { name: 'Jadwiga Bartycka', job: 'pracowniczka pralni' },
-    { name: 'Emilia Troć', job: 'pracowniczka prac lekkich' },
-    { name: 'Ewa Rozwałko', job: 'pracowniczka prac lekkich' },
-    { name: 'Honorata Kuc', job: 'pracowniczka prac lekkich' },
+    { name: 'Jadwiga Bartycka', job: 'pracownik pralni' },
+    { name: 'Emilia Troć', job: 'pracownik do prac lekkich' },
+    { name: 'Ewa Rozwałko', job: 'pracownik do prac lekkich' },
+    { name: 'Honorata Kuc', job: 'pracownik do prac lekkich' },
   ];
   const babysittesData = [
     { name: 'Angelika Banach' },
