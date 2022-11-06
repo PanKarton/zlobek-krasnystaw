@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-export const StyledSection = styled.section`
+
+export const StyledWrapper = styled.div`
   font-family: var(--font-primary);
-  position: relative;
-  padding-block: 2rem 4rem;
   color: ${({ theme }) => theme.color.text.primary};
   font-weight: 500;
+  padding-bottom: 4rem;
   @media screen and (min-width: 900px) {
-    padding-block: 2.5rem 5.5rem;
+    padding-bottom: 5.5rem;
   }
 
   .max-width-1440 {

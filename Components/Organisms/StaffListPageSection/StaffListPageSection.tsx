@@ -1,47 +1,14 @@
-import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { StaffList } from 'Components/Molecules/StaffList/StaffList';
-import styled from 'styled-components';
+import { StyledWrapper } from './StaffListPageSection.styles';
 import { useStaffData } from './useStaffData';
-
-const StyledSection = styled.section`
-  position: relative;
-  margin-top: 2rem;
-  padding-block: 1rem 5rem;
-  @media screen and (min-width: 900px) {
-    margin-top: 3rem;
-  }
-  .flex-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    .list-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      p.description {
-        font-family: var(--font-primary);
-        font-size: ${({ theme }) => theme.fontSize.textBase};
-        line-height: ${({ theme }) => theme.lineHeight.textBase};
-        color: ${({ theme }) => theme.color.text.primary};
-        font-weight: 400;
-        letter-spacing: 1px;
-        max-width: 85ch;
-        @media screen and (min-width: 900px) {
-          font-size: ${({ theme }) => theme.fontSize.textLG};
-        }
-      }
-    }
-  }
-`;
 
 export const StaffListPageSection = () => {
   const { babysittesData, serviceWorkersData, directorsData } = useStaffData();
 
   return (
-    <StyledSection>
-      <StarsBackground />
-      <div></div>
-      <div className="flex-wrapper max-width-1440">
+    <SectionWithStars>
+      <StyledWrapper>
         <StaffList isDirector heading="Dyrektorzy" staffArray={directorsData} />
         <div className="list-wrapper">
           <StaffList heading="Pracownicy administracji i obsługi" staffArray={serviceWorkersData} />
@@ -57,7 +24,7 @@ export const StaffListPageSection = () => {
             zabawa i bezpieczeństwo to priotytety naszych opiekunek.
           </p>
         </div>
-      </div>
-    </StyledSection>
+      </StyledWrapper>
+    </SectionWithStars>
   );
 };

@@ -1,11 +1,10 @@
 import { DownloadFileAnchor } from 'Components/Atoms/DownloadFileAnchor/DownloadFileAnchor';
-import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
-import { StyledSection } from './RodoSection.styles';
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import { StyledWrapper } from './RodoSection.styles';
 
 export const RodoSection = () => (
-  <StyledSection>
-    <StarsBackground />
-    <div className="flex-wrapper max-width-1440">
+  <SectionWithStars>
+    <StyledWrapper>
       <p>
         Na podstawie art. 37 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady UE 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony
         osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE
@@ -26,6 +25,6 @@ export const RodoSection = () => (
           <DownloadFileAnchor href="/download/przepis-prawa.pdf">przepis-prawa.pdf(86kb)</DownloadFileAnchor>
         </li>
       </ul>
-    </div>
-  </StyledSection>
+    </StyledWrapper>
+  </SectionWithStars>
 );
