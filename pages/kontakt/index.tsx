@@ -1,4 +1,4 @@
-import { ContactSection } from 'Components/Organisms/ContactSection/ContactSection';
+import { ContactSection } from 'modules/kontakt/ContactSection/ContactSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const Contact = () => (

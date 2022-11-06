@@ -1,4 +1,4 @@
-import { StaffListPageSection } from 'Components/Organisms/StaffListPageSection/StaffListPageSection';
+import { StaffListPageSection } from 'modules/kadra/StaffListPageSection/StaffListPageSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const Staff = () => {

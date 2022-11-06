@@ -1,5 +1,5 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { NewsPost } from 'Components/Organisms/NewsPost/NewsPost';
+import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 
 const NewsArticle = () => {
   const article = {

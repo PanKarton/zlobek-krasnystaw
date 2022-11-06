@@ -1,4 +1,4 @@
-import { RodoSection } from 'Components/Organisms/RodoSection/RodoSection';
+import { RodoSection } from 'modules/rodo/RodoSection/RodoSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const Contact = () => (

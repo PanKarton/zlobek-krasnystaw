@@ -1,4 +1,4 @@
-import { LayetteSection } from 'Components/Organisms/LayetteSection/LayetteSection';
+import { LayetteSection } from 'modules/wyprawka/LayetteSection/LayetteSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const Layette = () => (

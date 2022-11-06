@@ -1,7 +1,7 @@
-import { AboutUsSection } from 'Components/Organisms/AboutUsSection/AboutUsSection';
-import { NurseryDescription } from 'Components/Organisms/NurseryDescription/NurseryDescription';
-import { OurValues } from 'Components/Organisms/OurValues/OurValues';
-import { StaffSection } from 'Components/Organisms/StaffSection/StaffSection';
+import { AboutUsSection } from 'modules/index/AboutUsSection/AboutUsSection';
+import { NurseryDescription } from 'modules/index/NurseryDescription/NurseryDescription';
+import { OurValues } from 'modules/index/OurValues/OurValues';
+import { StaffSection } from 'modules/index/StaffSection/StaffSection';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
 
 export default function Home() {

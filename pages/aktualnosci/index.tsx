@@ -1,4 +1,4 @@
-import { NewsListSection } from 'Components/Organisms/NewsListSection/NewsListSection';
+import { NewsListSection } from 'modules/aktualnosci/NewsListSection/NewsListSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 
 const News = () => {

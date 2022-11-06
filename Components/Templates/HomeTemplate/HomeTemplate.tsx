@@ -1,5 +1,5 @@
-import { Footer } from 'Components/Organisms/Footer/Footer';
-import { Header } from 'Components/Organisms/Header/Header';
+import { Footer } from 'modules/footer/Footer/Footer';
+import { Header } from 'modules/header/Header/Header';
 import { ReactNode } from 'react';
 
 type Props = {
