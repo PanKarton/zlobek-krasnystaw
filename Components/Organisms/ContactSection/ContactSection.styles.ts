@@ -1,24 +1,20 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section`
-  margin-top: 4rem;
-  position: relative;
-  .flex-wrapper {
-    padding-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+export const StyledWrapper = styled.div`
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  @media screen and (min-width: 1150px) {
+    flex-direction: row;
+    justify-content: space-between;
     gap: 5rem;
-    @media screen and (min-width: 1150px) {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 5rem;
-    }
-    @media screen and (min-width: 1550px) {
-      gap: 14.5rem;
-      padding-bottom: 6rem;
-    }
+  }
+  @media screen and (min-width: 1550px) {
+    gap: 14.5rem;
+    padding-bottom: 4rem;
   }
 `;
 

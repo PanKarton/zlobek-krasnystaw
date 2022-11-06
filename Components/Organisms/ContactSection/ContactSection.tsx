@@ -1,15 +1,15 @@
 import { ContactSectionListItem } from 'Components/Atoms/ContactSectionListItem/ContactSectionListItem';
-import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { ContactForm } from 'Components/Molecules/ContactForm/ContactForm';
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { useFetchContactInfo } from 'hooks/useFetchContactInfo';
-import { StyledArticle, StyledContactFormWrapper, StyledSection } from './ContactSection.styles';
+import { StyledArticle, StyledContactFormWrapper, StyledWrapper } from './ContactSection.styles';
 
 export const ContactSection = () => {
   const { email, adress, phoneNumber } = useFetchContactInfo();
 
   return (
-    <StyledSection>
-      <div className="flex-wrapper max-width-1440">
+    <SectionWithStars>
+      <StyledWrapper>
         <StyledArticle>
           <ul>
             <li>
@@ -56,8 +56,7 @@ export const ContactSection = () => {
             </p>
           </div>
         </StyledContactFormWrapper>
-      </div>
-      <StarsBackground />
-    </StyledSection>
+      </StyledWrapper>
+    </SectionWithStars>
   );
 };

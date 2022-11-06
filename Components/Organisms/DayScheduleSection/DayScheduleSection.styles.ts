@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section`
-  position: relative;
-  padding-block: 3rem 4rem;
+export const StyledWrapper = styled.div`
+  padding-bottom: 4rem;
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.text.primary};
   @media screen and (min-width: 1150px) {
-    padding-block: 4rem 6rem;
+    padding-bottom: 6rem;
   }
   @media screen and (min-width: 1550px) {
-    padding-block: 4rem 9rem;
+    padding-bottom: 9rem;
   }
   .flex-wrapper {
     display: flex;

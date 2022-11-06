@@ -1,15 +1,14 @@
 import { CopyToClipBoardWrapper } from 'Components/Atoms/CopyToClipBoardWrapper/CopyToClipBoardWrapper';
-import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
-import { BankAccountData, StyledSection } from './FeesSection.styles';
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import { BankAccountData, StyledWrapper } from './FeesSection.styles';
 import { useFees } from './useFees';
 
 export const FeesSection = () => {
   const { monthlyFee, dailyFoodFee, accountNumber, bankName } = useFees();
 
   return (
-    <StyledSection>
-      <StarsBackground />
-      <div className="max-width-1440">
+    <SectionWithStars>
+      <StyledWrapper>
         <h3>Opłaty związane z pobytem dziecka w żłobku obejmują:</h3>
         <div className="fees-wrapper">
           <ul>
@@ -45,7 +44,7 @@ export const FeesSection = () => {
           </div>
           <p className="deadline-info">Płatności prosimy uiszczać najpóźniej do 25 dnia danego miesiąca.</p>
         </BankAccountData>
-      </div>
-    </StyledSection>
+      </StyledWrapper>
+    </SectionWithStars>
   );
 };

@@ -1,5 +1,5 @@
-import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
-import { StyledArticle, StyledSection } from './NewsPost.styles';
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import { StyledArticle, StyledWrapper } from './NewsPost.styles';
 
 type Props = {
   articleData: {
@@ -18,9 +18,8 @@ type Props = {
   };
 };
 export const NewsPost = ({ articleData }: Props) => (
-  <StyledSection>
-    <StarsBackground />
-    <div className="flex-wrapper max-width-1440">
+  <SectionWithStars>
+    <StyledWrapper>
       <StyledArticle>
         <p className="date">{`${articleData.date.day}, ${articleData.date.dayNum} ${articleData.date.month} ${articleData.date.year}`}</p>
         <div className="flex-wrapper">
@@ -32,6 +31,6 @@ export const NewsPost = ({ articleData }: Props) => (
           </div>
         </div>
       </StyledArticle>
-    </div>
-  </StyledSection>
+    </StyledWrapper>
+  </SectionWithStars>
 );

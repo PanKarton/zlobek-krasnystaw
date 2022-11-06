@@ -1,16 +1,15 @@
-import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { TextButton } from 'Components/Atoms/TextButton/TextButton';
 import { ArchivesList } from 'Components/Molecules/ArchivesList/ArchivesList';
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { NewsList } from 'Components/Organisms/NewsList/NewsList';
-import { StyledSection } from './NewsListSection.styles';
+import { Styledwrapper } from './NewsListSection.styles';
 
 export const NewsListSection = () => (
-  <StyledSection>
-    <StarsBackground />
-    <div className="flex-wrapper max-width-1440">
+  <SectionWithStars>
+    <Styledwrapper>
       <NewsList />
       <TextButton>Załaduj więcej...</TextButton>
       <ArchivesList />
-    </div>
-  </StyledSection>
+    </Styledwrapper>
+  </SectionWithStars>
 );

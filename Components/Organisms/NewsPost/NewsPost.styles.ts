@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-export const StyledSection = styled.section`
+export const StyledWrapper = styled.div`
   padding-bottom: 5rem;
-  position: relative;
 `;
 
 export const StyledArticle = styled.article`

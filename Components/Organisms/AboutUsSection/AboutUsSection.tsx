@@ -2,6 +2,7 @@ import { CircleBorderImage } from 'Components/Atoms/CircleBorderImage/CircleBord
 import { MainSectionHeading } from 'Components/Atoms/MainSectionHeading/MainSectionHeading';
 import { MainSectionParagraph } from 'Components/Atoms/MainSectionParagraph/MainSectionParagraph';
 import { SnailIcon } from 'Components/Atoms/SnailIcon/SnailIcon';
+import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { SunImage } from 'Components/Atoms/SunImage/SunImage';
 import Image from 'next/image';
 import { StyledArticle, StyledSection } from './AboutUsSection.styles';
@@ -11,9 +12,7 @@ export const AboutUsSection = () => (
     <div className="bottom-wave-wrapper">
       <Image src="/images/gray-wave.svg" alt="Szara fala ozdobna" layout="fill" />
     </div>
-    <div className="stars-background-wrapper">
-      <Image src="/images/stars-background.svg" alt="Tło sekcji z szarymi gwiazdami" layout="fill" objectFit="cover" />
-    </div>
+    <StarsBackground />
     <div className="flex-wrapper max-width-1440">
       <StyledArticle>
         <MainSectionHeading>

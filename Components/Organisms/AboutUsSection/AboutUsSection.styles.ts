@@ -2,7 +2,16 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   position: relative;
-
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1.5rem;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(34, 193, 195, 0) 75%);
+  }
   .flex-wrapper {
     display: flex;
     justify-content: center;
