@@ -10,6 +10,7 @@ export const theme = {
       accentSecondary: '#2D79D6',
       accentSecondaryLightHover: '#5693de',
       accentTertiary: '#115A78',
+      accentTertiaryLightHover: '#146d91',
     },
     icons: {
       primary: '#FE9FBF',

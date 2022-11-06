@@ -39,6 +39,10 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+strong {
+  font-weight: 600;
+}
+
 *:focus,
 *::before:focus,
 *::after:focus {

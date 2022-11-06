@@ -1,10 +1,7 @@
+import { CopyToClipBoardWrapper } from 'Components/Atoms/CopyToClipBoardWrapper/CopyToClipBoardWrapper';
 import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
-import styled from 'styled-components';
+import { BankAccountData, StyledSection } from './FeesSection.styles';
 import { useFees } from './useFees';
-
-const StyledSection = styled.section``;
-
-const BankAccountData = styled.div``;
 
 export const FeesSection = () => {
   const { monthlyFee, dailyFoodFee, accountNumber, bankName } = useFees();
@@ -13,7 +10,7 @@ export const FeesSection = () => {
     <StyledSection>
       <StarsBackground />
       <div className="max-width-1440">
-        <h3>Opłaty zwiazane z pobytem dziecka w żłobku obejmują:</h3>
+        <h3>Opłaty związane z pobytem dziecka w żłobku obejmują:</h3>
         <div className="fees-wrapper">
           <ul>
             <li>
@@ -25,7 +22,8 @@ export const FeesSection = () => {
               <p>
                 <strong>{monthlyFee}zł</strong> - czesne za jeden miesiąc
               </p>
-              <li></li>
+            </li>
+            <li>
               <p>
                 <strong>{dailyFoodFee}zł/1 dzień*</strong> - wyżywienie
               </p>
@@ -34,15 +32,16 @@ export const FeesSection = () => {
           <p>* W przypadku nieobecności dziecka opłata za wyżywienie podlega odliczeniu.</p>
         </div>
         <BankAccountData>
-          <p>Tytuł przelewu prosimy uprzejmie napisać wg. podanego wzoru:</p>
-          <p>
+          <p className="transfer-pattern">
+            Tytuł przelewu uprzejmie prosimy napisać wg podanego wzoru: <br />
             <strong>Imię i nazwisko dziecka, grupa</strong>
           </p>
-          <p>
+          <p className="bank-name">
             Bank: <strong>{bankName}</strong>
           </p>
-          <p>Numer konta:</p>
-          <p>Płatności prosimy uiszczać najpóźniej do 25 dnia danego miesiąca.</p>
+          <p className="account-number-label">Numer konta:</p>
+          <CopyToClipBoardWrapper text={accountNumber} />
+          <p className="deadline-info">Płatności prosimy uiszczać najpóźniej do 25 dnia danego miesiąca.</p>
         </BankAccountData>
       </div>
     </StyledSection>
