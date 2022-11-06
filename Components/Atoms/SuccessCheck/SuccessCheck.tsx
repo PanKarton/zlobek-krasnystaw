@@ -1,7 +1,11 @@
 import { StyledWrapper } from './SuccessCheck.styles';
 
-export const SuccessCheck = () => (
-  <StyledWrapper>
+type Props = {
+  color?: string;
+};
+
+export const SuccessCheck = ({ color }: Props) => (
+  <StyledWrapper color={color}>
     <div className="check-icon">
       <span className="icon-line line-tip"></span>
       <span className="icon-line line-long"></span>
