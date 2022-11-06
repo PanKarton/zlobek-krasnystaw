@@ -6,6 +6,7 @@ export const StyledDiv = styled.div`
   width: 100vw;
   bottom: 1rem;
   z-index: -1;
+
   &::after {
     content: '';
     position: absolute;
