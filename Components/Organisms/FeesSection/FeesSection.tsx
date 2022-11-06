@@ -39,8 +39,10 @@ export const FeesSection = () => {
           <p className="bank-name">
             Bank: <strong>{bankName}</strong>
           </p>
-          <p className="account-number-label">Numer konta:</p>
-          <CopyToClipBoardWrapper text={accountNumber} />
+          <div>
+            <p className="account-number-label">Numer konta:</p>
+            <CopyToClipBoardWrapper accountNumber={accountNumber} text={accountNumber} />
+          </div>
           <p className="deadline-info">Płatności prosimy uiszczać najpóźniej do 25 dnia danego miesiąca.</p>
         </BankAccountData>
       </div>

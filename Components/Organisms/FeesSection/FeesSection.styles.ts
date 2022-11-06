@@ -38,12 +38,13 @@ export const StyledSection = styled.section`
       }
     }
     ul {
-      li + li {
-        margin-top: 0.75rem;
-        @media screen and (min-width: 900px) {
-          margin-top: 1rem;
-        }
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      @media screen and (min-width: 900px) {
+        gap: 1rem;
       }
+
       li {
         p {
           font-size: ${({ theme }) => theme.fontSize.Base};
@@ -57,17 +58,11 @@ export const StyledSection = styled.section`
 `;
 
 export const BankAccountData = styled.div`
-  margin-top: 1.5rem;
-  .bank-name {
-    margin-block: 1rem;
-  }
+  margin-top: 2.5rem;
   .transfer-pattern {
     line-height: ${({ theme }) => theme.lineHeight.textLG};
   }
-  .account-number-label {
-    margin-bottom: 0.5rem;
-  }
-  .deadline-info {
+  & > * + * {
     margin-top: 1rem;
   }
 `;
