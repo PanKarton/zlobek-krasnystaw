@@ -4,6 +4,7 @@ export const StyledSection = styled.section`
   position: relative;
   padding-block: 2rem 4rem;
   color: ${({ theme }) => theme.color.text.primary};
+  font-weight: 500;
   @media screen and (min-width: 900px) {
     padding-block: 2.5rem 5.5rem;
   }
@@ -17,13 +18,10 @@ export const StyledSection = styled.section`
   h3 {
     color: ${({ theme }) => theme.color.text.accentTertiary};
     font-size: ${({ theme }) => theme.fontSize.textXL};
-    font-weight: 500;
+    font-weight: inherit;
     @media screen and (min-width: 900px) {
       font-size: ${({ theme }) => theme.fontSize.text2XL};
     }
-  }
-  p {
-    font-weight: 500;
   }
 
   .fees-wrapper {
@@ -61,6 +59,9 @@ export const BankAccountData = styled.div`
   margin-top: 2.5rem;
   .transfer-pattern {
     line-height: ${({ theme }) => theme.lineHeight.textLG};
+  }
+  .account-number-label {
+    margin-bottom: 0.25rem;
   }
   & > * + * {
     margin-top: 1rem;

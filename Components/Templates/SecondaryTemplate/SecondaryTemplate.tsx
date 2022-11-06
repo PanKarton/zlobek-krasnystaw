@@ -1,4 +1,5 @@
 import { PageHeading } from 'Components/Atoms/PageHeading/PageHeading';
+import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { Footer } from 'Components/Organisms/Footer/Footer';
 import { Header } from 'Components/Organisms/Header/Header';
 
