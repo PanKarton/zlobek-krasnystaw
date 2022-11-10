@@ -30,7 +30,7 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
 
       setSubmitState({ isLoading: true, message: '' });
 
-      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+      const x = await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 
       setSubmitState(() => ({ isLoading: false, message: 'Dziękujemy za wiadomość :)' }));
     } catch (e) {
