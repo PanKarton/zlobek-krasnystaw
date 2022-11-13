@@ -1,11 +1,19 @@
 import emailjs from '@emailjs/browser';
 import { getEnvVariable } from 'helpers/getEnvVariable';
-import React, { useCallback, useState } from 'react';
-import { SubmitHandler } from 'react-hook-form';
+import React, { useCallback, useEffect, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 type State =
   | { isLoading: false; message: '' | 'Dziękujemy za wiadomość :)' | 'Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)' }
   | { isLoading: true; message: '' };
+
+type NameTypes =
+  | 'message'
+  | 'from_name'
+  | 'from_email'
+  | ('message' | 'from_name' | 'from_email')[]
+  | readonly ('message' | 'from_name' | 'from_email')[]
+  | undefined;
 
 export type FormValues = {
   from_name: string;
@@ -16,9 +24,32 @@ export type FormValues = {
 export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
   const [submitState, setSubmitState] = useState<State>({ isLoading: false, message: '' });
 
-  const clearErrorMessage = useCallback(() => {
-    setSubmitState(() => ({ isLoading: false, message: '' }));
-  }, []);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitSuccessful },
+    clearErrors,
+  } = useForm<FormValues>({
+    defaultValues: {
+      from_name: '',
+      from_email: '',
+      message: '',
+    },
+  });
+
+  useEffect(() => {
+    if (isSubmitSuccessful) reset();
+  }, [isSubmitSuccessful, reset]);
+
+  const handleClearErorrs = useCallback(
+    (name: NameTypes) => {
+      clearErrors(name);
+
+      setSubmitState(() => ({ isLoading: false, message: '' }));
+    },
+    [clearErrors],
+  );
 
   const onSubmit: SubmitHandler<FormValues> = useCallback(async () => {
     try {
@@ -35,9 +66,18 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
       setSubmitState(() => ({ isLoading: false, message: 'Dziękujemy za wiadomość :)' }));
     } catch (e) {
       setSubmitState(() => ({ isLoading: false, message: 'Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)' }));
-      console.log(e);
     }
   }, [formRef]);
 
-  return { submitState, onSubmit, clearErrorMessage };
+  return {
+    submitState,
+    errors,
+    isSubmitSuccessful,
+    onSubmit,
+    handleClearErorrs,
+    register,
+    handleSubmit,
+    reset,
+    clearErrors,
+  };
 };

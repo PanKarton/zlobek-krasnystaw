@@ -6,69 +6,56 @@ import React, { useEffect, useRef } from 'react';
 import { FormButton } from 'modules/kontakt/FormButton/FormButton';
 import { useForm } from 'react-hook-form';
 
-export const ContactForm = () => {
+type Props = {
+  testOnSubmit?: () => any;
+};
+
+export const ContactForm = ({ testOnSubmit }: Props) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitSuccessful },
-    clearErrors,
-  } = useForm<FormValues>({
-    defaultValues: {
-      from_name: '',
-      from_email: '',
-      message: '',
-    },
-  });
-
-  const { submitState, onSubmit, clearErrorMessage } = useContactForm(formRef);
-
-  useEffect(() => {
-    if (isSubmitSuccessful) reset();
-  }, [isSubmitSuccessful, reset]);
+  const { submitState, errors, isSubmitSuccessful, onSubmit, handleClearErorrs, register, handleSubmit, clearErrors } = useContactForm(formRef);
 
   return (
     <StyledForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="name">
-        Twoje imię:
+      <div className="input-wrapper">
+        <label htmlFor="name">Twoje imię:</label>
         <StyledInput
-          {...register('from_name', { required: true })}
+          {...register('from_name', { required: 'Imię jest wymagane' })}
           id="name"
           type="text"
-          onChange={() => {
-            clearErrors('from_name');
-            clearErrorMessage();
-          }}
+          onChange={() => handleClearErorrs('from_name')}
           className={errors.from_name ? 'invalid' : ''}
+          aria-invalid={errors.from_name ? 'true' : 'false'}
         />
-      </label>
-      <label htmlFor="email">
-        Twój email:
+        {errors.from_name && <p className="error"> {errors.from_name?.message}</p>}
+      </div>
+
+      <div className="input-wrapper">
+        <label htmlFor="email">Twój email:</label>
         <StyledInput
-          {...register('from_email', { required: true })}
+          {...register('from_email', { required: 'Email jest wymagany' })}
           id="email"
           type="email"
-          onChange={() => {
-            clearErrors('from_email');
-            clearErrorMessage();
-          }}
+          onChange={() => handleClearErorrs('from_email')}
           className={errors.from_email ? 'invalid' : ''}
+          aria-invalid={errors.from_email ? 'true' : 'false'}
         />
-      </label>
-      <label htmlFor="message">
-        W czym możemy pomóc?
+        {errors.from_email && <p className="error"> {errors.from_email?.message}</p>}
+      </div>
+
+      <div className="input-wrapper">
+        <label htmlFor="message">W czym możemy pomóc?</label>
         <StyledTextArea
-          {...register('message', { required: true })}
+          {...register('message', { required: 'Wiadomość jest wymagana' })}
           id="message"
-          onChange={() => {
-            clearErrors('message');
-            clearErrorMessage();
-          }}
+          onChange={() => handleClearErorrs('message')}
           className={errors.message ? 'invalid' : ''}
+          aria-invalid={errors.message ? 'true' : 'false'}
         />
-      </label>
-      {submitState.message && <p className="submit-message">{submitState.message} </p>}
+        {errors.message && <p className="error"> {errors.message?.message}</p>}
+      </div>
+
+      {submitState.message && Object.keys(errors).length === 0 ? <p className="submit-message">{submitState.message} </p> : null}
+
       {Object.keys(errors).length > 0 && <p className="error-message">Uzupełnij brakujące pola :)</p>}
       <FormButton type="submit" isLoading={submitState.isLoading} />
     </StyledForm>

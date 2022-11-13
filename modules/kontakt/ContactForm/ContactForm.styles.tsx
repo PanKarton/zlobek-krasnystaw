@@ -4,12 +4,12 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  height: 33rem;
+  /* height: 33rem; */
   width: min(100%, 40rem);
   @media screen and (min-width: 900px) {
     width: 100%;
   }
-  label {
+  div.input-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,12 @@ export const StyledForm = styled.form`
     font-weight: 500;
     gap: 0.5rem;
     margin-top: 0.25rem;
+    .error {
+      /* position: absolute; */
+      /* right: 1rem; */
+      color: red;
+      /* bottom: 1rem; */
+    }
   }
   .submit-message,
   .error-message {
@@ -27,8 +33,5 @@ export const StyledForm = styled.form`
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     color: ${({ theme }) => theme.color.text.primary};
-  }
-  button {
-    margin-top: auto;
   }
 `;
