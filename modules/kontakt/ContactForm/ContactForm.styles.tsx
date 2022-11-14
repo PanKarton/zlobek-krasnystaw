@@ -4,7 +4,6 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* height: 33rem; */
   width: min(100%, 40rem);
   @media screen and (min-width: 900px) {
     width: 100%;
@@ -19,11 +18,8 @@ export const StyledForm = styled.form`
     font-weight: 500;
     gap: 0.5rem;
     margin-top: 0.25rem;
-    .error {
-      /* position: absolute; */
-      /* right: 1rem; */
+    .error-wrapper {
       color: red;
-      /* bottom: 1rem; */
     }
   }
   .submit-message,

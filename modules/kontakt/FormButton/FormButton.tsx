@@ -5,8 +5,13 @@ import { StyledButton } from './FormButton.styles';
 type Props = {
   type: 'submit' | 'reset' | 'button';
   isLoading: boolean;
+  isDisabled: boolean;
 };
 
-export const FormButton = ({ type, isLoading }: Props) => {
-  return <StyledButton type={type}>{isLoading ? <LoadingSpinner /> : 'Wyślij'}</StyledButton>;
+export const FormButton = ({ type, isLoading, isDisabled }: Props) => {
+  return (
+    <StyledButton type={type} disabled={isDisabled}>
+      {isLoading ? <LoadingSpinner /> : 'Wyślij'}
+    </StyledButton>
+  );
 };

@@ -1,63 +1,77 @@
 import { StyledInput } from 'modules/kontakt/FormInput/FormInput';
 import { StyledTextArea } from 'modules/kontakt/FormTextArea/FormTextArea';
 import { StyledForm } from './ContactForm.styles';
-import { useContactForm, FormValues } from 'modules/kontakt/ContactForm/useContactForm';
-import React, { useEffect, useRef } from 'react';
+import { useContactForm } from 'modules/kontakt/ContactForm/useContactForm';
+import React, { useRef } from 'react';
 import { FormButton } from 'modules/kontakt/FormButton/FormButton';
-import { useForm } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
 
-type Props = {
-  testOnSubmit?: () => any;
-};
-
-export const ContactForm = ({ testOnSubmit }: Props) => {
+export const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const { submitState, errors, isSubmitSuccessful, onSubmit, handleClearErorrs, register, handleSubmit, clearErrors } = useContactForm(formRef);
+  const { isSubmitting, errors, submitMessage, onSubmit, register, handleSubmit } = useContactForm(formRef);
 
   return (
     <StyledForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>
       <div className="input-wrapper">
         <label htmlFor="name">Twoje imię:</label>
         <StyledInput
-          {...register('from_name', { required: 'Imię jest wymagane' })}
+          {...register('from_name', {
+            required: 'Imię jest wymagane.',
+            maxLength: {
+              value: 50,
+              message: 'Przekroczono ilość znaków!',
+            },
+          })}
           id="name"
           type="text"
-          onChange={() => handleClearErorrs('from_name')}
           className={errors.from_name ? 'invalid' : ''}
           aria-invalid={errors.from_name ? 'true' : 'false'}
         />
-        {errors.from_name && <p className="error"> {errors.from_name?.message}</p>}
+        <p className="error-wrapper">
+          <ErrorMessage errors={errors} name="from_name" />
+        </p>
       </div>
 
       <div className="input-wrapper">
         <label htmlFor="email">Twój email:</label>
         <StyledInput
-          {...register('from_email', { required: 'Email jest wymagany' })}
+          {...register('from_email', {
+            required: 'Email jest wymagany.',
+            maxLength: {
+              value: 256,
+              message: 'Przekroczono ilość znaków!',
+            },
+          })}
           id="email"
           type="email"
-          onChange={() => handleClearErorrs('from_email')}
           className={errors.from_email ? 'invalid' : ''}
           aria-invalid={errors.from_email ? 'true' : 'false'}
         />
-        {errors.from_email && <p className="error"> {errors.from_email?.message}</p>}
+        <p className="error-wrapper">
+          <ErrorMessage errors={errors} name="from_email" />
+        </p>
       </div>
 
       <div className="input-wrapper">
         <label htmlFor="message">W czym możemy pomóc?</label>
         <StyledTextArea
-          {...register('message', { required: 'Wiadomość jest wymagana' })}
+          {...register('message', {
+            required: 'Wiadomość jest wymagana.',
+            maxLength: {
+              value: 900,
+              message: 'Przekroczono ilość znaków!',
+            },
+          })}
           id="message"
-          onChange={() => handleClearErorrs('message')}
           className={errors.message ? 'invalid' : ''}
           aria-invalid={errors.message ? 'true' : 'false'}
         />
-        {errors.message && <p className="error"> {errors.message?.message}</p>}
+        <p className="error-wrapper">
+          <ErrorMessage errors={errors} name="message" />
+        </p>
       </div>
-
-      {submitState.message && Object.keys(errors).length === 0 ? <p className="submit-message">{submitState.message} </p> : null}
-
-      {Object.keys(errors).length > 0 && <p className="error-message">Uzupełnij brakujące pola :)</p>}
-      <FormButton type="submit" isLoading={submitState.isLoading} />
+      <p className="submit-message">{submitMessage} </p>
+      <FormButton type="submit" isLoading={isSubmitting} isDisabled={isSubmitting} />
     </StyledForm>
   );
 };
