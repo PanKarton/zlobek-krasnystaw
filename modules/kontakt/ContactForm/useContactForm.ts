@@ -9,6 +9,8 @@ export type FormValues = {
   message: string;
 };
 
+type State = '' | 'Dziękujemy za wiadomość! :)' | 'Ups! Coś poszło nie tak, spróbuj ponownie! :)';
+
 export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
   const {
     register,
@@ -25,7 +27,7 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
     },
   });
 
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState<State>('');
 
   useEffect(() => {
     if (isSubmitSuccessful) reset();
