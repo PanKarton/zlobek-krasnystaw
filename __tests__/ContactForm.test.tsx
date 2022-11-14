@@ -48,46 +48,64 @@ describe('ContactForm with all scenarios', () => {
 
     await user.click(getSubmitButton());
 
-    await screen.findByText(/Ups, coś poszło nie tak/i);
+    await screen.findByText(/spróbuj ponownie/i);
   });
 
-  it('Displays error when email input is empty', async () => {
+  it('Displays errors after submit click when inputs are empty', async () => {
     const user = userEvent.setup();
-
-    await user.type(getNameInput(), 'test');
-    await user.type(getMessageTextarea(), 'test');
-
     await user.click(getSubmitButton());
 
-    await screen.findByText(/Uzupełnij brakujące pola/i);
+    await screen.findByText(/Imię jest wymagane/i);
     await screen.findByText(/Email jest wymagany/i);
-  });
-  it('Displays error when message textarea is empty', async () => {
-    const user = userEvent.setup();
-
-    await user.type(getNameInput(), 'test');
-    await user.type(getEmailInput(), 'test@test.pl');
-
-    await user.click(getSubmitButton());
-
-    await screen.findByText(/Uzupełnij brakujące pola/i);
     await screen.findByText(/Wiadomość jest wymagana/i);
   });
-
-  it('Displays error when name input is empty', async () => {
+  it('Displays errors after clear inputs', async () => {
     const user = userEvent.setup();
 
-    await user.type(getEmailInput(), 'test@test.pl');
+    await user.type(getNameInput(), 'test');
     await user.type(getMessageTextarea(), 'test');
+    await user.type(getEmailInput(), 'test@test.pl');
 
-    await user.click(getSubmitButton());
+    await user.clear(getNameInput());
+    await user.clear(getMessageTextarea());
+    await user.clear(getEmailInput());
 
-    await screen.findByText(/Uzupełnij brakujące pola/i);
     await screen.findByText(/Imię jest wymagane/i);
+    await screen.findByText(/Email jest wymagany/i);
+    await screen.findByText(/Wiadomość jest wymagana/i);
   });
+  it('Validates name input max length', async () => {
+    const user = userEvent.setup();
+
+    await user.type(getNameInput(), getNLongString(51));
+
+    await screen.findByText(/Przekroczono ilość znaków/i);
+  });
+  it('Validates email input max length', async () => {
+    const user = userEvent.setup();
+
+    await user.type(getNameInput(), getNLongString(257));
+
+    await screen.findByText(/Przekroczono ilość znaków/i);
+  });
+  it('Validates message input max length', async () => {
+    const user = userEvent.setup();
+
+    await user.type(getNameInput(), getNLongString(901));
+
+    await screen.findByText(/Przekroczono ilość znaków/i);
+  }, 70000);
 });
 
 const getNameInput = () => screen.getByRole('textbox', { name: /twoje imię/i });
 const getEmailInput = () => screen.getByRole('textbox', { name: /twój email/i });
 const getMessageTextarea = () => screen.getByRole('textbox', { name: /w czym możemy pomóc/i });
 const getSubmitButton = () => screen.getByRole('button', { name: /wyślij/i });
+
+const getNLongString = (n: number) => {
+  const arr = [];
+  for (let i = 0; i < n; i++) {
+    arr.push('l');
+  }
+  return arr.join('');
+};

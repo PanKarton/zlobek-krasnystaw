@@ -3,18 +3,6 @@ import { getEnvVariable } from 'helpers/getEnvVariable';
 import React, { useCallback, useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-type State =
-  | { isLoading: false; message: '' | 'Dziękujemy za wiadomość :)' | 'Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)' }
-  | { isLoading: true; message: '' };
-
-type NameTypes =
-  | 'message'
-  | 'from_name'
-  | 'from_email'
-  | ('message' | 'from_name' | 'from_email')[]
-  | readonly ('message' | 'from_name' | 'from_email')[]
-  | undefined;
-
 export type FormValues = {
   from_name: string;
   from_email: string;
@@ -22,15 +10,14 @@ export type FormValues = {
 };
 
 export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
-  const [submitState, setSubmitState] = useState<State>({ isLoading: false, message: '' });
-
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitSuccessful },
     clearErrors,
+    formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm<FormValues>({
+    mode: 'onChange',
     defaultValues: {
       from_name: '',
       from_email: '',
@@ -38,18 +25,14 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
     },
   });
 
+  const [submitMessage, setSubmitMessage] = useState('');
+
   useEffect(() => {
     if (isSubmitSuccessful) reset();
+    setTimeout(() => {
+      setSubmitMessage('');
+    }, 4000);
   }, [isSubmitSuccessful, reset]);
-
-  const handleClearErorrs = useCallback(
-    (name: NameTypes) => {
-      clearErrors(name);
-
-      setSubmitState(() => ({ isLoading: false, message: '' }));
-    },
-    [clearErrors],
-  );
 
   const onSubmit: SubmitHandler<FormValues> = useCallback(async () => {
     try {
@@ -59,22 +42,19 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
       const templateId = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID);
       const publicKey = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY);
 
-      setSubmitState({ isLoading: true, message: '' });
-
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 
-      setSubmitState(() => ({ isLoading: false, message: 'Dziękujemy za wiadomość :)' }));
+      setSubmitMessage('Dziękujemy za wiadomość! :)');
     } catch (e) {
-      setSubmitState(() => ({ isLoading: false, message: 'Ups, coś poszło nie tak. Spróbujmy jeszcze raz! :)' }));
+      setSubmitMessage('Ups! Coś poszło nie tak, spróbuj ponownie! :)');
     }
   }, [formRef]);
 
   return {
-    submitState,
     errors,
-    isSubmitSuccessful,
+    isSubmitting,
+    submitMessage,
     onSubmit,
-    handleClearErorrs,
     register,
     handleSubmit,
     reset,
