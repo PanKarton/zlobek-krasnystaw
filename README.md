@@ -1,6 +1,6 @@
 # Żłobek Miejski w Krasnymstawie - business website
-<p align="center">
 Simple website created with [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
 
 The aim of the project was to gain commercial experience in working with a real client and solving their problems, domain and hosting purchase, and real deployment.
 </p>
