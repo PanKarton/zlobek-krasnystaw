@@ -1,8 +1,8 @@
 # Żłobek Miejski w Krasnymstawie - business website
 Simple website created with [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-<p align="center">
 
-The aim of the project was to gain commercial experience in working with a real client and solving their problems, domain and hosting purchase, and real deployment.
+<p align="center">
+My first website for real client with real problems. I gave my best and tried to take care of every element of the site.
 </p>
 
 
@@ -12,33 +12,42 @@ The aim of the project was to gain commercial experience in working with a real 
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- My goal was to create a new and fresh website according to the latest standards
+- Website simplifies communication between parents and the nursery and vice versa
+- The aim of the project was to gain commercial experience in working with a real client and solving their problems, domain and hosting purchase, and real deployment.
+- Website is fully accessible meeting WCAG 2.1 standards
 
 
-## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+## Technologies Used - What's inside?
+- React - version 18.2.0
+- React-DOM - version 18.2.0
+- Next - version 12.3.0
+- TypeScript - version 4.8.4
+- Styled Components - version 5.3.5
+- React Icons - version 4.4.0
+- react-copy-to-clipboard - version 5.1.0
+- React Hook Form - version 7.37.0
+- EmailJS - version 3.7.0
+- @react-google-maps/api - version 2.13.1
+- JEST - version 29.3.0
+- React Testing Library - version 13.4.0
+- dotenv - version 16.0.3
+- ESLint - version 8.23.1
+- Prettier - version 2.7.1
 
 
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- Lazy loaded images
+- Email contact form with validation and error handler
+- Google map
+- Clickable phone number link
+- Button that copies account number to clipboard
 
 
 ## Screenshots
@@ -51,37 +60,38 @@ What are the project requirements/dependencies? Where are they listed? A require
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
+First, install all neccesary dependencies: 
 
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
+```bash
+npm install
+```
 
-`write-your-code-here`
+Then, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
-
+Project is: _in progress_ 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- Replace ORIGINAL and LEGAL images
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
-
-
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+- Gallery groups site 
+- Gallery group folders site
+- Gallery group folder images site
+- Attach CMS and caching for: contact data, adress, staff list, fees, layette and day schedule 
+- Attach CMS for news and gallery
+- Change logo
+- Optional: Add images to parent sites
 
