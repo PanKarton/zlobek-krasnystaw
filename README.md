@@ -1,8 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Żłobek Miejski w Krasnymstawie - business website
 
-## Getting Started
+Simple website created with [Next.js](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+My first website for real client with real problems to solve. I gave my best and tried to take care of every element of the site.
+
+## Table of Contents
+
+- [General Info](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+
+## General Information
+
+- My goal was to create a new and fresh website according to the latest standards
+- Website simplifies communication between parents and the nursery and vice versa
+- The aim of the project was to gain commercial experience in working with a real client and solving their problems, domain and hosting purchase, and real deployment.
+- Website is fully accessible meeting WCAG 2.1 standards
+
+## Technologies Used - What's inside?
+
+- React - version 18.2.0
+- React-DOM - version 18.2.0
+- Next - version 12.3.0
+- TypeScript - version 4.8.4
+- Styled Components - version 5.3.5
+- React Icons - version 4.4.0
+- react-copy-to-clipboard - version 5.1.0
+- React Hook Form - version 7.37.0
+- EmailJS - version 3.7.0
+- @react-google-maps/api - version 2.13.1
+- JEST - version 29.3.0
+- React Testing Library - version 13.4.0
+- dotenv - version 16.0.3
+- ESLint - version 8.23.1
+- Prettier - version 2.7.1
+
+## Features
+
+List the ready features here:
+
+- Lazy loaded images
+- Email contact form with validation and error handler
+- Google map
+- Clickable phone number link
+- Button that copies account number to clipboard
+
+## Screenshots
+
+![Example screenshot](./img/screenshot.png)
+
+## Setup
+
+What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+
+Proceed to describe how to install / setup one's local environment / get started with the project.
+
+First, install all neccesary dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +75,23 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Project Status
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Project is: _in progress_
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Room for Improvement
 
-## Learn More
+Room for improvement:
 
-To learn more about Next.js, take a look at the following resources:
+- Replace ORIGINAL and LEGAL images
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To do:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Recruitment site
+- Gallery groups site
+- Gallery group folders site
+- Gallery group folder images site
+- Attach CMS and caching for: contact data, adress, staff list, fees, layette and day schedule
+- Attach CMS for news and gallery
+- Change logo
+- Optional: Add images to parent sites
