@@ -1,6 +1,7 @@
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import { Map } from 'modules/footer/Map/Map';
 import { FooterContactInfo } from 'modules/footer/FooterContactInfo/FooterContactInfo';
+import Image from 'next/image';
 import { StyledFooter } from './Footer.styles';
 
 export const Footer = () => (
@@ -16,10 +17,12 @@ export const Footer = () => (
     <section className="nav-copyrights-wrapper ">
       <div className="max-width-1440">
         <div className="flex-wrapper">
-          <div className="nav-facebook-wrapper">
-            <FbButton />
-            <h2>Odwiedź nas na Facebooku :)</h2>
-          </div>
+          <FbButton>
+            <div className="nav-facebook-wrapper">
+              <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" layout="fixed" width="36" height="36" />
+              <h2>Odwiedź nas na Facebooku :)</h2>
+            </div>
+          </FbButton>
           <p className="nav-copyrights">
             Copyright 2021 &copy; | <span className="text-pink">Żłobek Miejski w Krasnymstawie</span> | Wszelkie prawa zastrzeżone.
           </p>

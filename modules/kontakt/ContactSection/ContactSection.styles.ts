@@ -95,7 +95,7 @@ export const StyledContactFormWrapper = styled.div`
     }
     p {
       font-size: ${({ theme }) => theme.fontSize.textBase};
-      line-height: ${({ theme }) => theme.lineHeight.text2XL};
+      line-height: ${({ theme }) => theme.lineHeight.text3XL};
       margin-top: 0.5rem;
     }
   }

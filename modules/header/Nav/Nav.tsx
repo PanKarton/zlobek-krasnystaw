@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { MainLogo } from 'modules/header/MainLogo/MainLogo';
 import { DesktopNavList } from '../DesktopNavList/DesktopNavList';
 import { MobileNavList } from '../MobileNavList/MobileNavList';
@@ -27,15 +28,9 @@ export const Nav = () => {
       </div>
       <div className="nav-contact-info-wrapper">
         <div className="nav-contact-info left">
-          <div>
+          <div className="flex-row">
             <AiFillClockCircle />
             <span>{`${openDays} ${openHours.openTime} - ${openHours.closeTime}`}</span>
-          </div>
-        </div>
-        <div className="nav-contact-info right">
-          <div className="flex-row">
-            <FaEnvelope />
-            <span>{`Napisz: ${email}`}</span>
           </div>
           <div>
             <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>
@@ -46,9 +41,17 @@ export const Nav = () => {
             </a>
           </div>
         </div>
+        <div className="nav-contact-info right">
+          <div className="flex-row">
+            <FaEnvelope />
+            <span>{`Napisz: ${email}`}</span>
+          </div>
+        </div>
       </div>
       <div className="fb-icon">
-        <FbButton />
+        <FbButton>
+          <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" layout="fixed" width="36" height="36" />
+        </FbButton>
       </div>
       <MobileNavList isVisible={isVisible} handleCloseMenu={handleCloseMenu} />
     </StyledNav>

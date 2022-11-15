@@ -65,7 +65,7 @@ export const StyledSection = styled.section`
       height: 110px;
       aspect-ratio: 1;
       animation: floater 15s infinite ease-in-out;
-      z-index: 9999;
+      /* z-index: 1; */
       &:nth-child(1) {
         /* Icon C */
         display: none;
@@ -113,8 +113,8 @@ export const StyledSection = styled.section`
         /* Icon diamond */
         display: none;
         height: 150px;
-        right: 5%;
-        bottom: -50%;
+        right: 0%;
+        bottom: -40%;
         animation-delay: 3s;
         scale: 0.7;
         @media screen and (min-width: 1000px) {
@@ -125,7 +125,8 @@ export const StyledSection = styled.section`
         }
         @media screen and (min-width: 1550px) {
           scale: 0.85;
-          bottom: -10%;
+          bottom: -30%;
+          right: 5%;
         }
       }
     }

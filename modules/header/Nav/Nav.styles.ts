@@ -124,12 +124,12 @@ export const StyledNav = styled.nav`
         color: inherit;
       }
       & svg {
+        font-size: 1.25rem;
         color: ${({ theme }) => theme.color.icons.primary};
       }
       &.left {
         left: 0;
-        justify-content: flex-end;
-        gap: 1.125rem;
+        justify-content: center;
       }
       &.right {
         right: 0;
