@@ -6,7 +6,7 @@ export const StyledWrapper = styled.section`
   top: 0;
   height: 100vh;
   width: max(13rem, 80%);
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.primary};
   padding-block: 1.5rem;
   padding-left: 1.5rem;
   border-left: 1px solid #aaa;
@@ -44,7 +44,7 @@ export const StyledWrapper = styled.section`
     top: 1rem;
     right: 0.75rem;
     svg {
-      color: ${({ theme }) => theme.color.icons.closeNav};
+      color: ${({ theme }) => theme.color.contrast};
       font-size: ${({ theme }) => theme.fontSize.text3XL};
     }
   }

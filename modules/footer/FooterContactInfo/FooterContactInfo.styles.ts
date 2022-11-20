@@ -4,7 +4,7 @@ export const StyledSection = styled.section`
   margin-block: 2rem 1.5rem;
   font-family: var(--font-primary);
   width: 18rem;
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.contrast};
 
   @media screen and (min-width: 700px) {
     width: 100%;
@@ -62,7 +62,7 @@ export const StyledSection = styled.section`
         .icon-wrapper {
           flex-basis: 1rem;
           svg {
-            color: ${({ theme }) => theme.color.icons.primary};
+            color: ${({ theme }) => theme.color.accentSecondary};
             font-size: ${({ theme }) => theme.fontSize.text2XL};
           }
           &--pin {

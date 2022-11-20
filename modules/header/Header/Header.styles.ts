@@ -24,7 +24,7 @@ export const StyledHeader = styled.header<Props>`
     left: 0%;
     padding: 0.75rem 1rem;
     border: 1px solid #aaa;
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.primary};
 
     /* Hide button when not focused */
     translate: 0 -100%;
@@ -36,7 +36,7 @@ export const StyledHeader = styled.header<Props>`
     a {
       display: block;
       height: 100%;
-      color: black;
+      color: ${({ theme }) => theme.color.primary};
       font-family: var(--font-primary);
     }
   }
@@ -71,9 +71,9 @@ export const StyledHeader = styled.header<Props>`
     display: ${({ isSecondary }) => (isSecondary ? 'none' : 'block')};
     width: min(calc(100% - 3rem), 30rem);
     text-align: center;
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.contrast};
     font-family: var(--font-primary);
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.primary};
     padding-block: clamp(1.5rem, 5vw, 2rem);
     padding-inline: 1rem;
 
@@ -95,7 +95,7 @@ export const StyledHeader = styled.header<Props>`
       font-weight: 500;
       font-size: ${({ theme }) => theme.fontSize.text3XL};
       .text-pink {
-        color: ${({ theme }) => theme.color.text.accentPrimary};
+        color: ${({ theme }) => theme.color.accentSecondaryDarker};
       }
       @media screen and (min-width: 700px) {
         font-size: ${({ theme }) => theme.fontSize.text4XL};

@@ -9,7 +9,7 @@ export const StyledArticle = styled.article`
   flex-direction: column;
   gap: 2rem;
   font-family: var(--font-primary);
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.contrast};
   p.date {
     font-weight: 500;
     padding-bottom: 0.5rem;

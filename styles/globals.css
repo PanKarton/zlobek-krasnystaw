@@ -49,6 +49,10 @@ strong {
   outline: 1px solid #aaa;
 }
 
+.call-button-hover:hover {
+  color: #555 !important;
+}
+
 /* Max width */
 
 .max-width-1440 {

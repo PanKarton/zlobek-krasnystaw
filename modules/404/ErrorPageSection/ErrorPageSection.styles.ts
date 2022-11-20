@@ -16,7 +16,7 @@ export const StyledArticle = styled.article`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: ${({ theme }) => theme.color.pageErrorTheme};
+    color: ${({ theme }) => theme.color.accentPrimaryDarker};
     font-family: var(--font-primary);
     h2 {
       font-size: ${({ theme }) => theme.fontSize.text8XL};

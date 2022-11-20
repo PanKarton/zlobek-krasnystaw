@@ -4,9 +4,9 @@ export const StyledTextArea = styled.textarea`
   width: 100%;
   height: 14rem;
   border-radius: 0;
-  border: 1px solid ${({ theme }) => theme.color.black};
+  border: 1px solid ${({ theme }) => theme.color.contrast};
   padding: 1rem;
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.contrast};
   font-family: var(--font-primary);
   font-size: ${({ theme }) => theme.fontSize.textBase};
 
@@ -14,8 +14,8 @@ export const StyledTextArea = styled.textarea`
   resize: none;
 
   &.invalid {
-    border: 2px solid ${({ theme }) => theme.color.input.invalidBorder};
+    border: 2px solid ${({ theme }) => theme.color.error};
     outline: none;
-    background-color: ${({ theme }) => theme.color.input.invalidBackground};
+    background-color: ${({ theme }) => theme.color.errorTransparent};
   }
 `;

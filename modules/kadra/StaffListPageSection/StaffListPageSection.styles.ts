@@ -13,7 +13,7 @@ export const StyledWrapper = styled.section`
       font-family: var(--font-primary);
       font-size: ${({ theme }) => theme.fontSize.textBase};
       line-height: ${({ theme }) => theme.lineHeight.textBase};
-      color: ${({ theme }) => theme.color.text.primary};
+      color: ${({ theme }) => theme.color.contast};
       font-weight: 400;
       letter-spacing: 1px;
       max-width: 85ch;

@@ -7,8 +7,8 @@ type Props = {
 export const StyledButton = styled.button<Props>`
   width: 100%;
   height: 3.5rem;
-  background-color: ${({ theme }) => theme.color.button.formSubmit};
-  color: ${({ theme }) => theme.color.text.primary};
+  background-color: ${({ theme }) => theme.color.accentPrimary};
+  color: ${({ theme }) => theme.color.contrast};
   font-size: ${({ theme }) => theme.fontSize.textLG};
   font-family: var(--font-primary);
   font-weight: 500;
@@ -19,7 +19,7 @@ export const StyledButton = styled.button<Props>`
   justify-content: center;
   &:hover {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.color.button.formSubmitHover};
-    color: ${({ theme }) => theme.color.text.primaryLightHover};
+    background-color: ${({ theme }) => theme.color.accentPrimaryLighter};
+    color: ${({ theme }) => theme.color.contrastLightHover};
   }
 `;

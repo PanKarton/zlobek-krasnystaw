@@ -1,6 +1,7 @@
 import { CloseButton } from 'Components/Atoms/CloseButton/CloseButton';
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import { NavLink } from 'modules/header/NavLink/NavLink';
+import Image from 'next/image';
 import { CallMobileButton } from '../CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 
@@ -75,7 +76,9 @@ export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
         </li>
         <li>
           <div className="fb-icon">
-            <FbButton />
+            <FbButton>
+              <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" layout="fixed" width="36" height="36" />
+            </FbButton>
           </div>
         </li>
       </StyledList>

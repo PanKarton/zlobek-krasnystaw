@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.div`
   padding-bottom: 5rem;
   font-family: var(--font-primary);
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.contrast};
   @media screen and (min-width: 900px) {
     padding-bottom: 5rem;
   }

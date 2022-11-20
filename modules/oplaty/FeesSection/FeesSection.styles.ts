@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
   font-family: var(--font-primary);
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.contrast};
   font-weight: 500;
   padding-bottom: 4rem;
   @media screen and (min-width: 900px) {
@@ -16,7 +16,7 @@ export const StyledWrapper = styled.div`
   }
 
   h3 {
-    color: ${({ theme }) => theme.color.text.accentTertiary};
+    color: ${({ theme }) => theme.color.accentPrimaryDarker};
     font-size: ${({ theme }) => theme.fontSize.textXL};
     font-weight: inherit;
     @media screen and (min-width: 900px) {

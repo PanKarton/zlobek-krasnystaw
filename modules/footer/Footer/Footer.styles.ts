@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.primary};
   border-top: 1px solid #aaa;
   & > .flex-wrapper {
     padding-block: 2rem;
@@ -24,7 +24,6 @@ export const StyledFooter = styled.footer`
     .footer-right {
       display: none;
       position: relative;
-      background-color: #303030;
       width: 440px;
       height: 440px;
       &::after,
@@ -84,14 +83,14 @@ export const StyledFooter = styled.footer`
       h2 {
         font-size: ${({ theme }) => theme.fontSize.textLG};
         font-weight: 400;
-        color: ${({ theme }) => theme.color.text.accentPrimary};
+        color: ${({ theme }) => theme.color.accentSecondaryDarker};
       }
     }
     .nav-copyrights {
       font-family: var(--font-primary);
       font-size: ${({ theme }) => theme.fontSize.textBase};
       .text-pink {
-        color: ${({ theme }) => theme.color.text.accentPrimary};
+        color: ${({ theme }) => theme.color.accentSecondaryDarker};
       }
     }
   }
