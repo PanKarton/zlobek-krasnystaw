@@ -4,7 +4,7 @@ export const StyledListWrapper = styled.div`
   font-family: var(--font-primary);
 
   h3 {
-    color: ${({ theme }) => theme.color.text.accentTertiary};
+    color: ${({ theme }) => theme.color.accentPrimaryDarker};
     font-size: ${({ theme }) => theme.fontSize.textXL};
     font-weight: 500;
     @media screen and (min-width: 900px) {
@@ -24,7 +24,7 @@ export const StyledListWrapper = styled.div`
     }
     li {
       p {
-        color: ${({ theme }) => theme.color.text.primary};
+        color: ${({ theme }) => theme.color.contrast};
         font-size: ${({ theme }) => theme.fontSize.textBase};
         font-weight: 500;
         @media screen and (min-width: 900px) {

@@ -7,7 +7,7 @@ type Props = {
 export const StyledNavSpan = styled.span<Props>`
   position: relative;
   font-family: var(--font-primary);
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.contrast};
   font-size: ${({ theme }) => theme.fontSize.textLG};
   font-weight: 400;
   text-transform: uppercase;
@@ -22,13 +22,13 @@ export const StyledNavSpan = styled.span<Props>`
     width: 100%;
     left: 0;
     bottom: ${({ hasNarrowHitbox }) => (hasNarrowHitbox ? '-0.25rem' : '1.25rem')};
-    border-bottom: 3px solid ${({ theme }) => theme.color.text.accentPrimary};
+    border-bottom: 3px solid ${({ theme }) => theme.color.accentSecondaryDarker};
     scale: 0 1;
     translate: -50% 0;
     transition: all 0.25s ease-in-out;
   }
   &:hover {
-    color: ${({ theme }) => theme.color.text.accentPrimary};
+    color: ${({ theme }) => theme.color.accentSecondaryDarker};
   }
   &:hover::after {
     translate: 0 0;

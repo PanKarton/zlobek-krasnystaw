@@ -43,7 +43,7 @@ export const FooterContactInfo = () => {
               </div>
               <div className="text-wrapper">
                 <h3>Kontakt</h3>
-                <p>{`tel. ${phoneNumber}`}</p>
+                <p className="call-button-hover">{`tel. ${phoneNumber}`}</p>
               </div>
             </div>
           </a>

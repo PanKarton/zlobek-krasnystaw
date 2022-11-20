@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f9f8f8cf;
+  background-color: #f9f8f8;
   border-radius: 5px;
   overflow: hidden;
   font-family: inherit;
@@ -27,8 +27,8 @@ export const StyledWrapper = styled.div`
   button {
     border: none;
     padding-block: 0.75rem;
-    background-color: ${({ theme }) => theme.color.text.accentTertiary};
-    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.accentPrimaryDarker};
+    color: ${({ theme }) => theme.color.primary};
     font-weight: 400;
     text-align: center;
     font-size: inherit;
@@ -43,7 +43,7 @@ export const StyledWrapper = styled.div`
     }
     &:hover {
       cursor: pointer;
-      background-color: ${({ theme }) => theme.color.text.accentTertiaryLightHover};
+      background-color: ${({ theme }) => theme.color.accentPrimaryDarkerLightHover};
     }
   }
 `;

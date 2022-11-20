@@ -6,7 +6,7 @@ export const StyledNav = styled.nav`
   height: 5rem;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: ${({ theme }) => theme.color.primary};
   padding-inline: 1.5rem;
   display: flex;
   align-items: center;
@@ -40,13 +40,14 @@ export const StyledNav = styled.nav`
     @media screen and (min-width: 700px) {
       justify-content: flex-start;
       align-items: center;
-      width: 20rem;
-      height: 15rem;
+      /* width: 20rem; */
+      /* height: 15rem; */
       padding: 1rem 0 0 1.5rem;
-      background-color: white;
+      background-color: ${({ theme }) => theme.color.primary};
       clip-path: circle(70% at 25% 0);
       & .logo-img-wrapper {
-        width: 10rem;
+        width: 11rem;
+        translate: 0 1rem;
       }
     }
 
@@ -62,7 +63,7 @@ export const StyledNav = styled.nav`
       z-index: 2;
       clip-path: none;
       background-image: none;
-      background-color: ${({ theme }) => theme.color.white};
+      background-color: ${({ theme }) => theme.color.primary};
       padding: 0;
       justify-content: center;
       align-items: center;
@@ -75,7 +76,7 @@ export const StyledNav = styled.nav`
         translate: -50% -50%;
         width: 110%;
         height: 4.4rem;
-        background-color: white;
+        background-color: ${({ theme }) => theme.color.primary};
       }
     }
   }
@@ -115,7 +116,7 @@ export const StyledNav = styled.nav`
       width: 100%;
       font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
-      color: ${({ theme }) => theme.color.black};
+      color: ${({ theme }) => theme.color.contrast};
       display: flex;
       align-items: center;
       gap: 3rem;
@@ -125,7 +126,7 @@ export const StyledNav = styled.nav`
       }
       & svg {
         font-size: 1.25rem;
-        color: ${({ theme }) => theme.color.icons.primary};
+        color: ${({ theme }) => theme.color.accentSecondary};
       }
       &.left {
         left: 0;
@@ -133,6 +134,7 @@ export const StyledNav = styled.nav`
       }
       &.right {
         right: 0;
+        padding-left: 3rem;
       }
       & div.flex-row {
         display: flex;

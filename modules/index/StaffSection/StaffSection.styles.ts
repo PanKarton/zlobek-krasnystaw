@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   position: relative;
-  background-color: ${({ theme }) => theme.color.background.staffSection};
+  background-color: ${({ theme }) => theme.color.primaryDark};
   padding-top: clamp(5rem, 8vw, 9rem);
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
@@ -38,7 +38,7 @@ export const StyledSection = styled.section`
           position: absolute;
           inset: 0;
           translate: 1rem 1rem;
-          background-color: ${({ theme }) => theme.color.white};
+          background-color: ${({ theme }) => theme.color.primary};
           z-index: 0;
         }
       }

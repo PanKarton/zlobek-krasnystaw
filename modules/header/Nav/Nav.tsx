@@ -36,7 +36,7 @@ export const Nav = () => {
             <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>
               <div className="flex-row">
                 <BsFillTelephoneFill />
-                <span>{`Zadzwoń: ${phoneNumber}`}</span>
+                <span className="call-button-hover">{`Zadzwoń: ${phoneNumber}`}</span>
               </div>
             </a>
           </div>

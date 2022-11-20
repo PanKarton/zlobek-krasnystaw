@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
-  background-color: ${({ theme }) => theme.color.background.nurserySection};
+  background-color: ${({ theme }) => theme.color.accentPrimary};
   padding-top: 5rem;
   /* Padding top + blue wave layer height - 100vw/11.5 - wave height based on its aspect ratio | /3.5 - most blue wave layer aspect.ratio */
   padding-bottom: calc(5rem + calc(100vw / 11.5 / 3.5));

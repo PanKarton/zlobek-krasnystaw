@@ -12,14 +12,14 @@ export const StyledForm = styled.form`
     position: relative;
     display: flex;
     flex-direction: column;
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.contrast};
     font-family: var(--font-primary);
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     gap: 0.5rem;
     margin-top: 0.25rem;
     .error-wrapper {
-      color: red;
+      color: ${({ theme }) => theme.color.error};
     }
   }
   .submit-message,
@@ -28,6 +28,6 @@ export const StyledForm = styled.form`
     font-family: var(--font-primary);
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.contrast};
   }
 `;

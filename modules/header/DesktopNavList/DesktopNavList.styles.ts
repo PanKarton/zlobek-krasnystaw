@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.section`
   display: none;
   height: 4.5rem;
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.primary};
   border-top-left-radius: 9999px;
   border-bottom-left-radius: 9999px;
   border: 1px solid #aaa;
@@ -91,7 +91,7 @@ export const StyledList = styled.ul`
         border-top: none;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        background-color: ${({ theme }) => theme.color.white};
+        background-color: ${({ theme }) => theme.color.primary};
         scale: 1 0;
         z-index: 0;
         translate: 0 -50%;

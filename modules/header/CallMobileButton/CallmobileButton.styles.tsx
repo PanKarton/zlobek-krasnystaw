@@ -9,15 +9,15 @@ export const StyledWrapper = styled.button`
   cursor: pointer;
   &:hover > svg,
   &:hover > a {
-    color: ${({ theme }) => theme.color.text.accentPrimary} !important;
+    color: ${({ theme }) => theme.color.accentSecondaryDarker} !important;
   }
   a {
     font-family: var(--font-primary);
     font-weight: 400;
-    color: ${({ theme }) => theme.color.black};
+    color: ${({ theme }) => theme.color.contrast};
     font-size: ${({ theme }) => theme.fontSize.textLG};
     &:active {
-      color: ${({ theme }) => theme.color.text.accentPrimary};
+      color: ${({ theme }) => theme.color.accentSecondaryDarker};
     }
   }
   svg {

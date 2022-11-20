@@ -9,7 +9,7 @@ export const StyledWrapper = styled.div`
   }
   .archives {
     font-family: var(--font-primary);
-    color: ${({ theme }) => theme.color.text.primary};
+    color: ${({ theme }) => theme.color.contrast};
     &__heading {
       font-size: ${({ theme }) => theme.fontSize.text2XL};
       font-weight: 600;
@@ -41,7 +41,7 @@ export const StyledWrapper = styled.div`
         width: 0.375rem;
         aspect-ratio: 1;
         border-radius: 50%;
-        background-color: ${({ theme }) => theme.color.text.accentPrimary};
+        background-color: ${({ theme }) => theme.color.accentSecondaryDarker};
         @media screen and (min-width: 1550px) {
           display: block;
         }
@@ -55,7 +55,7 @@ export const StyledWrapper = styled.div`
         right: -0.75rem;
         height: 1rem;
         width: 1px;
-        background-color: ${({ theme }) => theme.color.text.primary};
+        background-color: ${({ theme }) => theme.color.contrast};
         @media screen and (min-width: 1550px) {
           display: none;
         }

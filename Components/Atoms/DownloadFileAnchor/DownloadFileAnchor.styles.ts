@@ -7,12 +7,12 @@ export const StyledAnchor = styled.a`
   padding: 0.25rem 2rem 0.25rem 0;
   font-size: ${({ theme }) => theme.fontSize.textBase};
   font-family: var(--font-primary);
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.contrast};
   @media screen and (min-width: 1150px) {
     font-size: ${({ theme }) => theme.fontSize.textXL};
   }
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.color.text.accentSecondary};
+    color: ${({ theme }) => theme.color.accentPrimaryDarker};
   }
 `;

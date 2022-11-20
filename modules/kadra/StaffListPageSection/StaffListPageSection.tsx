@@ -9,7 +9,7 @@ export const StaffListPageSection = () => {
   return (
     <SectionWithStars>
       <StyledWrapper>
-        <StaffList isDirector heading="Dyrektorzy" staffArray={directorsData} />
+        <StaffList isDirector heading={directorsData.length === 0 ? 'Dyrektor' : 'Dyrektorzy'} staffArray={directorsData} />
         <div className="list-wrapper">
           <StaffList heading="Pracownicy administracji i obsługi" staffArray={serviceWorkersData} />
           <p className="description">

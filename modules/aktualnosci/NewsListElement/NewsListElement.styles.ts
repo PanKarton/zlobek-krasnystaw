@@ -22,7 +22,7 @@ export const StyledArticle = styled.article`
       content: '';
       position: absolute;
       inset: 0;
-      background-color: ${({ theme }) => theme.color.background.imageTransparentHover};
+      background-color: hsla(0, 100%, 100%, 0.1);
       opacity: 0;
     }
     &:hover::after {
@@ -36,13 +36,13 @@ export const StyledArticle = styled.article`
       font-family: inherit;
       font-size: ${({ theme }) => theme.fontSize.text3XL};
       font-weight: 600;
-      color: ${({ theme }) => theme.color.text.primary};
+      color: ${({ theme }) => theme.color.contrast};
       &:hover {
-        color: ${({ theme }) => theme.color.text.primaryLightHover};
+        color: ${({ theme }) => theme.color.contrastLightHover};
       }
     }
     .news-article__paragraph {
-      color: ${({ theme }) => theme.color.text.primary};
+      color: ${({ theme }) => theme.color.contrast};
       margin-top: 0.25rem;
       font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
@@ -51,7 +51,7 @@ export const StyledArticle = styled.article`
     a.news-article__read-more {
       margin-top: 0.5rem;
       background-color: transparent;
-      color: ${({ theme }) => theme.color.text.accentSecondary};
+      color: ${({ theme }) => theme.color.accentPrimaryDarker};
       display: flex;
       align-items: center;
       gap: 0.125rem;
@@ -61,7 +61,7 @@ export const StyledArticle = styled.article`
       padding-block: 0.5rem;
       padding-right: 0.5rem;
       &:hover {
-        color: ${({ theme }) => theme.color.text.accentSecondaryLightHover};
+        color: ${({ theme }) => theme.color.accentPrimaryDarkerLightHover};
         cursor: pointer;
       }
       svg {
