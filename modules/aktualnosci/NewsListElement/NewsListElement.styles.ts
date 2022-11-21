@@ -2,71 +2,62 @@ import styled from 'styled-components';
 
 export const StyledArticle = styled.article`
   max-width: 65rem;
+  font-family: var(--font-primary);
+
   .flex-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    @media screen and (min-width: 1150px) {
-      flex-direction: row;
-    }
+    gap: 0.125rem;
   }
-  .news-article__img-wrapper {
-    position: relative;
-    width: min(100%, 400px);
-    aspect-ratio: 1.61;
-    background-color: #aaa;
+
+  .heading > h3 {
+    font-family: inherit;
+    font-size: ${({ theme }) => theme.fontSize.text2XL};
+    font-weight: 600;
+    color: ${({ theme }) => theme.color.contrast};
+    translate: -2px 0;
     @media screen and (min-width: 1150px) {
-      width: 400px;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: hsla(0, 100%, 100%, 0.1);
-      opacity: 0;
-    }
-    &:hover::after {
-      opacity: 1;
-    }
-  }
-  .news-article__lead {
-    font-family: var(--font-primary);
-    max-width: 40rem;
-    .news-article__heading > h3 {
-      font-family: inherit;
       font-size: ${({ theme }) => theme.fontSize.text3XL};
-      font-weight: 600;
-      color: ${({ theme }) => theme.color.contrast};
-      &:hover {
-        color: ${({ theme }) => theme.color.contrastLightHover};
-      }
     }
-    .news-article__paragraph {
-      color: ${({ theme }) => theme.color.contrast};
-      margin-top: 0.25rem;
-      font-size: ${({ theme }) => theme.fontSize.textBase};
-      font-weight: 500;
-      line-height: 1.4;
+    &:hover {
+      color: ${({ theme }) => theme.color.contrastLightHover};
     }
-    a.news-article__read-more {
-      margin-top: 0.5rem;
-      background-color: transparent;
-      color: ${({ theme }) => theme.color.accentPrimaryDarker};
-      display: flex;
-      align-items: center;
-      gap: 0.125rem;
-      font-weight: 800;
-      font-family: inherit;
-      border: none;
-      padding-block: 0.5rem;
-      padding-right: 0.5rem;
-      &:hover {
-        color: ${({ theme }) => theme.color.accentPrimaryDarkerLightHover};
-        cursor: pointer;
-      }
-      svg {
-        font-size: ${({ theme }) => theme.fontSize.text2XL};
-      }
+  }
+
+  p.content,
+  p.date {
+    color: ${({ theme }) => theme.color.contrast};
+    font-size: ${({ theme }) => theme.fontSize.textBase};
+    line-height: 1.4;
+  }
+
+  p.content {
+    margin-block: 0.75rem;
+    max-width: 70ch;
+    /* add ... when --max-lines is reached*/
+    --max-lines: 3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--max-lines);
+    -webkit-box-orient: vertical;
+  }
+
+  a.read-more {
+    background-color: transparent;
+    color: ${({ theme }) => theme.color.accentPrimaryDarker};
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    font-weight: 500;
+    font-family: inherit;
+    border: none;
+    padding-right: 0.5rem;
+    &:hover {
+      color: ${({ theme }) => theme.color.accentPrimaryDarkerLightHover};
+      cursor: pointer;
+    }
+    svg {
+      font-size: ${({ theme }) => theme.fontSize.text2XL};
     }
   }
 `;

@@ -7,26 +7,25 @@ type Props = {
 };
 
 export const NewsListElement = ({ postId }: Props) => (
-  <StyledArticle className="news-article">
+  <StyledArticle>
     <div className="flex-wrapper">
       <Link href={`/aktualnosci/${postId}`}>
-        <a href="!#">
-          <div className="news-article__img-wrapper"></div>
+        <a href="!#" className="heading">
+          <h3>Wycieczka do Hajduszoboszlo </h3>
         </a>
       </Link>
-      <div className="news-article__lead">
-        <Link href={`/aktualnosci/${postId}`}>
-          <a href="!#" className="news-article__heading">
-            <h3>Wycieczka do Hajduszoboszlo </h3>
-          </a>
-        </Link>
-        <p className="news-article__paragraph">Krotki paragraf opisujacy po krótce temat posta, lub zawierajacy słowa kluczowe tematyki wpisu. </p>
-        <Link href={`/aktualnosci/${postId}`}>
-          <a href="!#" className="news-article__read-more">
-            Czytaj cały post <BiRightArrowAlt />
-          </a>
-        </Link>
-      </div>
+      <p className="publishDate">czwartek, 25 lipiec 2022</p>
+      <p className="content">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+        inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+        aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+        dolor sit amet, consectetur{' '}
+      </p>
+      <Link href={`/aktualnosci/${postId}`}>
+        <a href="!#" className="read-more">
+          Czytaj cały post <BiRightArrowAlt />
+        </a>
+      </Link>
     </div>
   </StyledArticle>
 );

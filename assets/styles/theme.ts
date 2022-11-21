@@ -1,42 +1,5 @@
 export const theme = {
   color: {
-    // primary: '#fff',
-    // contast: '#2D2D2F',
-    // error: 'red',
-    // text: {
-    //   primary: '#2D2D2F',
-    //   primaryLightHover: '#3D3D3F',
-    //   primaryDarkHover: '#1D1D1F',
-    // dark pink
-    //   accentPrimary: '#BF3160',
-    // blue
-    //   accentSecondary: '#2D79D6',
-    //   accentSecondaryLightHover: '#5693de',
-    // dark blue
-    //   accentTertiary: '#115A78',
-    //   accentTertiaryLightHover: '#146d91',
-    // },
-    // icons: {
-    //   primary: '#FE9FBF',
-    //   closeNav: '#2D2D2F',
-    // },
-    //= button: {
-    // =  formSubmit: '#79C9EC',
-    // = formSubmitHover: '#89D9FC',
-    // },
-    // input: {
-    //  =  invalidBorder: 'red',
-    //  = invailidBackground: 'hsla(0, 100%, 50%, 0.05)',
-    // },
-    // background: {
-    // =  staffSection: '#e8eaed',
-    // =  nurserySection: '#79C9EC',
-    //   imageTransparentHover: 'hsla(0, 100%, 100%, 0.1)',
-    // },
-    // pageErrorTheme: '#115A78',
-
-    //
-
     primary: '#fff',
     primaryDark: '#e8eaed',
     // Black
@@ -55,6 +18,8 @@ export const theme = {
     // Error
     error: 'red',
     errorTransparent: 'hsla(0, 100%, 50%, 0.05)',
+    // Border dividers
+    borderDivider: '#ccc',
   },
   fontSize: {
     pageHeadingRegular: '100rem',

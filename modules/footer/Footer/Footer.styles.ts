@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.color.primary};
-  border-top: 1px solid #aaa;
+  border-top: 1px solid ${({ theme }) => theme.color.borderDivider};
   & > .flex-wrapper {
     padding-block: 2rem;
     display: flex;
@@ -34,14 +34,14 @@ export const StyledFooter = styled.footer`
         height: 3rem;
       }
       &::before {
-        border-left: 2px solid #aaa;
-        border-top: 2px solid #aaa;
+        border-left: 2px solid ${({ theme }) => theme.color.borderDivider};
+        border-top: 2px solid ${({ theme }) => theme.color.borderDivider};
         top: -1rem;
         left: -1rem;
       }
       &::after {
-        border-right: 2px solid #aaa;
-        border-bottom: 2px solid #aaa;
+        border-right: 2px solid ${({ theme }) => theme.color.borderDivider};
+        border-bottom: 2px solid ${({ theme }) => theme.color.borderDivider};
         bottom: -1rem;
         right: -1rem;
       }
@@ -60,7 +60,7 @@ export const StyledFooter = styled.footer`
     position: relative;
     padding-block: 1.5rem;
     display: flex;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid ${({ theme }) => theme.color.borderDivider};
     align-items: center;
     & > .max-width-1440 {
       .flex-wrapper {

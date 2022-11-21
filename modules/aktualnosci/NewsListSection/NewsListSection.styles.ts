@@ -4,7 +4,7 @@ export const Styledwrapper = styled.div`
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 10rem;
   & > button {
     margin-top: 1rem;
   }
