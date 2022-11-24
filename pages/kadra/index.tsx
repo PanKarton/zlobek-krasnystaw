@@ -10,3 +10,9 @@ const Staff = () => {
 };
 
 export default Staff;
+
+export const getStaticProps = async () => {
+  return {
+    props: {},
+  };
+};

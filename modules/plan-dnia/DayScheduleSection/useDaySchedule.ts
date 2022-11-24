@@ -11,7 +11,7 @@ export const useDaySchedule = () => {
     { hours: '12:00 – 14:00', name: 'leżakowanie' },
     { hours: '14:00 – 14:15', name: 'ubieranie' },
     { hours: '14:15 – 14:40', name: 'podwieczorek' },
-    { hours: '14:40 – 16:00', name: ' zabawy w grupie, odchodzenie dzieci do domu' },
+    { hours: '14:40 – 16:00', name: 'zabawy w grupie, odchodzenie dzieci do domu' },
   ];
 
   return dayScheduleArr;
