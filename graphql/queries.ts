@@ -53,3 +53,19 @@ export const GET_LAYETTE = gql`
     }
   }
 `;
+
+export const GET_DAY_SCHEDULE = gql`
+  query {
+    daySchedule {
+      data {
+        attributes {
+          daySchedule {
+            id
+            hours
+            name
+          }
+        }
+      }
+    }
+  }
+`;
