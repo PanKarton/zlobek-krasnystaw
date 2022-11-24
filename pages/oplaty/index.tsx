@@ -2,11 +2,7 @@ import { FeesSection } from 'modules/oplaty/FeesSection/FeesSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_FEES } from 'graphql/queries';
-import { FeesResponse } from 'types/fees';
-
-type Props = {
-  fees: FeesResponse;
-};
+import { Props } from 'types/fees';
 
 const Fees = ({ fees }: Props) => {
   return (

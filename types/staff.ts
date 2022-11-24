@@ -1,3 +1,7 @@
+export interface Props {
+  staff: StaffResponse;
+}
+
 export interface StaffResponse {
   typename: string;
   data: Data;

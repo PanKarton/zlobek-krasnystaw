@@ -1,3 +1,7 @@
+export interface Props {
+  fees: FeesResponse;
+}
+
 export interface FeesResponse {
   typename: string;
   attributes: Attributes;

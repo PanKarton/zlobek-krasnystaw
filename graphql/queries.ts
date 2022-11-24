@@ -38,3 +38,18 @@ export const GET_STAFF_LISTS = gql`
     }
   }
 `;
+
+export const GET_LAYETTE = gql`
+  query {
+    layette {
+      data {
+        attributes {
+          layette {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;

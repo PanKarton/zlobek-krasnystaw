@@ -2,11 +2,7 @@ import { StaffListPageSection } from 'modules/kadra/StaffListPageSection/StaffLi
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_STAFF_LISTS } from 'graphql/queries';
-import { StaffResponse } from 'types/staff';
-
-type Props = {
-  staff: StaffResponse;
-};
+import { Props } from 'types/staff';
 
 const Staff = ({ staff }: Props) => {
   return (
