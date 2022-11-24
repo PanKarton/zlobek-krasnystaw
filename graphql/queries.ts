@@ -14,3 +14,27 @@ export const GET_FEES = gql`
     }
   }
 `;
+
+export const GET_STAFF_LISTS = gql`
+  query {
+    staff {
+      data {
+        attributes {
+          directors {
+            id
+            name
+          }
+          serviceWorkers {
+            id
+            job
+            name
+          }
+          babysitters {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;

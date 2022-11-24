@@ -1,4 +1,4 @@
-export interface FeesTypes {
+export interface FeesResponse {
   typename: string;
   attributes: Attributes;
 }

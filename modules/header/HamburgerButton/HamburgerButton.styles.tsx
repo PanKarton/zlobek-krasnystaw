@@ -20,7 +20,7 @@ export const StyledBurger = styled.button<HamburgerProps>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.color.accent};
+    background: ${({ theme }) => theme.color.contrast};
     border-radius: 10px;
     position: relative;
     transform-origin: 1px;

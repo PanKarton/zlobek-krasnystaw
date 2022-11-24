@@ -1,7 +1,7 @@
 import { StyledListWrapper } from './StaffList.styles';
 
 type Props = {
-  heading: string;
+  heading: 'Dyrektor' | 'Dyrektorzy' | 'Pracownicy administracji i obsługi' | 'Opekunki';
   isDirector?: boolean;
   staffArray: {
     name: string;
