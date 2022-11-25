@@ -1,8 +1,4 @@
-export interface Props {
-  daySchedule: Welcome;
-}
-
-export interface Welcome {
+export interface DayScheduleResponse {
   typename: string;
   data: Data;
 }

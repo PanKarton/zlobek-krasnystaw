@@ -1,7 +1,3 @@
-export interface Props {
-  layette: LayetteResponse;
-}
-
 export interface LayetteResponse {
   typename: string;
   data: Data;

@@ -1,7 +1,16 @@
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
+import { GET_CONTACT_INFO } from 'graphql/queries';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
+import { ContactDataProvider } from 'providers/ContactDataProvider';
+import { ContactDataResponse } from 'types/contactData';
 
-const NewsArticle = () => {
+type Props = {
+  contactInfo: ContactDataResponse;
+};
+
+const NewsArticle = ({ contactInfo }: Props) => {
   const article = {
     id: '3',
     title: 'Tajemniczy post o nie wiem czym',
@@ -22,9 +31,11 @@ const NewsArticle = () => {
   };
 
   return (
-    <SecondaryTemplate heading={article.title}>
-      <NewsPost articleData={article} />
-    </SecondaryTemplate>
+    <ContactDataProvider contactData={contactInfo}>
+      <SecondaryTemplate heading={article.title}>
+        <NewsPost articleData={article} />
+      </SecondaryTemplate>
+    </ContactDataProvider>
   );
 };
 
@@ -37,8 +48,19 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
+  const client = new ApolloClient({
+    uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
+    cache: new InMemoryCache(),
+  });
+
+  const { data: contactInfo } = await client.query({
+    query: GET_CONTACT_INFO,
+  });
+
   return {
-    props: {},
+    props: {
+      contactInfo,
+    },
   };
-}
+};

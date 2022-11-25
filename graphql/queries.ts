@@ -69,3 +69,26 @@ export const GET_DAY_SCHEDULE = gql`
     }
   }
 `;
+
+export const GET_CONTACT_INFO = gql`
+  query {
+    contactInfo {
+      data {
+        attributes {
+          phoneNumber
+          email
+          openDays
+          adress {
+            city
+            name
+            street
+          }
+          openHours {
+            openTime
+            closeTime
+          }
+        }
+      }
+    }
+  }
+`;

@@ -9,11 +9,17 @@ import { AiFillClockCircle } from 'react-icons/ai';
 import { FaEnvelope } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
-import { useFetchContactInfo } from 'hooks/useFetchContactInfo';
+import { useContactData } from 'providers/ContactDataProvider';
 
 export const Nav = () => {
   const { isVisible, handleToggleMenu, handleCloseMenu } = useHamburgerNav();
-  const { openDays, openHours, phoneNumber, email } = useFetchContactInfo();
+  const {
+    contactInfo: {
+      data: {
+        attributes: { openDays, phoneNumber, openHours, email },
+      },
+    },
+  } = useContactData();
 
   return (
     <StyledNav>
