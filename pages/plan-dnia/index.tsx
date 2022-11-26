@@ -4,12 +4,12 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_CONTACT_INFO, GET_DAY_SCHEDULE } from 'graphql/queries';
 import { DayScheduleResponse } from 'types/daySchedule';
 import { getEnvVariable } from 'helpers/getEnvVariable';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 
 export type Props = {
   daySchedule: DayScheduleResponse;
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const Schedule = ({ daySchedule, contactInfo }: Props) => {
@@ -36,9 +36,11 @@ export const getStaticProps = async () => {
     query: GET_DAY_SCHEDULE,
   });
 
-  const { data: contactInfo } = await client.query({
+  const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = ContactInfo.data.contactInfo.data.attributes;
 
   return {
     props: {

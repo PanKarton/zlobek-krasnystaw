@@ -4,7 +4,6 @@ import { StyledList } from './NewsList.styles';
 
 export const NewsList = () => {
   const { newsPostsState } = useNewPosts();
-  console.log('NewsList', newsPostsState[0]);
 
   return (
     <StyledList>

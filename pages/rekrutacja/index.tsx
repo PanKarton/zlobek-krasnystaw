@@ -3,10 +3,10 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 
 type Props = {
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const Recruitment = ({ contactInfo }: Props) => (
@@ -25,9 +25,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const { data: contactInfo } = await client.query({
+  const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = ContactInfo.data.contactInfo.data.attributes;
 
   return {
     props: {

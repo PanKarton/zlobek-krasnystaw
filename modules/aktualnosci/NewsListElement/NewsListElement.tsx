@@ -1,3 +1,5 @@
+import { formatDate } from 'helpers/formatDate';
+import { getDayName } from 'helpers/getDayName';
 import Link from 'next/link';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { PostAttributes } from 'types/newsPostsArray';
@@ -9,7 +11,9 @@ type Props = {
 };
 
 export const NewsListElement = ({ postId, attributes }: Props) => {
-  console.log(attributes);
+  const formatedDate = formatDate(attributes.publishedAt);
+  const dayName = getDayName(attributes.publishedAt);
+
   return (
     <StyledArticle>
       <div className="flex-wrapper">
@@ -18,7 +22,7 @@ export const NewsListElement = ({ postId, attributes }: Props) => {
             <h3>{attributes.title} </h3>
           </a>
         </Link>
-        <p className="publishDate">czwartek, 25 lipiec 2022</p>
+        <p className="publishDate">{`${dayName}, ${formatedDate}`}</p>
         <p className="content">{attributes.content}</p>
         <Link href={`/aktualnosci/${postId}`}>
           <a href="!#" className="read-more">

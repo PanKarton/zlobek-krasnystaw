@@ -4,12 +4,12 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_CONTACT_INFO, GET_STAFF_LISTS } from 'graphql/queries';
 import { StaffResponse } from 'types/staff';
 import { getEnvVariable } from 'helpers/getEnvVariable';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 
 type Props = {
   staff: StaffResponse;
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const Staff = ({ staff, contactInfo }: Props) => {
@@ -34,9 +34,11 @@ export const getStaticProps = async () => {
     query: GET_STAFF_LISTS,
   });
 
-  const { data: contactInfo } = await client.query({
+  const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   return {
     props: {

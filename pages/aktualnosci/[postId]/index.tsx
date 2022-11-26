@@ -4,10 +4,10 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 
 type Props = {
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const NewsArticle = ({ contactInfo }: Props) => {
@@ -54,9 +54,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const { data: contactInfo } = await client.query({
+  const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   return {
     props: {

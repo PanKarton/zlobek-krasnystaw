@@ -6,11 +6,11 @@ import { NurseryDescription } from 'modules/index/NurseryDescription/NurseryDesc
 import { OurValues } from 'modules/index/OurValues/OurValues';
 import { StaffSection } from 'modules/index/StaffSection/StaffSection';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
 
 type Props = {
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const Home = ({ contactInfo }: Props) => {
@@ -36,9 +36,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const { data: contactInfo } = await client.query({
+  const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = ContactInfo.data.contactInfo.data.attributes;
 
   return {
     props: {

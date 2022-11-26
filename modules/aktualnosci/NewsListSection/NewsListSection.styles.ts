@@ -4,13 +4,14 @@ export const Styledwrapper = styled.div`
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 3rem;
   & > button {
     margin-top: 1rem;
   }
   @media screen and (min-width: 1550px) {
     flex-direction: row;
     padding-bottom: 8rem;
+    gap: 10rem;
     & > button {
       position: absolute;
       bottom: 3rem;

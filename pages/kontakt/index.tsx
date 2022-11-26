@@ -3,11 +3,11 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import { GET_CONTACT_INFO } from 'graphql/queries';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 
 type Props = {
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const Contact = ({ contactInfo }: Props) => (
@@ -25,9 +25,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const { data: contactInfo } = await client.query({
+  const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   return {
     props: {

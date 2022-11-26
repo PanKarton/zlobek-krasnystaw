@@ -4,12 +4,12 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_CONTACT_INFO, GET_FEES } from 'graphql/queries';
 import { FeesResponse } from 'types/fees';
 import { getEnvVariable } from 'helpers/getEnvVariable';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 
 export interface Props {
   fees: FeesResponse;
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 }
 
 const Fees = ({ fees, contactInfo }: Props) => {
@@ -37,11 +37,13 @@ export const getStaticProps = async () => {
     query: GET_FEES,
   });
 
-  const { data: contactInfo } = await client.query({
+  const fees = fee.data;
+
+  const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,
   });
 
-  const fees = fee.data;
+  const contactInfo = ContactInfo.data.contactInfo.data.attributes;
 
   return {
     props: {
