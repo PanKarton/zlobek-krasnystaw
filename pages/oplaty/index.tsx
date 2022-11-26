@@ -31,13 +31,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const {
-    data: { fee },
-  } = await client.query({
+  const feesRes = await client.query({
     query: GET_FEES,
   });
 
-  const fees = fee.data;
+  const fees = feesRes.data.fee;
 
   const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,

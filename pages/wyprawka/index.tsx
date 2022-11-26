@@ -5,11 +5,11 @@ import { GET_CONTACT_INFO, GET_LAYETTE } from 'graphql/queries';
 import { LayetteResponse } from 'types/layette';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 
 type Props = {
   layette: LayetteResponse;
-  contactInfo: ContactDataResponse;
+  contactInfo: ContactInfo;
 };
 
 const Layette = ({ layette, contactInfo }: Props) => {
@@ -30,15 +30,17 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const {
-    data: { layette },
-  } = await client.query({
+  const layetteRes = await client.query({
     query: GET_LAYETTE,
   });
 
-  const { data: contactInfo } = await client.query({
+  const layette = layetteRes.data.layette;
+
+  const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
+
+  const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   return {
     props: {

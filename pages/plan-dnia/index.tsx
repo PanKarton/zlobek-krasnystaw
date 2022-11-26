@@ -30,11 +30,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const {
-    data: { daySchedule },
-  } = await client.query({
+  const dayScheduleRes = await client.query({
     query: GET_DAY_SCHEDULE,
   });
+
+  const daySchedule = dayScheduleRes.data.daySchedule;
 
   const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,

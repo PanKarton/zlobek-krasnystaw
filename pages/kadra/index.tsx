@@ -30,9 +30,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const { data } = await client.query({
+  const staffRes = await client.query({
     query: GET_STAFF_LISTS,
   });
+
+  const staff = staffRes.data;
 
   const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
@@ -42,7 +44,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      staff: data.staff,
+      staff,
       contactInfo,
     },
   };
