@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useContext } from 'react';
-import { ContactDataResponse } from 'types/contactData';
+import { ContactInfo } from 'types/contactData';
 
 type Props = {
   children: ReactNode;
-  contactData: ContactDataResponse;
+  contactData: ContactInfo;
 };
 
-export const ContactDataContext = createContext<ContactDataResponse>({});
+const ContactDataContext = createContext<ContactInfo | null>(null);
 
 export const ContactDataProvider = ({ children, contactData }: Props) => {
   return <ContactDataContext.Provider value={contactData}>{children}</ContactDataContext.Provider>;
@@ -15,7 +15,7 @@ export const ContactDataProvider = ({ children, contactData }: Props) => {
 export const useContactData = () => {
   const contactData = useContext(ContactDataContext);
 
-  if (Object.keys(contactData).length === 0) throw Error('useContactData is supposed to be used inside ContactDataContext.Provider');
+  if (contactData === null) throw Error('useContactData is supposed to be used inside ContactDataProvider');
 
   return contactData;
 };

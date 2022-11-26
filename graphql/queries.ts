@@ -92,3 +92,38 @@ export const GET_CONTACT_INFO = gql`
     }
   }
 `;
+
+export const GET_NEWS_POSTS = gql`
+  query {
+    newsPosts {
+      data {
+        id
+        attributes {
+          title
+          content
+          image {
+            data {
+              attributes {
+                name
+                alternativeText
+                caption
+                width
+                height
+                formats
+                hash
+                ext
+                mime
+                size
+                url
+                previewUrl
+                provider
+                provider_metadata
+              }
+            }
+          }
+          publishedAt
+        }
+      }
+    }
+  }
+`;

@@ -5,13 +5,7 @@ import { BipButton } from 'modules/footer/BipButton/BipButton';
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const FooterContactInfo = () => {
-  const {
-    contactInfo: {
-      data: {
-        attributes: { openDays, openHours, phoneNumber, adress },
-      },
-    },
-  } = useContactData();
+  const { openDays, phoneNumber, openHours, adress } = useContactData();
 
   return (
     <StyledSection className="nav-contact-details">

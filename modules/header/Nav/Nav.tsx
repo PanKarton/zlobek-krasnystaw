@@ -13,13 +13,7 @@ import { useContactData } from 'providers/ContactDataProvider';
 
 export const Nav = () => {
   const { isVisible, handleToggleMenu, handleCloseMenu } = useHamburgerNav();
-  const {
-    contactInfo: {
-      data: {
-        attributes: { openDays, phoneNumber, openHours, email },
-      },
-    },
-  } = useContactData();
+  const { openDays, phoneNumber, openHours, email } = useContactData();
 
   return (
     <StyledNav>
