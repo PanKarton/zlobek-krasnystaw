@@ -1,6 +1,10 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
-import { Props } from 'types/layette';
+import { LayetteResponse } from 'types/layette';
 import { StyledOrderedList, StyledWrapper } from './LayetteSection.styles';
+
+type Props = {
+  layette: LayetteResponse;
+};
 
 export const LayetteSection = ({ layette }: Props) => {
   const {
