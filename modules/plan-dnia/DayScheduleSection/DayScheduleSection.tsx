@@ -1,10 +1,13 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import Image from 'next/image';
-import { Props } from 'types/daySchedule';
+import { DayScheduleResponse } from 'types/daySchedule';
 import { StyledWrapper } from './DayScheduleSection.styles';
 
+type Props = {
+  daySchedule: DayScheduleResponse;
+};
+
 export const DayScheduleSection = ({ daySchedule }: Props) => {
-  console.log(daySchedule.data.attributes);
   const {
     data: { attributes },
   } = daySchedule;
