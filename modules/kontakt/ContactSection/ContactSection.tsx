@@ -5,13 +5,7 @@ import { StyledArticle, StyledContactFormWrapper, StyledWrapper } from './Contac
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const ContactSection = () => {
-  const {
-    contactInfo: {
-      data: {
-        attributes: { phoneNumber, adress, email },
-      },
-    },
-  } = useContactData();
+  const { phoneNumber, adress, email } = useContactData();
   return (
     <SectionWithStars>
       <StyledWrapper>
