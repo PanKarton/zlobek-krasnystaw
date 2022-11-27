@@ -5,11 +5,11 @@ export type Props = {
 };
 
 export interface Welcome {
-  data: WelcomeDatum[];
+  data: Post[];
   meta: Meta;
 }
 
-export interface WelcomeDatum {
+export interface Post {
   id: number;
   attributes: PurpleAttributes;
 }
