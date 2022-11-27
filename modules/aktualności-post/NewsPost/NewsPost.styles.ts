@@ -1,55 +1,41 @@
 import styled from 'styled-components';
 export const StyledWrapper = styled.div`
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
+  translate: 0px -1.5rem;
 `;
 
 export const StyledArticle = styled.article`
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   font-family: var(--font-primary);
-  color: ${({ theme }) => theme.color.contrast};
-  p.date {
-    font-weight: 500;
-    padding-bottom: 0.5rem;
+  font-weight: 500;
+  .publishDate {
     border-bottom: 1px solid #aaa;
+    padding-bottom: 0.5rem;
   }
   .flex-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    @media screen and (min-width: 700px) {
+    margin-top: 2rem;
+    @media screen and (min-width: 900px) {
       flex-direction: row;
       align-items: flex-start;
+      gap: 2rem;
     }
     .img-wrapper {
-      background-color: #ddd;
-      flex-basis: 35%;
+      width: 100%;
       aspect-ratio: 1.61;
+      background-color: #eee;
+      @media screen and (min-width: 900px) {
+        width: auto;
+        flex-basis: 30%;
+        flex-shrink: 0;
+      }
     }
-  }
-
-  /* Narrow when img exists */
-  .img-wrapper + .content-wrapper {
-    flex-basis: 60%;
-  }
-
-  .content-wrapper {
-    flex-basis: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    p {
-      font-size: ${({ theme }) => theme.fontSize.textBase};
-      line-height: ${({ theme }) => theme.lineHeight.textLG};
-      font-weight: 500;
+    .content {
+      translate: 0 -0.625rem;
+      line-height: ${({ theme }) => theme.lineHeight.text2XL};
+      max-width: 65ch;
       @media screen and (min-width: 700px) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
-        line-height: ${({ theme }) => theme.lineHeight.text2XL};
-      }
-      @media screen and (min-width: 1550px) {
-        font-size: ${({ theme }) => theme.fontSize.textXL};
         line-height: ${({ theme }) => theme.lineHeight.text4XL};
       }
     }

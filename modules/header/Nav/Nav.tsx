@@ -17,9 +17,7 @@ export const Nav = () => {
 
   return (
     <StyledNav>
-      <div className="main-logo-wrapper">
-        <MainLogo />
-      </div>
+      <div className="main-logo-wrapper">{/* <MainLogo /> */}</div>
       <div className="mobile-icons-wrapper">
         <HamburgerButton onClick={handleToggleMenu} isActive={isVisible}></HamburgerButton>
       </div>

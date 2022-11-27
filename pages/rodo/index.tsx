@@ -26,11 +26,11 @@ export const getStaticProps = async () => {
     cache: new InMemoryCache(),
   });
 
-  const ContactInfo = await client.query({
+  const ContactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
 
-  const contactInfo = ContactInfo.data.contactInfo.data.attributes;
+  const contactInfo = ContactInfoRes.data.contactInfo.data.attributes;
 
   return {
     props: {

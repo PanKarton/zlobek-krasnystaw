@@ -18,10 +18,10 @@ export const NewsPost = ({ articleData }: Props) => {
     <SectionWithStars>
       <StyledWrapper>
         <StyledArticle>
-          <p className="date">{`${dayName}, ${formatedDate}`}</p>
+          <p className="publishDate">{`${dayName}, ${formatedDate}`}</p>
           <div className="flex-wrapper">
             {isImage && <div className="img-wrapper"></div>}
-            <div className="content-wrapper">{articleData.attributes.content}</div>
+            <p className="content">{articleData.attributes.content}</p>
           </div>
         </StyledArticle>
       </StyledWrapper>

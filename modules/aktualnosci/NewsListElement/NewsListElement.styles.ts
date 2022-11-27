@@ -25,14 +25,15 @@ export const StyledArticle = styled.article`
   }
 
   p.content,
-  p.date {
+  p.publishDate {
     color: ${({ theme }) => theme.color.contrast};
     font-size: ${({ theme }) => theme.fontSize.textBase};
     line-height: 1.4;
+    font-weight: 500;
   }
 
   p.content {
-    margin-block: 0.75rem;
+    margin-block: 0.5rem;
     max-width: 70ch;
     /* add ... when --max-lines is reached*/
     --max-lines: 3;
@@ -48,7 +49,7 @@ export const StyledArticle = styled.article`
     display: flex;
     align-items: center;
     gap: 0.125rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: inherit;
     border: none;
     padding-right: 0.5rem;

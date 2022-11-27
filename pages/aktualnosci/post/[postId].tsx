@@ -18,12 +18,7 @@ type Props = {
 const NewsArticle = ({ contactInfo, newsPost }: Props) => {
   const router = useRouter();
 
-  if (router.isFallback)
-    return (
-      <div>
-        <FallbackLoader />
-      </div>
-    );
+  if (router.isFallback) return <FallbackLoader />;
 
   return (
     <ContactDataProvider contactData={contactInfo}>
