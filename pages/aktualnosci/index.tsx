@@ -41,9 +41,14 @@ export const getServerSideProps = async () => {
 
   const newsPostsRes = await client.query({
     query: GET_NEWS_POSTS,
+    variables: {
+      limit: 2,
+      offset: 2,
+    },
   });
 
   const newsPosts = newsPostsRes.data.newsPosts.data;
+  console.log(newsPosts);
 
   return {
     props: {

@@ -94,8 +94,8 @@ export const GET_CONTACT_INFO = gql`
 `;
 
 export const GET_NEWS_POSTS = gql`
-  query {
-    newsPosts {
+  query ($limit: Int!, $offset: Int!) {
+    newsPosts(limit: $limit, offset: $offset) {
       data {
         id
         attributes {
