@@ -2,10 +2,10 @@ import { BsCalendarDateFill, BsFillTelephoneFill } from 'react-icons/bs';
 import { FiMapPin } from 'react-icons/fi';
 import { StyledSection } from './FooterContactInfo.styles';
 import { BipButton } from 'modules/footer/BipButton/BipButton';
-import { useFetchContactInfo } from 'hooks/useFetchContactInfo';
+import { useContactData } from 'providers/ContactDataProvider';
 
 export const FooterContactInfo = () => {
-  const { openDays, openHours, adress, phoneNumber } = useFetchContactInfo();
+  const { openDays, phoneNumber, openHours, adress } = useContactData();
 
   return (
     <StyledSection className="nav-contact-details">

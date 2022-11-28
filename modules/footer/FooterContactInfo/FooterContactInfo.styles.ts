@@ -80,7 +80,7 @@ export const StyledSection = styled.section`
       /* BIP */
       .nav-bip-wrapper {
         position: relative;
-        border-top: 1px solid #aaa;
+        border-top: 1px solid ${({ theme }) => theme.color.borderDivider};
         width: 100%;
         padding-top: 2rem;
         margin-left: 1.75rem;

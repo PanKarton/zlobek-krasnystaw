@@ -1,36 +1,30 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import { formatDate } from 'helpers/formatDate';
+import { getDayName } from 'helpers/getDayName';
+import { Post } from 'types/newsPosts';
 import { StyledArticle, StyledWrapper } from './NewsPost.styles';
 
 type Props = {
-  articleData: {
-    id: string;
-    title: string;
-    subTitle: string;
-    imgUrl?: string;
-    content: string[];
-    date: {
-      day: string;
-      dayNum: string;
-      month: string;
-      year: string;
-      dateMs: number;
-    };
-  };
+  articleData: Post;
 };
-export const NewsPost = ({ articleData }: Props) => (
-  <SectionWithStars>
-    <StyledWrapper>
-      <StyledArticle>
-        <p className="date">{`${articleData.date.day}, ${articleData.date.dayNum} ${articleData.date.month} ${articleData.date.year}`}</p>
-        <div className="flex-wrapper">
-          {articleData.imgUrl && <div className="img-wrapper"></div>}
-          <div className="content-wrapper">
-            {articleData.content.map((paragraph: string, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+
+export const NewsPost = ({ articleData }: Props) => {
+  const formatedDate = formatDate(articleData.attributes.publishedAt);
+  const dayName = getDayName(articleData.attributes.publishedAt);
+
+  const isImage = articleData.attributes.image.data?.length === 1;
+
+  return (
+    <SectionWithStars>
+      <StyledWrapper>
+        <StyledArticle>
+          <p className="publishDate">{`${dayName}, ${formatedDate}`}</p>
+          <div className="flex-wrapper">
+            {isImage && <div className="img-wrapper"></div>}
+            <p className="content">{articleData.attributes.content}</p>
           </div>
-        </div>
-      </StyledArticle>
-    </StyledWrapper>
-  </SectionWithStars>
-);
+        </StyledArticle>
+      </StyledWrapper>
+    </SectionWithStars>
+  );
+};

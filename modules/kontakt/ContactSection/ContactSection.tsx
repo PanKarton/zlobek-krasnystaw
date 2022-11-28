@@ -1,12 +1,11 @@
 import { ContactSectionListItem } from 'modules/kontakt/ContactSectionListItem/ContactSectionListItem';
 import { ContactForm } from 'modules/kontakt/ContactForm/ContactForm';
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
-import { useFetchContactInfo } from 'hooks/useFetchContactInfo';
 import { StyledArticle, StyledContactFormWrapper, StyledWrapper } from './ContactSection.styles';
+import { useContactData } from 'providers/ContactDataProvider';
 
 export const ContactSection = () => {
-  const { email, adress, phoneNumber } = useFetchContactInfo();
-
+  const { phoneNumber, adress, email } = useContactData();
   return (
     <SectionWithStars>
       <StyledWrapper>
