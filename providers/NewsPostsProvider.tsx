@@ -1,8 +1,8 @@
-import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
 import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
-import { useQuery } from '@apollo/client';
+import { ApolloClient, InMemoryCache, useQuery } from '@apollo/client';
 import { GET_NEWS_POSTS } from 'graphql/queries';
-import { client } from '../graphql/apolloClient';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 
 type Props = {
   children: ReactNode;
@@ -20,26 +20,34 @@ type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
 
 const NewsPostsContext = createContext<Context | null>(null);
 
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 4;
+
+const client = new ApolloClient({
+  uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
+  cache: new InMemoryCache({
+    typePolicies: {
+      NewsPostEntityResponseCollection: {
+        keyFields: [],
+        fields: {
+          data: {
+            merge: (existing = [], incoming = []) => [...existing, ...incoming],
+          },
+        },
+      },
+    },
+  }),
+});
 
 export const NewsPostsProvider = ({ children }: Props) => {
   const [isLoadMoreButtonVisible, setIsLoadMoreButtonVisible] = useState(true);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
-  const { data, loading, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
+  const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
     client,
     variables: {
       page: 1,
       pageSize: PAGE_SIZE,
     },
   });
-
-  useEffect(() => {
-    if (!data) return;
-    const postsNumber = data.newsPosts.data.length;
-
-    // If number of displayed posts is not multiple of PAGE_SIZE, then all posts avaliable are displayed
-    if (postsNumber % PAGE_SIZE != 0) setIsLoadMoreButtonVisible(false);
-  }, [data]);
 
   const handleLoadMoreNews = useCallback(async () => {
     try {
@@ -50,33 +58,16 @@ export const NewsPostsProvider = ({ children }: Props) => {
 
       const nextPagePointer = postsNumber / PAGE_SIZE + 1;
 
-      await fetchMore({
+      const response = await fetchMore({
         // Update page variable based on current data length
         variables: {
           page: nextPagePointer,
           pageSize: PAGE_SIZE,
         },
-        // Merge old data with new data and return(update) current data
-        updateQuery: (prevResult, { fetchMoreResult }) => {
-          const prevData = prevResult.newsPosts.data;
-          const newData = fetchMoreResult.newsPosts.data;
-
-          if (newData.length === 0) {
-            setIsLoadMoreButtonVisible(false);
-            return prevResult;
-          }
-
-          const mergedData = [...prevData, ...newData];
-
-          return {
-            newsPosts: {
-              __typename: 'NewsPostEntityResponseCollection',
-              data: mergedData,
-            },
-          };
-        },
       });
-    } catch (err) {
+      // Hide button when received less items than PAGE_SIZE
+      if (response.data.newsPosts.data.length < PAGE_SIZE) setIsLoadMoreButtonVisible(false);
+    } catch {
       setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
     }
   }, [data, fetchMore]);
