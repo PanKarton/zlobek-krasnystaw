@@ -93,9 +93,43 @@ export const GET_CONTACT_INFO = gql`
   }
 `;
 
-export const GET_NEWS_POSTS = gql`
+export const GET_NEWS_POSTS_WITH_PAGINATION = gql`
   query NewsPosts($page: Int!, $pageSize: Int!) {
     newsPosts(pagination: { page: $page, pageSize: $pageSize }, sort: "publishedAt:DESC") {
+      data {
+        id
+        attributes {
+          title
+          content
+          image {
+            data {
+              attributes {
+                name
+                alternativeText
+                caption
+                width
+                height
+                formats
+                hash
+                ext
+                mime
+                size
+                url
+                previewUrl
+                provider
+                provider_metadata
+              }
+            }
+          }
+          publishedAt
+        }
+      }
+    }
+  }
+`;
+export const GET_NEWS_POSTS_ALL = gql`
+  query NewsPosts {
+    newsPosts {
       data {
         id
         attributes {

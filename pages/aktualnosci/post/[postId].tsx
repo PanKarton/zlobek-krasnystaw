@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { GET_CONTACT_INFO, GET_NEWS_POSTS, GET_SINGLE_POST_BY_ID } from 'graphql/queries';
+import { GET_CONTACT_INFO, GET_NEWS_POSTS_ALL, GET_SINGLE_POST_BY_ID } from 'graphql/queries';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -17,6 +17,7 @@ type Props = {
 
 const NewsArticle = ({ contactInfo, newsPost }: Props) => {
   const router = useRouter();
+  console.log(`dzialam`);
 
   if (router.isFallback) return <FallbackLoader />;
 
@@ -38,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   });
 
   const newsPostsRes = await client.query({
-    query: GET_NEWS_POSTS,
+    query: GET_NEWS_POSTS_ALL,
   });
 
   const newsPosts = newsPostsRes.data.newsPosts.data;

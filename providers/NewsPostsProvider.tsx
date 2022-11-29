@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
 import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
 import { ApolloClient, InMemoryCache, useQuery } from '@apollo/client';
-import { GET_NEWS_POSTS } from 'graphql/queries';
+import { GET_NEWS_POSTS_WITH_PAGINATION } from 'graphql/queries';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 
 type Props = {
@@ -41,7 +41,7 @@ const client = new ApolloClient({
 export const NewsPostsProvider = ({ children }: Props) => {
   const [isLoadMoreButtonVisible, setIsLoadMoreButtonVisible] = useState(true);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
-  const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
+  const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS_WITH_PAGINATION, {
     client,
     variables: {
       page: 1,
