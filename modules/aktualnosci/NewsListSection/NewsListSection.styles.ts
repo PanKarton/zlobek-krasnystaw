@@ -16,7 +16,7 @@ export const Styledwrapper = styled.div`
       position: absolute;
       bottom: 3rem;
       left: 50%;
-      translate: 0 -50%;
+      translate: -50% 0;
     }
   }
 `;

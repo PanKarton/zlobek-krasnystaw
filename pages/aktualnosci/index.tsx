@@ -10,13 +10,14 @@ import { NewsPosts } from 'types/newsPostsArray';
 
 type Props = {
   contactInfo: ContactInfo;
-  newsPosts: NewsPosts;
+  // newsPosts: NewsPosts;
 };
 
-const News = ({ contactInfo, newsPosts }: Props) => {
+// const News = ({ contactInfo, newsPosts }: Props) => {
+const News = ({ contactInfo }: Props) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <NewsPostsProvider newsPosts={newsPosts}>
+      <NewsPostsProvider>
         <SecondaryTemplate heading="Nasze nowości">
           <NewsListSection />
         </SecondaryTemplate>
@@ -39,21 +40,20 @@ export const getServerSideProps = async () => {
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
-  const newsPostsRes = await client.query({
-    query: GET_NEWS_POSTS,
-    variables: {
-      limit: 2,
-      offset: 2,
-    },
-  });
+  // const newsPostsRes = await client.query({
+  //   query: GET_NEWS_POSTS,
+  //   variables: {
+  //     page: 1,
+  //     pageSize: 3,
+  //   },
+  // });
 
-  const newsPosts = newsPostsRes.data.newsPosts.data;
-  console.log(newsPosts);
+  // const newsPosts = newsPostsRes.data.newsPosts.data;
 
   return {
     props: {
       contactInfo,
-      newsPosts,
+      // newsPosts,
     },
   };
 };
