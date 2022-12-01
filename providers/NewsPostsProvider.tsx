@@ -1,8 +1,9 @@
 import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
 import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
-import { ApolloClient, InMemoryCache, useQuery } from '@apollo/client';
-import { GET_NEWS_POSTS_WITH_PAGINATION } from 'graphql/queries';
-import { getEnvVariable } from 'helpers/getEnvVariable';
+import { useQuery } from '@apollo/client';
+import { client } from '../graphql/apolloClient';
+import { GET_NEWS_POSTS } from 'graphql/queries';
+import { MonthData } from 'helpers/getMonthsSinceDate';
 
 type Props = {
   children: ReactNode;
@@ -10,7 +11,8 @@ type Props = {
 
 type Context = {
   newsPostsState: NewsPosts;
-  handleLoadMoreNews: () => void;
+  handleLoadMoreNewsPosts: () => void;
+  getPostsByMonth: (queryData: MonthData) => Promise<void>;
   isLoading: boolean;
   isLoadMoreButtonVisible: boolean;
   errorMessage: ErrorMessage;
@@ -20,28 +22,11 @@ type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
 
 const NewsPostsContext = createContext<Context | null>(null);
 
-const PAGE_SIZE = 4;
-
-const client = new ApolloClient({
-  uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
-  cache: new InMemoryCache({
-    typePolicies: {
-      NewsPostEntityResponseCollection: {
-        keyFields: [],
-        fields: {
-          data: {
-            merge: (existing = [], incoming = []) => [...existing, ...incoming],
-          },
-        },
-      },
-    },
-  }),
-});
-
+const PAGE_SIZE = 1;
 export const NewsPostsProvider = ({ children }: Props) => {
   const [isLoadMoreButtonVisible, setIsLoadMoreButtonVisible] = useState(true);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
-  const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS_WITH_PAGINATION, {
+  const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
     client,
     variables: {
       page: 1,
@@ -49,7 +34,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
     },
   });
 
-  const handleLoadMoreNews = useCallback(async () => {
+  const handleLoadMoreNewsPosts = useCallback(async () => {
     try {
       if (!data) return;
       setErrorMessage('');
@@ -64,6 +49,17 @@ export const NewsPostsProvider = ({ children }: Props) => {
           page: nextPagePointer,
           pageSize: PAGE_SIZE,
         },
+        updateQuery: (previousResult, { fetchMoreResult }) => {
+          const previousData = previousResult.newsPosts.data;
+          const newData = fetchMoreResult.newsPosts.data;
+
+          return {
+            newsPosts: {
+              __typename: 'NewsPostEntityResponseCollection',
+              data: [...previousData, ...newData],
+            },
+          };
+        },
       });
       // Hide button when received less items than PAGE_SIZE
       if (response.data.newsPosts.data.length < PAGE_SIZE) setIsLoadMoreButtonVisible(false);
@@ -72,9 +68,42 @@ export const NewsPostsProvider = ({ children }: Props) => {
     }
   }, [data, fetchMore]);
 
+  const getPostsByMonth = useCallback(
+    async ({ year, month, nextMonth, nextYear }: MonthData) => {
+      try {
+        if (!data) return;
+        const startDate = `${year}-${month}-01T00:00:00.265Z`;
+        const endDate = `${nextYear}-${nextMonth}-01T00:00:00.265Z`;
+
+        const response = await fetchMore({
+          // Update page variable based on current data length
+          variables: {
+            startDate,
+            endDate,
+          },
+          updateQuery: (_, { fetchMoreResult }) => {
+            const newData = fetchMoreResult.newsPosts.data;
+
+            return {
+              newsPosts: {
+                __typename: 'NewsPostEntityResponseCollection',
+                data: newData,
+              },
+            };
+          },
+        });
+        setIsLoadMoreButtonVisible(false);
+      } catch (err) {
+        console.log('zesralem sb', { err });
+      }
+    },
+    [data, fetchMore],
+  );
+
   const context = {
     newsPostsState: data ? data.newsPosts.data : [],
-    handleLoadMoreNews,
+    handleLoadMoreNewsPosts,
+    getPostsByMonth,
     isLoading: loading,
     isLoadMoreButtonVisible,
     errorMessage,

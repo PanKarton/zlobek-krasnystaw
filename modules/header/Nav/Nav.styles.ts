@@ -84,7 +84,7 @@ export const StyledNav = styled.nav`
   & > .mobile-icons-wrapper {
     @media screen and (min-width: 700px) {
       position: absolute;
-      right: 1.5rem;
+      right: 2rem;
       top: 50%;
       translate: 0 -50%;
       z-index: 9999;

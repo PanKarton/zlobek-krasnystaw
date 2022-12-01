@@ -27,8 +27,6 @@ export const StyledWrapper = styled.div`
     }
 
     &__list-item {
-      font-size: ${({ theme }) => theme.fontSize.textLG};
-      font-weight: 500;
       position: relative;
       /* Pink dots */
       &::before {

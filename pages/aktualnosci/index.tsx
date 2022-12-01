@@ -6,7 +6,6 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { getEnvVariable } from 'helpers/getEnvVariable';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';
-import { NewsPosts } from 'types/newsPostsArray';
 
 type Props = {
   contactInfo: ContactInfo;

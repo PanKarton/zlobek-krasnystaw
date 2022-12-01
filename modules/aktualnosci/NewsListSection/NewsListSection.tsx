@@ -6,14 +6,14 @@ import { Styledwrapper } from './NewsListSection.styles';
 import { useNewPosts } from 'providers/NewsPostsProvider';
 
 export const NewsListSection = () => {
-  const { handleLoadMoreNews, isLoading, isLoadMoreButtonVisible, errorMessage } = useNewPosts();
+  const { handleLoadMoreNewsPosts, isLoading, isLoadMoreButtonVisible, errorMessage } = useNewPosts();
 
   return (
     <SectionWithStars>
       <Styledwrapper>
         <NewsList />
         {isLoadMoreButtonVisible && (
-          <TextButton handleClick={handleLoadMoreNews} isLoading={isLoading} text={errorMessage ? errorMessage : 'Załaduj więcej...'} />
+          <TextButton handleClick={handleLoadMoreNewsPosts} isLoading={isLoading} text={errorMessage ? errorMessage : 'Załaduj więcej...'} />
         )}
         <ArchivesList />
       </Styledwrapper>

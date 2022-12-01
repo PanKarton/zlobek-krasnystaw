@@ -1,18 +1,27 @@
+import { getMonthsSinceDate } from 'helpers/getMonthsSinceDate';
+import { getEnvVariable } from 'helpers/getEnvVariable';
 import { TextButton } from 'modules/aktualnosci/TextButton/TextButton';
+import { ArchivesListItem } from '../ArchivesListItem/ArchivesListItem';
 import { StyledWrapper } from './ArchivesList.styles';
 
-export const ArchivesList = () => (
-  <StyledWrapper>
-    <div className="archives">
-      <h3 className="archives__heading">Archiwum</h3>
-      <ul className="archives__list">
-        <li className="archives__list-item">sierpień 2022</li>
-        <li className="archives__list-item">lipiec 2022</li>
-        <li className="archives__list-item">czerwiec 2022</li>
-        <li className="archives__list-item">maj 2022</li>
-        <li className="archives__list-item">kwiecień 2022</li>
-      </ul>
-      <TextButton className="archives__load-btn">Więcej...</TextButton>
-    </div>
-  </StyledWrapper>
-);
+export const ArchivesList = () => {
+  const RELEASE_DATE = new Date(getEnvVariable(process.env.NEXT_PUBLIC_RELEASE_DATE));
+  const monthsData = getMonthsSinceDate(RELEASE_DATE);
+
+  return (
+    <StyledWrapper>
+      <div className="archives">
+        <h3 className="archives__heading">Archiwum</h3>
+        <ul className="archives__list">
+          {monthsData &&
+            monthsData.map((month, index) => (
+              <li key={index} className="archives__list-item">
+                <ArchivesListItem monthData={month} />
+              </li>
+            ))}
+        </ul>
+        {/* <TextButton className="archives__load-btn" text="Więcej..."></TextButton> */}
+      </div>
+    </StyledWrapper>
+  );
+};

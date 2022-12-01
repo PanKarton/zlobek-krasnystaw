@@ -4,7 +4,7 @@ export const theme = {
     primaryDark: '#e8eaed',
     // Black
     contrast: '#2D2D2F',
-    contrastLightHover: '3D3D3F',
+    contrastLightHover: '#3D3D3F',
     contrastDarkHover: '#1D1D1F',
     // Blue
     accentPrimary: '#79C9EC',
