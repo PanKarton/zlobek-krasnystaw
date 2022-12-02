@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  border-top: 1px solid #aaa;
-  padding-top: 2rem;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 1rem;
   @media screen and (min-width: 1550px) {
-    border-top: none;
-    padding-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
   }
   .archives {
     font-family: var(--font-primary);
@@ -58,6 +58,11 @@ export const StyledWrapper = styled.div`
           display: none;
         }
       }
+    }
+    .error-message {
+      color: ${({ theme }) => theme.color.error};
+      font-weight: 500;
+      margin-top: 0.5rem;
     }
 
     &__load-btn {

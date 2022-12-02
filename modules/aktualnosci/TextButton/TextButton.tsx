@@ -5,7 +5,7 @@ type Props = {
   text: string;
   className?: string;
   handleClick: () => void;
-  isLoading: boolean;
+  isLoading?: boolean;
 };
 
 export const TextButton = ({ text, className, handleClick, isLoading }: Props) => (

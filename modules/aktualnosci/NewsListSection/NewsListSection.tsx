@@ -6,16 +6,19 @@ import { Styledwrapper } from './NewsListSection.styles';
 import { useNewPosts } from 'providers/NewsPostsProvider';
 
 export const NewsListSection = () => {
-  const { handleLoadMoreNewsPosts, isLoading, isLoadMoreButtonVisible, errorMessage } = useNewPosts();
+  const { handleLoadMoreNewsPosts, isLoading, isLoadMoreButtonVisible, errorMessage, error } = useNewPosts();
 
   return (
     <SectionWithStars>
       <Styledwrapper>
-        <NewsList />
-        {isLoadMoreButtonVisible && (
-          <TextButton handleClick={handleLoadMoreNewsPosts} isLoading={isLoading} text={errorMessage ? errorMessage : 'Załaduj więcej...'} />
-        )}
         <ArchivesList />
+        <NewsList />
+        {/* Show when there is no errors on init fetch */}
+        {isLoadMoreButtonVisible && !error ? (
+          <TextButton handleClick={handleLoadMoreNewsPosts} isLoading={isLoading} text={errorMessage ? errorMessage : 'Załaduj więcej...'} />
+        ) : null}
+        {/* Show when there is error with init fetch */}
+        {error && <TextButton handleClick={() => window.location.reload()} text="Ups, coś poszło nie tak. Odśwież stronę! :)" />}
       </Styledwrapper>
     </SectionWithStars>
   );

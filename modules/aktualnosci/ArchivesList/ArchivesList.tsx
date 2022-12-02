@@ -3,8 +3,11 @@ import { getEnvVariable } from 'helpers/getEnvVariable';
 import { TextButton } from 'modules/aktualnosci/TextButton/TextButton';
 import { ArchivesListItem } from '../ArchivesListItem/ArchivesListItem';
 import { StyledWrapper } from './ArchivesList.styles';
+import { useNewPosts } from 'providers/NewsPostsProvider';
 
 export const ArchivesList = () => {
+  const { archivesErrorMessage } = useNewPosts();
+
   const RELEASE_DATE = new Date(getEnvVariable(process.env.NEXT_PUBLIC_RELEASE_DATE));
   const monthsData = getMonthsSinceDate(RELEASE_DATE);
 
@@ -20,7 +23,7 @@ export const ArchivesList = () => {
               </li>
             ))}
         </ul>
-        {/* <TextButton className="archives__load-btn" text="Więcej..."></TextButton> */}
+        {archivesErrorMessage && <p className="error-message">Ups, coś poszło nie tak. Spróbuj ponownie! :)</p>}
       </div>
     </StyledWrapper>
   );

@@ -15,9 +15,9 @@ const polishMonthsNames = [
 
 export type MonthData = {
   year: number;
-  month: number;
+  month: number | string;
   monthName: string;
-  nextMonth: number;
+  nextMonth: number | string;
   nextYear: number;
 };
 
