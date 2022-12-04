@@ -10,8 +10,8 @@ export const ArchivesList = () => {
   const [areAllVisible, setAreAllVisible] = useState(false);
   const { archivesErrorMessage } = useNewPosts();
 
-  const RELEASE_DATE = new Date(getEnvVariable(process.env.NEXT_PUBLIC_RELEASE_DATE));
-  const monthsData = getMonthsSinceDate(RELEASE_DATE);
+  const releaseDate = new Date(getEnvVariable(process.env.NEXT_PUBLIC_RELEASE_DATE));
+  const monthsData = getMonthsSinceDate(releaseDate);
 
   const months = areAllVisible ? monthsData : monthsData.slice(0, 5);
   const isButtonVisible = monthsData.length >= 6;

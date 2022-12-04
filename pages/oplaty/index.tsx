@@ -1,11 +1,10 @@
 import { FeesSection } from 'modules/oplaty/FeesSection/FeesSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_CONTACT_INFO, GET_FEES } from 'graphql/queries';
 import { FeesResponse } from 'types/fees';
-import { getEnvVariable } from 'helpers/getEnvVariable';
 import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
+import { client } from '../../graphql/apolloClient';
 
 export interface Props {
   fees: FeesResponse;
@@ -25,12 +24,6 @@ const Fees = ({ fees, contactInfo }: Props) => {
 export default Fees;
 
 export const getStaticProps = async () => {
-  // Apollo client init
-  const client = new ApolloClient({
-    uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
-    cache: new InMemoryCache(),
-  });
-
   const feesRes = await client.query({
     query: GET_FEES,
   });

@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { ContactForm } from 'modules/kontakt/ContactForm/ContactForm';
-import { render, screen, waitFor } from 'test-utils';
+import { render, screen } from 'test-utils';
 import userEvent from '@testing-library/user-event';
 const emailjs = require('@emailjs/browser');
 

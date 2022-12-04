@@ -1,11 +1,10 @@
 import { StaffListPageSection } from 'modules/kadra/StaffListPageSection/StaffListPageSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_CONTACT_INFO, GET_STAFF_LISTS } from 'graphql/queries';
 import { StaffResponse } from 'types/staff';
-import { getEnvVariable } from 'helpers/getEnvVariable';
 import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
+import { client } from '../../graphql/apolloClient';
 
 type Props = {
   staff: StaffResponse;
@@ -25,11 +24,6 @@ const Staff = ({ staff, contactInfo }: Props) => {
 export default Staff;
 
 export const getStaticProps = async () => {
-  const client = new ApolloClient({
-    uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
-    cache: new InMemoryCache(),
-  });
-
   const staffRes = await client.query({
     query: GET_STAFF_LISTS,
   });

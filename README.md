@@ -33,6 +33,8 @@ My first website for real client with real problems to solve. I gave my best and
 - React Hook Form - version 7.37.0
 - EmailJS - version 3.7.0
 - @react-google-maps/api - version 2.13.1
+- @apollo/client - version 3.7.1,
+- graphql - version 16.6.0
 - JEST - version 29.3.0
 - React Testing Library - version 13.4.0
 - dotenv - version 16.0.3
