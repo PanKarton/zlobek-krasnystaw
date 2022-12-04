@@ -1,4 +1,17 @@
+export type ApolloNewsPostsResponse = {
+  newsPosts: {
+    data: NewsPosts;
+  };
+};
+
 export type NewsPosts = NewsPostsDatum[];
+
+export interface OnCompleteResponse {
+  newsPosts: {
+    data: NewsPostsDatum[];
+    __typename: string;
+  };
+}
 
 export interface NewsPostsDatum {
   __typename: string;

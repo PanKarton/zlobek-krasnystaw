@@ -94,8 +94,12 @@ export const GET_CONTACT_INFO = gql`
 `;
 
 export const GET_NEWS_POSTS = gql`
-  query ($limit: Int!, $offset: Int!) {
-    newsPosts(limit: $limit, offset: $offset) {
+  query NewsPosts($page: Int, $pageSize: Int, $startDate: DateTime, $endDate: DateTime) {
+    newsPosts(
+      pagination: { page: $page, pageSize: $pageSize }
+      filters: { publishedAt: { gte: $startDate, lt: $endDate } }
+      sort: "publishedAt:DESC"
+    ) {
       data {
         id
         attributes {

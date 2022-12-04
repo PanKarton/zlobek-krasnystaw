@@ -9,14 +9,14 @@ export const Styledwrapper = styled.div`
     margin-top: 1rem;
   }
   @media screen and (min-width: 1550px) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     padding-bottom: 8rem;
     gap: 10rem;
     & > button {
       position: absolute;
       bottom: 3rem;
       left: 50%;
-      translate: 0 -50%;
+      translate: -50% 0;
     }
   }
 `;

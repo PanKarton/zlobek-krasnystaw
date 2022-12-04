@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
   background-color: transparent;
   border: none;
   color: ${({ theme }) => theme.color.accentPrimaryDarker};

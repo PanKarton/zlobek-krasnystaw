@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledArticle = styled.article`
   max-width: 65rem;
   font-family: var(--font-primary);
-
+  animation: fade-in 0.5s;
   .flex-wrapper {
     display: flex;
     flex-direction: column;
@@ -59,6 +59,15 @@ export const StyledArticle = styled.article`
     }
     svg {
       font-size: ${({ theme }) => theme.fontSize.text2XL};
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 `;

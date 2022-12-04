@@ -1,14 +1,13 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_NEWS_POSTS, GET_SINGLE_POST_BY_ID } from 'graphql/queries';
-import { getEnvVariable } from 'helpers/getEnvVariable';
 import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { Post } from 'types/newsPosts';
+import { client } from '../../../graphql/apolloClient';
 
 type Props = {
   contactInfo: ContactInfo;
@@ -32,11 +31,6 @@ const NewsArticle = ({ contactInfo, newsPost }: Props) => {
 export default NewsArticle;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const client = new ApolloClient({
-    uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
-    cache: new InMemoryCache(),
-  });
-
   const newsPostsRes = await client.query({
     query: GET_NEWS_POSTS,
   });
@@ -53,11 +47,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
-
-  const client = new ApolloClient({
-    uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
-    cache: new InMemoryCache(),
-  });
 
   const newsPostRes = await client.query({
     query: GET_SINGLE_POST_BY_ID,

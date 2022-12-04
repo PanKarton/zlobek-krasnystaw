@@ -1,9 +1,15 @@
-import { ReactNode } from 'react';
+import { LoadingSpinner } from 'Components/Atoms/LoadingSpinner/LoadingSpinner';
 import { StyledButton } from './TextButton.styles';
 
 type Props = {
-  children: ReactNode | string;
+  text: string;
   className?: string;
+  handleClick: () => void;
+  isLoading?: boolean;
 };
 
-export const TextButton = ({ children, className }: Props) => <StyledButton className={className}>{children}</StyledButton>;
+export const TextButton = ({ text, className, handleClick, isLoading }: Props) => (
+  <StyledButton className={className} onClick={handleClick} disabled={isLoading}>
+    {isLoading ? <LoadingSpinner /> : text}
+  </StyledButton>
+);
