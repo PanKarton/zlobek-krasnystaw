@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const StaffListPageSection = ({ staffData }: Props) => {
-  const { directors, serviceWorkers, babysitters } = staffData.data.attributes;
+  const { directors, serviceWorkers, babysitters } = staffData;
 
   return (
     <SectionWithStars>

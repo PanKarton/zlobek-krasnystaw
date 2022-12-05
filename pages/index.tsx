@@ -30,11 +30,11 @@ const Home = ({ contactInfo }: Props) => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const ContactInfoRes = await client.query({
+  const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
 
-  const contactInfo = ContactInfoRes.data.contactInfo.data.attributes;
+  const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   return {
     props: {

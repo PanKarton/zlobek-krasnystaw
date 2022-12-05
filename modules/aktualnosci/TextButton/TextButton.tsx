@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const TextButton = ({ text, className, handleClick, isLoading }: Props) => (
-  <StyledButton className={className} onClick={handleClick} disabled={isLoading}>
+  <StyledButton type="button" className={className} onClick={handleClick} disabled={isLoading}>
     {isLoading ? <LoadingSpinner /> : text}
   </StyledButton>
 );

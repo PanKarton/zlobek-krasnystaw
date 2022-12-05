@@ -1,13 +1,17 @@
 import { StyledButton } from './ArchivesListItem.styles';
 import { MonthData } from '../../../helpers/getMonthsSinceDate';
-import { useNewPosts } from 'providers/NewsPostsProvider';
+import { useNewsPosts } from 'providers/NewsPostsProvider';
 
 type Props = {
   monthData: MonthData;
 };
 
 export const ArchivesListItem = ({ monthData }: Props) => {
-  const { getPostsByMonth } = useNewPosts();
+  const { getPostsByMonth } = useNewsPosts();
 
-  return <StyledButton onClick={() => getPostsByMonth(monthData)}>{`${monthData.monthName} ${monthData.year}`}</StyledButton>;
+  const handleLoadPosts = () => {
+    getPostsByMonth(monthData);
+  };
+
+  return <StyledButton onClick={handleLoadPosts}>{`${monthData.monthName} ${monthData.year}`}</StyledButton>;
 };

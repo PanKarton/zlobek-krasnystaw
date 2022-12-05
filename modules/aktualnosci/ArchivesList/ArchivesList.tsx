@@ -3,12 +3,12 @@ import { getEnvVariable } from 'helpers/getEnvVariable';
 import { TextButton } from 'modules/aktualnosci/TextButton/TextButton';
 import { ArchivesListItem } from '../ArchivesListItem/ArchivesListItem';
 import { StyledWrapper } from './ArchivesList.styles';
-import { useNewPosts } from 'providers/NewsPostsProvider';
+import { useNewsPosts } from 'providers/NewsPostsProvider';
 import { useState } from 'react';
 
 export const ArchivesList = () => {
   const [areAllVisible, setAreAllVisible] = useState(false);
-  const { archivesErrorMessage } = useNewPosts();
+  const { archivesErrorMessage } = useNewsPosts();
 
   const releaseDate = new Date(getEnvVariable(process.env.NEXT_PUBLIC_RELEASE_DATE));
   const monthsData = getMonthsSinceDate(releaseDate);

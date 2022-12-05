@@ -3,15 +3,15 @@ import { ArchivesList } from 'modules/aktualnosci/ArchivesList/ArchivesList';
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { NewsList } from 'modules/aktualnosci/NewsList/NewsList';
 import { Styledwrapper } from './NewsListSection.styles';
-import { useNewPosts } from 'providers/NewsPostsProvider';
+import { useNewsPosts } from 'providers/NewsPostsProvider';
 
 export const NewsListSection = () => {
-  const { handleLoadMoreNewsPosts, isLoading, isLoadMoreButtonVisible, errorMessage, error } = useNewPosts();
+  const { handleLoadMoreNewsPosts, isLoading, isLoadMoreButtonVisible, errorMessage, error } = useNewsPosts();
 
   return (
     <SectionWithStars>
       <Styledwrapper>
-        <ArchivesList />
+        {/* <ArchivesList /> */}
         <NewsList />
         {/* Show when there is no errors on init fetch */}
         {isLoadMoreButtonVisible && !error ? (

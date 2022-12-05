@@ -1,7 +1,11 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { getEnvVariable } from 'helpers/getEnvVariable';
+import fetch from 'cross-fetch';
+
+const uri = getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL);
 
 export const client = new ApolloClient({
-  uri: getEnvVariable(process.env.NEXT_PUBLIC_STRAPI_URL),
   cache: new InMemoryCache(),
+  // HttpLink instead simple uri is to make tests work
+  link: new HttpLink({ uri, fetch }),
 });

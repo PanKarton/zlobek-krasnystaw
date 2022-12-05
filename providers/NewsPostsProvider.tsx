@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
 import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
 import { ApolloError, useQuery } from '@apollo/client';
-import { client } from '../graphql/apolloClient';
 import { GET_NEWS_POSTS } from 'graphql/queries';
 import { MonthData } from 'helpers/getMonthsSinceDate';
 
@@ -31,7 +30,6 @@ export const NewsPostsProvider = ({ children }: Props) => {
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
   const [archivesErrorMessage, setArchivesErrorMessage] = useState<ErrorMessage>('');
   const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
-    client,
     variables: {
       page: 1,
       pageSize: PAGE_SIZE,
@@ -121,7 +119,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
   return <NewsPostsContext.Provider value={context}>{children}</NewsPostsContext.Provider>;
 };
 
-export const useNewPosts = () => {
+export const useNewsPosts = () => {
   const newsPosts = useContext(NewsPostsContext);
 
   if (newsPosts === null) throw Error('useNewPosts is supposed to be used inside NewsPostsProvider');
