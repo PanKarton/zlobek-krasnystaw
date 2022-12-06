@@ -10,7 +10,7 @@ describe('News list page', () => {
     jest.clearAllMocks();
   });
 
-  it('Properly displays news list page with contact info and layette list', async () => {
+  it('Properly displays news list page with contact info ', async () => {
     jest.spyOn(client, 'query').mockImplementation(async () => apolloContactInfoMockResponse);
 
     const {

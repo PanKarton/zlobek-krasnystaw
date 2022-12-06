@@ -126,97 +126,116 @@ export const apolloStaffMockResponse = {
   networkStatus: 7,
 };
 
-export const newsPostsMockRequestAndResult = [
-  {
-    request: {
-      query: GET_NEWS_POSTS,
-      variables: {
-        page: 1,
-        pageSize: 2,
-      },
+export const newsPostsMockSuccess = {
+  request: {
+    query: GET_NEWS_POSTS,
+    variables: {
+      page: 1,
+      pageSize: 2,
     },
-    result: {
-      data: {
-        newsPosts: {
-          data: [
-            {
-              id: '1',
-              attributes: {
-                title: 'Test title 1',
-                content: 'Test content 1',
-                image: {
-                  data: [],
-                },
-                publishedAt: '2022-12-02T20:03:26.379Z',
+  },
+  result: {
+    data: {
+      newsPosts: {
+        data: [
+          {
+            id: '1',
+            attributes: {
+              title: 'Test title 1',
+              content: 'Test content 1',
+              image: {
+                data: [],
               },
+              publishedAt: '2022-12-02T20:03:26.379Z',
             },
-            {
-              id: '2',
-              attributes: {
-                title: 'Test title 2',
-                content: 'Test content 2',
-                image: {
-                  data: [],
-                },
-                publishedAt: '2022-13-02T20:03:26.379Z',
+          },
+          {
+            id: '2',
+            attributes: {
+              title: 'Test title 2',
+              content: 'Test content 2',
+              image: {
+                data: [],
               },
+              publishedAt: '2022-13-02T20:03:26.379Z',
             },
-          ],
-        },
+          },
+        ],
       },
     },
   },
-];
-export const failedNewsPostsMockRequestAndResult = [
-  {
-    request: {
-      query: GET_NEWS_POSTS,
-    },
-    response: {
-      errrors: [],
-    },
-  },
-];
+};
 
-export const fetchMoreMockSuccess = [
-  newsPostsMockRequestAndResult[0],
-  {
-    request: {
-      query: GET_NEWS_POSTS,
-      variables: {
-        page: 2,
-        pageSize: 2,
-      },
+export const newsPostsMockZeroResults = {
+  request: {
+    query: GET_NEWS_POSTS,
+    variables: {
+      page: 1,
+      pageSize: 2,
     },
-    result: {
-      data: {
-        newsPosts: {
-          data: [
-            {
-              id: '3',
-              attributes: {
-                title: 'Test title 3',
-                content: 'Test content 3',
-                image: {
-                  data: [],
-                },
-                publishedAt: '2022-12-02T20:03:26.379Z',
-              },
-            },
-            {
-              id: '4',
-              attributes: {
-                title: 'Test title 4',
-                content: 'Test content 4',
-                image: {
-                  data: [],
-                },
-                publishedAt: '2022-13-02T20:03:26.379Z',
-              },
-            },
-          ],
-        },
+  },
+  result: {
+    data: {
+      newsPosts: {
+        data: [],
       },
     },
   },
-];
+};
+
+export const newsPostsMockFail = {
+  request: {
+    query: GET_NEWS_POSTS,
+  },
+  response: {
+    errrors: [],
+  },
+};
+
+export const fetchMoreMockSuccess = {
+  request: {
+    query: GET_NEWS_POSTS,
+    variables: {
+      page: 2,
+      pageSize: 2,
+    },
+  },
+  result: {
+    data: {
+      newsPosts: {
+        data: [
+          {
+            id: '3',
+            attributes: {
+              title: 'Test title 3',
+              content: 'Test content 3',
+              image: {
+                data: [],
+              },
+              publishedAt: '2022-12-02T20:03:26.379Z',
+            },
+          },
+          {
+            id: '4',
+            attributes: {
+              title: 'Test title 4',
+              content: 'Test content 4',
+              image: {
+                data: [],
+              },
+              publishedAt: '2022-13-02T20:03:26.379Z',
+            },
+          },
+        ],
+      },
+    },
+  },
+};
+export const fetchMoreMockFail = {
+  request: {
+    query: GET_NEWS_POSTS,
+  },
+  result: {
+    errors: [],
+  },
+};

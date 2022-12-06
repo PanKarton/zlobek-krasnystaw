@@ -13,7 +13,7 @@ type Context = {
   handleLoadMoreNewsPosts: () => Promise<void>;
   getPostsByMonth: (queryData: MonthData) => Promise<void>;
   isLoading: boolean;
-  isLoadMoreButtonVisible: boolean;
+  isAllDataDisplayed: boolean;
   errorMessage: ErrorMessage;
   archivesErrorMessage: ErrorMessage;
   error: ApolloError | undefined;
@@ -26,7 +26,7 @@ const NewsPostsContext = createContext<Context | null>(null);
 const PAGE_SIZE = 2;
 
 export const NewsPostsProvider = ({ children }: Props) => {
-  const [isLoadMoreButtonVisible, setIsLoadMoreButtonVisible] = useState(true);
+  const [isAllDataDisplayed, setIsAllDataDisplayed] = useState(true);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
   const [archivesErrorMessage, setArchivesErrorMessage] = useState<ErrorMessage>('');
   const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
@@ -64,7 +64,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
       });
 
       // Hide button when received less items than PAGE_SIZE
-      if (response.data.newsPosts.data.length < PAGE_SIZE) setIsLoadMoreButtonVisible(false);
+      if (response.data.newsPosts.data.length < PAGE_SIZE) setIsAllDataDisplayed(false);
     } catch {
       setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
     }
@@ -97,7 +97,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
             };
           },
         });
-        setIsLoadMoreButtonVisible(false);
+        setIsAllDataDisplayed(false);
       } catch (err) {
         setArchivesErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
       }
@@ -110,7 +110,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
     handleLoadMoreNewsPosts,
     getPostsByMonth,
     isLoading: loading,
-    isLoadMoreButtonVisible,
+    isAllDataDisplayed,
     errorMessage,
     archivesErrorMessage,
     error,
