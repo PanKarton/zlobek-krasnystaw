@@ -1,9 +1,9 @@
 import { NewsListElement } from 'modules/aktualnosci/NewsListElement/NewsListElement';
-import { useNewPosts } from 'providers/NewsPostsProvider';
+import { useNewsPosts } from 'providers/NewsPostsProvider';
 import { StyledList } from './NewsList.styles';
 
 export const NewsList = () => {
-  const { newsPostsState } = useNewPosts();
+  const { newsPostsState } = useNewsPosts();
 
   return (
     <StyledList>

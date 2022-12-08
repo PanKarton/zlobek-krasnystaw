@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
 import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
 import { ApolloError, useQuery } from '@apollo/client';
-import { client } from '../graphql/apolloClient';
 import { GET_NEWS_POSTS } from 'graphql/queries';
 import { MonthData } from 'helpers/getMonthsSinceDate';
 
@@ -14,7 +13,7 @@ type Context = {
   handleLoadMoreNewsPosts: () => Promise<void>;
   getPostsByMonth: (queryData: MonthData) => Promise<void>;
   isLoading: boolean;
-  isLoadMoreButtonVisible: boolean;
+  isAllDataDisplayed: boolean;
   errorMessage: ErrorMessage;
   archivesErrorMessage: ErrorMessage;
   error: ApolloError | undefined;
@@ -27,11 +26,10 @@ const NewsPostsContext = createContext<Context | null>(null);
 const PAGE_SIZE = 2;
 
 export const NewsPostsProvider = ({ children }: Props) => {
-  const [isLoadMoreButtonVisible, setIsLoadMoreButtonVisible] = useState(true);
+  const [isAllDataDisplayed, setIsAllDataDisplayed] = useState(true);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
   const [archivesErrorMessage, setArchivesErrorMessage] = useState<ErrorMessage>('');
   const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
-    client,
     variables: {
       page: 1,
       pageSize: PAGE_SIZE,
@@ -66,7 +64,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
       });
 
       // Hide button when received less items than PAGE_SIZE
-      if (response.data.newsPosts.data.length < PAGE_SIZE) setIsLoadMoreButtonVisible(false);
+      if (response.data.newsPosts.data.length < PAGE_SIZE) setIsAllDataDisplayed(false);
     } catch {
       setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
     }
@@ -80,7 +78,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
         const startDate = `${year}-${month}-01T00:00:00.265Z`;
         const endDate = `${nextYear}-${nextMonth}-01T00:00:00.265Z`;
 
-        await fetchMore({
+        const res = await fetchMore({
           // Fetch with filter by publishDate variables and override pagination variables to display all posts of month
           variables: {
             startDate,
@@ -99,7 +97,8 @@ export const NewsPostsProvider = ({ children }: Props) => {
             };
           },
         });
-        setIsLoadMoreButtonVisible(false);
+
+        setIsAllDataDisplayed(false);
       } catch (err) {
         setArchivesErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
       }
@@ -112,7 +111,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
     handleLoadMoreNewsPosts,
     getPostsByMonth,
     isLoading: loading,
-    isLoadMoreButtonVisible,
+    isAllDataDisplayed,
     errorMessage,
     archivesErrorMessage,
     error,
@@ -121,7 +120,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
   return <NewsPostsContext.Provider value={context}>{children}</NewsPostsContext.Provider>;
 };
 
-export const useNewPosts = () => {
+export const useNewsPosts = () => {
   const newsPosts = useContext(NewsPostsContext);
 
   if (newsPosts === null) throw Error('useNewPosts is supposed to be used inside NewsPostsProvider');

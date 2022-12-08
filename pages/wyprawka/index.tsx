@@ -14,7 +14,7 @@ type Props = {
 const Layette = ({ layette, contactInfo }: Props) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Wyprawka">
+      <SecondaryTemplate heading="Wyprawka malucha">
         <LayetteSection layette={layette} />
       </SecondaryTemplate>
     </ContactDataProvider>

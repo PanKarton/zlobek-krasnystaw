@@ -15,7 +15,7 @@ const Fees = ({ fees, contactInfo }: Props) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading="Cennik">
-        <FeesSection feesData={fees.attributes} />
+        <FeesSection feesData={fees} />
       </SecondaryTemplate>
     </ContactDataProvider>
   );
@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
     query: GET_FEES,
   });
 
-  const fees = feesRes.data.fee;
+  const fees = feesRes.data.fee.data.attributes;
 
   const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,

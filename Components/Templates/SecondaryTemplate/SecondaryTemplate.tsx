@@ -1,9 +1,10 @@
 import { PageHeading } from 'Components/Atoms/PageHeading/PageHeading';
 import { Footer } from 'modules/footer/Footer/Footer';
 import { Header } from 'modules/header/Header/Header';
+import { ReactNode } from 'react';
 
 type Props = {
-  children: import('react').ReactNode;
+  children: ReactNode;
   heading?: string;
 };
 

@@ -10,7 +10,7 @@ type Props = {
 
 const Recruitment = ({ contactInfo }: Props) => (
   <ContactDataProvider contactData={contactInfo}>
-    <SecondaryTemplate heading="Rekrutacja">
+    <SecondaryTemplate heading="Informacje o rekrutacji">
       <section></section>
     </SecondaryTemplate>
   </ContactDataProvider>

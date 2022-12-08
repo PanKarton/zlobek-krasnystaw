@@ -29,7 +29,7 @@ export const getMonthsSinceDate = (fromDate: Date) => {
   const toMonth = toDate.getMonth();
   const months = [];
 
-  function aZero(n: number) {
+  function aZero(n: number | string) {
     return n.toString().length == 1 ? (n = '0' + n) : n;
   }
 
@@ -48,5 +48,6 @@ export const getMonthsSinceDate = (fromDate: Date) => {
       months.push({ year, month: aZero(month), monthName, nextMonth: aZero(nextMonth), nextYear });
     }
   }
+
   return months;
 };

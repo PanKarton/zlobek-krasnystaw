@@ -1,4 +1,4 @@
-import { ErrorPageButton } from 'modules/404/ErrorPageButton/ErrorPageButton';
+import { GoToMainPageLink } from 'modules/404/GoToMainPageLink/GoToMainPageLink';
 import { StarsBackground } from 'Components/Atoms/StarsBackground/StarsBackground';
 import { StyledArticle, StyledSection } from './ErrorPageSection.styles';
 
@@ -12,7 +12,7 @@ export const ErrorPageSection = () => (
           <p>Uuups!!! Nie ma takiej strony :( </p>
           <p>Podana strona nie istnieje lub nie jest dostępna</p>
         </div>
-        <ErrorPageButton />
+        <GoToMainPageLink />
       </div>
     </StyledArticle>
   </StyledSection>

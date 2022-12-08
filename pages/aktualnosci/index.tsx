@@ -24,7 +24,7 @@ const News = ({ contactInfo }: Props) => {
 
 export default News;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });

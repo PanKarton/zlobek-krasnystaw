@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
     query: GET_STAFF_LISTS,
   });
 
-  const staff = staffRes.data;
+  const staff = staffRes.data.staff.data.attributes;
 
   const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,

@@ -6,7 +6,7 @@ export const StyledWrapper = styled.div`
   @media screen and (min-width: 1550px) {
     border-bottom: none;
     padding-bottom: 0;
-    width: 150px;
+    width: 200px;
   }
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.contrast};
