@@ -34,7 +34,7 @@ export interface ImageDatum {
 
 export interface FluffyAttributes {
   name: string;
-  alternativeText: null;
+  alternativeText: string;
   caption: null;
   width: number;
   height: number;

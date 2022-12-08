@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
 import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
 import { ApolloError, useQuery } from '@apollo/client';
 import { GET_NEWS_POSTS } from 'graphql/queries';
@@ -35,6 +35,36 @@ export const NewsPostsProvider = ({ children }: Props) => {
       pageSize: PAGE_SIZE,
     },
   });
+
+  useEffect(() => {
+    // Additional fetch to check if there is more data waiting on server
+    const fetchData = async () => {
+      try {
+        if (!data) return;
+
+        const postsNumber = data.newsPosts.data.length;
+
+        const nextPagePointer = postsNumber / PAGE_SIZE + 1;
+
+        // Hide button when nextPagePointer is float
+        if (!Number.isInteger(nextPagePointer)) return setIsAllDataDisplayed(false);
+
+        const response = await fetchMore({
+          variables: {
+            page: nextPagePointer,
+            pageSize: PAGE_SIZE,
+          },
+        });
+
+        // Hide button when there are no posts to fetch
+        if (!response.data.newsPosts.data.length) setIsAllDataDisplayed(false);
+      } catch (error) {
+        console.log('Additional news posts fetch error', { error });
+      }
+    };
+
+    fetchData();
+  }, [data, fetchMore]);
 
   const handleLoadMoreNewsPosts = useCallback(async () => {
     try {
