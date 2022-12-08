@@ -6,6 +6,8 @@ import {
   fetchMoreMockSuccess,
   fetchMoreMockFail,
   newsPostsMockZeroResults,
+  fetchMoreOfMonthMockSuccess,
+  fetchMoreOfMonthMockFail,
 } from 'testHelpers/mocked-responses';
 import { MockedProvider } from '@apollo/client/testing';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';
@@ -65,7 +67,7 @@ describe('News list component', () => {
 
     const user = userEvent.setup();
 
-    await user.click(await getLoadMoreButton());
+    await user.click(await findLoadMoreButton());
 
     await testNewsPostsWithLoadedPosts();
   });
@@ -81,10 +83,47 @@ describe('News list component', () => {
 
     const user = userEvent.setup();
 
-    await user.click(await getLoadMoreButton());
+    await user.click(await findLoadMoreButton());
+
+    await screen.findByText(/Ups, coś poszło nie tak. Spróbuj ponownie/i);
+  });
+
+  it('Loads posts of particular month after archives button click', async () => {
+    render(
+      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreOfMonthMockSuccess]} addTypename={false}>
+        <NewsPostsProvider>
+          <NewsListSection />
+        </NewsPostsProvider>
+      </MockedProvider>,
+    );
+
+    const user = userEvent.setup();
+
+    await user.click(await findLoadPostsOfMonthButton());
+
+    await screen.findByText(/Listopad title test 1/i);
+    await screen.findByText(/Listopad title test 2/i);
+
+    expect(queryLoadMoreButton()).not.toBeInTheDocument();
+  });
+
+  it('Displays error after archives button query fails', async () => {
+    render(
+      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreOfMonthMockFail]} addTypename={false}>
+        <NewsPostsProvider>
+          <NewsListSection />
+        </NewsPostsProvider>
+      </MockedProvider>,
+    );
+
+    const user = userEvent.setup();
+
+    await user.click(await findLoadPostsOfMonthButton());
 
     await screen.findByText(/Ups, coś poszło nie tak. Spróbuj ponownie/i);
   });
 });
 
-const getLoadMoreButton = async () => await screen.findByRole('button', { name: /Załaduj więcej/i });
+const findLoadMoreButton = async () => await screen.findByRole('button', { name: /Załaduj więcej/i });
+const queryLoadMoreButton = () => screen.queryByRole('button', { name: /Załaduj więcej/i });
+const findLoadPostsOfMonthButton = async () => await screen.findByRole('button', { name: /Listopad/i });

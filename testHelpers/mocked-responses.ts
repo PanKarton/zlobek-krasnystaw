@@ -231,11 +231,58 @@ export const fetchMoreMockSuccess = {
     },
   },
 };
+
 export const fetchMoreMockFail = {
   request: {
     query: GET_NEWS_POSTS,
   },
   result: {
     errors: [],
+  },
+};
+
+export const fetchMoreOfMonthMockSuccess = {
+  request: {
+    query: GET_NEWS_POSTS,
+    variables: { page: 1, pageSize: 100, startDate: '2022-11-01T00:00:00.265Z', endDate: '2022-12-01T00:00:00.265Z' },
+  },
+  result: {
+    data: {
+      newsPosts: {
+        data: [
+          {
+            id: '3',
+            attributes: {
+              title: 'Listopad title test 1',
+              content: 'Listopad content test 1',
+              image: {
+                data: [],
+              },
+              publishedAt: '2022-11-11T20:03:26.379Z',
+            },
+          },
+          {
+            id: '4',
+            attributes: {
+              title: 'Listopad title test 2',
+              content: 'Listopad content test 2',
+              image: {
+                data: [],
+              },
+              publishedAt: '2022-11-02T20:03:26.379Z',
+            },
+          },
+        ],
+      },
+    },
+  },
+};
+export const fetchMoreOfMonthMockFail = {
+  request: {
+    query: GET_NEWS_POSTS,
+    variables: { page: 1, pageSize: 100, startDate: '2022-11-01T00:00:00.265Z', endDate: '2022-12-01T00:00:00.265Z' },
+  },
+  result: {
+    data: [],
   },
 };

@@ -78,7 +78,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
         const startDate = `${year}-${month}-01T00:00:00.265Z`;
         const endDate = `${nextYear}-${nextMonth}-01T00:00:00.265Z`;
 
-        await fetchMore({
+        const res = await fetchMore({
           // Fetch with filter by publishDate variables and override pagination variables to display all posts of month
           variables: {
             startDate,
@@ -97,6 +97,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
             };
           },
         });
+
         setIsAllDataDisplayed(false);
       } catch (err) {
         setArchivesErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
