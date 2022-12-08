@@ -4,7 +4,7 @@ import { DesktopNavList } from '../DesktopNavList/DesktopNavList';
 import { MobileNavList } from '../MobileNavList/MobileNavList';
 import { StyledNav } from './Nav.styles';
 import { HamburgerButton } from '../HamburgerButton/HamburgerButton';
-import { useHamburgerNav } from './useHamburgerNav';
+import { useNav } from './useNav';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { FaEnvelope } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
@@ -12,14 +12,16 @@ import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const Nav = () => {
-  const { isVisible, handleToggleMenu, handleCloseMenu } = useHamburgerNav();
+  const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
   const { openDays, phoneNumber, openHours, email } = useContactData();
 
   return (
-    <StyledNav>
-      <div className="main-logo-wrapper">{/* <MainLogo /> */}</div>
+    <StyledNav className={isNavVisible ? '' : 'hidden'}>
+      <div className="main-logo-wrapper">
+        <MainLogo />
+      </div>
       <div className="mobile-icons-wrapper">
-        <HamburgerButton onClick={handleToggleMenu} isActive={isVisible}></HamburgerButton>
+        <HamburgerButton onClick={handleToggleMenu} isActive={isSecondaryVisible}></HamburgerButton>
       </div>
       <div className="ul-wrapper">
         <DesktopNavList />
@@ -51,7 +53,7 @@ export const Nav = () => {
           <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" layout="fixed" width="36" height="36" />
         </FbButton>
       </div>
-      <MobileNavList isVisible={isVisible} handleCloseMenu={handleCloseMenu} />
+      <MobileNavList isVisible={isSecondaryVisible} handleCloseMenu={handleCloseMenu} />
     </StyledNav>
   );
 };

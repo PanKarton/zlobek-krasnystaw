@@ -20,6 +20,9 @@ export const StyledSection = styled.section`
     @media screen and (min-width: 700px) {
       flex-direction: row;
       flex-wrap: wrap;
+      width: 85%;
+      column-gap: 0;
+      margin-inline: auto;
       li {
         flex: 1 0 47%;
       }
@@ -27,6 +30,8 @@ export const StyledSection = styled.section`
     @media screen and (min-width: 900px) {
       flex-direction: column;
       row-gap: 1rem;
+      margin-inline: 0;
+
       li {
         flex: 1 0 99%;
       }

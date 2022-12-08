@@ -10,7 +10,6 @@ export const StyledWrapper = styled.section`
   padding-block: 1.5rem;
   padding-left: 1.5rem;
   border-left: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
 
   /* Hide and show menu */
   translate: 100% 0;
@@ -23,11 +22,12 @@ export const StyledWrapper = styled.section`
 
   /* Change padding for side menu */
   @media screen and (min-width: 700px) {
-    top: 5.25rem;
+    top: 5rem;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
     border-bottom-left-radius: 5px;
     height: min-content;
     width: max(25%, 15rem);
+    border-bottom: 1px solid #aaa;
     .close-button-wrapper {
       display: none;
     }

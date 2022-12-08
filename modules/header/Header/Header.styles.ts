@@ -82,7 +82,7 @@ export const StyledHeader = styled.header<Props>`
       translate: 0 -50%;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1150px) {
       width: max-content;
       padding-inline: 4rem;
     }
@@ -98,12 +98,9 @@ export const StyledHeader = styled.header<Props>`
         color: ${({ theme }) => theme.color.accentSecondaryDarker};
       }
       @media screen and (min-width: 700px) {
-        font-size: ${({ theme }) => theme.fontSize.text4XL};
-      }
-      @media screen and (min-width: 1000px) {
         font-size: ${({ theme }) => theme.fontSize.text5XL};
       }
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 1150px) {
         font-size: ${({ theme }) => theme.fontSize.text7XL};
       }
     }
@@ -115,7 +112,7 @@ export const StyledHeader = styled.header<Props>`
       @media screen and (min-width: 700px) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
       }
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 1300px) {
         font-size: ${({ theme }) => theme.fontSize.text2XL};
       }
     }

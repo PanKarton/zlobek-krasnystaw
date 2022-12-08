@@ -63,12 +63,17 @@ export const StyledFooter = styled.footer`
     border-top: 1px solid ${({ theme }) => theme.color.borderDivider};
     align-items: center;
     & > .max-width-1440 {
+      padding-right: 0;
       .flex-wrapper {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
         @media screen and (min-width: 700px) {
+          padding-left: 3rem;
+        }
+        @media screen and (min-width: 900px) {
+          padding-left: 0;
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
@@ -81,14 +86,24 @@ export const StyledFooter = styled.footer`
       gap: 0.5rem;
       font-family: var(--font-primary);
       h2 {
-        font-size: ${({ theme }) => theme.fontSize.textLG};
+        font-size: ${({ theme }) => theme.fontSize.textBase};
         font-weight: 400;
         color: ${({ theme }) => theme.color.accentSecondaryDarker};
+        @media screen and (min-width: 1000px) {
+          font-size: ${({ theme }) => theme.fontSize.textLG};
+        }
       }
     }
     .nav-copyrights {
       font-family: var(--font-primary);
       font-size: ${({ theme }) => theme.fontSize.textBase};
+      max-width: 40ch;
+      @media screen and (min-width: 900px) {
+        max-width: 570px;
+      }
+      @media screen and (min-width: 1550px) {
+        max-width: max-content;
+      }
       .text-pink {
         color: ${({ theme }) => theme.color.accentSecondaryDarker};
       }
