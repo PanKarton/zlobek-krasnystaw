@@ -12,71 +12,58 @@ export const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   z-index: 1;
-
-  @media screen and (min-width: 700px) {
-    background-color: transparent;
-    padding-inline: 0;
-    height: 6rem;
+  border-bottom: 1px solid #aaa;
+  transition: translate ease-out 0.25s;
+  &.hidden {
+    translate: 0 -100%;
   }
+
   @media screen and (min-width: 1440px) {
     position: absolute;
     left: 50%;
     top: 3rem;
     translate: -50% 0;
     max-width: 1440px;
+    height: 4.5rem;
+    border-radius: 9999px;
+    border-bottom: none;
   }
 
   & > .main-logo-wrapper {
     position: relative;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    & .logo-img-wrapper {
+    .logo-img-wrapper {
       position: relative;
-      width: 8rem;
-      aspect-ratio: 1;
+      height: 70px;
+      aspect-ratio: 1.2;
     }
-    @media screen and (min-width: 700px) {
-      justify-content: flex-start;
-      align-items: center;
-      /* width: 20rem; */
-      /* height: 15rem; */
-      padding: 1rem 0 0 1.5rem;
-      background-color: ${({ theme }) => theme.color.primary};
-      clip-path: circle(70% at 25% 0);
-      & .logo-img-wrapper {
-        width: 11rem;
-        translate: 0 1rem;
-      }
-    }
-
     @media screen and (min-width: 1440px) {
       position: absolute;
-      height: 11rem;
-      width: 11rem;
-      border: 1px solid #aaa;
-      border-radius: 50%;
-      left: 50%;
       top: 50%;
+      left: 50%;
       translate: -50% -50%;
-      z-index: 2;
-      clip-path: none;
-      background-image: none;
+      width: 10rem;
+      aspect-ratio: 1;
       background-color: ${({ theme }) => theme.color.primary};
-      padding: 0;
-      justify-content: center;
+      border-radius: 50%;
+      z-index: 2;
+      border: 1px solid #aaa;
+      display: flex;
       align-items: center;
-
+      justify-content: center;
       &::before {
         content: '';
         position: absolute;
+        background-color: ${({ theme }) => theme.color.primary};
+        width: 110%;
+        height: 4.375rem;
         left: 50%;
         top: 50%;
         translate: -50% -50%;
-        width: 110%;
-        height: 4.4rem;
-        background-color: ${({ theme }) => theme.color.primary};
+      }
+      .logo-img-wrapper {
+        height: 100px;
+        translate: 0 -5%;
       }
     }
   }
@@ -170,6 +157,7 @@ export const StyledNav = styled.nav`
       left: 50%;
       translate: -50% -50%;
       width: 100%;
+      background-color: transparent;
     }
   }
 `;

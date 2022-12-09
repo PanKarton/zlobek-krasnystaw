@@ -4,24 +4,25 @@ export const StyledWrapper = styled.section`
   display: none;
   height: 4.5rem;
   background-color: ${({ theme }) => theme.color.primary};
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-  border: 1px solid #aaa;
 
   /* Show bar */
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 750px) {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 2rem;
-    padding-left: 4rem;
+    padding-right: 2rem;
+  }
+  @media screen and (min-width: 1300px) {
+    padding-right: 4rem;
   }
 
   /* Add  border radius*/
   @media screen and (min-width: 1440px) {
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
+    border-radius: 9999px;
     justify-content: space-between;
     padding-inline: 6rem;
+    border: 1px solid #aaa;
   }
 `;
 

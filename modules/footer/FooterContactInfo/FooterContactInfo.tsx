@@ -16,7 +16,9 @@ export const FooterContactInfo = () => {
               <FiMapPin />
             </div>
             <div className="text-wrapper">
-              <h3>Godziny otwarcia</h3>
+              <h3>
+                Godziny <br /> otwarcia
+              </h3>
               <p>{openDays}</p>
               <p>{`${openHours.openTime} - ${openHours.closeTime}`}</p>
             </div>

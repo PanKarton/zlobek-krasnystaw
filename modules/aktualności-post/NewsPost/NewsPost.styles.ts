@@ -15,15 +15,16 @@ export const StyledArticle = styled.article`
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
+    gap: 1rem;
     @media screen and (min-width: 900px) {
       flex-direction: row;
       align-items: flex-start;
       gap: 2rem;
     }
     .img-wrapper {
+      position: relative;
       width: 100%;
       aspect-ratio: 1.61;
-      background-color: #eee;
       @media screen and (min-width: 900px) {
         width: auto;
         flex-basis: 30%;
