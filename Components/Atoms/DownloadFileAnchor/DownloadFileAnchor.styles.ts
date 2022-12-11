@@ -12,6 +12,9 @@ export const StyledAnchor = styled.a`
   @media screen and (min-width: 1150px) {
     font-size: ${({ theme }) => theme.fontSize.textLG};
   }
+  span {
+    flex: 1 0 calc(100% - 10rem);
+  }
   &:hover {
     cursor: pointer;
     color: ${({ theme }) => theme.color.accentPrimaryDarker};

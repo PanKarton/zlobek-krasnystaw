@@ -22,7 +22,7 @@ export const RodoSection = () => (
           <DownloadFileAnchor href="/download/umowa.pdf">umowa.pdf (159kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/przepis-prawa.pdf">przepis-prawa.pdf(86kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href="/download/przepis-prawa.pdf">przepis-prawa.pdf (86kb)</DownloadFileAnchor>
         </li>
       </ul>
     </StyledWrapper>
