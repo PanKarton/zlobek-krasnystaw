@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledAnchor = styled.a`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
   padding: 0.25rem 2rem 0.25rem 0;
   font-size: ${({ theme }) => theme.fontSize.textBase};

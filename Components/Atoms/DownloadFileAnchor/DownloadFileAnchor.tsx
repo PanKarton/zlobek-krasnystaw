@@ -11,7 +11,10 @@ type Props = {
 export const DownloadFileAnchor = ({ children, href }: Props) => {
   const [isDownloaded, setIsDownloaded] = useState(false);
 
-  const handleDownloadCheck = () => setIsDownloaded(true);
+  const handleDownloadCheck = () => {
+    setIsDownloaded(true);
+    setTimeout(() => setIsDownloaded(false), 2000);
+  };
 
   return (
     <StyledAnchor href={href} download onClick={handleDownloadCheck}>

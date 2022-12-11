@@ -4,7 +4,6 @@ export const StyledWrapper = styled.div`
   --main-size: 16px;
   width: var(--main-size);
   height: var(--main-size);
-  margin: 0 auto;
 
   .check-icon {
     width: var(--main-size);
