@@ -56,9 +56,9 @@ export const StyledHeader = styled.header<Props>`
       width: ${({ isSecondary }) => (isSecondary ? '100%' : '85%')};
     }
     @media screen and (min-width: 1440px) {
-      top: 6rem;
+      top: 5.25rem;
       span {
-        translate: ${({ isSecondary }) => (isSecondary ? '0 -6rem' : '0')};
+        translate: ${({ isSecondary }) => (isSecondary ? '0 -5.5rem' : '0')};
       }
     }
   }

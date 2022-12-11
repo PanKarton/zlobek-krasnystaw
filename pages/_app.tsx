@@ -1,3 +1,4 @@
+import NextNProgress from 'nextjs-progressbar';
 import { Loader } from 'Components/Organisms/Loader/Loader';
 import { AppProvider } from 'providers/AppProvider';
 import Head from 'next/head';
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Loader />
       <AppProvider>
+        <NextNProgress />
         <Component {...pageProps} />
       </AppProvider>
     </>
