@@ -1,5 +1,6 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
+import { RecruitmentPageSection } from 'modules/rekrutacja/RecruitmentPageSection/RecruitmentPageSection';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { client } from '../../graphql/apolloClient';
@@ -11,7 +12,7 @@ type Props = {
 const Recruitment = ({ contactInfo }: Props) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Informacje o rekrutacji">
-      <section></section>
+      <RecruitmentPageSection></RecruitmentPageSection>
     </SecondaryTemplate>
   </ContactDataProvider>
 );
