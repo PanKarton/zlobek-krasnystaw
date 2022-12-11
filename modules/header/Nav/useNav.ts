@@ -9,6 +9,7 @@ export const useNav = () => {
   const handleCloseMenu = useCallback(() => setIsVisible(false), []);
 
   const handleScroll = useCallback(() => {
+    if (window.innerWidth >= 1440) return;
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
 
