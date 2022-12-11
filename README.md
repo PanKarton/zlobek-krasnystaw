@@ -30,6 +30,7 @@ My first website for real client with real problems to solve. I gave my best and
 - Styled Components - version 5.3.5
 - React Icons - version 4.4.0
 - react-copy-to-clipboard - version 5.1.0
+- nextjs-progressbar - version 0.0.16;
 - React Hook Form - version 7.37.0
 - EmailJS - version 3.7.0
 - @react-google-maps/api - version 2.13.1
@@ -50,6 +51,9 @@ List the ready features here:
 - Google map
 - Clickable phone number link
 - Button that copies account number to clipboard
+- News posts page with 'Load more' button that loads paginated posts
+- Archives list that loads news posts from particular month
+- Links for downloading documents
 
 ## Screenshots
 
@@ -89,11 +93,8 @@ Room for improvement:
 
 To do:
 
-- Recruitment site
 - Gallery groups site
 - Gallery group folders site
 - Gallery group folder images site
-- Attach CMS and caching for: contact data, adress, staff list, fees, layette and day schedule
 - Attach CMS for news and gallery
-- Change logo
-- Optional: Add images to parent sites
+- Optional: Add decorative images to parent sites
