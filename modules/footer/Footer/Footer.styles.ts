@@ -52,7 +52,8 @@ export const StyledFooter = styled.footer`
         width: 540px;
       }
       @media screen and (min-width: 1550px) {
-        width: 660px;
+        width: 800px;
+        height: 500px;
       }
     }
   }
