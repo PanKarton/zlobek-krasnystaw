@@ -36,7 +36,7 @@ export const StyledHeader = styled.header<Props>`
     a {
       display: block;
       height: 100%;
-      color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.color.contrast};
       font-family: var(--font-primary);
     }
   }

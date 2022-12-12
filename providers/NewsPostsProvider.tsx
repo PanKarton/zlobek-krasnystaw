@@ -69,6 +69,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
   const handleLoadMoreNewsPosts = useCallback(async () => {
     try {
       if (!data) return;
+
       setErrorMessage('');
 
       const postsNumber = data.newsPosts.data.length;
@@ -79,11 +80,14 @@ export const NewsPostsProvider = ({ children }: Props) => {
         // Update page variable based on current data length
         variables: {
           page: nextPagePointer,
-          pageSize: PAGE_SIZE,
+          pageSize: 1,
         },
         updateQuery: (previousResult, { fetchMoreResult }) => {
           const previousData = previousResult.newsPosts.data;
           const newData = fetchMoreResult.newsPosts.data;
+
+          console.log(newData);
+
           return {
             newsPosts: {
               __typename: 'NewsPostEntityResponseCollection',
@@ -93,9 +97,11 @@ export const NewsPostsProvider = ({ children }: Props) => {
         },
       });
 
+      console.log(response);
+
       // Hide button when received less items than PAGE_SIZE
       if (response.data.newsPosts.data.length < PAGE_SIZE) setIsAllDataDisplayed(false);
-    } catch {
+    } catch (err) {
       setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
     }
   }, [data, fetchMore]);
@@ -108,7 +114,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
         const startDate = `${year}-${month}-01T00:00:00.265Z`;
         const endDate = `${nextYear}-${nextMonth}-01T00:00:00.265Z`;
 
-        const res = await fetchMore({
+        await fetchMore({
           // Fetch with filter by publishDate variables and override pagination variables to display all posts of month
           variables: {
             startDate,

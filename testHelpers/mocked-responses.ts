@@ -146,7 +146,7 @@ export const newsPostsMockSuccess = {
               image: {
                 data: [],
               },
-              publishedAt: '2022-12-02T20:03:26.379Z',
+              publishedAt: '2022-12-10T20:03:26.379Z',
             },
           },
           {
@@ -157,7 +157,7 @@ export const newsPostsMockSuccess = {
               image: {
                 data: [],
               },
-              publishedAt: '2022-13-02T20:03:26.379Z',
+              publishedAt: '2022-12-09T20:03:26.379Z',
             },
           },
         ],
@@ -212,7 +212,7 @@ export const fetchMoreMockSuccess = {
               image: {
                 data: [],
               },
-              publishedAt: '2022-12-02T20:03:26.379Z',
+              publishedAt: '2022-12-08T20:02:50.607Z',
             },
           },
           {
@@ -223,7 +223,7 @@ export const fetchMoreMockSuccess = {
               image: {
                 data: [],
               },
-              publishedAt: '2022-13-02T20:03:26.379Z',
+              publishedAt: '2022-12-07T20:02:30.513Z',
             },
           },
         ],
@@ -281,6 +281,15 @@ export const fetchMoreOfMonthMockFail = {
   request: {
     query: GET_NEWS_POSTS,
     variables: { page: 1, pageSize: 100, startDate: '2022-11-01T00:00:00.265Z', endDate: '2022-12-01T00:00:00.265Z' },
+  },
+  result: {
+    data: [],
+  },
+};
+
+export const dummyFetchMock = {
+  request: {
+    query: GET_NEWS_POSTS,
   },
   result: {
     data: [],

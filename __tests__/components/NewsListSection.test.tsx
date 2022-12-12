@@ -8,6 +8,7 @@ import {
   newsPostsMockZeroResults,
   fetchMoreOfMonthMockSuccess,
   fetchMoreOfMonthMockFail,
+  dummyFetchMock,
 } from 'testHelpers/mocked-responses';
 import { MockedProvider } from '@apollo/client/testing';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';
@@ -58,7 +59,7 @@ describe('News list component', () => {
 
   it('Properly loads more posts', async () => {
     render(
-      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreMockSuccess]} addTypename={false}>
+      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreMockSuccess, fetchMoreMockSuccess]} addTypename={false}>
         <NewsPostsProvider>
           <NewsListSection />
         </NewsPostsProvider>
@@ -74,7 +75,7 @@ describe('News list component', () => {
 
   it('Displays error when load more posts fails', async () => {
     render(
-      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreMockFail]} addTypename={false}>
+      <MockedProvider mocks={[newsPostsMockSuccess, dummyFetchMock, fetchMoreMockFail]} addTypename={false}>
         <NewsPostsProvider>
           <NewsListSection />
         </NewsPostsProvider>
@@ -90,7 +91,7 @@ describe('News list component', () => {
 
   it('Loads posts of particular month after archives button click', async () => {
     render(
-      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreOfMonthMockSuccess]} addTypename={false}>
+      <MockedProvider mocks={[newsPostsMockSuccess, dummyFetchMock, fetchMoreOfMonthMockSuccess]} addTypename={false}>
         <NewsPostsProvider>
           <NewsListSection />
         </NewsPostsProvider>
@@ -109,7 +110,7 @@ describe('News list component', () => {
 
   it('Displays error after archives button query fails', async () => {
     render(
-      <MockedProvider mocks={[newsPostsMockSuccess, fetchMoreOfMonthMockFail]} addTypename={false}>
+      <MockedProvider mocks={[newsPostsMockSuccess, dummyFetchMock, fetchMoreOfMonthMockFail]} addTypename={false}>
         <NewsPostsProvider>
           <NewsListSection />
         </NewsPostsProvider>
