@@ -3,7 +3,7 @@ import { render } from 'testHelpers/test-utils';
 import Home, { getStaticProps } from 'pages';
 import { client } from 'graphql/apolloClient';
 import { apolloContactInfoMockResponse } from '../../testHelpers/mocked-responses';
-import { testContactInfo } from '../../testHelpers/screen-test-functions';
+import { testContactInfo } from '../../testHelpers/screen-elements-test-functions';
 
 describe('Home page', () => {
   afterEach(() => {

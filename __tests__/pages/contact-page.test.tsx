@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Contact, { getStaticProps } from '../../pages/kontakt/index';
 import { client } from '../../graphql/apolloClient';
 import { render, screen } from 'testHelpers/test-utils';
-import { testContactPage } from '../../testHelpers/screen-test-functions';
+import { testContactPage } from '../../testHelpers/screen-elements-test-functions';
 import { apolloContactInfoMockResponse } from '../../testHelpers/mocked-responses';
 
 describe('Contact page', () => {

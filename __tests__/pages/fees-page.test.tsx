@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Fees, { getStaticProps } from '../../pages/oplaty/index';
 import { client } from '../../graphql/apolloClient';
 import { render, screen } from 'testHelpers/test-utils';
-import { testContactInfo, testFees } from '../../testHelpers/screen-test-functions';
+import { testContactInfo, testFees } from '../../testHelpers/screen-elements-test-functions';
 import { apolloContactInfoMockResponse, apolloFeesMockResponse } from '../../testHelpers/mocked-responses';
 
 describe('Fees page', () => {

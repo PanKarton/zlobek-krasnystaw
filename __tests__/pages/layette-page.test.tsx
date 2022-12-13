@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Layette, { getStaticProps } from '../../pages/wyprawka/index';
 import { client } from '../../graphql/apolloClient';
 import { render, screen } from 'testHelpers/test-utils';
-import { testContactInfo, testLayette } from '../../testHelpers/screen-test-functions';
+import { testContactInfo, testLayette } from '../../testHelpers/screen-elements-test-functions';
 import { apolloContactInfoMockResponse, apolloLeyetteMockResponse } from '../../testHelpers/mocked-responses';
 
 describe('Layette page', () => {

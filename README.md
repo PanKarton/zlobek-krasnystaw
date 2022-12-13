@@ -98,3 +98,4 @@ To do:
 - Gallery group folder images site
 - Attach CMS for news and gallery
 - Optional: Add decorative images to parent sites
+- News post markdown text dispaly
