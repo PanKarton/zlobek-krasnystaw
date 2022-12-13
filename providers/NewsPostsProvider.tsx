@@ -23,7 +23,7 @@ type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
 
 const NewsPostsContext = createContext<Context | null>(null);
 
-const PAGE_SIZE = 2;
+const pageSize = 2;
 
 export const NewsPostsProvider = ({ children }: Props) => {
   const [isAllDataDisplayed, setIsAllDataDisplayed] = useState(true);
@@ -32,7 +32,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
   const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
     variables: {
       page: 1,
-      pageSize: PAGE_SIZE,
+      pageSize,
     },
   });
 
@@ -44,7 +44,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
 
         const postsNumber = data.newsPosts.data.length;
 
-        const nextPagePointer = postsNumber / PAGE_SIZE + 1;
+        const nextPagePointer = postsNumber / pageSize + 1;
 
         // Hide button when nextPagePointer is float
         if (!Number.isInteger(nextPagePointer)) return setIsAllDataDisplayed(false);
@@ -52,7 +52,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
         const response = await fetchMore({
           variables: {
             page: nextPagePointer,
-            pageSize: PAGE_SIZE,
+            pageSize,
           },
         });
 
@@ -74,19 +74,17 @@ export const NewsPostsProvider = ({ children }: Props) => {
 
       const postsNumber = data.newsPosts.data.length;
 
-      const nextPagePointer = postsNumber / PAGE_SIZE + 1;
+      const nextPagePointer = postsNumber / pageSize + 1;
 
       const response = await fetchMore({
         // Update page variable based on current data length
         variables: {
           page: nextPagePointer,
-          pageSize: 1,
+          pageSize,
         },
         updateQuery: (previousResult, { fetchMoreResult }) => {
           const previousData = previousResult.newsPosts.data;
           const newData = fetchMoreResult.newsPosts.data;
-
-          console.log(newData);
 
           return {
             newsPosts: {
@@ -97,10 +95,8 @@ export const NewsPostsProvider = ({ children }: Props) => {
         },
       });
 
-      console.log(response);
-
-      // Hide button when received less items than PAGE_SIZE
-      if (response.data.newsPosts.data.length < PAGE_SIZE) setIsAllDataDisplayed(false);
+      // Hide button when received less items than pageSize
+      if (response.data.newsPosts.data.length < pageSize) setIsAllDataDisplayed(false);
     } catch (err) {
       setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
     }

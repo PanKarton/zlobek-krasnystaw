@@ -5,6 +5,7 @@ import { getDayName } from 'helpers/getDayName';
 import Image from 'next/image';
 import { Post } from 'types/newsPosts';
 import { StyledArticle, StyledWrapper } from './NewsPost.styles';
+import ReactMarkdown from 'react-markdown';
 
 type Props = {
   articleData: Post;
@@ -27,7 +28,9 @@ export const NewsPost = ({ articleData }: Props) => {
                 <Image src={buildURL(imageData?.attributes.url)} alt={imageData?.attributes?.alternativeText} layout="fill" />
               </div>
             )}
-            <p className="content">{articleData.attributes.content}</p>
+            <p className="content">
+              <ReactMarkdown>{articleData.attributes.content}</ReactMarkdown>
+            </p>
           </div>
         </StyledArticle>
       </StyledWrapper>
