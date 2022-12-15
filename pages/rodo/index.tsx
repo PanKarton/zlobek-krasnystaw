@@ -4,6 +4,7 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
+import { GetStaticProps } from 'next';
 
 type Props = {
   contactInfo: ContactInfo;
@@ -19,7 +20,7 @@ const Contact = ({ contactInfo }: Props) => (
 
 export default Contact;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const ContactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });

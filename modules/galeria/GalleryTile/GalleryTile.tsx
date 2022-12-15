@@ -12,7 +12,7 @@ export const GalleryTile = ({ groupData }: Props) => {
   const { name, id } = groupData;
 
   return (
-    <Link href={`/galeria/${id}`}>
+    <Link href={`/galeria/grupa/${id}`}>
       <StyledWrapper>
         <div className="img-wrapper"></div>
         <div className="name-wrapper">

@@ -93,6 +93,8 @@ export const GET_CONTACT_INFO = gql`
   }
 `;
 
+// News posts
+
 export const GET_NEWS_POSTS = gql`
   query NewsPosts($page: Int, $pageSize: Int, $startDate: DateTime, $endDate: DateTime) {
     newsPosts(
@@ -161,6 +163,49 @@ export const GET_SINGLE_POST_BY_ID = gql`
             }
           }
           publishedAt
+        }
+      }
+    }
+  }
+`;
+
+// Gallery
+
+export const GET_GROUPS_IDS = gql`
+  query GetGroupsIds {
+    grupies {
+      data {
+        attributes {
+          numerGrupy
+        }
+      }
+    }
+  }
+`;
+export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
+  query ($groupNumber: Int) {
+    grupies(filters: { numerGrupy: { eq: $groupNumber } }) {
+      data {
+        attributes {
+          nazwa
+          numerGrupy
+          foldery_zdjecs {
+            data {
+              id
+              attributes {
+                nazwa
+                slug
+                miniatura {
+                  data {
+                    attributes {
+                      alternativeText
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

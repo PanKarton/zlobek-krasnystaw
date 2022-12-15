@@ -1,6 +1,7 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { RecruitmentPageSection } from 'modules/rekrutacja/RecruitmentPageSection/RecruitmentPageSection';
+import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { client } from '../../graphql/apolloClient';
@@ -19,7 +20,7 @@ const Recruitment = ({ contactInfo }: Props) => (
 
 export default Recruitment;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const ContactInfo = await client.query({
     query: GET_CONTACT_INFO,
   });

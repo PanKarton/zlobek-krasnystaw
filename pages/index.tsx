@@ -3,6 +3,7 @@ import { AboutUsSection } from 'modules/index/AboutUsSection/AboutUsSection';
 import { NurseryDescription } from 'modules/index/NurseryDescription/NurseryDescription';
 import { OurValues } from 'modules/index/OurValues/OurValues';
 import { StaffSection } from 'modules/index/StaffSection/StaffSection';
+import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
@@ -29,7 +30,7 @@ const Home = ({ contactInfo }: Props) => {
 
 export default Home;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
