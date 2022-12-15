@@ -5,6 +5,7 @@ import { LayetteResponse } from 'types/layette';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { client } from '../../graphql/apolloClient';
+import { GetStaticProps } from 'next';
 
 type Props = {
   layette: LayetteResponse;
@@ -23,7 +24,7 @@ const Layette = ({ layette, contactInfo }: Props) => {
 
 export default Layette;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const layetteRes = await client.query({
     query: GET_LAYETTE,
   });

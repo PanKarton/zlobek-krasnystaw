@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Schedule, { getStaticProps } from '../../pages/plan-dnia/index';
 import { client } from '../../graphql/apolloClient';
 import { render, screen } from 'testHelpers/test-utils';
-import { testContactInfo, testSchedule } from '../../testHelpers/screen-test-functions';
+import { testContactInfo, testSchedule } from '../../testHelpers/screen-elements-test-functions';
 import { apolloContactInfoMockResponse, apolloScheduleMockResponse } from '../../testHelpers/mocked-responses';
 
 describe('Schedule page', () => {

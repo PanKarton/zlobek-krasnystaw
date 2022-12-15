@@ -30,7 +30,8 @@ My first website for real client with real problems to solve. I gave my best and
 - Styled Components - version 5.3.5
 - React Icons - version 4.4.0
 - react-copy-to-clipboard - version 5.1.0
-- nextjs-progressbar - version 0.0.16;
+- nextjs-progressbar - version 0.0.16
+- react-markdown - version 8.0.4
 - React Hook Form - version 7.37.0
 - EmailJS - version 3.7.0
 - @react-google-maps/api - version 2.13.1
@@ -98,3 +99,4 @@ To do:
 - Gallery group folder images site
 - Attach CMS for news and gallery
 - Optional: Add decorative images to parent sites
+- News post markdown text dispaly

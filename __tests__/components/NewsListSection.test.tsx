@@ -13,7 +13,7 @@ import {
 import { MockedProvider } from '@apollo/client/testing';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';
 import userEvent from '@testing-library/user-event';
-import { testNewsPosts, testNewsPostsWithLoadedPosts } from 'testHelpers/screen-test-functions';
+import { testNewsPosts, testNewsPostsWithLoadedPosts } from 'testHelpers/screen-elements-test-functions';
 import { NewsListSection } from 'modules/aktualnosci/NewsListSection/NewsListSection';
 
 describe('News list component', () => {

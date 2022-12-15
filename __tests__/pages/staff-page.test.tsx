@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Staff, { getStaticProps } from '../../pages/kadra/index';
 import { client } from '../../graphql/apolloClient';
 import { render, screen } from 'testHelpers/test-utils';
-import { testContactInfo, testStaff } from '../../testHelpers/screen-test-functions';
+import { testContactInfo, testStaff } from '../../testHelpers/screen-elements-test-functions';
 import { apolloContactInfoMockResponse, apolloStaffMockResponse } from '../../testHelpers/mocked-responses';
 
 describe('Staff page', () => {

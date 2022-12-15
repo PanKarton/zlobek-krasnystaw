@@ -5,6 +5,7 @@ import { FeesResponse } from 'types/fees';
 import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
+import { GetStaticProps } from 'next';
 
 export interface Props {
   fees: FeesResponse;
@@ -23,7 +24,7 @@ const Fees = ({ fees, contactInfo }: Props) => {
 
 export default Fees;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const feesRes = await client.query({
     query: GET_FEES,
   });

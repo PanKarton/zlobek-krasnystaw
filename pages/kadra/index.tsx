@@ -5,6 +5,7 @@ import { StaffResponse } from 'types/staff';
 import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
+import { GetStaticProps } from 'next';
 
 type Props = {
   staff: StaffResponse;
@@ -23,7 +24,7 @@ const Staff = ({ staff, contactInfo }: Props) => {
 
 export default Staff;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const staffRes = await client.query({
     query: GET_STAFF_LISTS,
   });

@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Rodo, { getStaticProps } from '../../pages/rodo/index';
 import { client } from '../../graphql/apolloClient';
 import { render, screen } from 'testHelpers/test-utils';
-import { testContactInfo } from '../../testHelpers/screen-test-functions';
+import { testContactInfo } from '../../testHelpers/screen-elements-test-functions';
 import { apolloContactInfoMockResponse } from '../../testHelpers/mocked-responses';
 
 describe('RODO page', () => {

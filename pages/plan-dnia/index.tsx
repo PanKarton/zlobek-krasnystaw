@@ -5,6 +5,7 @@ import { DayScheduleResponse } from 'types/daySchedule';
 import { ContactInfo } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
+import { GetStaticProps } from 'next';
 
 export type Props = {
   daySchedule: DayScheduleResponse;
@@ -23,7 +24,7 @@ const Schedule = ({ daySchedule, contactInfo }: Props) => {
 
 export default Schedule;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const dayScheduleRes = await client.query({
     query: GET_DAY_SCHEDULE,
   });

@@ -1,5 +1,7 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
+import { GalleryGroupsSection } from 'modules/galeria/GalleryGroupsSection/GalleryGroupsSection';
+import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { client } from '../../graphql/apolloClient';
@@ -11,14 +13,14 @@ type Props = {
 const Gallery = ({ contactInfo }: Props) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Nasze zdjęcia">
-      <section></section>
+      <GalleryGroupsSection />
     </SecondaryTemplate>
   </ContactDataProvider>
 );
 
 export default Gallery;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
   });
