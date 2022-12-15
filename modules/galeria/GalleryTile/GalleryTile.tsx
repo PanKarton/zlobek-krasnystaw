@@ -2,17 +2,13 @@ import Link from 'next/link';
 import { StyledWrapper } from './GalleryTile.styles';
 
 type Props = {
-  groupData: {
-    id: number;
-    name: string;
-  };
+  name: string;
+  href: string;
 };
 
-export const GalleryTile = ({ groupData }: Props) => {
-  const { name, id } = groupData;
-
+export const GalleryTile = ({ name, href }: Props) => {
   return (
-    <Link href={`/galeria/grupa/${id}`}>
+    <Link href={href}>
       <StyledWrapper>
         <div className="img-wrapper"></div>
         <div className="name-wrapper">

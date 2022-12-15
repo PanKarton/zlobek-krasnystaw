@@ -25,7 +25,7 @@ export const GalleryGroupsSection = () => {
           {groups &&
             groups.map((group) => (
               <li key={group.id}>
-                <GalleryTile groupData={group} />
+                <GalleryTile name={group.name} href={`/galeria/grupa/${group.id}`} />
               </li>
             ))}
         </ul>

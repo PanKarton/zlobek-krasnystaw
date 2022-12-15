@@ -1,21 +1,24 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { GET_CONTACT_INFO, GET_GROUPS_IDS } from 'graphql/queries';
+import { GET_CONTACT_INFO, GET_GALLERY_FOLDERS_OF_GROUP, GET_GROUPS_IDS } from 'graphql/queries';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { client } from '../../../graphql/apolloClient';
-import { GrupiesDatum } from 'types/galleryGroupPage';
+import { GroupData, GrupiesDatum, PokedexData } from 'types/galleryGroupPage';
+import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
 
 type Props = {
   contactInfo: ContactInfo;
-  groupId: 1 | 2 | 3;
+  galleryGroupInfo: GroupData;
 };
 
-const GroupGallery = ({ contactInfo, groupId }: Props) => {
+const GroupGallery = ({ contactInfo, galleryGroupInfo }: Props) => {
+  const { nazwa: groupName } = galleryGroupInfo;
+
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Nasze zdjęcia">
-        <section>{groupId}</section>
+      <SecondaryTemplate heading={`${groupName} - galeria`}>
+        <GalleryGroupPageSection galleryGroupInfo={galleryGroupInfo} />
       </SecondaryTemplate>
     </ContactDataProvider>
   );
@@ -44,7 +47,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
-  const { groupId } = params;
+  if (!params.groupId) throw Error(`getStaticProps couldn't find param groupId`);
+
+  const groupNumber = parseInt(params.groupId as string);
 
   const contactInfoRes = await client.query({
     query: GET_CONTACT_INFO,
@@ -52,10 +57,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
+  const groupFoldersRes = await client.query<PokedexData>({
+    query: GET_GALLERY_FOLDERS_OF_GROUP,
+    variables: {
+      groupNumber,
+    },
+  });
+
+  const galleryGroupInfo = groupFoldersRes.data.grupies.data[0].attributes;
+
   return {
     props: {
       contactInfo,
-      groupId,
+      galleryGroupInfo,
     },
   };
 };

@@ -13,10 +13,10 @@ export interface Grupies {
 
 export interface GrupiesDatum {
   __typename: string;
-  attributes: PurpleAttributes;
+  attributes: GroupData;
 }
 
-export interface PurpleAttributes {
+export interface GroupData {
   __typename: string;
   nazwa: string;
   numerGrupy: number;
