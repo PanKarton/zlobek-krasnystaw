@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
+  position: relative;
   aspect-ratio: 1.7;
   display: flex;
   flex-direction: column;
@@ -8,10 +9,30 @@ export const StyledWrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   transition: all ease-in-out 0.25s;
+
+  .date-wrapper {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    background-color: ${({ theme }) => theme.color.primary};
+    font-family: var(--font-primary);
+    color: ${({ theme }) => theme.color.contrast};
+    font-size: ${({ theme }) => theme.fontSize.textBase};
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 0.375rem;
+    border-radius: 0.5rem 0 0.25rem 0;
+  }
   .img-wrapper {
     position: relative;
     background-color: #aaa;
     height: 100%;
+    img {
+      transition: scale ease-in-out 0.25s;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -27,16 +48,21 @@ export const StyledWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-block: 0.25rem;
     span {
       font-family: var(--font-primary);
       color: ${({ theme }) => theme.color.contrast};
       font-size: ${({ theme }) => theme.fontSize.textLG};
       font-weight: 500;
+      max-width: 25ch;
+      text-align: center;
     }
   }
   &:hover {
     cursor: pointer;
-    scale: 1.005;
+    .img-wrapper img {
+      scale: 1.01;
+    }
     .img-wrapper::after {
       opacity: 1;
     }

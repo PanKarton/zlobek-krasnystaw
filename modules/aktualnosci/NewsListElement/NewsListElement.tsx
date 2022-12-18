@@ -3,7 +3,7 @@ import { getDayName } from 'helpers/getDayName';
 import Link from 'next/link';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import ReactMarkdown from 'react-markdown';
-import { PostAttributes } from 'types/newsPostsArray';
+import { PostAttributes } from 'types/newsPosts';
 import { StyledArticle } from './NewsListElement.styles';
 
 type Props = {

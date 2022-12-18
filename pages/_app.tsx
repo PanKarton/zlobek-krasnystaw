@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Loader />
       <AppProvider>
-        <NextNProgress height={5} />
+        <NextNProgress height={5} options={{ showSpinner: false }} />
         <Component {...pageProps} />
       </AppProvider>
     </>

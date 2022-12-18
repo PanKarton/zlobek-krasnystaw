@@ -1,15 +1,30 @@
 import styled from 'styled-components';
 export const StyledWrapper = styled.div`
   padding-bottom: 3rem;
-  translate: 0px -1.5rem;
+  translate: 2px 0;
 `;
 
 export const StyledArticle = styled.article`
   font-family: var(--font-primary);
   font-weight: 500;
-  .publishDate {
+  .publish-date-wrapper {
     border-bottom: 1px solid #aaa;
     padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    .return-anchor {
+      margin-left: 0.125rem;
+      color: ${({ theme }) => theme.color.accentPrimaryDarker};
+      font-size: ${({ theme }) => theme.fontSize.textBase};
+      font-weight: 500;
+      @media screen and (min-width: 1150px) {
+        margin-left: 0.25rem;
+      }
+      &:hover {
+        cursor: pointer;
+        color: ${({ theme }) => theme.color.accentPrimary};
+      }
+    }
   }
   .flex-wrapper {
     display: flex;

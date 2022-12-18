@@ -39,6 +39,7 @@ export interface FluffyAttributes {
   nazwa: string;
   slug: string;
   miniatura: Miniatura;
+  publishedAt: Date;
 }
 
 export interface Miniatura {
@@ -51,5 +52,5 @@ export interface MiniaturaData {
 
 export interface DataAttributes {
   alternativeText: string;
-  name: string;
+  url: string;
 }

@@ -17,7 +17,7 @@ const GroupGallery = ({ contactInfo, galleryGroupInfo }: Props) => {
 
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading={`${groupName} - galeria`}>
+      <SecondaryTemplate heading={`${groupName} - galeria`} returnHref="/galeria">
         <GalleryGroupPageSection galleryGroupInfo={galleryGroupInfo} />
       </SecondaryTemplate>
     </ContactDataProvider>

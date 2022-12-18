@@ -195,11 +195,12 @@ export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
               attributes {
                 nazwa
                 slug
+                publishedAt
                 miniatura {
                   data {
                     attributes {
                       alternativeText
-                      name
+                      url
                     }
                   }
                 }
