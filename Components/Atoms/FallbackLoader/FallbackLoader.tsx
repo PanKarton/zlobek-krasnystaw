@@ -18,8 +18,8 @@ const StyledLoader = styled.div`
     transform: translate3d(-50%, -50%, 0);
   }
   .loader-dot {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background: #3ac;
     border-radius: 100%;
     display: inline-block;

@@ -24,22 +24,35 @@ export const StyledSection = styled.section`
     }
 
     @media screen and (min-width: 56.25rem) {
-      justify-content: center;
       li {
-        flex-basis: min(100%, 22.5rem);
+        flex-basis: calc(50% - 1rem);
       }
     }
     @media screen and (min-width: 71.875rem) {
       column-gap: 3rem;
       row-gap: 2rem;
       li {
-        flex-basis: min(100%, 27rem);
+        flex-basis: calc(50% - 1.5rem);
       }
     }
     @media screen and (min-width: 96.875rem) {
       li {
-        flex-basis: calc(33% - 1.75rem);
+        flex-basis: calc(25% - 1.5rem);
       }
+    }
+  }
+  .no-folders-message {
+    font-family: var(--font-primary);
+    color: ${({ theme }) => theme.color.contrast};
+    font-size: ${({ theme }) => theme.fontSize.textLG};
+    font-weight: 500;
+    margin-top: 4rem;
+    text-align: center;
+    @media screen and (min-width: 56.25rem) {
+      font-size: ${({ theme }) => theme.fontSize.textXL};
+      letter-spacing: 0.0625rem;
+      text-align: left;
+      margin-top: 3 rem;
     }
   }
 `;

@@ -7,19 +7,18 @@ export const StyledWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 5rem;
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 96.875rem) {
     flex-direction: row;
     justify-content: space-between;
     gap: 5rem;
   }
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     gap: 14.5rem;
     padding-bottom: 4rem;
   }
 `;
 
 export const StyledArticle = styled.article`
-  max-width: 463px;
   ul {
     display: flex;
     flex-direction: column;
@@ -42,10 +41,10 @@ export const StyledArticle = styled.article`
             color: ${({ theme }) => theme.color.contrast};
             font-size: ${({ theme }) => theme.fontSize.textBase};
             font-weight: 500;
-            @media screen and (min-width: 700px) {
+            @media screen and (min-width: 43.75rem) {
               font-size: ${({ theme }) => theme.fontSize.textLG};
             }
-            @media screen and (min-width: 1150px) {
+            @media screen and (min-width: 96.875rem) {
               font-size: ${({ theme }) => theme.fontSize.textXL};
             }
           }
@@ -64,7 +63,7 @@ export const StyledContactFormWrapper = styled.div`
   align-items: center;
   gap: 0.5rem;
   width: 100%;
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     flex-basis: 50%;
   }
   .heading-wrapper {
@@ -79,7 +78,7 @@ export const StyledContactFormWrapper = styled.div`
     p {
       font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
-      margin-left: 2px;
+      margin-left: 0.125rem;
       margin-top: 0.25rem;
     }
   }

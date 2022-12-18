@@ -1,15 +1,15 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
-import { NewsPosts, ApolloNewsPostsResponse } from 'types/newsPostsArray';
 import { ApolloError, useQuery } from '@apollo/client';
 import { GET_NEWS_POSTS } from 'graphql/queries';
 import { MonthData } from 'helpers/getMonthsSinceDate';
+import { ApolloNewsPostsResponse, NewsPost, NewsPosts } from 'types/newsPostsArrayResponse';
 
 type Props = {
   children: ReactNode;
 };
 
 type Context = {
-  newsPostsState: NewsPosts;
+  newsPostsState: NewsPost[];
   handleLoadMoreNewsPosts: () => Promise<void>;
   getPostsByMonth: (queryData: MonthData) => Promise<void>;
   isLoading: boolean;

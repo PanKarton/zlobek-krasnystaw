@@ -5,6 +5,8 @@ export const Styledwrapper = styled.div`
   flex-direction: column;
   gap: 3rem;
   padding-bottom: 2rem;
+  translate: 0.125rem 0;
+
   &:has(.no-posts-message) {
     padding-bottom: 3rem;
   }
@@ -24,20 +26,21 @@ export const Styledwrapper = styled.div`
       font-size: ${({ theme }) => theme.fontSize.textXL};
       color: ${({ theme }) => theme.color.accentPrimaryDarker};
       font-weight: 500;
-      @media screen and (min-width: 1150px) {
+      @media screen and (min-width: 96.875rem) {
         font-size: ${({ theme }) => theme.fontSize.text3XL};
       }
     }
     p {
       font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
-      @media screen and (min-width: 1150px) {
+      @media screen and (min-width: 96.875rem) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
       }
     }
   }
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     flex-direction: row-reverse;
+
     &:has(.no-posts-message) {
       padding-bottom: 4rem;
     }
@@ -47,7 +50,7 @@ export const Styledwrapper = styled.div`
       position: absolute;
       bottom: 3rem;
       left: 50%;
-      translate: -50% 0;
+      translate: -95% 0;
     }
   }
 `;

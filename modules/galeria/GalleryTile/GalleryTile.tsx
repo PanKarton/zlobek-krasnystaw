@@ -1,23 +1,30 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { StyledWrapper } from './GalleryTile.styles';
 
 type Props = {
-  groupData: {
-    id: number;
-    name: string;
-  };
+  name: string;
+  href: string;
+  altText: string;
+  imgPath: string;
+  publishDate?: string;
 };
 
-export const GalleryTile = ({ groupData }: Props) => {
-  const { name, id } = groupData;
-
+export const GalleryTile = ({ name, href, altText, imgPath, publishDate }: Props) => {
   return (
-    <Link href={`/galeria/grupa/${id}`}>
+    <Link href={href}>
       <StyledWrapper>
-        <div className="img-wrapper"></div>
+        <div className="img-wrapper">
+          <Image src={imgPath} alt={altText} layout="fill" objectFit="cover" />
+        </div>
         <div className="name-wrapper">
           <span>{name}</span>
         </div>
+        {publishDate ? (
+          <div className="date-wrapper">
+            <span>{publishDate}</span>
+          </div>
+        ) : null}
       </StyledWrapper>
     </Link>
   );

@@ -10,7 +10,7 @@ type Props = {
   contactInfo: ContactInfo;
 };
 
-const Contact = ({ contactInfo }: Props) => (
+const GDPR = ({ contactInfo }: Props) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Ochrona danych osobowych">
       <RodoSection />
@@ -18,7 +18,7 @@ const Contact = ({ contactInfo }: Props) => (
   </ContactDataProvider>
 );
 
-export default Contact;
+export default GDPR;
 
 export const getStaticProps: GetStaticProps = async () => {
   const ContactInfoRes = await client.query({

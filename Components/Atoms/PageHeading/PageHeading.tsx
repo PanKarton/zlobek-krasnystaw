@@ -1,11 +1,19 @@
+import Link from 'next/link';
 import React from 'react';
-import { StyledPageHeading } from './PageHeading.styles';
+import { ReturnAnchor } from '../ReturnAnchor/ReturnAnchor';
+import { StyledPageHeading, StyledWrapper } from './PageHeading.styles';
 
 type Props = {
   headingText: string;
   className?: string;
+  returnHref?: string;
 };
 
-export const PageHeading = ({ headingText, className }: Props) => (
-  <StyledPageHeading className={`${className} max-width-1440`}>{headingText}</StyledPageHeading>
-);
+export const PageHeading = ({ headingText, className, returnHref }: Props) => {
+  return (
+    <StyledWrapper className="max-width-1440">
+      {returnHref ? <ReturnAnchor href={returnHref} /> : null}
+      <StyledPageHeading className={className}>{headingText}</StyledPageHeading>
+    </StyledWrapper>
+  );
+};

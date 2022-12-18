@@ -7,7 +7,11 @@ const nextConfig = {
     defaultLocale: 'pl',
   },
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        hostname: '192.168.43.110',
+      },
+    ],
   },
 };
 

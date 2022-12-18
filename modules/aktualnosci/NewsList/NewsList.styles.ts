@@ -10,7 +10,7 @@ export const StyledList = styled.ul`
       position: absolute;
       width: 100%;
       top: -2.5rem;
-      border-top: 1px solid ${({ theme }) => theme.color.borderDivider};
+      border-top: 0.0625rem solid ${({ theme }) => theme.color.borderDivider};
     }
   }
 `;

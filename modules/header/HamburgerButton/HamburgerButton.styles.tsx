@@ -12,7 +12,7 @@ export const StyledBurger = styled.button<HamburgerProps>`
   cursor: pointer;
   padding: 0;
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 43.75rem) {
     top: 50%;
     z-index: 10;
   }
@@ -21,9 +21,9 @@ export const StyledBurger = styled.button<HamburgerProps>`
     width: 2rem;
     height: 0.25rem;
     background: ${({ theme }) => theme.color.contrast};
-    border-radius: 10px;
+    border-radius: 0.625rem;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: 0.0625rem;
     transition: all 0.125s linear;
 
     :first-child {

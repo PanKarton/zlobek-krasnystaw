@@ -15,8 +15,8 @@ export const StyledArticle = styled.article`
     font-size: ${({ theme }) => theme.fontSize.text2XL};
     font-weight: 600;
     color: ${({ theme }) => theme.color.contrast};
-    translate: -2px 0;
-    @media screen and (min-width: 1150px) {
+    translate: -0.125rem 0;
+    @media screen and (min-width: 96.875rem) {
       font-size: ${({ theme }) => theme.fontSize.text3XL};
     }
     &:hover {
@@ -32,7 +32,7 @@ export const StyledArticle = styled.article`
     font-weight: 500;
   }
 
-  p.content {
+  div.content {
     margin-block: 0.5rem;
     max-width: 70ch;
     /* add ... when --max-lines is reached*/

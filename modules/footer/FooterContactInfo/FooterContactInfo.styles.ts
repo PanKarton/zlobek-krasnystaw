@@ -6,10 +6,10 @@ export const StyledSection = styled.section`
   width: 18rem;
   color: ${({ theme }) => theme.color.contrast};
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 43.75rem) {
     width: 100%;
   }
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     width: 34rem;
   }
   .flex-list {
@@ -17,7 +17,7 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       flex-direction: row;
       flex-wrap: wrap;
       width: 85%;
@@ -27,7 +27,7 @@ export const StyledSection = styled.section`
         flex: 1 0 47%;
       }
     }
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 56.25rem) {
       flex-direction: column;
       row-gap: 1rem;
       margin-inline: 0;
@@ -36,7 +36,7 @@ export const StyledSection = styled.section`
         flex: 1 0 99%;
       }
     }
-    @media screen and (min-width: 1550px) {
+    @media screen and (min-width: 96.875rem) {
       flex-direction: row;
       row-gap: 3rem;
       li {
@@ -85,11 +85,11 @@ export const StyledSection = styled.section`
       /* BIP */
       .nav-bip-wrapper {
         position: relative;
-        border-top: 1px solid ${({ theme }) => theme.color.borderDivider};
+        border-top: 0.0625rem solid ${({ theme }) => theme.color.borderDivider};
         width: 100%;
         padding-top: 2rem;
         margin-left: 1.75rem;
-        @media screen and (min-width: 1400px) {
+        @media screen and (min-width: 87.5rem) {
           border: none;
           padding-top: 0;
         }

@@ -12,7 +12,7 @@ export const StyledButton = styled.button<Props>`
   font-size: ${({ theme }) => theme.fontSize.textLG};
   font-family: var(--font-primary);
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   border: none;
   display: flex;
   align-items: center;

@@ -46,7 +46,7 @@ strong {
 *:focus,
 *::before:focus,
 *::after:focus {
-  outline: 1px solid #aaa;
+  outline: 0.0625rem solid #aaa;
 }
 
 .call-button-hover:hover {
@@ -60,21 +60,21 @@ strong {
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25rem) {
   .max-width-1440 {
-    width: min(1440px, 800px);
+    width: min(90rem, 50rem);
   }
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 96.875rem) {
   .max-width-1440 {
-    width: min(1440px, 960px);
+    width: min(90rem, 60rem);
   }
 }
 
-@media screen and (min-width: 1550px) {
+@media screen and (min-width: 96.875rem) {
   .max-width-1440 {
-    width: 1440px;
+    width: 90rem;
     padding-inline: 0;
   }
 }
@@ -100,8 +100,8 @@ strong {
   transform: translate3d(-50%, -50%, 0);
 }
 .loader-dot {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   background: #3ac;
   border-radius: 100%;
   display: inline-block;

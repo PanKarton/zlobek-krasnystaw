@@ -17,37 +17,37 @@ export const StyledSection = styled.section`
     justify-content: center;
     align-items: center;
     padding-block: 3rem 8rem;
-    @media screen and (min-width: 1187px) {
+    @media screen and (min-width: 75rem) {
       padding-block: 0rem 8rem;
     }
-    @media screen and (min-width: 1550px) {
+    @media screen and (min-width: 96.875rem) {
       padding-block: 3rem 10rem;
       justify-content: flex-start;
       gap: 8rem;
     }
     .images-wrapper {
       display: none;
-      width: 513px;
+      width: 32.125rem;
       aspect-ratio: 1.3;
       position: relative;
-      @media screen and (min-width: 1000px) {
+      @media screen and (min-width: 62.5rem) {
         display: block;
       }
-      @media screen and (min-width: 1550px) {
-        width: 713px;
-        height: 550px;
+      @media screen and (min-width: 96.875rem) {
+        width: 44.625rem;
+        height: 34.375rem;
       }
       .sun-wrapper {
         position: absolute;
-        height: 80px;
+        height: 5rem;
         aspect-ratio: 1.16;
         top: 0;
         right: 15%;
-        @media screen and (min-width: 1150px) {
-          height: 150px;
+        @media screen and (min-width: 96.875rem) {
+          height: 9.375rem;
         }
-        @media screen and (min-width: 1550px) {
-          height: 200px;
+        @media screen and (min-width: 96.875rem) {
+          height: 12.5rem;
         }
       }
     }
@@ -59,7 +59,7 @@ export const StyledSection = styled.section`
   }
   .bottom-wave-wrapper {
     position: absolute;
-    bottom: -2px;
+    bottom: -0.125rem;
     left: 0;
     right: 0;
     aspect-ratio: 15.28;
@@ -72,14 +72,14 @@ export const StyledArticle = styled.article`
   align-items: flex-start;
   justify-content: center;
   gap: 0.75rem;
-  max-width: 500px;
+  max-width: 31.25rem;
 
   h2 {
-    max-width: 400px;
+    max-width: 25rem;
   }
 
   .about-us-paragraph {
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       margin-bottom: 0;
     }
   }
@@ -94,8 +94,8 @@ export const StyledArticle = styled.article`
       align-items: baseline;
       gap: 0.375rem;
       .snail-image-wrapper {
-        min-width: 30px;
-        height: 17px;
+        min-width: 1.875rem;
+        height: 1.0625rem;
         position: relative;
       }
     }

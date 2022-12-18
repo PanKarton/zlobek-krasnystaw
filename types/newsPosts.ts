@@ -11,10 +11,10 @@ export interface Welcome {
 
 export interface Post {
   id: number;
-  attributes: PurpleAttributes;
+  attributes: PostAttributes;
 }
 
-export interface PurpleAttributes {
+export interface PostAttributes {
   title: string;
   content: string;
   createdAt: Date;

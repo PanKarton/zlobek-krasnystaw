@@ -7,14 +7,20 @@ export const GalleryGroupsSection = () => {
     {
       id: 1,
       name: 'Grupa I - Pszczółki',
+      altText: 'Ilustracja pszczół',
+      imgPath: '/images/pszczoly.png',
     },
     {
       id: 2,
       name: 'Grupa II - Sowy',
+      altText: 'Ilustracja sów',
+      imgPath: '/images/sowy.png',
     },
     {
       id: 3,
       name: 'Grupa III - Biedronki',
+      altText: 'Ilustracja biedronek',
+      imgPath: '/images/biedronki.png',
     },
   ];
 
@@ -25,7 +31,7 @@ export const GalleryGroupsSection = () => {
           {groups &&
             groups.map((group) => (
               <li key={group.id}>
-                <GalleryTile groupData={group} />
+                <GalleryTile name={group.name} href={`/galeria/grupa/${group.id}`} altText={group.altText} imgPath={group.imgPath} />
               </li>
             ))}
         </ul>
