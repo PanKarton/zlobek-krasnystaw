@@ -50,7 +50,7 @@ export const StyledSection = styled.section`
     text-align: center;
     @media screen and (min-width: 56.25rem) {
       font-size: ${({ theme }) => theme.fontSize.textXL};
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
       text-align: left;
       margin-top: 3 rem;
     }

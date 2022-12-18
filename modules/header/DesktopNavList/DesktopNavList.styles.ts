@@ -6,23 +6,23 @@ export const StyledWrapper = styled.section`
   background-color: ${({ theme }) => theme.color.primary};
 
   /* Show bar */
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 46.875rem) {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 2rem;
     padding-right: 2rem;
   }
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 81.25rem) {
     padding-right: 4rem;
   }
 
   /* Add  border radius*/
-  @media screen and (min-width: 1440px) {
-    border-radius: 9999px;
+  @media screen and (min-width: 90rem) {
+    border-radius: 620rem;
     justify-content: space-between;
     padding-inline: 6rem;
-    border: 1px solid #aaa;
+    border: 0.0625rem solid #aaa;
   }
 `;
 
@@ -38,11 +38,11 @@ export const StyledList = styled.ul`
     & > :nth-child(3) {
       display: none;
       /* Show galery  */
-      @media screen and (min-width: 950px) {
+      @media screen and (min-width: 59.375rem) {
         display: block;
       }
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       gap: 6.5rem;
     }
   }
@@ -56,13 +56,13 @@ export const StyledList = styled.ul`
       display: none;
     }
     /* Show secondary menu trigger  */
-    @media screen and (min-width: 1300px) {
+    @media screen and (min-width: 81.25rem) {
       & > :nth-child(1) {
         display: block;
       }
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       /* Show rest of the bar, rodo and contact */
       & > :nth-child(2),
       & > :nth-child(3) {
@@ -88,10 +88,10 @@ export const StyledList = styled.ul`
         left: -1.25rem;
         padding: 0 0 1.5rem 1.25rem;
         min-width: 13rem;
-        border: 1px solid #aaa;
+        border: 0.0625rem solid #aaa;
         border-top: none;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
         background-color: ${({ theme }) => theme.color.primary};
         scale: 1 0;
         z-index: 0;

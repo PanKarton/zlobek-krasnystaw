@@ -9,7 +9,7 @@ export const StyledAnchor = styled.a`
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.contrast};
   font-weight: 500;
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 96.875rem) {
     font-size: ${({ theme }) => theme.fontSize.textLG};
   }
   span {

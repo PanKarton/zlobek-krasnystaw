@@ -14,19 +14,19 @@ export const StyledWrapper = styled.div`
     color: ${({ theme }) => theme.color.accentPrimaryDarker};
     font-size: ${({ theme }) => theme.fontSize.textXL};
     font-weight: inherit;
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 56.25rem) {
       font-size: ${({ theme }) => theme.fontSize.text2XL};
     }
   }
 
   .fees-wrapper {
     margin-top: 1.25rem;
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 56.25rem) {
       margin-top: 1rem;
     }
     & > p {
       margin-top: 0.75rem;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 56.25rem) {
         margin-top: 1rem;
       }
     }
@@ -34,14 +34,14 @@ export const StyledWrapper = styled.div`
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 56.25rem) {
         gap: 1rem;
       }
 
       li {
         p {
           font-size: ${({ theme }) => theme.fontSize.Base};
-          @media screen and (min-width: 900px) {
+          @media screen and (min-width: 56.25rem) {
             font-size: ${({ theme }) => theme.fontSize.textLG};
           }
         }

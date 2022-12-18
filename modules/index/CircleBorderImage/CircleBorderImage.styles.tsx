@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledCirculareWrapper = styled.div`
   position: absolute;
   border-radius: 50%;
-  border: 1px dashed #555;
+  border: 0.0625rem dashed #555;
   aspect-ratio: 1;
   display: flex;
   align-items: center;

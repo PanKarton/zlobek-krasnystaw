@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  border-bottom: 1px solid #aaa;
+  border-bottom: 0.0625rem solid #aaa;
   padding-bottom: 1rem;
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     border-bottom: none;
     padding-bottom: 0;
-    width: 200px;
+    width: 12.5rem;
   }
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.contrast};
@@ -21,7 +21,7 @@ export const StyledWrapper = styled.div`
     flex-wrap: wrap;
     column-gap: 1.5rem;
     row-gap: 0.75rem;
-    @media screen and (min-width: 1550px) {
+    @media screen and (min-width: 96.875rem) {
       flex-direction: column;
     }
   }
@@ -40,7 +40,7 @@ export const StyledWrapper = styled.div`
       aspect-ratio: 1;
       border-radius: 50%;
       background-color: ${({ theme }) => theme.color.accentSecondaryDarker};
-      @media screen and (min-width: 1550px) {
+      @media screen and (min-width: 96.875rem) {
         display: block;
       }
     }
@@ -52,9 +52,9 @@ export const StyledWrapper = styled.div`
       translate: 0 -50%;
       right: -0.75rem;
       height: 1rem;
-      width: 1px;
+      width: 0.0625rem;
       background-color: ${({ theme }) => theme.color.contrast};
-      @media screen and (min-width: 1550px) {
+      @media screen and (min-width: 96.875rem) {
         display: none;
       }
     }

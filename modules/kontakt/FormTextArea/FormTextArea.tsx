@@ -4,7 +4,7 @@ export const StyledTextArea = styled.textarea`
   width: 100%;
   height: 14rem;
   border-radius: 0;
-  border: 1px solid ${({ theme }) => theme.color.contrast};
+  border: 0.0625rem solid ${({ theme }) => theme.color.contrast};
   padding: 1rem;
   color: ${({ theme }) => theme.color.contrast};
   font-family: var(--font-primary);
@@ -14,7 +14,7 @@ export const StyledTextArea = styled.textarea`
   resize: none;
 
   &.invalid {
-    border: 2px solid ${({ theme }) => theme.color.error};
+    border: 0.125rem solid ${({ theme }) => theme.color.error};
     outline: none;
     background-color: ${({ theme }) => theme.color.errorTransparent};
   }

@@ -6,7 +6,7 @@ export const StyledSpan = styled.span`
   color: ${({ theme }) => theme.color.accentPrimaryDarker};
   font-size: ${({ theme }) => theme.fontSize.textBase};
   font-weight: 500;
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 96.875rem) {
     margin-left: 0.25rem;
   }
   &:hover {

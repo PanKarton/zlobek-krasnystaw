@@ -11,10 +11,10 @@ export const StyledPageHeading = styled.h2`
   color: ${({ theme }) => theme.color.accentPrimaryDarker};
   font-weight: 500;
   text-align: left;
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 43.75rem) {
     font-size: ${({ theme }) => theme.fontSize.text4XL};
   }
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 96.875rem) {
     line-height: ${({ theme }) => theme.lineHeight.text6XL};
     font-size: ${({ theme }) => theme.fontSize.text5XL};
   }

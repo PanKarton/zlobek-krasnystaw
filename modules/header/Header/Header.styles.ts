@@ -6,14 +6,14 @@ export const StyledHeader = styled.header<Props>`
   height: ${({ isSecondary }) => (isSecondary ? '15rem' : '75vh')};
   overflow: hidden;
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 43.75rem) {
     height: ${({ isSecondary }) => (isSecondary ? '18rem' : '90vh')};
     margin-top: 0rem;
     .bottom-wave-wrapper {
-      bottom: -2px;
+      bottom: -0.125rem;
     }
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 90rem) {
     height: ${({ isSecondary }) => (isSecondary ? '26.5rem' : '90vh')};
   }
 
@@ -23,7 +23,7 @@ export const StyledHeader = styled.header<Props>`
     top: 0;
     left: 0%;
     padding: 0.75rem 1rem;
-    border: 1px solid #aaa;
+    border: 0.0625rem solid #aaa;
     background-color: ${({ theme }) => theme.color.primary};
 
     /* Hide button when not focused */
@@ -49,13 +49,13 @@ export const StyledHeader = styled.header<Props>`
     width: 100%;
     z-index: -1;
     overflow: hidden;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       left: auto;
       right: 0;
       top: 3rem;
       width: ${({ isSecondary }) => (isSecondary ? '100%' : '85%')};
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       top: 5.25rem;
       span {
         translate: ${({ isSecondary }) => (isSecondary ? '0 -5.5rem' : '0')};
@@ -77,16 +77,16 @@ export const StyledHeader = styled.header<Props>`
     padding-block: clamp(1.5rem, 5vw, 2rem);
     padding-inline: 1rem;
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       left: 0;
       translate: 0 -50%;
     }
 
-    @media screen and (min-width: 1150px) {
+    @media screen and (min-width: 96.875rem) {
       width: max-content;
       padding-inline: 4rem;
     }
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 100rem) {
       left: 50%;
       translate: -100% -40%;
     }
@@ -97,10 +97,10 @@ export const StyledHeader = styled.header<Props>`
       .text-pink {
         color: ${({ theme }) => theme.color.accentSecondaryDarker};
       }
-      @media screen and (min-width: 700px) {
+      @media screen and (min-width: 43.75rem) {
         font-size: ${({ theme }) => theme.fontSize.text5XL};
       }
-      @media screen and (min-width: 1150px) {
+      @media screen and (min-width: 96.875rem) {
         font-size: ${({ theme }) => theme.fontSize.text7XL};
       }
     }
@@ -109,10 +109,10 @@ export const StyledHeader = styled.header<Props>`
       line-height: ${({ theme }) => theme.lineHeight.textBase};
       font-weight: 500;
       margin-top: 1.5rem;
-      @media screen and (min-width: 700px) {
+      @media screen and (min-width: 43.75rem) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
       }
-      @media screen and (min-width: 1300px) {
+      @media screen and (min-width: 81.25rem) {
         font-size: ${({ theme }) => theme.fontSize.text2XL};
       }
     }
@@ -124,11 +124,11 @@ export const StyledHeader = styled.header<Props>`
     align-items: center;
     justify-content: center;
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       justify-content: flex-start;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       justify-content: flex-start;
       position: relative;
     }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  --main-size: 16px;
+  --main-size: 1rem;
   width: var(--main-size);
   height: var(--main-size);
 
@@ -11,14 +11,14 @@ export const StyledWrapper = styled.div`
     position: relative;
     border-radius: 50%;
     box-sizing: content-box;
-    border: 1px solid #4caf50;
+    border: 0.0625rem solid #4caf50;
 
     &::before {
-      top: 3px;
-      left: -2px;
+      top: 0.1875rem;
+      left: -0.125rem;
       width: calc(var(--main-size) * 3 / 8);
       transform-origin: 100% 50%;
-      border-radius: 100px 0 0 100px;
+      border-radius: 6.25rem 0 0 6.25rem;
     }
 
     &::after {
@@ -26,7 +26,7 @@ export const StyledWrapper = styled.div`
       left: 37.5%;
       width: calc(var(--main-size) * 6 / 8);
       transform-origin: 0 50%;
-      border-radius: 0 100px 100px 0;
+      border-radius: 0 6.25rem 6.25rem 0;
       animation: rotate-circle 4.25s ease-in;
     }
 
@@ -43,7 +43,7 @@ export const StyledWrapper = styled.div`
       height: 5.25%;
       background-color: #4caf50;
       display: block;
-      border-radius: 2px;
+      border-radius: 0.125rem;
       position: absolute;
       z-index: 10;
 
@@ -73,7 +73,7 @@ export const StyledWrapper = styled.div`
       border-radius: 50%;
       position: absolute;
       box-sizing: content-box;
-      border: 1px solid rgba(76, 175, 80, 0.5);
+      border: 0.0625rem solid rgba(76, 175, 80, 0.5);
     }
 
     .icon-fix {
@@ -105,12 +105,12 @@ export const StyledWrapper = styled.div`
   @keyframes icon-line-tip {
     0% {
       width: 0;
-      left: 1px;
+      left: 0.0625rem;
       top: calc(var(--main-size) * 1.9 / 8);
     }
     54% {
       width: 0;
-      left: 1px;
+      left: 0.0625rem;
       top: calc(var(--main-size) * 1.9 / 8);
     }
     70% {

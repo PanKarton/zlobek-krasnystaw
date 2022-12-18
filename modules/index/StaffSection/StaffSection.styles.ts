@@ -19,19 +19,19 @@ export const StyledSection = styled.section`
       align-items: center;
       justify-content: center;
       gap: clamp(3rem, 5vw, 6rem);
-      @media screen and (min-width: 1150px) {
+      @media screen and (min-width: 96.875rem) {
         justify-content: flex-start;
       }
       .staff-image-wrapper {
         display: none;
         position: relative;
-        width: 423px;
+        width: 26.375rem;
         aspect-ratio: 1.58;
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 62.5rem) {
           justify-content: flex-start;
           display: block;
         }
-        @media screen and (min-width: 1550px) {
+        @media screen and (min-width: 96.875rem) {
           flex-grow: 0.5;
         }
         &::before {
@@ -63,7 +63,7 @@ export const StyledSection = styled.section`
     width: 100%;
     .floating-icon-wrapper {
       position: absolute;
-      height: 110px;
+      height: 10.625rem;
       aspect-ratio: 1;
       animation: floater 15s infinite ease-in-out;
       /* z-index: 1; */
@@ -74,8 +74,8 @@ export const StyledSection = styled.section`
         left: -5%;
         rotate: 210deg;
         scale: 0.75;
-        height: 130px;
-        @media screen and (min-width: 1640px) {
+        height: 8.125rem;
+        @media screen and (min-width: 102.5rem) {
           display: block;
           top: -20%;
           left: -6%;
@@ -88,7 +88,7 @@ export const StyledSection = styled.section`
         left: -10%;
         scale: 0.75;
         animation-delay: 1s;
-        @media screen and (min-width: 1640px) {
+        @media screen and (min-width: 102.5rem) {
           display: block;
           bottom: -20%;
           left: -5%;
@@ -101,11 +101,11 @@ export const StyledSection = styled.section`
         right: 0%;
         animation-delay: 2s;
         scale: 0.5;
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 62.5rem) {
           display: block;
           top: -25%;
         }
-        @media screen and (min-width: 1550px) {
+        @media screen and (min-width: 96.875rem) {
           scale: 0.7;
           top: 0;
         }
@@ -113,18 +113,18 @@ export const StyledSection = styled.section`
       &:nth-child(4) {
         /* Icon diamond */
         display: none;
-        height: 150px;
+        height: 9.375rem;
         right: 0%;
         bottom: -40%;
         animation-delay: 3s;
         scale: 0.7;
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 62.5rem) {
           display: block;
         }
-        @media screen and (min-width: 1150px) {
+        @media screen and (min-width: 96.875rem) {
           bottom: -40%;
         }
-        @media screen and (min-width: 1550px) {
+        @media screen and (min-width: 96.875rem) {
           scale: 0.85;
           bottom: -30%;
           right: 5%;
@@ -158,10 +158,10 @@ export const StyledSection = styled.section`
 export const StyledArticle = styled.article`
   text-align: right;
   max-width: 31.25rem;
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 62.5rem) {
     max-width: 20rem;
   }
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     max-width: 31.25rem;
     text-align: left;
   }
@@ -171,7 +171,7 @@ export const StyledArticle = styled.article`
     justify-content: center;
     align-items: flex-end;
     gap: 0.75rem;
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 62.5rem) {
       align-items: flex-start;
       text-align: left;
     }

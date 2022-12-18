@@ -9,7 +9,7 @@ export const StyledWrapper = styled.section`
   background-color: ${({ theme }) => theme.color.primary};
   padding-block: 1.5rem;
   padding-left: 1.5rem;
-  border-left: 1px solid #aaa;
+  border-left: 0.0625rem solid #aaa;
 
   /* Hide and show menu */
   translate: 100% 0;
@@ -21,20 +21,20 @@ export const StyledWrapper = styled.section`
   }
 
   /* Change padding for side menu */
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 43.75rem) {
     top: 5rem;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius0.3125rem;
     height: min-content;
     width: max(25%, 15rem);
-    border-bottom: 1px solid #aaa;
+    border-bottom: 0.0625rem solid #aaa;
     .close-button-wrapper {
       display: none;
     }
   }
 
   /* Hide mobile nav */
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 90rem) {
     display: none;
   }
 
@@ -70,20 +70,20 @@ export const StyledList = styled.ul`
   }
 
   /* Hide news and home page  */
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 43.75rem) {
     & > :nth-child(1),
     & > :nth-child(2) {
       display: none;
     }
   }
   /* Hide galery  */
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 56.25rem) {
     & > :nth-child(3) {
       display: none;
     }
   }
   /* Hide secondary menu trigger  */
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 81.25rem) {
     & > :nth-child(4) {
       display: none;
     }

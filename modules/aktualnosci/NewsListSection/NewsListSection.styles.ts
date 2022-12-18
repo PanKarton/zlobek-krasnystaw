@@ -26,21 +26,20 @@ export const Styledwrapper = styled.div`
       font-size: ${({ theme }) => theme.fontSize.textXL};
       color: ${({ theme }) => theme.color.accentPrimaryDarker};
       font-weight: 500;
-      @media screen and (min-width: 1150px) {
+      @media screen and (min-width: 96.875rem) {
         font-size: ${({ theme }) => theme.fontSize.text3XL};
       }
     }
     p {
       font-size: ${({ theme }) => theme.fontSize.textBase};
       font-weight: 500;
-      @media screen and (min-width: 1150px) {
+      @media screen and (min-width: 96.875rem) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
       }
     }
   }
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 96.875rem) {
     flex-direction: row-reverse;
-    border: 1px solid red;
 
     &:has(.no-posts-message) {
       padding-bottom: 4rem;

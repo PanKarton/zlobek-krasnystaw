@@ -5,7 +5,7 @@ export const StyledForm = styled.form`
   flex-direction: column;
   gap: 0.5rem;
   width: min(100%, 40rem);
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 56.25rem) {
     width: 100%;
   }
   div.input-wrapper {

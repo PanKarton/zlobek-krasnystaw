@@ -14,7 +14,7 @@ export const StyledSection = styled.section`
       align-items: center;
       gap: 3rem;
       translate: 0 -7%;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 56.25rem) {
         translate: 0 -10%;
         flex-wrap: wrap;
         flex-direction: row;
@@ -25,7 +25,7 @@ export const StyledSection = styled.section`
           margin-inline: auto;
         }
       }
-      @media screen and (min-width: 1187px) {
+      @media screen and (min-width: 75rem) {
         translate: 0 -20%;
       }
     }

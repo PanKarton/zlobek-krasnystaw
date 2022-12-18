@@ -12,20 +12,20 @@ export const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   z-index: 1;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 0.0625rem solid #aaa;
   transition: translate ease-out 0.25s;
   &.hidden {
     translate: 0 -100%;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 90rem) {
     position: absolute;
     left: 50%;
     top: 3rem;
     translate: -50% 0;
-    max-width: 1440px;
+    max-width: 90rem;
     height: 4.5rem;
-    border-radius: 9999px;
+    border-radius: 620rem;
     border-bottom: none;
   }
 
@@ -34,10 +34,10 @@ export const StyledNav = styled.nav`
     display: flex;
     .logo-img-wrapper {
       position: relative;
-      height: 70px;
+      height: 4.375rem;
       aspect-ratio: 1.2;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -47,7 +47,7 @@ export const StyledNav = styled.nav`
       background-color: ${({ theme }) => theme.color.primary};
       border-radius: 50%;
       z-index: 2;
-      border: 1px solid #aaa;
+      border: 0.0625rem solid #aaa;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,21 +62,21 @@ export const StyledNav = styled.nav`
         translate: -50% -50%;
       }
       .logo-img-wrapper {
-        height: 100px;
+        height: 6.25rem;
         translate: 0 -5%;
       }
     }
   }
 
   & > .mobile-icons-wrapper {
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       position: absolute;
       right: 2rem;
       top: 50%;
       translate: 0 -50%;
       z-index: 9999;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       display: none;
     }
   }
@@ -96,7 +96,7 @@ export const StyledNav = styled.nav`
     padding-bottom: 3rem;
 
     font-family: var(--font-primary);
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       display: flex;
     }
     .nav-contact-info {
@@ -137,21 +137,21 @@ export const StyledNav = styled.nav`
     right: 2rem;
     top: 50%;
     translate: 0 -50%;
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       display: block;
     }
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 100rem) {
       right: -3.5rem;
     }
   }
 
   & > .ul-wrapper {
     display: none;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 43.75rem) {
       display: block;
       width: 50%;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 90rem) {
       position: absolute;
       top: 50%;
       left: 50%;

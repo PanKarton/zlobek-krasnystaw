@@ -5,7 +5,7 @@ export const StyledSection = styled.section`
   padding-top: 5rem;
   /* Padding top + blue wave layer height - 100vw/11.5 - wave height based on its aspect ratio | /3.5 - most blue wave layer aspect.ratio */
   padding-bottom: calc(5rem + calc(100vw / 11.5 / 3.5));
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 62.5rem) {
     padding-inline: 3rem;
   }
   .max-width-1440 {
@@ -18,7 +18,7 @@ export const StyledSection = styled.section`
         position: relative;
         flex-grow: 1;
         aspect-ratio: 1.5;
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 62.5rem) {
           display: block;
         }
       }
@@ -27,8 +27,8 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArticle = styled.article`
-  max-width: 500px;
-  @media screen and (min-width: 1550px) {
+  max-width: 31.25rem;
+  @media screen and (min-width: 96.875rem) {
     max-width: 42rem;
   }
   .flex-wrapper {

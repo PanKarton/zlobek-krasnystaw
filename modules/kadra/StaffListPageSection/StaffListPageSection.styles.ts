@@ -18,7 +18,7 @@ export const StyledWrapper = styled.section`
       line-height: ${({ theme }) => theme.lineHeight.textBase};
       color: ${({ theme }) => theme.color.contast};
       font-weight: 400;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
       max-width: 85ch;
       @media screen and (min-width: 56.25rem) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
