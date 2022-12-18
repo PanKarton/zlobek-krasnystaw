@@ -5,6 +5,9 @@ export const StyledWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  @media screen and (min-width: 71.875rem) {
+    translate: 0.125rem 0;
+  }
   .list-wrapper {
     display: flex;
     flex-direction: column;
@@ -17,7 +20,7 @@ export const StyledWrapper = styled.section`
       font-weight: 400;
       letter-spacing: 1px;
       max-width: 85ch;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 56.25rem) {
         font-size: ${({ theme }) => theme.fontSize.textLG};
       }
     }

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   padding-bottom: 5rem;
+  translate: 0.25rem 0;
+
   @media screen and (min-width: 56.25rem) {
     padding-bottom: 6rem;
   }

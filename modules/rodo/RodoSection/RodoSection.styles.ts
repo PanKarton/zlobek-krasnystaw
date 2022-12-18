@@ -6,6 +6,7 @@ export const StyledWrapper = styled.div`
   color: ${({ theme }) => theme.color.contrast};
   @media screen and (min-width: 900px) {
     padding-bottom: 5rem;
+    translate: 0.25rem 0;
   }
   p {
     font-size: ${({ theme }) => theme.fontSize.textBase};

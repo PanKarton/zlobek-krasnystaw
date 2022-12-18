@@ -84,7 +84,7 @@ export const StyledList = styled.ul`
         position: absolute;
         flex-direction: column;
         gap: 1.5rem;
-        top: 2.875rem;
+        top: 3.125rem;
         left: -1.25rem;
         padding: 0 0 1.5rem 1.25rem;
         min-width: 13rem;
@@ -96,6 +96,9 @@ export const StyledList = styled.ul`
         scale: 1 0;
         z-index: 0;
         translate: 0 -50%;
+        @media screen and (min-width: 90rem) {
+          top: 2.875rem;
+        }
         &:focus-within {
           scale: 1 1;
           translate: 0 0;

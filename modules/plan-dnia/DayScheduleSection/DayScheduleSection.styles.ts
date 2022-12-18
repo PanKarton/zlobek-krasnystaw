@@ -4,6 +4,7 @@ export const StyledWrapper = styled.div`
   padding-bottom: 4rem;
   font-family: var(--font-primary);
   color: ${({ theme }) => theme.color.contrast};
+  translate: 0.125rem 0;
   @media screen and (min-width: 1150px) {
     padding-bottom: 6rem;
   }

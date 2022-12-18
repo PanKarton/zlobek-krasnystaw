@@ -5,14 +5,9 @@ export const StyledWrapper = styled.div`
   color: ${({ theme }) => theme.color.contrast};
   font-weight: 500;
   padding-bottom: 4rem;
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 56.25rem) {
     padding-bottom: 5.5rem;
-  }
-
-  .max-width-1440 {
-    /* For some reason context was 2px  to right compared to section heading with the same padding  */
-    position: relative;
-    left: -2px;
+    translate: 0.125rem 0;
   }
 
   h3 {

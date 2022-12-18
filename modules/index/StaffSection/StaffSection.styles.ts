@@ -6,6 +6,7 @@ export const StyledSection = styled.section`
   padding-top: clamp(5rem, 8vw, 9rem);
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
+
   .max-width-1440 {
     position: relative;
     display: flex;

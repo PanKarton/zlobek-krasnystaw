@@ -32,7 +32,7 @@ export const StyledArticle = styled.article`
     font-weight: 500;
   }
 
-  p.content {
+  div.content {
     margin-block: 0.5rem;
     max-width: 70ch;
     /* add ... when --max-lines is reached*/

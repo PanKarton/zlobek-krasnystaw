@@ -24,9 +24,7 @@ export const NewsListElement = ({ postId, attributes }: Props) => {
           </a>
         </Link>
         <p className="publishDate">{`${dayName}, ${formatedDate}`}</p>
-        <p className="content">
-          <ReactMarkdown>{attributes.content}</ReactMarkdown>
-        </p>
+        <ReactMarkdown className="content">{attributes.content}</ReactMarkdown>
         <Link href={`/aktualnosci/post/${postId}`}>
           <a href="!#" className="read-more">
             Czytaj cały post <BiRightArrowAlt />

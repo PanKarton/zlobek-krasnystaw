@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Post } from 'types/newsPosts';
 import { StyledArticle, StyledWrapper } from './NewsPost.styles';
 import ReactMarkdown from 'react-markdown';
-import Link from 'next/link';
+import { ReturnAnchor } from 'Components/Atoms/ReturnAnchor/ReturnAnchor';
 
 type Props = {
   articleData: Post;
@@ -24,11 +24,7 @@ export const NewsPost = ({ articleData }: Props) => {
         <StyledArticle>
           <div className="publish-date-wrapper">
             <p className="publish-date">{`${dayName}, ${formatedDate}`}</p>
-            <Link href="/aktualnosci" passHref>
-              <a href="!#">
-                <span className="return-anchor">Cofnij</span>
-              </a>
-            </Link>
+            <ReturnAnchor href="/aktualnosci" />
           </div>
           <div className="flex-wrapper">
             {imageData?.attributes && (

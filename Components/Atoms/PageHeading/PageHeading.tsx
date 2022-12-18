@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { ReturnAnchor } from '../ReturnAnchor/ReturnAnchor';
 import { StyledPageHeading, StyledWrapper } from './PageHeading.styles';
 
 type Props = {
@@ -11,13 +12,7 @@ type Props = {
 export const PageHeading = ({ headingText, className, returnHref }: Props) => {
   return (
     <StyledWrapper className="max-width-1440">
-      {returnHref ? (
-        <Link href={returnHref} passHref>
-          <a href="!#">
-            <span>Cofnij</span>
-          </a>
-        </Link>
-      ) : null}
+      {returnHref ? <ReturnAnchor href={returnHref} /> : null}
       <StyledPageHeading className={className}>{headingText}</StyledPageHeading>
     </StyledWrapper>
   );

@@ -5,6 +5,8 @@ export const Styledwrapper = styled.div`
   flex-direction: column;
   gap: 3rem;
   padding-bottom: 2rem;
+  translate: 0.125rem 0;
+
   &:has(.no-posts-message) {
     padding-bottom: 3rem;
   }
@@ -38,6 +40,8 @@ export const Styledwrapper = styled.div`
   }
   @media screen and (min-width: 1550px) {
     flex-direction: row-reverse;
+    border: 1px solid red;
+
     &:has(.no-posts-message) {
       padding-bottom: 4rem;
     }
@@ -47,7 +51,7 @@ export const Styledwrapper = styled.div`
       position: absolute;
       bottom: 3rem;
       left: 50%;
-      translate: -50% 0;
+      translate: -95% 0;
     }
   }
 `;
