@@ -3,7 +3,7 @@ import { GET_CONTACT_INFO, GET_GALLERY_FOLDERS_OF_GROUP, GET_GROUPS_IDS } from '
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
-import { client } from '../../../graphql/apolloClient';
+import { client } from '../../../../graphql/apolloClient';
 import { GroupData, GrupiesDatum, PokedexData } from 'types/galleryGroupPage';
 import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
 
@@ -47,7 +47,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
-  if (!params.groupId) throw Error(`getStaticProps couldn't find param groupId`);
 
   const groupNumber = parseInt(params.groupId as string);
 

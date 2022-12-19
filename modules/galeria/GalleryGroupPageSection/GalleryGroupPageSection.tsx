@@ -27,7 +27,7 @@ export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
               return (
                 <li key={id}>
                   <GalleryTile
-                    href={`/galeria/grupa/${groupId}/${slug}`}
+                    href={`/galeria/grupa/${groupId}/folder/${slug}`}
                     altText={miniatureImage.data.attributes.alternativeText}
                     name={name}
                     imgPath={buildURL(miniatureImage.data.attributes.url)}
