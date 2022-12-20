@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { StyledSpan } from './ReturnAnchor.styles';
+import { StyledSpan, StyledWrapper } from './ReturnAnchor.styles';
+import { BiLeftArrowAlt } from 'react-icons/bi';
 
 type Props = {
   href: string;
@@ -8,7 +9,10 @@ type Props = {
 export const ReturnAnchor = ({ href }: Props) => (
   <Link href={href} passHref>
     <a href="!#">
-      <StyledSpan className="return-anchor">Cofnij</StyledSpan>
+      <StyledWrapper className="return-anchor">
+        <BiLeftArrowAlt />
+        <StyledSpan>Cofnij</StyledSpan>
+      </StyledWrapper>
     </a>
   </Link>
 );

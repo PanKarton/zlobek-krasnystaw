@@ -22,10 +22,10 @@ export interface ImagesFolders {
 
 export interface ImagesFolder {
   id: string;
-  attributes: FluffyAttributes;
+  attributes: ImagesFolderAttributes;
 }
 
-export interface FluffyAttributes {
+export interface ImagesFolderAttributes {
   nazwa: string;
   slug: string;
   publishedAt: Date;
@@ -38,10 +38,10 @@ export interface Images {
 
 export interface Image {
   id: string;
-  attributes: TentacledAttributes;
+  attributes: ImageAttributes;
 }
 
-export interface TentacledAttributes {
-  name: string;
+export interface ImageAttributes {
+  url: string;
   alternativeText: string;
 }

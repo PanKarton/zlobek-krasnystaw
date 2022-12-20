@@ -12,8 +12,8 @@ type Props = {
 export const PageHeading = ({ headingText, className, returnHref }: Props) => {
   return (
     <StyledWrapper className="max-width-1440">
-      {returnHref ? <ReturnAnchor href={returnHref} /> : null}
       <StyledPageHeading className={className}>{headingText}</StyledPageHeading>
+      {returnHref ? <ReturnAnchor href={returnHref} /> : null}
     </StyledWrapper>
   );
 };

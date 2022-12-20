@@ -5,11 +5,17 @@ import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfo } from 'types/contactData';
 import { client } from '../../../../../graphql/apolloClient';
 import { Group, GroupsIdsAndFoldersSlugsResponse, ImageFolder } from 'types/galleryGroupsIdsAndFoldersSlugs';
-import { GalleryFolderResponse, GalleryGroup } from 'types/galleryFolderResponse';
+import { GalleryFolderResponse, ImagesFolderAttributes } from 'types/galleryFolderResponse';
+import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
+import { Image } from 'types/galleryFolderResponse';
 
 type Props = {
   contactInfo: ContactInfo;
-  groupFolder: GalleryGroup;
+  folderName: string;
+  imagesArray: Image[];
+  groupNumber: string;
+  groupName: string;
+  imagesFolderAttributes: ImagesFolderAttributes;
 };
 
 type Paths = {
@@ -19,17 +25,13 @@ type Paths = {
   };
 }[];
 
-const GalleryFolder = ({ contactInfo, groupFolder }: Props) => {
-  const {
-    attributes: { nazwa: groupName, numerGrupy: groupId },
-  } = groupFolder;
-
-  const folderName = groupFolder.attributes.foldery_zdjecs.data[0].attributes.nazwa;
+const GalleryFolder = ({ contactInfo, groupNumber, groupName, imagesFolderAttributes }: Props) => {
+  const { nazwa: folderName, zdjecia: images, publishedAt } = imagesFolderAttributes;
 
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading={`${groupName} - ${folderName}`} returnHref={`/galeria/grupa/${groupId}`}>
-        <p>asddasd</p>
+      <SecondaryTemplate heading={`${groupName} - ${folderName}`}>
+        <GalleryFolderSection images={images.data} returnHref={`/galeria/grupa/${groupNumber}`} publishDate={publishedAt} />
       </SecondaryTemplate>
     </ContactDataProvider>
   );
@@ -83,12 +85,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  const groupFolder = groupFoldersRes.data.grupies.data[0];
+  const groupFolder = groupFoldersRes.data.grupies.data[0].attributes;
+  const groupName = groupFolder.nazwa;
+  const imagesFolderAttributes = groupFolder.foldery_zdjecs.data[0].attributes;
 
   return {
     props: {
       contactInfo,
-      groupFolder,
+      imagesFolderAttributes,
+      groupName,
+      groupNumber,
     },
   };
 };

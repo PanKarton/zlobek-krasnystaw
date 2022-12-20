@@ -251,7 +251,7 @@ export const GET_IMAGES_FOLDER_OF_GROUP = gql`
                   data {
                     id
                     attributes {
-                      name
+                      url
                       alternativeText
                     }
                   }
