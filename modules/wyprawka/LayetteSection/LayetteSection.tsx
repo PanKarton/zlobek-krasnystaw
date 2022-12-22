@@ -1,21 +1,18 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
-import { LayetteResponse } from 'types/layette';
+import { LayetteElement } from 'types/layetteResponse';
 import { StyledOrderedList, StyledWrapper } from './LayetteSection.styles';
 
 type Props = {
-  layette: LayetteResponse;
+  layette: LayetteElement[];
 };
 
 export const LayetteSection = ({ layette }: Props) => {
-  const {
-    data: { attributes },
-  } = layette;
   return (
     <SectionWithStars>
       <StyledWrapper>
         <StyledOrderedList>
           {layette &&
-            attributes.layette.map(({ id, name }) => (
+            layette.map(({ id, name }) => (
               <li key={id}>
                 <p>{name}</p>
               </li>

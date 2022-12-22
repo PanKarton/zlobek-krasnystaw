@@ -1,14 +1,14 @@
 import { StaffListPageSection } from 'modules/kadra/StaffListPageSection/StaffListPageSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_STAFF_LISTS } from 'graphql/queries';
-import { StaffResponse } from 'types/staff';
-import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
+import { StaffDataAttributes, StaffResponse } from 'types/staffResponse';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 type Props = {
-  staff: StaffResponse;
+  staff: StaffDataAttributes;
   contactInfo: ContactInfoDataAttributes;
 };
 
@@ -25,7 +25,7 @@ const Staff = ({ staff, contactInfo }: Props) => {
 export default Staff;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const staffRes = await client.query({
+  const staffRes = await client.query<StaffResponse>({
     query: GET_STAFF_LISTS,
   });
 

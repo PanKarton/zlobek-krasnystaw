@@ -3,13 +3,13 @@ import { buildURL } from 'helpers/buildURL';
 import { formatDate } from 'helpers/formatDate';
 import { getDayName } from 'helpers/getDayName';
 import Image from 'next/image';
-import { Post } from 'types/newsPosts';
+import { NewsPostData } from 'types/newsPostResponse';
 import { StyledArticle, StyledWrapper } from './NewsPost.styles';
 import ReactMarkdown from 'react-markdown';
 import { ReturnAnchor } from 'Components/Atoms/ReturnAnchor/ReturnAnchor';
 
 type Props = {
-  articleData: Post;
+  articleData: NewsPostData;
 };
 
 export const NewsPost = ({ articleData }: Props) => {

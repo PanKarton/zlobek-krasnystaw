@@ -5,7 +5,7 @@ import { OurValues } from 'modules/index/OurValues/OurValues';
 import { StaffSection } from 'modules/index/StaffSection/StaffSection';
 import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
 import { client } from '../graphql/apolloClient';
 

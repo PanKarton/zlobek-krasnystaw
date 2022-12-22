@@ -1,4 +1,4 @@
-export interface ApolloNewsPostsResponse {
+export interface NewsPostsListResponse {
   newsPosts: NewsPosts;
 }
 
@@ -8,10 +8,10 @@ export interface NewsPosts {
 
 export interface NewsPost {
   id: string;
-  attributes: Attributes;
+  attributes: NewsPostAttributes;
 }
 
-export interface Attributes {
+export interface NewsPostAttributes {
   title: string;
   content: string;
   image: NewsPosts;

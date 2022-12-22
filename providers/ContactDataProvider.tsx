@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext } from 'react';
-import { ContactInfoDataAttributes } from 'types/contactData';
+import { ContactInfoDataAttributes } from 'types/contactDataResponse';
 
 type Props = {
   children: ReactNode;

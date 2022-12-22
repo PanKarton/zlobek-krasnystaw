@@ -1,6 +1,6 @@
 import { NewsListSection } from 'modules/aktualnosci/NewsListSection/NewsListSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';

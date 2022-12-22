@@ -1,10 +1,10 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { StaffList } from 'modules/kadra/StaffList/StaffList';
-import { StaffResponse } from 'types/staff';
+import { StaffDataAttributes } from 'types/staffResponse';
 import { StyledWrapper } from './StaffListPageSection.styles';
 
 type Props = {
-  staffData: StaffResponse;
+  staffData: StaffDataAttributes;
 };
 
 export const StaffListPageSection = ({ staffData }: Props) => {

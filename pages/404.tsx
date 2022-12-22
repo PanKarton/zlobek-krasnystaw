@@ -2,7 +2,7 @@ import { ErrorPageSection } from 'modules/404/ErrorPageSection/ErrorPageSection'
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 

@@ -3,12 +3,12 @@ import { getDayName } from 'helpers/getDayName';
 import Link from 'next/link';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import ReactMarkdown from 'react-markdown';
-import { PostAttributes } from 'types/newsPosts';
+import { NewsPostDataAttributes } from 'types/newsPostResponse';
 import { StyledArticle } from './NewsListElement.styles';
 
 type Props = {
   postId: string;
-  attributes: PostAttributes;
+  attributes: NewsPostDataAttributes;
 };
 
 export const NewsListElement = ({ postId, attributes }: Props) => {

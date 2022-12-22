@@ -1,14 +1,10 @@
 import { CopyToClipBoardWrapper } from 'modules/oplaty/CopyToClipBoardWrapper/CopyToClipBoardWrapper';
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { BankAccountData, StyledWrapper } from './FeesSection.styles';
+import { FeesDataAttributes } from 'types/feesResponse';
 
 type Props = {
-  feesData: {
-    monthlyFee: string;
-    dailyFoodFee: string;
-    bankName: string;
-    accountNumber: string;
-  };
+  feesData: FeesDataAttributes;
 };
 
 export const FeesSection = ({ feesData }: Props) => {

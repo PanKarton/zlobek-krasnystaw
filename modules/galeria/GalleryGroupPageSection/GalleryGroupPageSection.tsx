@@ -1,13 +1,13 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { GalleryTile } from '../GalleryTile/GalleryTile';
 import { StyledWrapper } from './GalleryGroupPageSection.styles';
-import { GroupData } from 'types/galleryGroupPage';
 import { formatDate } from 'helpers/formatDate';
 import { getDayName } from 'helpers/getDayName';
 import { buildURL } from 'helpers/buildURL';
+import { GroupsDataAttributes } from 'types/galleryResponse';
 
 type Props = {
-  galleryGroupInfo: GroupData;
+  galleryGroupInfo: GroupsDataAttributes;
 };
 
 export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
