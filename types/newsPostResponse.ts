@@ -14,19 +14,19 @@ export interface NewsPostData {
 export interface NewsPostDataAttributes {
   title: string;
   content: string;
-  image: Image;
+  image: PostImage;
   publishedAt: Date;
 }
 
-export interface Image {
-  data: ImageData[];
+export interface PostImage {
+  data: PostImageData[];
 }
 
-export interface ImageData {
-  attributes: ImageDataAttributes;
+export interface PostImageData {
+  attributes: PostImageDataAttributes;
 }
 
-export interface ImageDataAttributes {
+export interface PostImageDataAttributes {
   alternativeText: string;
   url: string;
 }

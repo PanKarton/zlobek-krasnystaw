@@ -30,14 +30,14 @@ export interface ImageFoldersDataAttributes {
   slug: string;
   publishedAt: Date;
   miniatura: Miniature;
-  zdjecia: Images;
+  zdjecia: GalleryImages;
 }
 
-export interface Images {
-  data: Image[];
+export interface GalleryImages {
+  data: GalleryImage[];
 }
 
-export interface Image {
+export interface GalleryImage {
   id: string;
   attributes: ImageAttributes;
 }

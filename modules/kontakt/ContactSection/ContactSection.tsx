@@ -12,21 +12,21 @@ export const ContactSection = () => {
         <StyledArticle>
           <ul>
             <li>
-              <ContactSectionListItem src="/images/contact-icon-phone.svg" alt="ikonka słuchawki telefonu na niebieskim kwiatku">
+              <ContactSectionListItem src="/images/contact-icon-phone.svg" altText="ikonka słuchawki telefonu na niebieskim kwiatku">
                 <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>
                   <span className="call-button-hover">{`tel. ${phoneNumber}`}</span>
                 </a>
               </ContactSectionListItem>
             </li>
             <li>
-              <ContactSectionListItem src="/images/contact-icon-pin.svg" alt="ikonka pinezki na niebieskim kwiatku">
+              <ContactSectionListItem src="/images/contact-icon-pin.svg" altText="ikonka pinezki na niebieskim kwiatku">
                 <p>{adress.name}</p>
                 <p>{adress.city}</p>
                 <p>{adress.street}</p>
               </ContactSectionListItem>
             </li>
             <li>
-              <ContactSectionListItem src="/images/contact-icon-mail.svg" alt="ikonka koperty na niebieskim kwiatku">
+              <ContactSectionListItem src="/images/contact-icon-mail.svg" altText="ikonka koperty na niebieskim kwiatku">
                 <p>{email}</p>
               </ContactSectionListItem>
             </li>

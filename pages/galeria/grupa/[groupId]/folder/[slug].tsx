@@ -5,13 +5,12 @@ import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../../graphql/apolloClient';
 import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
-import { Image } from 'types/newsPostResponse';
-import { GalleryGroupsResponse, ImageFoldersDataAttributes } from 'types/galleryResponse';
+import { GalleryGroupsResponse, GalleryImage, ImageFoldersDataAttributes } from 'types/galleryResponse';
 
 type Props = {
   contactInfo: ContactInfoDataAttributes;
   folderName: string;
-  imagesArray: Image[];
+  imagesArray: GalleryImage[];
   groupNumber: string;
   groupName: string;
   imagesFolderAttributes: ImageFoldersDataAttributes;

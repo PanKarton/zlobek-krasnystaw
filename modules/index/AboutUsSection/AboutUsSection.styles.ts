@@ -1,17 +1,8 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section`
+export const StyledWrapper = styled.div`
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 1.5rem;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(34, 193, 195, 0) 75%);
-  }
+
   .flex-wrapper {
     display: flex;
     justify-content: center;
@@ -57,13 +48,16 @@ export const StyledSection = styled.section`
     inset: 0% 0 5% 0;
     z-index: -1;
   }
-  .bottom-wave-wrapper {
-    position: absolute;
-    bottom: -0.125rem;
-    left: 0;
-    right: 0;
-    aspect-ratio: 15.28;
-  }
+`;
+
+export const StyledWaveDivider = styled.div`
+  position: absolute;
+  bottom: -0.125rem;
+  left: 50%;
+  translate: -50% 0;
+  width: 100vw;
+
+  aspect-ratio: 15.28;
 `;
 
 export const StyledArticle = styled.article`

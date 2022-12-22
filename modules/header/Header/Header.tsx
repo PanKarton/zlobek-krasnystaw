@@ -2,7 +2,7 @@ import { Nav } from 'modules/header/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader } from './Header.styles';
 
-export type Props = {
+type Props = {
   isSecondary?: boolean;
 };
 

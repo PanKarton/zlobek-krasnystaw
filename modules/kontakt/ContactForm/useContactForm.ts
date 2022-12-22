@@ -9,7 +9,7 @@ export type FormValues = {
   message: string;
 };
 
-type State = '' | 'Dziękujemy za wiadomość! :)' | 'Ups! Coś poszło nie tak, spróbuj ponownie! :)';
+type MessageState = '' | 'Dziękujemy za wiadomość! :)' | 'Ups! Coś poszło nie tak, spróbuj ponownie! :)';
 
 export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
   const {
@@ -27,7 +27,7 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
     },
   });
 
-  const [submitMessage, setSubmitMessage] = useState<State>('');
+  const [submitMessage, setSubmitMessage] = useState<MessageState>('');
 
   useEffect(() => {
     if (isSubmitSuccessful) reset();
@@ -47,7 +47,7 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 
       setSubmitMessage('Dziękujemy za wiadomość! :)');
-    } catch (e) {
+    } catch {
       setSubmitMessage('Ups! Coś poszło nie tak, spróbuj ponownie! :)');
     }
   }, [formRef]);
