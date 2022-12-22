@@ -94,9 +94,8 @@ Room for improvement:
 
 To do:
 
-- Gallery groups site
-- Gallery group folders site
 - Gallery group folder images site
 - Attach CMS for news and gallery
 - Optional: Add decorative images to parent sites
-- News post markdown text dispaly
+- Add types to apollo.query in getStaticProps and getStaticPaths
+- Tidy up graphql response types in pages

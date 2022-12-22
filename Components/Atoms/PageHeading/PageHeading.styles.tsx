@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.div`
   font-family: var(--font-primary);
   margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 
 export const StyledPageHeading = styled.h2`

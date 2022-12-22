@@ -1,6 +1,6 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { GalleryTile } from '../GalleryTile/GalleryTile';
-import { StyledSection } from './GalleryGroupPageSection.styles';
+import { StyledWrapper } from './GalleryGroupPageSection.styles';
 import { GroupData } from 'types/galleryGroupPage';
 import { formatDate } from 'helpers/formatDate';
 import { getDayName } from 'helpers/getDayName';
@@ -17,8 +17,8 @@ export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
   const folders = groupGalleryFolders.data;
 
   return (
-    <SectionWithStars>
-      <StyledSection>
+    <SectionWithStars hasNoMarginTop>
+      <StyledWrapper>
         {folders.length ? (
           <ul>
             {folders.map(({ id, attributes: { publishedAt, slug, nazwa: name, miniatura: miniatureImage } }) => {
@@ -27,7 +27,7 @@ export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
               return (
                 <li key={id}>
                   <GalleryTile
-                    href={`/galeria/grupa/${groupId}/${slug}`}
+                    href={`/galeria/grupa/${groupId}/folder/${slug}`}
                     altText={miniatureImage.data.attributes.alternativeText}
                     name={name}
                     imgPath={buildURL(miniatureImage.data.attributes.url)}
@@ -40,7 +40,7 @@ export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
         ) : (
           <p className="no-folders-message">Brak folderów zdjęć. Zapraszamy za jakiś czas! :)</p>
         )}
-      </StyledSection>
+      </StyledWrapper>
     </SectionWithStars>
   );
 };

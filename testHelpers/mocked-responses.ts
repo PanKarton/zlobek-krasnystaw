@@ -280,7 +280,7 @@ export const fetchMoreOfMonthMockSuccess = {
 export const fetchMoreOfMonthMockFail = {
   request: {
     query: GET_NEWS_POSTS,
-    variables: { page: 1, pageSize: 100, startDate: '2022-11-01T00:00:00.265Z', endDate: '2022-12-01T00:00:00.265Z' },
+    variables: { page: 1, pageSize: 2, startDate: '2022-11-01T00:00:00.265Z', endDate: '2022-12-01T00:00:00.265Z' },
   },
   result: {
     data: [],

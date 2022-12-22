@@ -14,7 +14,6 @@ export const theme = {
     // Pink
     accentSecondary: '#FE9FBF',
     accentSecondaryDarker: '#BF3160',
-    accentSecondaryDarkerLightHover: '#5693de',
     // Error
     error: 'red',
     errorTransparent: 'hsla(0, 100%, 50%, 0.05)',

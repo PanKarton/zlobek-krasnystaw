@@ -12,8 +12,8 @@ export const StyledWrapper = styled.div`
 
   .date-wrapper {
     position: absolute;
-    top: 0.25rem;
-    left: 0.25rem;
+    top: 0rem;
+    left: 0rem;
     background-color: ${({ theme }) => theme.color.primary};
     font-family: var(--font-primary);
     color: ${({ theme }) => theme.color.contrast};
@@ -22,8 +22,8 @@ export const StyledWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.25rem 0.375rem;
-    border-radius: 0.5rem 0 0.25rem 0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0 0 0.75rem 0;
   }
   .img-wrapper {
     position: relative;

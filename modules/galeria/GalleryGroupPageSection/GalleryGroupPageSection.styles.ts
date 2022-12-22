@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section`
+export const StyledWrapper = styled.div`
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
   padding-bottom: 5rem;
-  translate: 0.25rem 0;
+  border-top: 0.0625rem solid #ccc;
 
   @media screen and (min-width: 56.25rem) {
-    padding-bottom: 6rem;
-  }
-  @media screen and (min-width: 71.875rem) {
-    padding-bottom: 7rem;
+    padding-bottom: 4rem;
   }
   @media screen and (min-width: 96.875rem) {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
   ul {
     display: flex;
@@ -52,7 +51,7 @@ export const StyledSection = styled.section`
       font-size: ${({ theme }) => theme.fontSize.textXL};
       letter-spacing: 0.0625rem;
       text-align: left;
-      margin-top: 3 rem;
+      margin-top: 2rem;
     }
   }
 `;

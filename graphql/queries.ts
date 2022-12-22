@@ -182,6 +182,26 @@ export const GET_GROUPS_IDS = gql`
     }
   }
 `;
+
+export const GET_GROUPS_SLUGS = gql`
+  query GetFoldersSlugs {
+    grupies {
+      data {
+        attributes {
+          numerGrupy
+          foldery_zdjecs {
+            data {
+              attributes {
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
   query ($groupNumber: Int) {
     grupies(filters: { numerGrupy: { eq: $groupNumber } }) {
@@ -201,6 +221,38 @@ export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
                     attributes {
                       alternativeText
                       url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_IMAGES_FOLDER_OF_GROUP = gql`
+  query ($groupNumber: Int, $slug: String) {
+    grupies(filters: { numerGrupy: { eq: $groupNumber } }) {
+      data {
+        attributes {
+          nazwa
+          numerGrupy
+          foldery_zdjecs(filters: { slug: { eq: $slug } }) {
+            data {
+              id
+              attributes {
+                nazwa
+                slug
+                publishedAt
+                zdjecia {
+                  data {
+                    id
+                    attributes {
+                      url
+                      alternativeText
                     }
                   }
                 }
