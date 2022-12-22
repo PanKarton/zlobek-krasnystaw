@@ -2,7 +2,7 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO, GET_GROUPS_SLUGS, GET_IMAGES_FOLDER_OF_GROUP } from 'graphql/queries';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { client } from '../../../../../graphql/apolloClient';
 import { Group, GroupsIdsAndFoldersSlugsResponse, ImageFolder } from 'types/galleryGroupsIdsAndFoldersSlugs';
 import { GalleryFolderResponse, ImagesFolderAttributes } from 'types/galleryFolderResponse';
@@ -10,7 +10,7 @@ import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSectio
 import { Image } from 'types/galleryFolderResponse';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
   folderName: string;
   imagesArray: Image[];
   groupNumber: string;
@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params;
   const groupNumber = parseInt(params.groupId as string);
 
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

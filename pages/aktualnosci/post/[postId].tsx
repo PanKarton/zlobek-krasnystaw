@@ -5,12 +5,12 @@ import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { Post } from 'types/newsPosts';
 import { client } from '../../../graphql/apolloClient';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
   newsPost: Post;
 };
 
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const newsPost = newsPostRes.data.newsPost.data;
 
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

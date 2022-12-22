@@ -3,11 +3,11 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { GalleryGroupsSection } from 'modules/galeria/GalleryGroupsSection/GalleryGroupsSection';
 import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { client } from '../../graphql/apolloClient';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Gallery = ({ contactInfo }: Props) => (
@@ -21,7 +21,7 @@ const Gallery = ({ contactInfo }: Props) => (
 export default Gallery;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

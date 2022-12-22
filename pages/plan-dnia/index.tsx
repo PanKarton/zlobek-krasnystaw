@@ -2,14 +2,14 @@ import { DayScheduleSection } from 'modules/plan-dnia/DayScheduleSection/DaySche
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_DAY_SCHEDULE } from 'graphql/queries';
 import { DayScheduleResponse } from 'types/daySchedule';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 export type Props = {
   daySchedule: DayScheduleResponse;
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Schedule = ({ daySchedule, contactInfo }: Props) => {
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const daySchedule = dayScheduleRes.data.daySchedule;
 
-  const ContactInfo = await client.query({
+  const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

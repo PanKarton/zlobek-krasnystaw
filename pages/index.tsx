@@ -5,12 +5,12 @@ import { OurValues } from 'modules/index/OurValues/OurValues';
 import { StaffSection } from 'modules/index/StaffSection/StaffSection';
 import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
 import { client } from '../graphql/apolloClient';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Home = ({ contactInfo }: Props) => {
@@ -31,7 +31,7 @@ const Home = ({ contactInfo }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

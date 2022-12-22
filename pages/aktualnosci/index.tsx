@@ -1,6 +1,6 @@
 import { NewsListSection } from 'modules/aktualnosci/NewsListSection/NewsListSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';
@@ -8,7 +8,7 @@ import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const News = ({ contactInfo }: Props) => {
@@ -26,7 +26,7 @@ const News = ({ contactInfo }: Props) => {
 export default News;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

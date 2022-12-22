@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useContext } from 'react';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes } from 'types/contactData';
 
 type Props = {
   children: ReactNode;
-  contactData: ContactInfo;
+  contactData: ContactInfoDataAttributes;
 };
 
-const ContactDataContext = createContext<ContactInfo | null>(null);
+const ContactDataContext = createContext<ContactInfoDataAttributes | null>(null);
 
 export const ContactDataProvider = ({ children, contactData }: Props) => {
   return <ContactDataContext.Provider value={contactData}>{children}</ContactDataContext.Provider>;

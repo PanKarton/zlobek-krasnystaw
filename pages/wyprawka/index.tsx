@@ -3,13 +3,13 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO, GET_LAYETTE } from 'graphql/queries';
 import { LayetteResponse } from 'types/layette';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 type Props = {
   layette: LayetteResponse;
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Layette = ({ layette, contactInfo }: Props) => {
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const layette = layetteRes.data.layette;
 
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

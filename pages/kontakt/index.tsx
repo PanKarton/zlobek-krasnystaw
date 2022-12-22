@@ -1,13 +1,13 @@
 import { ContactSection } from 'modules/kontakt/ContactSection/ContactSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Contact = ({ contactInfo }: Props) => (
@@ -20,7 +20,7 @@ const Contact = ({ contactInfo }: Props) => (
 
 export default Contact;
 export const getStaticProps: GetStaticProps = async () => {
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

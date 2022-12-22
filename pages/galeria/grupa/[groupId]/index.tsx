@@ -2,13 +2,13 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO, GET_GALLERY_FOLDERS_OF_GROUP, GET_GROUPS_IDS } from 'graphql/queries';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactData';
 import { client } from '../../../../graphql/apolloClient';
 import { GroupData, GrupiesDatum, PokedexData } from 'types/galleryGroupPage';
 import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
   galleryGroupInfo: GroupData;
 };
 
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const groupNumber = parseInt(params.groupId as string);
 
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 
