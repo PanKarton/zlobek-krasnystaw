@@ -51,7 +51,7 @@ export const StyledWrapper = styled.div`
       font-size: ${({ theme }) => theme.fontSize.textXL};
       letter-spacing: 0.0625rem;
       text-align: left;
-      margin-top: 3 rem;
+      margin-top: 2rem;
     }
   }
 `;
