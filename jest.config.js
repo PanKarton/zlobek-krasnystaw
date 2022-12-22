@@ -11,7 +11,11 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
   // Show tests names
-  // verbose: true,
+  verbose: true,
+  moduleNameMapper: {
+    // Line that solves the 'SyntaxError: Unexpected token 'export' caused by react-markdown
+    'react-markdown': '<rootDir>/node_modules/react-markdown/react-markdown.min.js',
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);
