@@ -3,12 +3,12 @@ import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionW
 import { buildURL } from 'helpers/buildURL';
 import { formatDate } from 'helpers/formatDate';
 import { getDayName } from 'helpers/getDayName';
-import { Image } from 'types/galleryFolderResponse';
+import { GalleryImage } from 'types/galleryResponse';
 import { ImageTile } from '../ImageTile/ImageTile';
 import { PublishDate, StyledList } from './GalleryFolderSection.styles';
 
 type Props = {
-  images: Image[];
+  images: GalleryImage[];
   returnHref: string;
   publishDate: Date;
 };

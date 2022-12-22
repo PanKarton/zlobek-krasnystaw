@@ -2,14 +2,14 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO, GET_GALLERY_FOLDERS_OF_GROUP, GET_GROUPS_IDS } from 'graphql/queries';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../graphql/apolloClient';
-import { GroupData, GrupiesDatum, PokedexData } from 'types/galleryGroupPage';
+import { GalleryGroupsResponse, GroupsDataAttributes } from 'types/galleryResponse';
 import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
 
 type Props = {
-  contactInfo: ContactInfo;
-  galleryGroupInfo: GroupData;
+  contactInfo: ContactInfoDataAttributes;
+  galleryGroupInfo: GroupsDataAttributes;
 };
 
 const GroupGallery = ({ contactInfo, galleryGroupInfo }: Props) => {
@@ -27,11 +27,11 @@ const GroupGallery = ({ contactInfo, galleryGroupInfo }: Props) => {
 export default GroupGallery;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const newsPostsRes = await client.query({
+  const newsPostsRes = await client.query<GalleryGroupsResponse>({
     query: GET_GROUPS_IDS,
   });
 
-  const paths = newsPostsRes.data.grupies.data.map((group: GrupiesDatum) => {
+  const paths = newsPostsRes.data.grupies.data.map((group) => {
     return {
       params: {
         groupId: group.attributes.numerGrupy.toString(),
@@ -50,13 +50,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const groupNumber = parseInt(params.groupId as string);
 
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
-  const groupFoldersRes = await client.query<PokedexData>({
+  const groupFoldersRes = await client.query<GalleryGroupsResponse>({
     query: GET_GALLERY_FOLDERS_OF_GROUP,
     variables: {
       groupNumber,

@@ -3,14 +3,14 @@ import { ReactNode } from 'react';
 
 type Props = {
   src: string;
-  alt: string;
+  altText: string;
   children: ReactNode;
 };
 
-export const ContactSectionListItem = ({ src, alt, children }: Props) => (
+export const ContactSectionListItem = ({ src, altText, children }: Props) => (
   <div className="li-flex-wrapper">
     <div className="icon-wrapper">
-      <Image src={src} alt={alt} layout="fill" />
+      <Image src={src} alt={altText} layout="fill" />
     </div>
     <div className="content">{children}</div>
   </div>

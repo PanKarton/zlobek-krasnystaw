@@ -4,13 +4,13 @@ import { StyledCirculareWrapper } from './CircleBorderImage.styles';
 
 type Props = {
   url: string;
-  alt: string;
+  altText: string;
 };
 
-export const CircleBorderImage = ({ url, alt }: Props) => (
+export const CircleBorderImage = ({ url, altText }: Props) => (
   <StyledCirculareWrapper>
     <div className="image-wrapper">
-      <Image src={url} alt={alt} layout="fill" />
+      <Image src={url} alt={altText} layout="fill" />
     </div>
   </StyledCirculareWrapper>
 );

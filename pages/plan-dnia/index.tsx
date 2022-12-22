@@ -1,15 +1,15 @@
 import { DayScheduleSection } from 'modules/plan-dnia/DayScheduleSection/DayScheduleSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_DAY_SCHEDULE } from 'graphql/queries';
-import { DayScheduleResponse } from 'types/daySchedule';
-import { ContactInfo } from 'types/contactData';
+import { DayScheduleDataAttributes, DayScheduleElement, DayScheduleResponse } from 'types/dayScheduleResponse';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 export type Props = {
-  daySchedule: DayScheduleResponse;
-  contactInfo: ContactInfo;
+  daySchedule: DayScheduleElement[];
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Schedule = ({ daySchedule, contactInfo }: Props) => {
@@ -25,13 +25,13 @@ const Schedule = ({ daySchedule, contactInfo }: Props) => {
 export default Schedule;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const dayScheduleRes = await client.query({
+  const dayScheduleRes = await client.query<DayScheduleResponse>({
     query: GET_DAY_SCHEDULE,
   });
 
-  const daySchedule = dayScheduleRes.data.daySchedule;
+  const daySchedule = dayScheduleRes.data.daySchedule.data.attributes.daySchedule;
 
-  const ContactInfo = await client.query({
+  const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

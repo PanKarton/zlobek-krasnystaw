@@ -1,5 +1,16 @@
+export interface ContactInfoResponse {
+  contactInfo: ContactInfo;
+}
+
 export interface ContactInfo {
-  typename: string;
+  data: ContactInfoData;
+}
+
+export interface ContactInfoData {
+  attributes: ContactInfoDataAttributes;
+}
+
+export interface ContactInfoDataAttributes {
   phoneNumber: string;
   email: string;
   openDays: string;
@@ -8,14 +19,12 @@ export interface ContactInfo {
 }
 
 export interface Adress {
-  typename: string;
   city: string;
   name: string;
   street: string;
 }
 
 export interface OpenHours {
-  typename: string;
   openTime: string;
   closeTime: string;
 }

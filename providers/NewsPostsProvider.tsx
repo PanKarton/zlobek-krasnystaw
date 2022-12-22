@@ -2,11 +2,13 @@ import { createContext, ReactNode, useCallback, useContext, useEffect, useState 
 import { ApolloError, useQuery } from '@apollo/client';
 import { GET_NEWS_POSTS } from 'graphql/queries';
 import { MonthData } from 'helpers/getMonthsSinceDate';
-import { ApolloNewsPostsResponse, NewsPost, NewsPosts } from 'types/newsPostsArrayResponse';
+import { NewsPost, NewsPostsListResponse } from 'types/newsPostsListResponse';
 
 type Props = {
   children: ReactNode;
 };
+
+type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
 
 type Context = {
   newsPostsState: NewsPost[];
@@ -19,8 +21,6 @@ type Context = {
   error: ApolloError | undefined;
 };
 
-type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
-
 const NewsPostsContext = createContext<Context | null>(null);
 
 const pageSize = 2;
@@ -29,7 +29,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
   const [isAllDataDisplayed, setIsAllDataDisplayed] = useState(true);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
   const [archivesErrorMessage, setArchivesErrorMessage] = useState<ErrorMessage>('');
-  const { data, loading, error, fetchMore } = useQuery<ApolloNewsPostsResponse>(GET_NEWS_POSTS, {
+  const { data, loading, error, fetchMore } = useQuery<NewsPostsListResponse>(GET_NEWS_POSTS, {
     variables: {
       page: 1,
       pageSize,

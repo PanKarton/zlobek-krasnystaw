@@ -145,20 +145,8 @@ export const GET_SINGLE_POST_BY_ID = gql`
           image {
             data {
               attributes {
-                name
                 alternativeText
-                caption
-                width
-                height
-                formats
-                hash
-                ext
-                mime
-                size
                 url
-                previewUrl
-                provider
-                provider_metadata
               }
             }
           }

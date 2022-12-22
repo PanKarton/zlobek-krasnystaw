@@ -3,11 +3,11 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { RecruitmentPageSection } from 'modules/rekrutacja/RecruitmentPageSection/RecruitmentPageSection';
 import { GetStaticProps } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../graphql/apolloClient';
 
 type Props = {
-  contactInfo: ContactInfo;
+  contactInfo: ContactInfoDataAttributes;
 };
 
 const Recruitment = ({ contactInfo }: Props) => (
@@ -21,7 +21,7 @@ const Recruitment = ({ contactInfo }: Props) => (
 export default Recruitment;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const ContactInfo = await client.query({
+  const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

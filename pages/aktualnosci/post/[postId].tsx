@@ -5,13 +5,14 @@ import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
-import { ContactInfo } from 'types/contactData';
-import { Post } from 'types/newsPosts';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
+import { NewsPostData, NewsPostResponse } from 'types/newsPostResponse';
+import { NewsPostsListResponse } from 'types/newsPostsListResponse';
 import { client } from '../../../graphql/apolloClient';
 
 type Props = {
-  contactInfo: ContactInfo;
-  newsPost: Post;
+  contactInfo: ContactInfoDataAttributes;
+  newsPost: NewsPostData;
 };
 
 const NewsArticle = ({ contactInfo, newsPost }: Props) => {
@@ -31,13 +32,13 @@ const NewsArticle = ({ contactInfo, newsPost }: Props) => {
 export default NewsArticle;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const newsPostsRes = await client.query({
+  const newsPostsRes = await client.query<NewsPostsListResponse>({
     query: GET_NEWS_POSTS,
   });
 
   const newsPosts = newsPostsRes.data.newsPosts.data;
 
-  const newsPostsIds = newsPosts.map((post: Post) => ({ params: { postId: post.id } }));
+  const newsPostsIds = newsPosts.map((post) => ({ params: { postId: post.id } }));
 
   return {
     paths: newsPostsIds,
@@ -48,7 +49,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
 
-  const newsPostRes = await client.query({
+  const newsPostRes = await client.query<NewsPostResponse>({
     query: GET_SINGLE_POST_BY_ID,
     variables: {
       id: params.postId,
@@ -57,7 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const newsPost = newsPostRes.data.newsPost.data;
 
-  const contactInfoRes = await client.query({
+  const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 

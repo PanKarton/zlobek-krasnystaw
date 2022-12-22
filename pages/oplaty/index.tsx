@@ -1,15 +1,15 @@
 import { FeesSection } from 'modules/oplaty/FeesSection/FeesSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_FEES } from 'graphql/queries';
-import { FeesResponse } from 'types/fees';
-import { ContactInfo } from 'types/contactData';
+import { FeesDataAttributes, FeesResponse } from 'types/feesResponse';
+import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { GetStaticProps } from 'next';
 
 export interface Props {
-  fees: FeesResponse;
-  contactInfo: ContactInfo;
+  fees: FeesDataAttributes;
+  contactInfo: ContactInfoDataAttributes;
 }
 
 const Fees = ({ fees, contactInfo }: Props) => {
@@ -25,13 +25,13 @@ const Fees = ({ fees, contactInfo }: Props) => {
 export default Fees;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const feesRes = await client.query({
+  const feesRes = await client.query<FeesResponse>({
     query: GET_FEES,
   });
 
   const fees = feesRes.data.fee.data.attributes;
 
-  const ContactInfo = await client.query({
+  const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });
 
