@@ -23,6 +23,9 @@ export const StyledSection = styled.section`
         li {
           width: max-content;
           margin-inline: auto;
+          @media screen and (min-width: 96.875rem) {
+            margin-inline: 0;
+          }
         }
       }
       @media screen and (min-width: 75rem) {
