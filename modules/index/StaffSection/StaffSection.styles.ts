@@ -7,41 +7,38 @@ export const StyledSection = styled.section`
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
 
-  .max-width-1440 {
+  .flex-wrapper {
     position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    & > .flex-wrapper {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(3rem, 5vw, 6rem);
-      @media screen and (min-width: 96.875rem) {
-        justify-content: flex-start;
+    gap: clamp(3rem, 5vw, 6rem);
+    @media screen and (min-width: 62.5rem) {
+      justify-content: space-between;
+    }
+    @media screen and (min-width: 96.875rem) {
+      justify-content: flex-start;
+    }
+    .staff-image-wrapper {
+      display: none;
+      position: relative;
+      width: 50%;
+      aspect-ratio: 1.58;
+      @media screen and (min-width: 62.5rem) {
+        display: block;
       }
-      .staff-image-wrapper {
-        display: none;
-        position: relative;
+      @media screen and (min-width: 96.875rem) {
         width: 26.375rem;
-        aspect-ratio: 1.58;
-        @media screen and (min-width: 62.5rem) {
-          justify-content: flex-start;
-          display: block;
-        }
-        @media screen and (min-width: 96.875rem) {
-          flex-grow: 0.5;
-        }
-        &::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          translate: 1rem 1rem;
-          background-color: ${({ theme }) => theme.color.primary};
-          z-index: 0;
-        }
+        flex-grow: 0.5;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        translate: 1rem 1rem;
+        background-color: ${({ theme }) => theme.color.primary};
+        z-index: 0;
       }
     }
   }
@@ -159,7 +156,7 @@ export const StyledArticle = styled.article`
   text-align: right;
   max-width: 31.25rem;
   @media screen and (min-width: 62.5rem) {
-    max-width: 20rem;
+    max-width: 45%;
   }
   @media screen and (min-width: 96.875rem) {
     max-width: 31.25rem;

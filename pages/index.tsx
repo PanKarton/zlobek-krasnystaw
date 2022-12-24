@@ -20,7 +20,7 @@ const Home = ({ contactInfo }: Props) => {
         <HomeTemplate>
           <OurValues />
           <AboutUsSection />
-          {/* <StaffSection /> */}
+          <StaffSection />
           {/* <NurseryDescription /> */}
         </HomeTemplate>
       </ContactDataProvider>
