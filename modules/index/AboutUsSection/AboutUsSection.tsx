@@ -34,9 +34,9 @@ export const AboutUsSection = () => (
           </ul>
         </StyledArticle>
         <div className="images-wrapper">
-          <CircleBorderImage url="/images/happy-kid3.jpg" altText="Dziecko cieszące się z zabawy klockami" />
-          <CircleBorderImage url="/images/happy-kid1.jpg" altText="Uśmiechnięte dziecko jedzące posiłek" />
           <CircleBorderImage url="/images/happy-kid2.jpg" altText="Dziecko ukladajace klocki" />
+          <CircleBorderImage url="/images/happy-kid1.jpg" altText="Uśmiechnięte dziecko jedzące posiłek" />
+          <CircleBorderImage url="/images/happy-kid3.jpg" altText="Dziecko cieszące się z zabawy klockami" />
           <div className="sun-wrapper">
             <SunImage />
           </div>
