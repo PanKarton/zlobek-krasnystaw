@@ -19,7 +19,7 @@ export const Footer = () => (
         <div className="flex-wrapper">
           <FbButton>
             <div className="nav-facebook-wrapper">
-              <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" layout="fixed" width="36" height="36" />
+              <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" width="36" height="36" />
               <h2>Odwiedź nas na Facebooku :)</h2>
             </div>
           </FbButton>

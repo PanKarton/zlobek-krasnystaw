@@ -7,10 +7,10 @@ type Props = {
   altText: string;
 };
 
-export const ImageTile = ({ imgPath, altText }: Props) => {
+export const ImageTile = ({ imgPath, altText = 'zdjecie' }: Props) => {
   return (
     <StyledWrapper>
-      <Image src={imgPath} alt={altText} layout="fill" objectFit="cover" />
+      <Image src={imgPath} alt={altText} fill style={{ objectFit: 'cover' }} />
       <div className="hover-layer">
         <AiOutlineSearch />
       </div>

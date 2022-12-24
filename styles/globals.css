@@ -60,17 +60,18 @@ strong {
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
   .max-width-1440 {
-    width: min(90rem, 50rem);
+    padding-inline: 0;
+    width: min(90%, 70rem);
   }
 }
 
-@media screen and (min-width: 96.875rem) {
+/* @media screen and (min-width: 96.875rem) {
   .max-width-1440 {
     width: min(90rem, 60rem);
   }
-}
+} */
 
 @media screen and (min-width: 96.875rem) {
   .max-width-1440 {

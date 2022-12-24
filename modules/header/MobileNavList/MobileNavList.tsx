@@ -77,7 +77,7 @@ export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
         <li>
           <div className="fb-icon">
             <FbButton>
-              <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" layout="fixed" width="36" height="36" />
+              <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" width="36" height="36" />
             </FbButton>
           </div>
         </li>

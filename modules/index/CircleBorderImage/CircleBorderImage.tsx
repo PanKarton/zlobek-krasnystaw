@@ -10,7 +10,7 @@ type Props = {
 export const CircleBorderImage = ({ url, altText }: Props) => (
   <StyledCirculareWrapper>
     <div className="image-wrapper">
-      <Image src={url} alt={altText} layout="fill" />
+      <Image src={url} alt={altText} fill sizes="25vw" />
     </div>
   </StyledCirculareWrapper>
 );

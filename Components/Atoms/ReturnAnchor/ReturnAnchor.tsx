@@ -7,12 +7,10 @@ type Props = {
 };
 
 export const ReturnAnchor = ({ href }: Props) => (
-  <Link href={href} passHref>
-    <a href="!#">
-      <StyledWrapper className="return-anchor">
-        <BiLeftArrowAlt />
-        <StyledSpan>Cofnij</StyledSpan>
-      </StyledWrapper>
-    </a>
+  <Link href={href}>
+    <StyledWrapper className="return-anchor">
+      <BiLeftArrowAlt />
+      <StyledSpan>Cofnij</StyledSpan>
+    </StyledWrapper>
   </Link>
 );

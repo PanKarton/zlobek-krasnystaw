@@ -10,6 +10,7 @@ export const StyledWrapper = styled.div`
     padding-block: 3rem 8rem;
     @media screen and (min-width: 75rem) {
       padding-block: 0rem 8rem;
+      justify-content: space-between;
     }
     @media screen and (min-width: 96.875rem) {
       padding-block: 3rem 10rem;
@@ -30,11 +31,11 @@ export const StyledWrapper = styled.div`
       }
       .sun-wrapper {
         position: absolute;
-        height: 5rem;
+        height: 8rem;
         aspect-ratio: 1.16;
         top: 0;
         right: 15%;
-        @media screen and (min-width: 96.875rem) {
+        @media screen and (min-width: 68.75rem) {
           height: 9.375rem;
         }
         @media screen and (min-width: 96.875rem) {

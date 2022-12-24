@@ -19,16 +19,14 @@ export const NewsListElement = ({ postId, attributes }: Props) => {
     <StyledArticle>
       <div className="flex-wrapper">
         <Link href={`/aktualnosci/post/${postId}`}>
-          <a href="!#" className="heading">
-            <h3>{attributes.title} </h3>
-          </a>
+          <h3 className="heading">{attributes.title} </h3>
         </Link>
         <p className="publishDate">{`${dayName}, ${formatedDate}`}</p>
         <ReactMarkdown className="content">{attributes.content}</ReactMarkdown>
         <Link href={`/aktualnosci/post/${postId}`}>
-          <a href="!#" className="read-more">
+          <span className="read-more">
             Czytaj cały post <BiRightArrowAlt />
-          </a>
+          </span>
         </Link>
       </div>
     </StyledArticle>
