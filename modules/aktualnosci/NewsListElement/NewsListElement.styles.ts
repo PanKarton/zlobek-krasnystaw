@@ -10,7 +10,7 @@ export const StyledArticle = styled.article`
     gap: 0.125rem;
   }
 
-  .heading > h3 {
+  h3.heading {
     font-family: inherit;
     font-size: ${({ theme }) => theme.fontSize.text2XL};
     font-weight: 600;
@@ -43,7 +43,7 @@ export const StyledArticle = styled.article`
     -webkit-box-orient: vertical;
   }
 
-  a.read-more {
+  span.read-more {
     background-color: transparent;
     color: ${({ theme }) => theme.color.accentPrimaryDarker};
     display: flex;

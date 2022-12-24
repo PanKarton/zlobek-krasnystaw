@@ -140,8 +140,5 @@ export const StyledHeader = styled.header<Props>`
     left: 0;
     right: 0;
     aspect-ratio: 17.25;
-    @media screen and (min-width: 90rem) {
-      bottom: ${({ isSecondary }) => (isSecondary ? '0.25rem' : '0')};
-    }
   }
 `;

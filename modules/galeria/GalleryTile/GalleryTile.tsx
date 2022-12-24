@@ -15,7 +15,14 @@ export const GalleryTile = ({ name, href, altText, imgPath, publishDate }: Props
     <Link href={href}>
       <StyledWrapper>
         <div className="img-wrapper">
-          <Image src={imgPath} alt={altText} layout="fill" objectFit="cover" />
+          <Image
+            src={imgPath}
+            alt={altText}
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 900px) 100vw,
+              350px"
+          />
         </div>
         <div className="name-wrapper">
           <span>{name}</span>

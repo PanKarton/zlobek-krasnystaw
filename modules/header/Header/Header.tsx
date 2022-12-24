@@ -2,7 +2,7 @@ import { Nav } from 'modules/header/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader } from './Header.styles';
 
-type Props = {
+export type Props = {
   isSecondary?: boolean;
 };
 
@@ -26,10 +26,16 @@ export const Header = ({ isSecondary }: Props) => {
         </div>
       )}
       <div className="hero-image-wrapper">
-        <Image priority src={heroImageURL} alt="Chłopiec bawiący się klockami na stole" layout="fill" objectFit="cover" objectPosition="50% 100%" />
+        <Image
+          priority
+          src={heroImageURL}
+          alt="Chłopiec bawiący się klockami na stole"
+          fill
+          style={{ objectFit: 'cover', objectPosition: '50% 100%' }}
+        />
       </div>
       <div className="bottom-wave-wrapper">
-        <Image src="/images/hero-wave-test.png" alt="Biała fala dekoracyjna" layout="fill" />
+        <Image src="/images/hero-wave-test.png" alt="Biała fala dekoracyjna" fill />
       </div>
     </StyledHeader>
   );
