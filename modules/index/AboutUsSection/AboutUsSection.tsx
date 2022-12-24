@@ -44,7 +44,7 @@ export const AboutUsSection = () => (
       </div>
     </StyledWrapper>
     <StyledWaveDivider>
-      <Image src="/images/gray-wave.svg" alt="Szara fala ozdobna" layout="fill" />
+      <Image src="/images/gray-wave.svg" alt="Szara fala ozdobna" fill sizes="100vw" />
     </StyledWaveDivider>
   </SectionWithStars>
 );

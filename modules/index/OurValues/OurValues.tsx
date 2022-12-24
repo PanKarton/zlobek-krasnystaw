@@ -9,7 +9,7 @@ export const OurValues = () => (
         <li>
           <ValueCell>
             <div>
-              <Image src="/images/our-value1.svg" alt="dłoń z sercem" layout="fill" />
+              <Image src="/images/our-value1.svg" alt="dłoń z sercem" fill sizes="(max-width: 43.75rem) 8rem, 10rem" />
             </div>
             <span>Szacunek i słuchanie</span>
           </ValueCell>
@@ -17,7 +17,7 @@ export const OurValues = () => (
         <li>
           <ValueCell>
             <div>
-              <Image src="/images/our-value2.svg" alt="Książka z żarówką" layout="fill" />
+              <Image src="/images/our-value2.svg" alt="Książka z żarówką" fill sizes="(max-width: 43.75rem) 8rem, 10rem" />
             </div>
             <span>Edukacja i odkrywanie świata</span>
           </ValueCell>
@@ -25,7 +25,7 @@ export const OurValues = () => (
         <li>
           <ValueCell>
             <div>
-              <Image src="/images/our-value3.svg" alt="Trzy popiersia na okręgu" layout="fill" />
+              <Image src="/images/our-value3.svg" alt="Trzy popiersia na okręgu" fill sizes="(max-width: 43.75rem) 8rem, 10rem" />
             </div>
             <span>Równość i przynależność</span>
           </ValueCell>
