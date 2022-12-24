@@ -18,9 +18,9 @@ const Home = ({ contactInfo }: Props) => {
     <>
       <ContactDataProvider contactData={contactInfo}>
         <HomeTemplate>
-          <OurValues />
-          <AboutUsSection />
-          <StaffSection />
+          {/* <OurValues /> */}
+          {/* <AboutUsSection /> */}
+          {/* <StaffSection /> */}
           <NurseryDescription />
         </HomeTemplate>
       </ContactDataProvider>

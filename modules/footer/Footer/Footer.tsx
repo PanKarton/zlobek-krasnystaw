@@ -7,10 +7,8 @@ import { StyledFooter } from './Footer.styles';
 export const Footer = () => (
   <StyledFooter>
     <div className="flex-wrapper max-width-1440">
-      <div className="footer-left">
-        <FooterContactInfo />
-      </div>
-      <div className="footer-right">
+      <FooterContactInfo />
+      <div className="map-wrapper">
         <Map />
       </div>
     </div>

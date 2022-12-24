@@ -7,24 +7,16 @@ export const StyledFooter = styled.footer`
     padding-block: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 3rem;
     @media screen and (min-width: 96.875rem) {
       padding-block: 5rem;
     }
-    .footer-left {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      @media screen and (min-width: 96.875rem) {
-        justify-content: flex-start;
-      }
-    }
 
-    .footer-right {
+    .map-wrapper {
       display: none;
       position: relative;
-      width: 27.5rem;
+      width: 27rem;
       height: 27.5rem;
       &::after,
       &::before {
@@ -45,11 +37,11 @@ export const StyledFooter = styled.footer`
         bottom: -1rem;
         right: -1rem;
       }
-      @media screen and (min-width: 56.25rem) {
+      @media screen and (min-width: 62.5rem) {
         display: block;
       }
-      @media screen and (min-width: 96.875rem) {
-        width: 33.75rem;
+      @media screen and (min-width: 71.875rem) {
+        width: 33rem;
       }
       @media screen and (min-width: 96.875rem) {
         width: 50rem;
@@ -70,10 +62,7 @@ export const StyledFooter = styled.footer`
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
-        @media screen and (min-width: 43.75rem) {
-          padding-left: 3rem;
-        }
-        @media screen and (min-width: 56.25rem) {
+        @media screen and (min-width: 62.5rem) {
           padding-left: 0;
           flex-direction: row;
           align-items: center;
@@ -99,10 +88,11 @@ export const StyledFooter = styled.footer`
       font-family: var(--font-primary);
       font-size: ${({ theme }) => theme.fontSize.textBase};
       max-width: 40ch;
-      @media screen and (min-width: 56.25rem) {
-        max-width: 35.625rem;
+      @media screen and (min-width: 62.5rem) {
+        max-width: 34rem;
       }
       @media screen and (min-width: 96.875rem) {
+        padding-right: 3rem;
         max-width: max-content;
       }
       .text-pink {

@@ -17,7 +17,7 @@ export const Map = () => {
 
   if (!isLoaded) return <p>Ładowanie...</p>;
   return (
-    <GoogleMap zoom={14} center={coordinates} clickableIcons={false} mapContainerClassName="footer-right">
+    <GoogleMap zoom={14} center={coordinates} clickableIcons={false} mapContainerClassName="map-wrapper">
       <MarkerF position={coordinates} />
     </GoogleMap>
   );

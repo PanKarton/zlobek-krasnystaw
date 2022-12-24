@@ -6,43 +6,17 @@ export const StyledSection = styled.section`
   width: 18rem;
   color: ${({ theme }) => theme.color.contrast};
 
-  @media screen and (min-width: 43.75rem) {
-    width: 100%;
-  }
-  @media screen and (min-width: 96.875rem) {
+  @media screen and (min-width: 34rem) {
     width: 34rem;
   }
-  .flex-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    @media screen and (min-width: 43.75rem) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 85%;
-      column-gap: 0;
-      margin-inline: auto;
-      li {
-        flex: 1 0 47%;
-      }
-    }
-    @media screen and (min-width: 56.25rem) {
-      flex-direction: column;
-      row-gap: 1rem;
-      margin-inline: 0;
 
-      li {
-        flex: 1 0 99%;
-      }
+  ul.flex-list {
+    display: grid;
+    @media screen and (min-width: 34rem) {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
-    @media screen and (min-width: 96.875rem) {
-      flex-direction: row;
-      row-gap: 3rem;
-      li {
-        flex: 1 0 47%;
-      }
-    }
+
     li {
       /* Typography for bip and contact */
       a {
