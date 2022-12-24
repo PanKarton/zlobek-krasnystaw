@@ -10,7 +10,7 @@ import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionW
 export const AboutUsSection = () => (
   <SectionWithStars>
     <StyledWrapper>
-      <div className="flex-wrapper max-width-1440">
+      <div className="flex-wrapper">
         <StyledArticle>
           <MainSiteSectionHeading>
             Czego nauczy się z nami <span className="text-pink">Twój maluch?</span>
