@@ -6,11 +6,11 @@ export const StyledWrapper = styled.div`
   padding-bottom: 5rem;
   border-top: 0.0625rem solid #ccc;
 
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 62.5rem) {
     padding-bottom: 4rem;
   }
   @media screen and (min-width: 96.875rem) {
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
   }
   ul {
     display: flex;

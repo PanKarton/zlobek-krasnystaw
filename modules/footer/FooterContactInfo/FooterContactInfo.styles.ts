@@ -3,19 +3,24 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   margin-block: 2rem 1.5rem;
   font-family: var(--font-primary);
-  width: 18rem;
+  flex-basis: 18rem;
   color: ${({ theme }) => theme.color.contrast};
 
   @media screen and (min-width: 34rem) {
-    width: 30rem;
+    flex-basis: 38rem;
+  }
+  @media screen and (min-width: 62.5rem) {
+    flex-basis: 27rem;
+    flex-shrink: 0;
   }
 
   ul.flex-list {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     @media screen and (min-width: 34rem) {
       grid-template-columns: 1fr 1fr;
-      gap: 3rem 0;
+      column-gap: 2rem;
+      row-gap: 3rem;
     }
 
     li {
@@ -60,13 +65,22 @@ export const StyledSection = styled.section`
       /* BIP */
       .nav-bip-wrapper {
         position: relative;
-        border-top: 0.0625rem solid ${({ theme }) => theme.color.borderDivider};
         width: 100%;
-        padding-top: 2rem;
         margin-left: 1.75rem;
-        @media screen and (min-width: 87.5rem) {
-          border: none;
+        padding-top: 1.5rem;
+        @media screen and (min-width: 34rem) {
           padding-top: 0;
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          width: 80%;
+          left: 0;
+          top: 0;
+          border-top: 0.0625rem solid ${({ theme }) => theme.color.borderDivider};
+          @media screen and (min-width: 34rem) {
+            display: none;
+          }
         }
         .bip-button-wrapper {
           position: relative;
