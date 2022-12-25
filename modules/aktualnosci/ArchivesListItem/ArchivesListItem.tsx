@@ -5,7 +5,6 @@ import { useNewsPosts } from 'providers/NewsPostsProvider';
 type Props = {
   monthData: MonthData;
   isActive?: boolean;
-  monthIndex: number;
   setActiveMonth: () => void;
 };
 
