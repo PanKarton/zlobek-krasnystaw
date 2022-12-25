@@ -12,7 +12,7 @@ My first website for real client with real problems to solve. I gave my best and
 - [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Project Status](#project-status)
-- [What did I learn?](#what-did-I-learn?)
+- [What did I learn?](#what-did-I-learn)
 - [Room for Improvement](#room-for-improvement)
 
 ## General Information
