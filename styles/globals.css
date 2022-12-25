@@ -67,16 +67,9 @@ strong {
   }
 }
 
-/* @media screen and (min-width: 96.875rem) {
-  .max-width-1440 {
-    width: min(90rem, 60rem);
-  }
-} */
-
 @media screen and (min-width: 96.875rem) {
   .max-width-1440 {
     width: 90rem;
-    padding-inline: 0;
   }
 }
 

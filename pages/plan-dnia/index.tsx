@@ -1,18 +1,18 @@
 import { DayScheduleSection } from 'modules/plan-dnia/DayScheduleSection/DayScheduleSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_DAY_SCHEDULE } from 'graphql/queries';
-import { DayScheduleDataAttributes, DayScheduleElement, DayScheduleResponse } from 'types/dayScheduleResponse';
+import { DayScheduleElement, DayScheduleResponse } from 'types/dayScheduleResponse';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 
-export type Props = {
+type PageProps = {
   daySchedule: DayScheduleElement[];
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Schedule = ({ daySchedule, contactInfo }: Props) => {
+const Schedule: NextPage<PageProps> = ({ daySchedule, contactInfo }) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading="Nasz plan dnia">
@@ -24,7 +24,7 @@ const Schedule = ({ daySchedule, contactInfo }: Props) => {
 
 export default Schedule;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const dayScheduleRes = await client.query<DayScheduleResponse>({
     query: GET_DAY_SCHEDULE,
   });

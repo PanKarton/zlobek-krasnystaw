@@ -3,24 +3,24 @@ import { AboutUsSection } from 'modules/index/AboutUsSection/AboutUsSection';
 import { NurseryDescription } from 'modules/index/NurseryDescription/NurseryDescription';
 import { OurValues } from 'modules/index/OurValues/OurValues';
 import { StaffSection } from 'modules/index/StaffSection/StaffSection';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
 import { client } from '../graphql/apolloClient';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Home = ({ contactInfo }: Props) => {
+const Home: NextPage<PageProps> = ({ contactInfo }) => {
   return (
     <>
       <ContactDataProvider contactData={contactInfo}>
         <HomeTemplate>
-          {/* <OurValues /> */}
-          {/* <AboutUsSection /> */}
-          {/* <StaffSection /> */}
+          <OurValues />
+          <AboutUsSection />
+          <StaffSection />
           <NurseryDescription />
         </HomeTemplate>
       </ContactDataProvider>
@@ -30,7 +30,7 @@ const Home = ({ contactInfo }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });

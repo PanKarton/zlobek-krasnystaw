@@ -1,16 +1,16 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { GalleryGroupsSection } from 'modules/galeria/GalleryGroupsSection/GalleryGroupsSection';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../graphql/apolloClient';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Gallery = ({ contactInfo }: Props) => (
+const Gallery: NextPage<PageProps> = ({ contactInfo }) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Nasze zdjęcia">
       <GalleryGroupsSection />
@@ -20,7 +20,7 @@ const Gallery = ({ contactInfo }: Props) => (
 
 export default Gallery;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });

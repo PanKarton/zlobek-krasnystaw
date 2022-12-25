@@ -1,13 +1,13 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_GROUPS_SLUGS, GET_IMAGES_FOLDER_OF_GROUP } from 'graphql/queries';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../../graphql/apolloClient';
 import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
 import { GalleryGroupsResponse, GalleryImage, ImageFoldersDataAttributes } from 'types/galleryResponse';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
   folderName: string;
   imagesArray: GalleryImage[];
@@ -16,14 +16,7 @@ type Props = {
   imagesFolderAttributes: ImageFoldersDataAttributes;
 };
 
-type Paths = {
-  params: {
-    groupId: string;
-    slug: string;
-  };
-}[];
-
-const GalleryFolder = ({ contactInfo, groupNumber, groupName, imagesFolderAttributes }: Props) => {
+const GalleryFolder: NextPage<PageProps> = ({ contactInfo, groupNumber, groupName, imagesFolderAttributes }) => {
   const { nazwa: folderName, zdjecia: images, publishedAt } = imagesFolderAttributes;
 
   return (
@@ -37,7 +30,14 @@ const GalleryFolder = ({ contactInfo, groupNumber, groupName, imagesFolderAttrib
 
 export default GalleryFolder;
 
-export const getStaticPaths: GetStaticPaths = async () => {
+type Paths = {
+  params: {
+    groupId: string;
+    slug: string;
+  };
+}[];
+
+export const getStaticPaths = async () => {
   const newsPostsRes = await client.query<GalleryGroupsResponse>({
     query: GET_GROUPS_SLUGS,
   });
@@ -63,11 +63,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+type Params = {
+  groupId: string;
+  slug: string;
+};
+
+export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
 
   const { slug } = params;
-  const groupNumber = parseInt(params.groupId as string);
+  const groupNumber = parseInt(params.groupId);
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,

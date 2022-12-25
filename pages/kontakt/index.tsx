@@ -4,13 +4,13 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Contact = ({ contactInfo }: Props) => (
+const Contact: NextPage<PageProps> = ({ contactInfo }) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Skontaktuj się z nami">
       <ContactSection />
@@ -19,7 +19,8 @@ const Contact = ({ contactInfo }: Props) => (
 );
 
 export default Contact;
-export const getStaticProps: GetStaticProps = async () => {
+
+export const getStaticProps = async () => {
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });

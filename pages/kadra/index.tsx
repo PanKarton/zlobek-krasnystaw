@@ -5,14 +5,14 @@ import { StaffDataAttributes, StaffResponse } from 'types/staffResponse';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 
-type Props = {
+type PageProps = {
   staff: StaffDataAttributes;
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Staff = ({ staff, contactInfo }: Props) => {
+const Staff: NextPage<PageProps> = ({ staff, contactInfo }) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading="Nasza załoga">
@@ -24,7 +24,7 @@ const Staff = ({ staff, contactInfo }: Props) => {
 
 export default Staff;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const staffRes = await client.query<StaffResponse>({
     query: GET_STAFF_LISTS,
   });
