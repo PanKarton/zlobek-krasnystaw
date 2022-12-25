@@ -21,7 +21,7 @@ export const StyledArticle = styled.article`
     flex-direction: column;
     margin-top: 2rem;
     gap: 1rem;
-    @media screen and (min-width: 56.25rem) {
+    @media screen and (min-width: 62.5rem) {
       flex-direction: row;
       align-items: flex-start;
       gap: 2rem;
@@ -30,7 +30,7 @@ export const StyledArticle = styled.article`
       position: relative;
       width: 100%;
       aspect-ratio: 1.61;
-      @media screen and (min-width: 56.25rem) {
+      @media screen and (min-width: 62.5rem) {
         width: auto;
         flex-basis: 30%;
         flex-shrink: 0;

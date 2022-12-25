@@ -34,9 +34,9 @@ export const AboutUsSection = () => (
           </ul>
         </StyledArticle>
         <div className="images-wrapper">
-          <CircleBorderImage url="/images/happy-kid3.jpg" altText="Dziecko cieszące się z zabawy klockami" />
-          <CircleBorderImage url="/images/happy-kid1.jpg" altText="Uśmiechnięte dziecko jedzące posiłek" />
           <CircleBorderImage url="/images/happy-kid2.jpg" altText="Dziecko ukladajace klocki" />
+          <CircleBorderImage url="/images/happy-kid1.jpg" altText="Uśmiechnięte dziecko jedzące posiłek" />
+          <CircleBorderImage url="/images/happy-kid3.jpg" altText="Dziecko cieszące się z zabawy klockami" />
           <div className="sun-wrapper">
             <SunImage />
           </div>
@@ -44,7 +44,7 @@ export const AboutUsSection = () => (
       </div>
     </StyledWrapper>
     <StyledWaveDivider>
-      <Image src="/images/gray-wave.svg" alt="Szara fala ozdobna" layout="fill" />
+      <Image src="/images/gray-wave.svg" alt="Szara fala ozdobna" fill sizes="100vw" />
     </StyledWaveDivider>
   </SectionWithStars>
 );

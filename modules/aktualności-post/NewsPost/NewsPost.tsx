@@ -29,12 +29,15 @@ export const NewsPost = ({ articleData }: Props) => {
           <div className="flex-wrapper">
             {imageData?.attributes && (
               <div className="img-wrapper">
-                <Image src={buildURL(imageData?.attributes.url)} alt={imageData?.attributes?.alternativeText} layout="fill" />
+                <Image
+                  src={buildURL(imageData?.attributes.url)}
+                  alt={imageData?.attributes?.alternativeText}
+                  fill
+                  sizes="(max-width: 62.5rem) 100vw, 21rem"
+                />
               </div>
             )}
-            <p className="content">
-              <ReactMarkdown>{articleData.attributes.content}</ReactMarkdown>
-            </p>
+            <ReactMarkdown className="content">{articleData.attributes.content}</ReactMarkdown>
           </div>
         </StyledArticle>
       </StyledWrapper>

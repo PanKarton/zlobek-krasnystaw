@@ -23,7 +23,12 @@ export const NurseryDescription = () => {
             </div>
           </StyledArticle>
           <div className="description-image-wrapper">
-            <Image src="/images/description-solar-system.svg" alt="Układ planetarny z dłońmi wskazujacymi na jego środek" layout="fill" />
+            <Image
+              src="/images/description-solar-system.svg"
+              alt="Układ planetarny z dłońmi wskazujacymi na jego środek"
+              fill
+              sizes="(max-width: 96.875rem) 38.75rem, 50rem"
+            />
           </div>
         </div>
       </div>

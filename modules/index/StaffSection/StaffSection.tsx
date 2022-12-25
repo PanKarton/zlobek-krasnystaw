@@ -10,20 +10,20 @@ export const StaffSection = () => {
         <div className="flex-wrapper">
           <div className="floating-icons-container">
             <div className="floating-icon-wrapper">
-              <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" layout="fill" />
+              <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" fill sizes="120px" />
             </div>
             <div className="floating-icon-wrapper">
-              <Image src="/images/floating-icon2.svg" alt="Półkole ozdobne" layout="fill" />
+              <Image src="/images/floating-icon2.svg" alt="Półkole ozdobne" fill sizes="120px" />
             </div>
             <div className="floating-icon-wrapper">
-              <Image src="/images/floating-icon5.svg" alt="Półkole ozdobne" layout="fill" />
+              <Image src="/images/floating-icon5.svg" alt="Półkole ozdobne" fill sizes="120px" />
             </div>
             <div className="floating-icon-wrapper">
-              <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" layout="fill" />
+              <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" fill sizes="120px" />
             </div>
           </div>
           <div className="staff-image-wrapper">
-            <Image src="/images/staff.jpg" alt="Opiekunka bawiąca się z dwójką dzieci" layout="fill" />
+            <Image src="/images/staff.jpg" alt="Opiekunka bawiąca się z dwójką dzieci" fill sizes="(max-width: 1550px) 550px, 700px" />
           </div>
           <StyledArticle>
             <div className="flex-wrapper">
@@ -38,7 +38,7 @@ export const StaffSection = () => {
         </div>
       </div>
       <div className="bottom-waves-wrapper">
-        <Image src="/images/blue-wave.svg" alt="Niebieska fala dekoracyjna" layout="fill" />
+        <Image src="/images/blue-wave.svg" alt="Niebieska fala dekoracyjna" fill sizes="100vw" />
       </div>
     </StyledSection>
   );

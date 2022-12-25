@@ -1,8 +1,8 @@
 import { DownloadFileAnchor } from 'Components/Atoms/DownloadFileAnchor/DownloadFileAnchor';
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
-import { StyledWrapper } from './RodoSection.styles';
+import { StyledWrapper } from './GDPRSection.styles';
 
-export const RodoSection = () => (
+export const GDPRSection = () => (
   <SectionWithStars>
     <StyledWrapper>
       <p>

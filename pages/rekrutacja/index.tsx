@@ -1,16 +1,17 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { RecruitmentPageSection } from 'modules/rekrutacja/RecruitmentPageSection/RecruitmentPageSection';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
+
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../graphql/apolloClient';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Recruitment = ({ contactInfo }: Props) => (
+const Recruitment: NextPage<PageProps> = ({ contactInfo }) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Informacje o rekrutacji">
       <RecruitmentPageSection></RecruitmentPageSection>
@@ -20,7 +21,7 @@ const Recruitment = ({ contactInfo }: Props) => (
 
 export default Recruitment;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });

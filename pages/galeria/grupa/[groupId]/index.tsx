@@ -1,18 +1,18 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_GALLERY_FOLDERS_OF_GROUP, GET_GROUPS_IDS } from 'graphql/queries';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPropsContext, NextPage } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../graphql/apolloClient';
 import { GalleryGroupsResponse, GroupsDataAttributes } from 'types/galleryResponse';
 import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
   galleryGroupInfo: GroupsDataAttributes;
 };
 
-const GroupGallery = ({ contactInfo, galleryGroupInfo }: Props) => {
+const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo }) => {
   const { nazwa: groupName } = galleryGroupInfo;
 
   return (
@@ -26,7 +26,7 @@ const GroupGallery = ({ contactInfo, galleryGroupInfo }: Props) => {
 
 export default GroupGallery;
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const newsPostsRes = await client.query<GalleryGroupsResponse>({
     query: GET_GROUPS_IDS,
   });
@@ -45,10 +45,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+type Params = {
+  groupId: string;
+};
+
+export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
 
-  const groupNumber = parseInt(params.groupId as string);
+  const groupNumber = parseInt(params.groupId);
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,

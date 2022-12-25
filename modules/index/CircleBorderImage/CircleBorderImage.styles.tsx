@@ -20,20 +20,19 @@ export const StyledCirculareWrapper = styled.div`
       border-radius: 50%;
     }
   }
-  &:nth-child(1) {
+  &:nth-child(3) {
     height: 50%;
     bottom: 0;
     left: 0;
-    z-index: 1;
     text-align: left;
   }
-  &:nth-child(2) {
+  &:nth-child(1) {
     height: 90%;
     top: 0;
     left: 40%;
     translate: -50% 0;
   }
-  &:nth-child(3) {
+  &:nth-child(2) {
     height: 60%;
     right: 0;
     bottom: 10%;

@@ -1,26 +1,26 @@
-import { RodoSection } from 'modules/rodo/RodoSection/RodoSection';
+import { GDPRSection } from 'modules/rodo/GDPRSection/GDPRSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const GDPR = ({ contactInfo }: Props) => (
+const GDPR: NextPage<PageProps> = ({ contactInfo }) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Ochrona danych osobowych">
-      <RodoSection />
+      <GDPRSection />
     </SecondaryTemplate>
   </ContactDataProvider>
 );
 
 export default GDPR;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const ContactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });

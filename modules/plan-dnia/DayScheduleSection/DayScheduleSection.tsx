@@ -23,7 +23,12 @@ export const DayScheduleSection = ({ daySchedule }: Props) => {
               ))}
           </ul>
           <div className="img-wrapper">
-            <Image src="/images/day-schedule-vector.svg" alt="opiekunka i jedzące dzieci" layout="fill" />
+            <Image
+              src="/images/day-schedule-vector.svg"
+              alt="opiekunka i jedzące dzieci"
+              fill
+              sizes="(max-width: 56.25rem) 10rem, (max-width: 96.875rem) 15rem, 20rem"
+            />
           </div>
         </div>
       </StyledWrapper>

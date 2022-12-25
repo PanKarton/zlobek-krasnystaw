@@ -86,7 +86,7 @@ export const StyledHeader = styled.header<Props>`
       width: max-content;
       padding-inline: 3rem;
     }
-    @media screen and (min-width: 100rem) {
+    @media screen and (min-width: 96.875rem) {
       left: 50%;
       translate: -100% -40%;
       padding-inline: 4rem;
@@ -104,7 +104,7 @@ export const StyledHeader = styled.header<Props>`
       @media screen and (min-width: 62.5rem) {
         font-size: ${({ theme }) => theme.fontSize.text6XL};
       }
-      @media screen and (min-width: 100rem) {
+      @media screen and (min-width: 96.875rem) {
         font-size: ${({ theme }) => theme.fontSize.text7XL};
       }
     }

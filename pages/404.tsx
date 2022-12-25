@@ -4,13 +4,13 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../graphql/apolloClient';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 
-type Props = {
+type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const ErrorPage = ({ contactInfo }: Props) => (
+const ErrorPage: NextPage<PageProps> = ({ contactInfo }) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate>
       <ErrorPageSection />
@@ -20,7 +20,7 @@ const ErrorPage = ({ contactInfo }: Props) => (
 
 export default ErrorPage;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
   });

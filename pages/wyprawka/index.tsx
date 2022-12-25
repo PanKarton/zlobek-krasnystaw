@@ -5,14 +5,14 @@ import { LayetteElement, LayetteResponse } from 'types/layetteResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../graphql/apolloClient';
-import { GetStaticProps } from 'next';
+import { NextPage } from 'next';
 
-type Props = {
+type PageProps = {
   layette: LayetteElement[];
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Layette = ({ layette, contactInfo }: Props) => {
+const Layette: NextPage<PageProps> = ({ layette, contactInfo }) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading="Wyprawka malucha">
@@ -24,7 +24,7 @@ const Layette = ({ layette, contactInfo }: Props) => {
 
 export default Layette;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const layetteRes = await client.query<LayetteResponse>({
     query: GET_LAYETTE,
   });

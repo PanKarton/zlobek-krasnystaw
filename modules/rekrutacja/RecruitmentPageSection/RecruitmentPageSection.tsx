@@ -10,7 +10,7 @@ export const RecruitmentPageSection = () => (
       <StyledStepsList>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step1.svg" alt="Ikona rodziców z dzieckiem" layout="fill" />
+            <Image src="/images/recruitment-step1.svg" alt="Ikona rodziców z dzieckiem" fill sizes="(max-width: 96.875rem) 3.5rem, 4rem" />
           </div>
           <div className="text-wrapper">
             <h4>Podejmij decyzję wraz z rodziną</h4>
@@ -19,7 +19,7 @@ export const RecruitmentPageSection = () => (
         </li>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step2.svg" alt="Ikona formularza" layout="fill" />
+            <Image src="/images/recruitment-step2.svg" alt="Ikona formularza" fill sizes="(max-width: 96.875rem) 3.5rem, 4rem" />
           </div>
           <div className="text-wrapper">
             <h4>
@@ -33,7 +33,7 @@ export const RecruitmentPageSection = () => (
         </li>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step3.svg" alt="Ikona budydnku z tęczą" layout="fill" />
+            <Image src="/images/recruitment-step3.svg" alt="Ikona budydnku z tęczą" fill sizes="(max-width: 96.875rem) 3.5rem, 4rem" />
           </div>
           <div className="text-wrapper">
             <h4>Złóż formularz do placówki</h4>
@@ -42,7 +42,7 @@ export const RecruitmentPageSection = () => (
         </li>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step4.svg" alt="Ikona zaciśniętych w zgodzie dłoni" layout="fill" />
+            <Image src="/images/recruitment-step4.svg" alt="Ikona zaciśniętych w zgodzie dłoni" fill sizes="(max-width: 96.875rem) 3.5rem, 4rem" />
           </div>
           <div className="text-wrapper">
             <h4>Podpisz umowę i gotowe.</h4>
