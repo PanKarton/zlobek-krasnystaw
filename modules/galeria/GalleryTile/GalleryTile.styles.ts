@@ -7,7 +7,7 @@ export const StyledWrapper = styled.div`
   flex-direction: column;
   overflow: hidden;
   border-radius: 0.625rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0rem 0.625rem 1.25rem, rgba(0, 0, 0, 0.23) 0rem 0.375rem 0.375rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   transition: all ease-in-out 0.25s;
 
   .date-wrapper {

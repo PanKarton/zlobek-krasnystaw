@@ -6,7 +6,7 @@ import { useArchives } from './useArchives';
 
 export const ArchivesList = () => {
   const { archivesErrorMessage } = useNewsPosts();
-  const { months, isButtonVisible, areAllVisible, handleToggleMonthsList } = useArchives();
+  const { months, isButtonVisible, areAllVisible, activeMonth, handleToggleMonthsList, setActiveMonth } = useArchives();
 
   return (
     <StyledWrapper>
@@ -15,7 +15,7 @@ export const ArchivesList = () => {
         {months &&
           months.map((month, index) => (
             <li key={index} className="list-item">
-              <ArchivesListItem monthData={month} />
+              <ArchivesListItem isActive={index === activeMonth} monthData={month} setActiveMonth={() => setActiveMonth(index)} />
             </li>
           ))}
       </ul>

@@ -8,7 +8,7 @@ export const Footer = () => (
   <StyledFooter>
     <div className="flex-wrapper max-width-1440">
       <FooterContactInfo />
-      <div className="map-wrapper">
+      <div className="map-wrapper map-wrapper--parent">
         <Map />
       </div>
     </div>

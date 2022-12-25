@@ -7,17 +7,25 @@ export const StyledFooter = styled.footer`
     padding-block: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 3rem;
+    justify-content: center;
+    gap: 4rem;
+
+    @media screen and (min-width: 62.5rem) {
+      padding-block: 4rem;
+    }
+
     @media screen and (min-width: 96.875rem) {
+      justify-content: space-between;
       padding-block: 5rem;
     }
 
     .map-wrapper {
       display: none;
       position: relative;
-      width: 27rem;
-      height: 27.5rem;
+      width: 100%;
+      max-width: 40rem;
+      flex-grow: 1;
+      height: 27rem;
       &::after,
       &::before {
         position: absolute;
@@ -40,11 +48,9 @@ export const StyledFooter = styled.footer`
       @media screen and (min-width: 62.5rem) {
         display: block;
       }
-      @media screen and (min-width: 71.875rem) {
-        width: 33rem;
-      }
+
       @media screen and (min-width: 96.875rem) {
-        width: 50rem;
+        max-width: 50rem;
         height: 31.25rem;
       }
     }
@@ -92,7 +98,6 @@ export const StyledFooter = styled.footer`
         max-width: 34rem;
       }
       @media screen and (min-width: 96.875rem) {
-        padding-right: 3rem;
         max-width: max-content;
       }
       .text-pink {

@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 
 export const useArchives = () => {
   const [areAllVisible, setAreAllVisible] = useState(false);
+  const [activeMonth, setActiveMonth] = useState<number | null>(null);
 
   const releaseDate = '2022-11-01';
 
@@ -18,6 +19,8 @@ export const useArchives = () => {
     months,
     isButtonVisible,
     areAllVisible,
+    activeMonth,
     handleToggleMonthsList,
+    setActiveMonth,
   };
 };
