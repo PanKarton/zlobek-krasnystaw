@@ -7,8 +7,11 @@ export const StyledFooter = styled.footer`
     padding-block: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 3rem;
+    @media screen and (min-width: 34rem) {
+      justify-content: flex-start;
+    }
     @media screen and (min-width: 96.875rem) {
       padding-block: 5rem;
     }

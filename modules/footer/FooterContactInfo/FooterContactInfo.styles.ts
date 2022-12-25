@@ -7,17 +7,20 @@ export const StyledSection = styled.section`
   color: ${({ theme }) => theme.color.contrast};
 
   @media screen and (min-width: 34rem) {
-    width: 34rem;
+    width: 30rem;
   }
 
   ul.flex-list {
     display: grid;
+    /* border: 1px solid blue; */
+    gap: 1rem;
     @media screen and (min-width: 34rem) {
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 3rem 0;
     }
 
     li {
+      /* border: 1px solid red; */
       /* Typography for bip and contact */
       a {
         color: inherit;
