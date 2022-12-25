@@ -12,7 +12,6 @@ export const StyledSection = styled.section`
 
   ul.flex-list {
     display: grid;
-    /* border: 1px solid blue; */
     gap: 1rem;
     @media screen and (min-width: 34rem) {
       grid-template-columns: 1fr 1fr;
@@ -20,7 +19,6 @@ export const StyledSection = styled.section`
     }
 
     li {
-      /* border: 1px solid red; */
       /* Typography for bip and contact */
       a {
         color: inherit;
