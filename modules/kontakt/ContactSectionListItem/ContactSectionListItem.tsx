@@ -10,7 +10,7 @@ type Props = {
 export const ContactSectionListItem = ({ src, altText, children }: Props) => (
   <div className="li-flex-wrapper">
     <div className="icon-wrapper">
-      <Image src={src} alt={altText} layout="fill" />
+      <Image src={src} alt={altText} fill sizes="4.5rem" />
     </div>
     <div className="content">{children}</div>
   </div>

@@ -48,9 +48,11 @@ export const StyledStepsList = styled.ul`
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1rem;
+
     @media screen and (min-width: 96.875rem) {
       gap: 1.5rem;
     }
+
     .icon-wrapper {
       position: relative;
       width: 3.5rem;
