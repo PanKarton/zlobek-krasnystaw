@@ -12,6 +12,7 @@ My first website for real client with real problems to solve. I gave my best and
 - [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Project Status](#project-status)
+- [What did I learn?](#what-did-I-learn?)
 - [Room for Improvement](#room-for-improvement)
 
 ## General Information
@@ -45,7 +46,7 @@ My first website for real client with real problems to solve. I gave my best and
 
 ## Features
 
-List the ready features here:
+List of more or less fancy features:
 
 - Lazy loaded images
 - Email contact form with validation and error handler
@@ -55,6 +56,7 @@ List the ready features here:
 - News posts page with 'Load more' button that loads paginated posts
 - Archives list that loads news posts from particular month
 - Links for downloading documents
+- Gallery divided by groups / folders of group / images of folder of group
 
 ## Screenshots
 
@@ -72,6 +74,9 @@ First, install all neccesary dependencies:
 npm install
 ```
 
+Next run Strapi CMS from another repo:
+https://github.com/PanKarton/zlobek-krasnystaw-strapi
+
 Then, run the development server:
 
 ```bash
@@ -86,16 +91,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Project is: _in progress_
 
+## What did I learn?
+
+### Generally
+
+- Alaways backup!
+- Break down your work into smaller tasks - divide et impera or sth
+- FIX ONE BUG / ADD ONE FEATURE AT ONCE
+- Scalability is a serious thing. Ill-conceived design structure can make you wanna end it all
+- Bad theme variable naming convention will eventually knock to your door
+- Well tested code will tell you that you messed up a thing you didn't mean to mess up
+- Sometimes docs do not happen to cover every single thing so you have to be creative and patient
+
 ## Room for Improvement
 
 Room for improvement:
 
-- Replace ORIGINAL and LEGAL images
-
 To do:
 
-- Gallery group folder images site
-- Attach CMS for news and gallery
+- Replace ORIGINAL and LEGAL images
 - Optional: Add decorative images to parent sites
-- Add types to apollo.query in getStaticProps and getStaticPaths
-- Tidy up graphql response types in pages
+- Add image popup with arrows
