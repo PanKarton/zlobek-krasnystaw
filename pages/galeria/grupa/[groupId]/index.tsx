@@ -10,11 +10,10 @@ import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
   galleryGroupInfo: GroupsDataAttributes;
+  groupName: string;
 };
 
-const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo }) => {
-  const { nazwaGrupy: groupName } = galleryGroupInfo;
-
+const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo, groupName }) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading={`${groupName} - galeria`} returnHref="/galeria">
@@ -68,11 +67,13 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
   });
 
   const galleryGroupInfo = groupFoldersRes.data.groups.data[0].attributes;
+  const groupName = galleryGroupInfo.nazwaGrupy;
 
   return {
     props: {
       contactInfo,
       galleryGroupInfo,
+      groupName,
     },
   };
 };

@@ -173,11 +173,11 @@ export const GET_GROUPS_IDS = gql`
 
 export const GET_GROUPS_SLUGS = gql`
   query GetFoldersSlugs {
-    grupies {
+    groups {
       data {
         attributes {
           numerGrupy
-          foldery_zdjecs {
+          foldery_zdjec {
             data {
               attributes {
                 slug
@@ -222,17 +222,17 @@ export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
 `;
 
 export const GET_IMAGES_FOLDER_OF_GROUP = gql`
-  query ($groupNumber: Int, $slug: String) {
-    grupies(filters: { numerGrupy: { eq: $groupNumber } }) {
+  query ($groupNumber: String, $slug: String) {
+    groups(filters: { numerGrupy: { eq: $groupNumber } }) {
       data {
         attributes {
-          nazwa
+          nazwaGrupy
           numerGrupy
-          foldery_zdjecs(filters: { slug: { eq: $slug } }) {
+          foldery_zdjec(filters: { slug: { eq: $slug } }) {
             data {
               id
               attributes {
-                nazwa
+                nazwaFolderu
                 slug
                 publishedAt
                 zdjecia {

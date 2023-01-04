@@ -1,6 +1,6 @@
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
 import { GET_CONTACT_INFO, GET_GROUPS_SLUGS, GET_IMAGES_FOLDER_OF_GROUP } from 'graphql/queries';
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
+import { GetStaticPropsContext, NextPage } from 'next';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../../graphql/apolloClient';
@@ -17,7 +17,7 @@ type PageProps = {
 };
 
 const GalleryFolder: NextPage<PageProps> = ({ contactInfo, groupNumber, groupName, imagesFolderAttributes }) => {
-  const { nazwa: folderName, zdjecia: images, publishedAt } = imagesFolderAttributes;
+  const { nazwaFolderu: folderName, zdjecia: images, publishedAt } = imagesFolderAttributes;
 
   return (
     <ContactDataProvider contactData={contactInfo}>
@@ -44,10 +44,10 @@ export const getStaticPaths = async () => {
 
   const paths: Paths = [];
 
-  newsPostsRes.data.grupies.data.forEach((group) => {
-    const groupId = group.attributes.numerGrupy.toString();
+  newsPostsRes.data.groups.data.forEach((group) => {
+    const groupId = group.attributes.numerGrupy;
 
-    group.attributes.foldery_zdjecs.data.forEach((folder) => {
+    group.attributes.foldery_zdjec.data.forEach((folder) => {
       paths.push({
         params: {
           groupId,
@@ -72,7 +72,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
   if (!params) throw Error(`getStaticProps couldn't find params object`);
 
   const { slug } = params;
-  const groupNumber = parseInt(params.groupId);
+  const groupNumber = params.groupId;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
@@ -88,9 +88,9 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
     },
   });
 
-  const groupFolder = groupFoldersRes.data.grupies.data[0].attributes;
-  const groupName = groupFolder.nazwa;
-  const imagesFolderAttributes = groupFolder.foldery_zdjecs.data[0].attributes;
+  const groupFolder = groupFoldersRes.data.groups.data[0].attributes;
+  const groupName = groupFolder.nazwaGrupy;
+  const imagesFolderAttributes = groupFolder.foldery_zdjec.data[0].attributes;
 
   return {
     props: {
