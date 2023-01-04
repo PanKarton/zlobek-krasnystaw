@@ -64,10 +64,6 @@ List of more or less fancy features:
 
 ## Setup
 
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
 First, install all neccesary dependencies:
 
 ```bash
