@@ -12,9 +12,9 @@ export const LayetteSection = ({ layette }: Props) => {
       <StyledWrapper>
         <StyledOrderedList>
           {layette &&
-            layette.map(({ id, name }) => (
+            layette.map(({ id, nazwa }) => (
               <li key={id}>
-                <p>{name}</p>
+                <p>{nazwa}</p>
               </li>
             ))}
         </StyledOrderedList>

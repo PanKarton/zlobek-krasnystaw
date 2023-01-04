@@ -22,7 +22,7 @@ const NewsArticle: NextPage<PageProps> = ({ contactInfo, newsPost }) => {
 
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading={newsPost.attributes.title}>
+      <SecondaryTemplate heading={newsPost.attributes.tytul}>
         <NewsPost articleData={newsPost} />
       </SecondaryTemplate>
     </ContactDataProvider>

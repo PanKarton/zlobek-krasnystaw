@@ -14,7 +14,7 @@ export const DayScheduleSection = ({ daySchedule }: Props) => {
         <div className="flex-wrapper">
           <ul>
             {daySchedule &&
-              daySchedule.map(({ hours, name, id }) => (
+              daySchedule.map(({ godziny: hours, nazwa: name, id }) => (
                 <li key={id}>
                   <p>
                     <span className="hour-span">{hours}</span> - <span>{name}</span>

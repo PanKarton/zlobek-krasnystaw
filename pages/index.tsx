@@ -13,8 +13,7 @@ type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
-const Home: NextPage<PageProps> = ({ contactInfo }) => {
-  return (
+const Home: NextPage<PageProps> = ({ contactInfo }) => (
     <>
       <ContactDataProvider contactData={contactInfo}>
         <HomeTemplate>
@@ -26,7 +25,6 @@ const Home: NextPage<PageProps> = ({ contactInfo }) => {
       </ContactDataProvider>
     </>
   );
-};
 
 export default Home;
 

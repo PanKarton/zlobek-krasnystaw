@@ -1,5 +1,5 @@
 export interface GalleryGroupsResponse {
-  grupies: Groups;
+  groups: Groups;
 }
 
 export interface Groups {
@@ -11,9 +11,9 @@ export interface GroupsData {
 }
 
 export interface GroupsDataAttributes {
-  nazwa: string;
-  numerGrupy: number;
-  foldery_zdjecs: ImageFolders;
+  nazwaGrupy: string;
+  numerGrupy: string;
+  foldery_zdjec: ImageFolders;
 }
 
 export interface ImageFolders {
@@ -26,10 +26,10 @@ export interface ImageFoldersData {
 }
 
 export interface ImageFoldersDataAttributes {
-  nazwa: string;
+  nazwaFolderu: string;
   slug: string;
   publishedAt: Date;
-  miniatura: Miniature;
+  miniaturaFolderu: Miniature;
   zdjecia: GalleryImages;
 }
 

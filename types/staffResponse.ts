@@ -11,12 +11,13 @@ export interface StaffData {
 }
 
 export interface StaffDataAttributes {
-  directors: Employee[];
-  serviceWorkers: Employee[];
-  babysitters: Employee[];
+  dyrektorzy: Employee[];
+  opiekunki: Employee[];
+  pracownicyAdministracjiOrazObslugi: Employee[];
 }
+
 export interface Employee {
   id: string;
-  name: string;
-  job?: string;
+  imieNazwisko: string;
+  stanowisko?: string;
 }

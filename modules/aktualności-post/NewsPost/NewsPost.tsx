@@ -16,7 +16,7 @@ export const NewsPost = ({ articleData }: Props) => {
   const formatedDate = formatDate(articleData.attributes.publishedAt);
   const dayName = getDayName(articleData.attributes.publishedAt);
 
-  const imageData = articleData.attributes.image.data?.[0];
+  const imageData = articleData.attributes.opcjonalneZdjecie.data?.[0];
 
   return (
     <SectionWithStars>
@@ -37,7 +37,7 @@ export const NewsPost = ({ articleData }: Props) => {
                 />
               </div>
             )}
-            <ReactMarkdown className="content">{articleData.attributes.content}</ReactMarkdown>
+            <ReactMarkdown className="content">{articleData.attributes.tresc}</ReactMarkdown>
           </div>
         </StyledArticle>
       </StyledWrapper>

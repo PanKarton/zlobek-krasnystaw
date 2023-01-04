@@ -1,8 +1,8 @@
 export interface FeesResponse {
-  fee: Fees;
+  fee: Fee;
 }
 
-export interface Fees {
+export interface Fee {
   data: FeesData;
 }
 
@@ -11,8 +11,8 @@ export interface FeesData {
 }
 
 export interface FeesDataAttributes {
-  monthlyFee: string;
-  dailyFoodFee: string;
-  bankName: string;
-  accountNumber: string;
+  kwotaMiesieczna: string;
+  wyzywienie: string;
+  numerKonta: string;
+  nazwaBanku: string;
 }

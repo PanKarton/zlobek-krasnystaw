@@ -18,6 +18,7 @@ export const StyledWrapper = styled.div`
     gap: 4rem;
     @media screen and (min-width: 56.25rem) {
       flex-direction: row;
+      align-items: flex-start;
       gap: 8rem;
     }
     @media screen and (min-width: 96.875rem) {

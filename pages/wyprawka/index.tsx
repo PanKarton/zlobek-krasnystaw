@@ -29,7 +29,7 @@ export const getStaticProps = async () => {
     query: GET_LAYETTE,
   });
 
-  const layette = layetteRes.data.layette.data.attributes.layette;
+  const layette = layetteRes.data.layette.data.attributes.elementyWyprawki;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,

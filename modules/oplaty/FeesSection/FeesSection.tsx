@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const FeesSection = ({ feesData }: Props) => {
-  const { monthlyFee, dailyFoodFee, bankName, accountNumber } = feesData;
+  const { kwotaMiesieczna: monthlyFee, wyzywienie: dailyFoodFee, nazwaBanku: bankName, numerKonta: accountNumber } = feesData;
 
   return (
     <SectionWithStars>

@@ -11,20 +11,21 @@ export interface ContactInfoData {
 }
 
 export interface ContactInfoDataAttributes {
-  phoneNumber: string;
-  email: string;
-  openDays: string;
-  adress: Adress;
-  openHours: OpenHours;
+  numerTelefonu: string;
+  email:         string;
+  dniPracy:      string;
+  adres:         Adres;
+  godzinyPracy:  GodzinyPracy;
 }
 
-export interface Adress {
-  city: string;
-  name: string;
-  street: string;
+export interface Adres {
+  miasto: string;
+  nazwa:  string;
+  ulica:  string;
 }
 
-export interface OpenHours {
-  openTime: string;
-  closeTime: string;
+export interface GodzinyPracy {
+  godzinaOtwarcia:   string;
+  godzinaZamkniecia: string;
 }
+

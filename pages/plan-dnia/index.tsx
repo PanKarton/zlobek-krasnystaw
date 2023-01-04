@@ -29,7 +29,7 @@ export const getStaticProps = async () => {
     query: GET_DAY_SCHEDULE,
   });
 
-  const daySchedule = dayScheduleRes.data.daySchedule.data.attributes.daySchedule;
+  const daySchedule = dayScheduleRes.data.daySchedule.data.attributes.planDnia;
 
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,

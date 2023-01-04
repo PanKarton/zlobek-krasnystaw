@@ -5,10 +5,10 @@ export const GET_FEES = gql`
     fee {
       data {
         attributes {
-          monthlyFee
-          dailyFoodFee
-          bankName
-          accountNumber
+          kwotaMiesieczna
+          wyzywienie
+          numerKonta
+          nazwaBanku
         }
       }
     }
@@ -20,18 +20,18 @@ export const GET_STAFF_LISTS = gql`
     staff {
       data {
         attributes {
-          directors {
+          dyrektorzy {
             id
-            name
+            imieNazwisko
           }
-          serviceWorkers {
+          opiekunki {
             id
-            job
-            name
+            imieNazwisko
           }
-          babysitters {
+          pracownicyAdministracjiOrazObslugi {
             id
-            name
+            stanowisko
+            imieNazwisko
           }
         }
       }
@@ -44,9 +44,9 @@ export const GET_LAYETTE = gql`
     layette {
       data {
         attributes {
-          layette {
+          elementyWyprawki {
+            nazwa
             id
-            name
           }
         }
       }
@@ -59,10 +59,10 @@ export const GET_DAY_SCHEDULE = gql`
     daySchedule {
       data {
         attributes {
-          daySchedule {
+          planDnia {
             id
-            hours
-            name
+            godziny
+            nazwa
           }
         }
       }
@@ -75,17 +75,17 @@ export const GET_CONTACT_INFO = gql`
     contactInfo {
       data {
         attributes {
-          phoneNumber
+          numerTelefonu
           email
-          openDays
-          adress {
-            city
-            name
-            street
+          dniPracy
+          adres {
+            miasto
+            nazwa
+            ulica
           }
-          openHours {
-            openTime
-            closeTime
+          godzinyPracy {
+            godzinaOtwarcia
+            godzinaZamkniecia
           }
         }
       }
@@ -105,9 +105,9 @@ export const GET_NEWS_POSTS = gql`
       data {
         id
         attributes {
-          title
-          content
-          image {
+          tytul
+          tresc
+          opcjonalneZdjecie {
             data {
               attributes {
                 name
@@ -140,9 +140,9 @@ export const GET_SINGLE_POST_BY_ID = gql`
       data {
         id
         attributes {
-          title
-          content
-          image {
+          tytul
+          tresc
+          opcjonalneZdjecie {
             data {
               attributes {
                 alternativeText
@@ -161,7 +161,7 @@ export const GET_SINGLE_POST_BY_ID = gql`
 
 export const GET_GROUPS_IDS = gql`
   query GetGroupsIds {
-    grupies {
+    groups {
       data {
         attributes {
           numerGrupy
@@ -191,20 +191,20 @@ export const GET_GROUPS_SLUGS = gql`
 `;
 
 export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
-  query ($groupNumber: Int) {
-    grupies(filters: { numerGrupy: { eq: $groupNumber } }) {
+  query ($groupNumber: String) {
+    groups(filters: { numerGrupy: { eq: $groupNumber } }) {
       data {
         attributes {
-          nazwa
+          nazwaGrupy
           numerGrupy
-          foldery_zdjecs {
+          foldery_zdjec {
             data {
               id
               attributes {
-                nazwa
+                nazwaFolderu
                 slug
                 publishedAt
-                miniatura {
+                miniaturaFolderu {
                   data {
                     attributes {
                       alternativeText

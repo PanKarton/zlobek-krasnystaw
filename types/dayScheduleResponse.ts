@@ -11,11 +11,11 @@ export interface DayScheduleData {
 }
 
 export interface DayScheduleDataAttributes {
-  daySchedule: DayScheduleElement[];
+  planDnia: DayScheduleElement[];
 }
 
 export interface DayScheduleElement {
   id: string;
-  hours: string;
-  name: string;
+  godziny: string;
+  nazwa: string;
 }

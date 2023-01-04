@@ -14,7 +14,7 @@ type PageProps = {
 const Recruitment: NextPage<PageProps> = ({ contactInfo }) => (
   <ContactDataProvider contactData={contactInfo}>
     <SecondaryTemplate heading="Informacje o rekrutacji">
-      <RecruitmentPageSection></RecruitmentPageSection>
+      <RecruitmentPageSection/>
     </SecondaryTemplate>
   </ContactDataProvider>
 );

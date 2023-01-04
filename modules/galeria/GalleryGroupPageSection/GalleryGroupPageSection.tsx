@@ -12,7 +12,7 @@ type Props = {
 
 export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
   // Rename polish names to english
-  const { numerGrupy: groupId, foldery_zdjecs: groupGalleryFolders } = galleryGroupInfo;
+  const { numerGrupy: groupId, foldery_zdjec: groupGalleryFolders } = galleryGroupInfo;
 
   const folders = groupGalleryFolders.data;
 
@@ -21,7 +21,7 @@ export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
       <StyledWrapper>
         {folders.length ? (
           <ul>
-            {folders.map(({ id, attributes: { publishedAt, slug, nazwa: name, miniatura: miniatureImage } }) => {
+            {folders.map(({ id, attributes: { publishedAt, slug, nazwaFolderu: name, miniaturaFolderu: miniatureImage } }) => {
               const publishDate = `${getDayName(publishedAt)}, ${formatDate(publishedAt)}`;
 
               return (

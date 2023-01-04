@@ -11,10 +11,10 @@ export interface LayetteData {
 }
 
 export interface LayetteDataAttributes {
-  layette: LayetteElement[];
+  elementyWyprawki: LayetteElement[];
 }
 
 export interface LayetteElement {
   id: string;
-  name: string;
+  nazwa: string;
 }
