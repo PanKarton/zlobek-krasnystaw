@@ -2,7 +2,8 @@ import { createContext, ReactNode, useCallback, useContext, useEffect, useState 
 import { ApolloError, useQuery } from '@apollo/client';
 import { GET_NEWS_POSTS } from 'graphql/queries';
 import { MonthData } from 'helpers/getMonthsSinceDate';
-import { NewsPost, NewsPostsListResponse } from 'types/newsPostsListResponse';
+import { NewsPostsListResponse } from 'types/newsPostsListResponse';
+import { NewsPostData } from 'types/newsPostResponse';
 
 type Props = {
   children: ReactNode;
@@ -11,7 +12,7 @@ type Props = {
 type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
 
 type Context = {
-  newsPostsState: NewsPost[];
+  newsPostsState: NewsPostData[];
   handleLoadMoreNewsPosts: () => Promise<void>;
   getPostsByMonth: (queryData: MonthData) => Promise<void>;
   isLoading: boolean;

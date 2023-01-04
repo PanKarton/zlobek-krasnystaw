@@ -4,7 +4,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f9f8f8;
-  border-radius0.3125rem;
+  border-radius: 0.3125rem;
   overflow: hidden;
   font-family: inherit;
   font-size: ${({ theme }) => theme.fontSize.textBase};

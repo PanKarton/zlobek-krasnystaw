@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledList = styled.div`
+export const StyledList = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   row-gap: clamp(1.25rem, 4.5vw, 1.75rem);
@@ -11,7 +11,7 @@ export const StyledList = styled.div`
   @media screen and (min-width: 20rem) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 62.5rem) {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 3rem;
     column-gap: 1.75rem;

@@ -11,14 +11,14 @@ export const StaffList = ({ heading, staffArray, isDirector }: Props) => (
   <StyledListWrapper>
     <h3 className={isDirector ? 'big' : ''}>{`${heading}:`}</h3>
     <ul>
-      {staffArray.map((employee) => (
-        <li key={employee.id}>
-          {employee.job ? (
+      {staffArray.map(({ imieNazwisko: name, stanowisko: job, id }) => (
+        <li key={id}>
+          {job ? (
             <p>
-              {employee.name} - <span className="job">{employee.job}</span>
+              {name} - <span className="job">{job}</span>
             </p>
           ) : (
-            <p className={isDirector ? 'big' : ''}>{employee.name}</p>
+            <p className={isDirector ? 'big' : ''}>{name}</p>
           )}
         </li>
       ))}

@@ -12,9 +12,9 @@ export interface NewsPostData {
 }
 
 export interface NewsPostDataAttributes {
-  title: string;
-  content: string;
-  image: PostImage;
+  tytul: string;
+  tresc: string;
+  opcjonalneZdjecie: PostImage;
   publishedAt: Date;
 }
 

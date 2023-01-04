@@ -71,13 +71,15 @@ export const StyledList = styled.ul`
     }
 
     /* Secondary menu on hover */
-    .secondary-menu,
-    .secondary-menu > ul {
+    .secondary-menu {
       position: relative;
       z-index: 2;
       &:hover > ul {
         scale: 1 1;
         translate: 0 0;
+      }
+      .secondary-menu-trigger {
+        padding-block: 1.75rem;
       }
       ul {
         display: flex;

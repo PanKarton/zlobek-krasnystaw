@@ -84,7 +84,7 @@ export const StyledSection = styled.section`
         }
         .bip-button-wrapper {
           position: relative;
-          aspect-ratio: 3;
+          aspect-ratio: 2.81;
           width: 75%;
           margin-top: 0.75rem;
           a {

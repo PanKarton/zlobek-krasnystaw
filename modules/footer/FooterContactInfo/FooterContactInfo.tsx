@@ -5,7 +5,8 @@ import { BipButton } from 'modules/footer/BipButton/BipButton';
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const FooterContactInfo = () => {
-  const { openDays, phoneNumber, openHours, adress } = useContactData();
+  const {   godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime}, numerTelefonu: phoneNumber, dniPracy: openDays, adres: {nazwa: name, miasto: city, ulica: street } } = useContactData();
+
 
   return (
     <StyledSection className="nav-contact-details">
@@ -20,7 +21,7 @@ export const FooterContactInfo = () => {
                 Godziny <br /> otwarcia
               </h3>
               <p>{openDays}</p>
-              <p>{`${openHours.openTime} - ${openHours.closeTime}`}</p>
+              <p>{`${openTime} - ${closeTime}`}</p>
             </div>
           </div>
         </li>
@@ -31,9 +32,9 @@ export const FooterContactInfo = () => {
             </div>
             <div className="text-wrapper">
               <h3>Adres</h3>
-              <p>{adress.name}</p>
-              <p>{adress.city}</p>
-              <p>{adress.street}</p>
+              <p>{name}</p>
+              <p>{city}</p>
+              <p>{street}</p>
             </div>
           </div>
         </li>

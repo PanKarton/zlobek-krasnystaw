@@ -10,11 +10,10 @@ import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
   galleryGroupInfo: GroupsDataAttributes;
+  groupName: string;
 };
 
-const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo }) => {
-  const { nazwa: groupName } = galleryGroupInfo;
-
+const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo, groupName }) => {
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading={`${groupName} - galeria`} returnHref="/galeria">
@@ -31,10 +30,10 @@ export const getStaticPaths = async () => {
     query: GET_GROUPS_IDS,
   });
 
-  const paths = newsPostsRes.data.grupies.data.map((group) => {
+  const paths = newsPostsRes.data.groups.data.map((group) => {
     return {
       params: {
-        groupId: group.attributes.numerGrupy.toString(),
+        groupId: group.attributes.numerGrupy,
       },
     };
   });
@@ -52,7 +51,7 @@ type Params = {
 export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) => {
   if (!params) throw Error(`getStaticProps couldn't find params object`);
 
-  const groupNumber = parseInt(params.groupId);
+  const groupNumber = params.groupId;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
@@ -67,12 +66,14 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
     },
   });
 
-  const galleryGroupInfo = groupFoldersRes.data.grupies.data[0].attributes;
+  const galleryGroupInfo = groupFoldersRes.data.groups.data[0].attributes;
+  const groupName = galleryGroupInfo.nazwaGrupy;
 
   return {
     props: {
       contactInfo,
       galleryGroupInfo,
+      groupName,
     },
   };
 };

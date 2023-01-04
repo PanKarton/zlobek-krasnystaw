@@ -13,7 +13,8 @@ import { useContactData } from 'providers/ContactDataProvider';
 
 export const Nav = () => {
   const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
-  const { openDays, phoneNumber, openHours, email } = useContactData();
+  // Rename polish object keys to english in destructuring
+  const {  email, godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime}, numerTelefonu: phoneNumber, dniPracy: openDays } = useContactData();
 
   return (
     <StyledNav className={isNavVisible ? '' : 'hidden'}>
@@ -30,7 +31,7 @@ export const Nav = () => {
         <div className="nav-contact-info left">
           <div className="flex-row">
             <AiFillClockCircle />
-            <span>{`${openDays} ${openHours.openTime} - ${openHours.closeTime}`}</span>
+            <span>{`${openDays} ${openTime} - ${closeTime}`}</span>
           </div>
           <div>
             <a href={`tel:${phoneNumber}`} aria-label={`Zadzwoń pod numer ${phoneNumber}`}>

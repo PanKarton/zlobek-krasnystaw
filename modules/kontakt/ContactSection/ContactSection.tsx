@@ -5,7 +5,8 @@ import { StyledArticle, StyledContactFormWrapper, StyledWrapper } from './Contac
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const ContactSection = () => {
-  const { phoneNumber, adress, email } = useContactData();
+  const {  email,  numerTelefonu: phoneNumber,  adres: {nazwa: name, miasto: city, ulica: street } } = useContactData();
+
   return (
     <SectionWithStars>
       <StyledWrapper>
@@ -20,9 +21,9 @@ export const ContactSection = () => {
             </li>
             <li>
               <ContactSectionListItem src="/images/contact-icon-pin.svg" altText="ikonka pinezki na niebieskim kwiatku">
-                <p>{adress.name}</p>
-                <p>{adress.city}</p>
-                <p>{adress.street}</p>
+                <p>{name}</p>
+                <p>{city}</p>
+                <p>{street}</p>
               </ContactSectionListItem>
             </li>
             <li>
@@ -41,7 +42,7 @@ export const ContactSection = () => {
           <div className="information-clause-wrapper">
             <h3>Klauzula informacyjna</h3>
             <p>
-              Administratorem jest <strong>{adress.name} w Krasnymstawie</strong> ({adress.street}, {adress.city}, e-mail: {email})
+              Administratorem jest <strong>{name} w Krasnymstawie</strong> ({street}, {city}, e-mail: {email})
             </p>
             <p>
               Dane kontaktowe inspektora ochrony danych: adres e-mail - <strong>inspektor@cbi24.pl</strong> Dane będą przetwarzane wyłącznie w celu
