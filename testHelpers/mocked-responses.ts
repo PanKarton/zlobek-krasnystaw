@@ -6,14 +6,14 @@ export const apolloContactInfoMockResponse = {
       data: {
         attributes: {
           typename: 'test',
-          phoneNumber: '123',
+          numerTelefonu: '123',
           email: 'test@test.pl',
-          openDays: 'mon - fri',
-          adress: { typename: 'test', city: 'Hajduszoboszlo', name: 'testName', street: 'testStreet' },
-          openHours: {
+          dniPracy: 'mon - fri',
+          adres: { typename: 'test', miasto: 'Hajduszoboszlo', nazwa: 'testName', ulica: 'testStreet' },
+          godzinyPracy: {
             typename: 'test',
-            openTime: 'testOpen',
-            closeTime: 'testClose',
+            godzinaOtwarcia: 'testOpen',
+            godzinaZamkniecia: 'testClose',
           },
         },
       },
@@ -28,18 +28,18 @@ export const apolloLeyetteMockResponse = {
     layette: {
       data: {
         attributes: {
-          layette: [
+          elementyWyprawki: [
             {
               id: 1,
-              name: 'Test layette item one',
+              nazwa: 'Test layette item one',
             },
             {
               id: 2,
-              name: 'Test layette item two',
+              nazwa: 'Test layette item two',
             },
             {
               id: 3,
-              name: 'Test layette item three',
+              nazwa: 'Test layette item three',
             },
           ],
         },
@@ -54,21 +54,21 @@ export const apolloScheduleMockResponse = {
     daySchedule: {
       data: {
         attributes: {
-          daySchedule: [
+          planDnia: [
             {
               id: '13',
-              hours: '6:00 - 8:00',
-              name: 'przyjmowanie dzieci do żłobka',
+              godziny: '6:00 - 8:00',
+              nazwa: 'przyjmowanie dzieci do żłobka',
             },
             {
               id: '14',
-              hours: '8:00 – 8:30',
-              name: 'śniadanie',
+              godziny: '8:00 – 8:30',
+              nazwa: 'śniadanie',
             },
             {
               id: '15',
-              hours: '8:30 – 9:00',
-              name: 'dowolne zabawy w grupie',
+              godziny: '8:30 – 9:00',
+              nazwa: 'dowolne zabawy w grupie',
             },
           ],
         },
@@ -83,10 +83,10 @@ export const apolloFeesMockResponse = {
     fee: {
       data: {
         attributes: {
-          monthlyFee: 'test100',
-          dailyFoodFee: 'test7',
-          bankName: 'test BS Krasnystaw',
-          accountNumber: 'test 36 8200 0008 2001 0010 3567 0006',
+          kwotaMiesieczna: 'test100',
+          wyzywienie: 'test7',
+          nazwaBanku: 'test BS Krasnystaw',
+          numerKonta: 'test 36 8200 0008 2001 0010 3567 0006',
         },
       },
     },
@@ -100,22 +100,22 @@ export const apolloStaffMockResponse = {
     staff: {
       data: {
         attributes: {
-          directors: [
+          dyrektorzy: [
             {
               id: 1,
-              name: 'Test director',
+              imieNazwisko: 'Test director',
             },
           ],
-          serviceWorkers: [
+          pracownicyAdministracjiOrazObslugi: [
             {
               id: 1,
-              name: 'Test service worker',
+              imieNazwisko: 'Test service worker',
             },
           ],
-          babysitters: [
+          opiekunki: [
             {
               id: 1,
-              name: 'Test babysitter',
+              imieNazwisko: 'Test babysitter',
             },
           ],
         },
@@ -141,9 +141,9 @@ export const newsPostsMockSuccess = {
           {
             id: '1',
             attributes: {
-              title: 'Test title 1',
-              content: 'Test content 1',
-              image: {
+              tytul: 'Test title 1',
+              tresc: 'Test content 1',
+              opcjonalneZdjecie: {
                 data: [],
               },
               publishedAt: '2022-12-10T20:03:26.379Z',
@@ -152,9 +152,9 @@ export const newsPostsMockSuccess = {
           {
             id: '2',
             attributes: {
-              title: 'Test title 2',
-              content: 'Test content 2',
-              image: {
+              tytul: 'Test title 2',
+              tresc: 'Test content 2',
+              opcjonalneZdjecie: {
                 data: [],
               },
               publishedAt: '2022-12-09T20:03:26.379Z',
@@ -207,9 +207,9 @@ export const fetchMoreMockSuccess = {
           {
             id: '3',
             attributes: {
-              title: 'Test title 3',
-              content: 'Test content 3',
-              image: {
+              tytul: 'Test title 3',
+              tresc: 'Test content 3',
+              opcjonalneZdjecie: {
                 data: [],
               },
               publishedAt: '2022-12-08T20:02:50.607Z',
@@ -218,9 +218,9 @@ export const fetchMoreMockSuccess = {
           {
             id: '4',
             attributes: {
-              title: 'Test title 4',
-              content: 'Test content 4',
-              image: {
+              tytul: 'Test title 4',
+              tresc: 'Test content 4',
+              opcjonalneZdjecie: {
                 data: [],
               },
               publishedAt: '2022-12-07T20:02:30.513Z',
@@ -253,9 +253,9 @@ export const fetchMoreOfMonthMockSuccess = {
           {
             id: '3',
             attributes: {
-              title: 'Listopad title test 1',
-              content: 'Listopad content test 1',
-              image: {
+              tytul: 'Listopad title test 1',
+              tresc: 'Listopad content test 1',
+              opcjonalneZdjecie: {
                 data: [],
               },
               publishedAt: '2022-11-11T20:03:26.379Z',
@@ -264,9 +264,9 @@ export const fetchMoreOfMonthMockSuccess = {
           {
             id: '4',
             attributes: {
-              title: 'Listopad title test 2',
-              content: 'Listopad content test 2',
-              image: {
+              tytul: 'Listopad title test 2',
+              tresc: 'Listopad content test 2',
+              opcjonalneZdjecie: {
                 data: [],
               },
               publishedAt: '2022-11-02T20:03:26.379Z',
