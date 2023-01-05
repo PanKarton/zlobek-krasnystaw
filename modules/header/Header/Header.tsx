@@ -11,9 +11,6 @@ export const Header = ({ isSecondary }: Props) => {
 
   return (
     <StyledHeader isSecondary={isSecondary}>
-      <div className="max-width-1440">
-        <Nav />
-      </div>
       <div className="skip-button-wrapper">
         <a href="#main-content">Przejdź do głównej treści</a>
       </div>
@@ -36,6 +33,9 @@ export const Header = ({ isSecondary }: Props) => {
       </div>
       <div className="bottom-wave-wrapper">
         <Image src="/images/hero-wave-test.png" alt="Biała fala dekoracyjna" fill />
+      </div>
+      <div className="max-width-1440">
+        <Nav />
       </div>
     </StyledHeader>
   );
