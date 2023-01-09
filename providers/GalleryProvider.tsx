@@ -20,41 +20,36 @@ type Context = {
 const GalleryContext = createContext<Context | null>(null);
 
 export const GalleryProvider = ({ children, imagesData }: Props) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const [currentImage, setCurrentImage] = useState<GalleryImage | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [images, setImages] = useState<GalleryImages>(imagesData);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  //   console.log('currentImageIndex', currentImageIndex);
-  //   console.log('currentImage', currentImage?.attributes.url);
-
-  const handleOpenModal = useCallback(
-    (index: number) => {
-      setCurrentImageIndex(() => index);
-      setCurrentImage(() => imagesData.data[index]);
-      setIsModalOpen(() => true);
-    },
-    [imagesData.data],
-  );
+  const handleOpenModal = useCallback((index: number) => {
+    setCurrentImageIndex(() => index);
+    setIsModalOpen(() => true);
+  }, []);
 
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(() => false);
   }, []);
 
   const handleNextImage = useCallback(() => {
-    setCurrentImage(() => imagesData.data[currentImageIndex + 1]);
-    setCurrentImageIndex((prevIndex) => ++prevIndex);
-  }, [currentImageIndex, imagesData.data]);
+    setCurrentImageIndex((prevIndex) => prevIndex + 1);
+  }, []);
 
   const handlePreviousImage = useCallback(() => {
-    setCurrentImage(() => imagesData.data[currentImageIndex - 1]);
     setCurrentImageIndex((prevIndex) => --prevIndex);
-  }, [currentImageIndex, imagesData.data]);
+  }, []);
 
   useEffect(() => {
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft' || event.key === 'a' || currentImageIndex !== 0) handlePreviousImage();
+      if ((event.key === 'ArrowLeft' || event.key === 'a') && currentImageIndex !== 0) {
+        handlePreviousImage();
+      }
 
-      if (event.key === 'ArrowRight' || event.key === 'd' || currentImageIndex !== imagesData.data.length - 1) handleNextImage();
+      if ((event.key === 'ArrowRight' || event.key === 'd') && currentImageIndex !== imagesData.data.length - 1) {
+        handleNextImage();
+      }
     };
 
     window.addEventListener('keyup', handleKeyUp);
@@ -66,7 +61,7 @@ export const GalleryProvider = ({ children, imagesData }: Props) => {
     isModalOpen,
     isLeftArrowVisible: currentImageIndex !== 0,
     isRightArrowVisible: currentImageIndex !== imagesData.data.length - 1,
-    currentImage,
+    currentImage: images.data[currentImageIndex],
     handleOpenModal,
     handleCloseModal,
     handleNextImage,

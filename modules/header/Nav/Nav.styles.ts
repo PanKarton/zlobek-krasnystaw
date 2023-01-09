@@ -12,7 +12,6 @@ export const StyledNav = styled.nav`
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  /* z-index: 1; */
   border-bottom: 0.0625rem solid #aaa;
   transition: translate ease-out 0.25s;
   &.hidden {
@@ -29,6 +28,7 @@ export const StyledNav = styled.nav`
     border-radius: 620rem;
     border-bottom: none;
     z-index: auto;
+    transition: none;
   }
 
   & > .main-logo-wrapper {
