@@ -14,7 +14,7 @@ export const GalleryModal = () => {
   const { alternativeText, url } = currentImage?.attributes;
 
   return (
-    <Modal isOpen={isModalOpen} shouldCloseOnOverlayClick={true} style={customStyles} onRequestClose={handleCloseModal}>
+    <Modal isOpen={isModalOpen} shouldCloseOnOverlayClick={true} style={customStyles} onRequestClose={handleCloseModal} preventScroll={false}>
       <StyledWrapper>
         <div className="main-img-wrapper">
           <Image src={buildURL(url)} alt={alternativeText || 'Gallery image'} fill style={{ objectFit: 'contain' }} />

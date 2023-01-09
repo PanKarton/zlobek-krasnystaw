@@ -11,7 +11,7 @@ export const StyledWrapper = styled.div`
     height: 80vh;
   }
   .close-button-wrapper {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 1rem;
     cursor: pointer;
@@ -62,6 +62,7 @@ export const customStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 1000,
   },
   content: {
     backgroundColor: 'transparent',

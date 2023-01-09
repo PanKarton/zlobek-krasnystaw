@@ -14,6 +14,7 @@ export const StyledNav = styled.nav`
   justify-content: space-between;
   border-bottom: 0.0625rem solid #aaa;
   transition: translate ease-out 0.25s;
+  z-index: 1;
   &.hidden {
     translate: 0 -100%;
   }
