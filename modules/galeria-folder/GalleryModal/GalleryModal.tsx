@@ -13,6 +13,7 @@ export const GalleryModal = () => {
 
   const { alternativeText, url } = currentImage?.attributes;
 
+  // Booleans that get true when it its first or/and last image
   const isLeftArrowVisible = currentImageIndex !== 0;
   const isRightArrowVisible = currentImageIndex !== imagesNumber - 1;
 
@@ -30,10 +31,10 @@ export const GalleryModal = () => {
         <div className="main-img-wrapper">
           <Image src={buildURL(url)} alt={alternativeText || 'Gallery image'} fill style={{ objectFit: 'contain' }} />
         </div>
-        <StyledArrowButton className="right" onClick={handleNextImage} isVisible={isRightArrowVisible}>
+        <StyledArrowButton className="right" onClick={handleNextImage} disabled={!isRightArrowVisible} isVisible={isRightArrowVisible}>
           <MdArrowForwardIos />
         </StyledArrowButton>
-        <StyledArrowButton className="left" onClick={handlePreviousImage} isVisible={isLeftArrowVisible}>
+        <StyledArrowButton className="left" onClick={handlePreviousImage} disabled={!isLeftArrowVisible} isVisible={isLeftArrowVisible}>
           <MdArrowBackIosNew />
         </StyledArrowButton>
       </StyledWrapper>

@@ -48,16 +48,16 @@ type Props = {
 
 export const StyledArrowButton = styled.button<Props>`
   position: fixed;
+  bottom: 0;
+  width: 50%;
+  height: 3rem;
   background-color: ${({ theme }) => theme.color.contrastTransparent};
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-
-  bottom: 0;
-  width: 50%;
   padding-block: 0.5rem;
+  cursor: pointer;
 
   @media screen and (min-width: 62.5rem) {
     top: 50%;
@@ -71,6 +71,11 @@ export const StyledArrowButton = styled.button<Props>`
   svg {
     font-size: 2rem;
     color: ${({ theme }) => theme.color.primaryTransparent};
+    /* Hide arrow when isn't avaliable */
+    display: ${({ isVisible }) => (isVisible ? 'inline' : 'none')};
+    @media screen and (min-width: 62.5rem) {
+      display: inline;
+    }
     &:hover {
       color: ${({ theme }) => theme.color.primary};
     }
@@ -82,7 +87,7 @@ export const StyledArrowButton = styled.button<Props>`
       left: 1rem;
     }
     svg {
-      translate: -0.125rem 0;
+      translate: -0.125rem 0.125rem;
     }
   }
 
@@ -92,7 +97,7 @@ export const StyledArrowButton = styled.button<Props>`
       right: 1rem;
     }
     svg {
-      translate: 0.125rem 0;
+      translate: 0.125rem 0.125rem;
     }
   }
 `;
