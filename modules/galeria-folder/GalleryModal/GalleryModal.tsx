@@ -30,10 +30,10 @@ export const GalleryModal = () => {
         <div className="main-img-wrapper">
           <Image src={buildURL(url)} alt={alternativeText || 'Gallery image'} fill style={{ objectFit: 'contain' }} />
         </div>
-        <StyledArrowButton className="right" onClick={handleNextImage} isVisible={isRightArrowVisible}>
+        <StyledArrowButton className="right" onClick={handleNextImage} disabled={!isRightArrowVisible} isVisible={isRightArrowVisible}>
           <MdArrowForwardIos />
         </StyledArrowButton>
-        <StyledArrowButton className="left" onClick={handlePreviousImage} isVisible={isLeftArrowVisible}>
+        <StyledArrowButton className="left" onClick={handlePreviousImage} disabled={!isLeftArrowVisible} isVisible={isLeftArrowVisible}>
           <MdArrowBackIosNew />
         </StyledArrowButton>
       </StyledWrapper>
