@@ -6,6 +6,7 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { client } from '../../../../../graphql/apolloClient';
 import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
 import { GalleryGroupsResponse, GalleryImage, ImageFoldersDataAttributes } from 'types/galleryResponse';
+import { GalleryProvider } from 'providers/GalleryProvider';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
@@ -21,9 +22,11 @@ const GalleryFolder: NextPage<PageProps> = ({ contactInfo, groupNumber, groupNam
 
   return (
     <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading={`${groupName} - ${folderName}`}>
-        <GalleryFolderSection images={images.data} returnHref={`/galeria/grupa/${groupNumber}`} publishDate={publishedAt} />
-      </SecondaryTemplate>
+      <GalleryProvider imagesData={images}>
+        <SecondaryTemplate heading={`${groupName} - ${folderName}`}>
+          <GalleryFolderSection images={images.data} returnHref={`/galeria/grupa/${groupNumber}`} publishDate={publishedAt} />
+        </SecondaryTemplate>
+      </GalleryProvider>
     </ContactDataProvider>
   );
 };

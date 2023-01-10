@@ -9,11 +9,12 @@ export const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.color.primary};
   padding-inline: 1.5rem;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
   border-bottom: 0.0625rem solid #aaa;
   transition: translate ease-out 0.25s;
+  z-index: 1;
   &.hidden {
     translate: 0 -100%;
   }
@@ -27,6 +28,8 @@ export const StyledNav = styled.nav`
     height: 4.5rem;
     border-radius: 620rem;
     border-bottom: none;
+    z-index: auto;
+    transition: none;
   }
 
   & > .main-logo-wrapper {
@@ -46,7 +49,6 @@ export const StyledNav = styled.nav`
       aspect-ratio: 1;
       background-color: ${({ theme }) => theme.color.primary};
       border-radius: 50%;
-      z-index: 2;
       border: 0.0625rem solid #aaa;
       display: flex;
       align-items: center;

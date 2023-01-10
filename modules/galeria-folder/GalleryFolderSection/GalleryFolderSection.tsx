@@ -4,8 +4,10 @@ import { buildURL } from 'helpers/buildURL';
 import { formatDate } from 'helpers/formatDate';
 import { getDayName } from 'helpers/getDayName';
 import { GalleryImage } from 'types/galleryResponse';
+import { GalleryModal } from '../GalleryModal/GalleryModal';
 import { ImageTile } from '../ImageTile/ImageTile';
 import { PublishDate, StyledList } from './GalleryFolderSection.styles';
+import { useGallery } from 'providers/GalleryProvider';
 
 type Props = {
   images: GalleryImage[];
@@ -16,6 +18,7 @@ type Props = {
 export const GalleryFolderSection = ({ images, returnHref, publishDate }: Props) => {
   const formatedDate = formatDate(publishDate);
   const dayName = getDayName(publishDate);
+  const { handleOpenModal } = useGallery();
 
   return (
     <SectionWithStars hasNoMarginTop>
@@ -27,10 +30,15 @@ export const GalleryFolderSection = ({ images, returnHref, publishDate }: Props)
         {images &&
           images.map((image, index) => (
             <li key={index}>
-              <ImageTile imgPath={buildURL(image.attributes.url)} altText={image.attributes.alternativeText} />
+              <ImageTile
+                onClick={() => handleOpenModal(index)}
+                imgPath={buildURL(image.attributes.url)}
+                altText={image.attributes.alternativeText || 'Alt text'}
+              />
             </li>
           ))}
       </StyledList>
+      <GalleryModal />
     </SectionWithStars>
   );
 };

@@ -13,7 +13,7 @@ export const useNav = () => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
 
-    // set state based on location info (explained in more detail below)
+    // set state based on scroll position
     setIsNavVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10 || isSecondaryVisible);
 
     // set state to new scroll position

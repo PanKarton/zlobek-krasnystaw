@@ -27,7 +27,7 @@ export const DayScheduleSection = ({ daySchedule }: Props) => {
               src="/images/day-schedule-vector.svg"
               alt="opiekunka i jedzące dzieci"
               fill
-              sizes="(max-width: 56.25rem) 10rem, (max-width: 96.875rem) 15rem, 20rem"
+              sizes="(max-width: 900px) 160px, (max-width: 1550px) 200px, 320px"
             />
           </div>
         </div>

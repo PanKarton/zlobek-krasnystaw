@@ -6,7 +6,6 @@
 
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 *,
@@ -26,9 +25,12 @@ ul {
 }
 
 body {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
 }
 
 input,

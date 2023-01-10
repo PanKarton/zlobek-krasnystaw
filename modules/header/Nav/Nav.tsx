@@ -14,13 +14,15 @@ import { useContactData } from 'providers/ContactDataProvider';
 export const Nav = () => {
   const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
   // Rename polish object keys to english in destructuring
-  const {  email, godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime}, numerTelefonu: phoneNumber, dniPracy: openDays } = useContactData();
+  const {
+    email,
+    godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime },
+    numerTelefonu: phoneNumber,
+    dniPracy: openDays,
+  } = useContactData();
 
   return (
     <StyledNav className={isNavVisible ? '' : 'hidden'}>
-      <div className="main-logo-wrapper">
-        <MainLogo />
-      </div>
       <div className="mobile-icons-wrapper">
         <HamburgerButton onClick={handleToggleMenu} isActive={isSecondaryVisible}></HamburgerButton>
       </div>
@@ -55,6 +57,9 @@ export const Nav = () => {
         </FbButton>
       </div>
       <MobileNavList isVisible={isSecondaryVisible} handleCloseMenu={handleCloseMenu} />
+      <div className="main-logo-wrapper">
+        <MainLogo />
+      </div>
     </StyledNav>
   );
 };
