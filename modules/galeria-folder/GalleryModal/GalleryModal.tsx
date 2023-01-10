@@ -7,31 +7,35 @@ import { useGallery } from 'providers/GalleryProvider';
 import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md';
 
 export const GalleryModal = () => {
-  const { isModalOpen, isLeftArrowVisible, isRightArrowVisible, currentImage, handleCloseModal, handleNextImage, handlePreviousImage } = useGallery();
+  const { isModalOpen, currentImage, currentImageIndex, imagesNumber, handleCloseModal, handleNextImage, handlePreviousImage } = useGallery();
 
   if (!currentImage) return null;
 
   const { alternativeText, url } = currentImage?.attributes;
 
+  const isLeftArrowVisible = currentImageIndex !== 0;
+  const isRightArrowVisible = currentImageIndex !== imagesNumber - 1;
+
   return (
     <Modal isOpen={isModalOpen} shouldCloseOnOverlayClick={true} style={customStyles} onRequestClose={handleCloseModal} preventScroll={false}>
       <StyledWrapper>
+        <div className="top-bar-wrapper">
+          <div className="counter-wrapper">
+            <span>{`${currentImageIndex + 1} / ${imagesNumber}`}</span>
+          </div>
+          <div className="close-button-wrapper">
+            <CloseButton onClick={handleCloseModal} />
+          </div>
+        </div>
         <div className="main-img-wrapper">
           <Image src={buildURL(url)} alt={alternativeText || 'Gallery image'} fill style={{ objectFit: 'contain' }} />
         </div>
-        <div className="close-button-wrapper">
-          <CloseButton onClick={handleCloseModal} />
-        </div>
-        {isRightArrowVisible && (
-          <StyledArrowButton className="right" onClick={handleNextImage}>
-            <MdArrowForwardIos />
-          </StyledArrowButton>
-        )}
-        {isLeftArrowVisible && (
-          <StyledArrowButton className="left" onClick={handlePreviousImage}>
-            <MdArrowBackIosNew />
-          </StyledArrowButton>
-        )}
+        <StyledArrowButton className="right" onClick={handleNextImage} isVisible={isRightArrowVisible}>
+          <MdArrowForwardIos />
+        </StyledArrowButton>
+        <StyledArrowButton className="left" onClick={handlePreviousImage} isVisible={isLeftArrowVisible}>
+          <MdArrowBackIosNew />
+        </StyledArrowButton>
       </StyledWrapper>
     </Modal>
   );

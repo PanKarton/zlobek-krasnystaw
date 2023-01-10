@@ -11,7 +11,7 @@ type Props = {
 export const ImageTile = ({ imgPath, altText = 'zdjecie', onClick }: Props) => {
   return (
     <StyledWrapper onClick={onClick}>
-      <Image src={imgPath} alt={altText} fill style={{ objectFit: 'cover' }} sizes="(max-width: 650px) 50vw, (max-width: 650px) 360px), 270px" />
+      <Image src={imgPath} alt={altText} fill style={{ objectFit: 'cover' }} sizes="(max-width: 650px) 50vw, (max-width: 1550px) 360px), 270px" />
       <div className="hover-layer">
         <AiOutlineSearch />
       </div>

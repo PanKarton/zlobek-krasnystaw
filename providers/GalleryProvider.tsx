@@ -8,9 +8,9 @@ type Props = {
 
 type Context = {
   isModalOpen: boolean;
-  isLeftArrowVisible: boolean;
-  isRightArrowVisible: boolean;
   currentImage: GalleryImage | null;
+  currentImageIndex: number;
+  imagesNumber: number;
   handleOpenModal: (index: number) => void;
   handleCloseModal: () => void;
   handleNextImage: () => void;
@@ -61,8 +61,8 @@ export const GalleryProvider = ({ children, imagesData }: Props) => {
 
   const context = {
     isModalOpen,
-    isLeftArrowVisible: currentImageIndex !== 0,
-    isRightArrowVisible: currentImageIndex !== imagesData.data.length - 1,
+    currentImageIndex,
+    imagesNumber: imagesData.data.length,
     currentImage: images.data[currentImageIndex],
     handleOpenModal,
     handleCloseModal,

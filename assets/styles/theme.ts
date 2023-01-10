@@ -5,7 +5,7 @@ export const theme = {
     primaryTransparent: 'hsla(0, 100%, 100%, 0.5)',
     // Black
     contrast: '#2D2D2F',
-    contrastTransparent: ' hsla(240, 2%, 18%, 0.75)',
+    contrastTransparent: ' hsla(240, 2%, 18%, 0.95)',
     contrastLightHover: '#3D3D3F',
     contrastDarkHover: '#1D1D1F',
     // Blue

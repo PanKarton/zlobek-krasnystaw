@@ -33,7 +33,7 @@ export const NewsPost = ({ articleData }: Props) => {
                   src={buildURL(imageData?.attributes.url)}
                   alt={imageData?.attributes?.alternativeText}
                   fill
-                  sizes="(max-width: 62.5rem) 100vw, 21rem"
+                  sizes="(max-width: 1000px) 100vw, 340px"
                 />
               </div>
             )}
