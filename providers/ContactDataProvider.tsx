@@ -6,7 +6,7 @@ type Props = {
   contactData: ContactInfoDataAttributes;
 };
 
-const initContext = {
+const initialContext = {
   numerTelefonu: '',
   email: '',
   dniPracy: '',
@@ -21,7 +21,7 @@ const initContext = {
   },
 };
 
-const ContactDataContext = createContext<ContactInfoDataAttributes>(initContext);
+const ContactDataContext = createContext<ContactInfoDataAttributes>(initialContext);
 
 export const ContactDataProvider = ({ children, contactData }: Props) => {
   return <ContactDataContext.Provider value={contactData}>{children}</ContactDataContext.Provider>;

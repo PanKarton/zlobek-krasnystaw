@@ -5,7 +5,11 @@ import { StyledArticle, StyledContactFormWrapper, StyledWrapper } from './Contac
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const ContactSection = () => {
-  const {  email,  numerTelefonu: phoneNumber,  adres: {nazwa: name, miasto: city, ulica: street } } = useContactData();
+  const {
+    email,
+    numerTelefonu: phoneNumber,
+    adres: { nazwa: name, miasto: city, ulica: street },
+  } = useContactData();
 
   return (
     <SectionWithStars>
@@ -28,7 +32,7 @@ export const ContactSection = () => {
             </li>
             <li>
               <ContactSectionListItem src="/images/contact-icon-mail.svg" altText="ikonka koperty na niebieskim kwiatku">
-                <p>{email}</p>
+                {/* <p>{email}</p> */}
               </ContactSectionListItem>
             </li>
           </ul>

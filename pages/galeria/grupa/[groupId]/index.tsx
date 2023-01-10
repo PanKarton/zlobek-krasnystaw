@@ -6,6 +6,8 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { client } from '../../../../graphql/apolloClient';
 import { GalleryGroupsResponse, GroupsDataAttributes } from 'types/galleryResponse';
 import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
+import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
+import { useRouter } from 'next/router';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
@@ -14,6 +16,10 @@ type PageProps = {
 };
 
 const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo, groupName }) => {
+  const router = useRouter();
+
+  if (router.isFallback) return <FallbackLoader />;
+
   return (
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading={`${groupName} - galeria`} returnHref="/galeria">

@@ -5,8 +5,12 @@ import { BipButton } from 'modules/footer/BipButton/BipButton';
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const FooterContactInfo = () => {
-  const {   godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime}, numerTelefonu: phoneNumber, dniPracy: openDays, adres: {nazwa: name, miasto: city, ulica: street } } = useContactData();
-
+  const {
+    godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime },
+    numerTelefonu: phoneNumber,
+    dniPracy: openDays,
+    adres: { nazwa: name, miasto: city, ulica: street },
+  } = useContactData();
 
   return (
     <StyledSection className="nav-contact-details">

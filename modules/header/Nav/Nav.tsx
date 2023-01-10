@@ -48,6 +48,7 @@ export const Nav = () => {
           <div className="flex-row">
             <FaEnvelope />
             <span>{`Napisz: ${email}`}</span>
+            <span>{`Napisz: siema`}</span>
           </div>
         </div>
       </div>
