@@ -27,6 +27,7 @@
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.4",
     "react-modal": "^3.16.1",
+    "sharp": "^0.31.3",
     "ts-jest": "29.0.3"
   },
   "devDependencies": {
