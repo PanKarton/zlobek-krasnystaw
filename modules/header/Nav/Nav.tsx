@@ -57,10 +57,10 @@ export const Nav = () => {
           <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" width="36" height="36" />
         </FbButton>
       </div>
-      <MobileNavList isVisible={isSecondaryVisible} handleCloseMenu={handleCloseMenu} />
       <div className="main-logo-wrapper">
         <MainLogo />
       </div>
+      <MobileNavList isVisible={isSecondaryVisible} handleCloseMenu={handleCloseMenu} />
     </StyledNav>
   );
 };

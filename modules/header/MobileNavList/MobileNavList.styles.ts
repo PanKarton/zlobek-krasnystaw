@@ -24,7 +24,7 @@ export const StyledWrapper = styled.section`
   @media screen and (min-width: 43.75rem) {
     top: 5rem;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
-    border-bottom-left-radius0.3125rem;
+    border-bottom-left-radius: 0.3125rem;
     height: min-content;
     width: max(25%, 15rem);
     border-bottom: 0.0625rem solid #aaa;
