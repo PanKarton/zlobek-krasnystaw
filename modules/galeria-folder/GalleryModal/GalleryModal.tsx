@@ -13,6 +13,7 @@ export const GalleryModal = () => {
 
   const { alternativeText, url } = currentImage?.attributes;
 
+  // Booleans that get true when it its first or/and last image
   const isLeftArrowVisible = currentImageIndex !== 0;
   const isRightArrowVisible = currentImageIndex !== imagesNumber - 1;
 

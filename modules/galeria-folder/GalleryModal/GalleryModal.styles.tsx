@@ -48,16 +48,16 @@ type Props = {
 
 export const StyledArrowButton = styled.button<Props>`
   position: fixed;
+  bottom: 0;
+  width: 50%;
+  height: 3rem;
   background-color: ${({ theme }) => theme.color.contrastTransparent};
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  bottom: 0;
-  width: 50%;
-  height: 3rem;
   padding-block: 0.5rem;
+  cursor: pointer;
 
   @media screen and (min-width: 62.5rem) {
     top: 50%;
