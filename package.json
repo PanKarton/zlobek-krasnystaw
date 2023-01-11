@@ -19,6 +19,7 @@
     "cross-fetch": "3.1.5",
     "graphql": "16.6.0",
     "next": "13.0.6",
+    "next-router-mock": "^0.8.0",
     "nextjs-progressbar": "0.0.16",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "5.1.0",

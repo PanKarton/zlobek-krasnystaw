@@ -126,6 +126,8 @@ export const apolloStaffMockResponse = {
   networkStatus: 7,
 };
 
+// News
+
 export const newsPostsMockSuccess = {
   request: {
     query: GET_NEWS_POSTS,
@@ -294,4 +296,111 @@ export const dummyFetchMock = {
   result: {
     data: [],
   },
+};
+
+// Gallery
+
+export const apolloGalleryGroupInfoMockSuccess = {
+  data: {
+    groups: {
+      data: [
+        {
+          attributes: {
+            nazwaGrupy: 'Test gorup name',
+            numerGrupy: '1',
+            foldery_zdjec: {
+              data: [
+                {
+                  id: '3',
+                  attributes: {
+                    nazwaFolderu: 'M.D. House - ciekawy serial',
+                    slug: 'house-serial',
+                    publishedAt: '2023-01-10T22:25:54.989Z',
+                    miniaturaFolderu: {
+                      data: {
+                        attributes: {
+                          alternativeText: 'test alt text',
+                          url: '/uploads/test.jpg',
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+  },
+  loading: false,
+  networkStatus: 7,
+};
+
+export const apolloGalleryGroupInfoZeroFoldersMockSuccess = {
+  data: {
+    groups: {
+      data: [
+        {
+          attributes: {
+            nazwaGrupy: 'Test gorup name',
+            numerGrupy: '1',
+            foldery_zdjec: {
+              data: [],
+            },
+          },
+        },
+      ],
+    },
+  },
+  loading: false,
+  networkStatus: 7,
+};
+
+export const apolloImagesFolderInfoMockSuccess = {
+  data: {
+    groups: {
+      data: [
+        {
+          attributes: {
+            nazwaGrupy: 'Test group name',
+            numerGrupy: '1',
+            foldery_zdjec: {
+              data: [
+                {
+                  id: '1',
+                  attributes: {
+                    nazwaFolderu: 'Test folder name',
+                    slug: 'house-serial',
+                    publishedAt: '2023-01-10T22:25:54.989Z',
+                    zdjecia: {
+                      data: [
+                        {
+                          id: '1',
+                          attributes: {
+                            url: '/uploads/test-url1.jpg',
+                            alternativeText: 'test alt 1',
+                          },
+                        },
+                        {
+                          id: '2',
+                          attributes: {
+                            url: '/uploads/test-url2.jpg',
+                            alternativeText: 'test alt 2',
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+  },
+
+  loading: false,
+  networkStatus: 7,
 };

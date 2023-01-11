@@ -62,3 +62,10 @@ export const testNewsPostsWithLoadedPosts = async () => {
   expect(await screen.findByText(/Test title 4/i)).toBeInTheDocument();
   expect(await screen.findByText(/Test content 4/i)).toBeInTheDocument();
 };
+
+export const testGalleryGroupPage = () => {
+  screen.getByText(/Test gorup name - galeria/);
+  screen.getByText(/M.D. House - ciekawy serial/);
+  screen.getByText(/wtorek, 10.01.2023/);
+  screen.getByAltText(/test alt text/);
+};
