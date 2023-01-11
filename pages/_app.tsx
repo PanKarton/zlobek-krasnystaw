@@ -4,6 +4,9 @@ import { AppProvider } from 'providers/AppProvider';
 import Head from 'next/head';
 import '../styles/globals.css';
 import { AppProps } from 'next/app';
+import localFont from '@next/font/local';
+
+const montserrat = localFont({ src: '../public/fonts/montserrat.woff', variable: '--font-primary', weight: '400, 500, 600' });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Loader />
       <AppProvider>
         <NextNProgress height={5} options={{ showSpinner: false }} />
-        <Component {...pageProps} />
+        <main className={montserrat.className}>
+          <Component {...pageProps} />
+        </main>
       </AppProvider>
     </>
   );
