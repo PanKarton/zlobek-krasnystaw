@@ -7,17 +7,21 @@ import { client } from '../../../../../graphql/apolloClient';
 import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
 import { GalleryGroupsResponse, GalleryImage, ImageFoldersDataAttributes } from 'types/galleryResponse';
 import { GalleryProvider } from 'providers/GalleryProvider';
+import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
+import { useRouter } from 'next/router';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
-  folderName: string;
-  imagesArray: GalleryImage[];
   groupNumber: string;
   groupName: string;
   imagesFolderAttributes: ImageFoldersDataAttributes;
 };
 
 const GalleryFolder: NextPage<PageProps> = ({ contactInfo, groupNumber, groupName, imagesFolderAttributes }) => {
+  const router = useRouter();
+
+  if (router.isFallback) return <FallbackLoader />;
+
   const { nazwaFolderu: folderName, zdjecia: images, publishedAt } = imagesFolderAttributes;
 
   return (
