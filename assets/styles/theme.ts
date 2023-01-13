@@ -22,6 +22,11 @@ export const theme = {
     // Border dividers
     borderDivider: '#ccc',
   },
+
+  fontFamily: {
+    primary: `var(--font-primary)`,
+  },
+
   fontSize: {
     pageHeadingRegular: '100rem',
     sectionHeading: '100rem',

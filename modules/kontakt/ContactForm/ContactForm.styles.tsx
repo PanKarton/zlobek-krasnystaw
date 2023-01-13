@@ -13,7 +13,7 @@ export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     color: ${({ theme }) => theme.color.contrast};
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     gap: 0.5rem;
@@ -25,7 +25,7 @@ export const StyledForm = styled.form`
   .submit-message,
   .error-message {
     text-align: center;
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     color: ${({ theme }) => theme.color.contrast};

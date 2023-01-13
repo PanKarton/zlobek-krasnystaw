@@ -8,7 +8,7 @@ export const StyledWrapper = styled.div`
     padding-bottom: 0;
     width: 12.5rem;
   }
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   color: ${({ theme }) => theme.color.contrast};
   .heading {
     font-size: ${({ theme }) => theme.fontSize.text2XL};

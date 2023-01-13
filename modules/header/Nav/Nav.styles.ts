@@ -96,8 +96,7 @@ export const StyledNav = styled.nav`
     justify-content: space-between;
     gap: 11rem;
     padding-bottom: 3rem;
-
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     @media screen and (min-width: 90rem) {
       display: flex;
     }

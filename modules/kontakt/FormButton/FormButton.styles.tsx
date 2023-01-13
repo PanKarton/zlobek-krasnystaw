@@ -10,7 +10,7 @@ export const StyledButton = styled.button<Props>`
   background-color: ${({ theme }) => theme.color.accentPrimary};
   color: ${({ theme }) => theme.color.contrast};
   font-size: ${({ theme }) => theme.fontSize.textLG};
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   font-weight: 500;
   letter-spacing: 0.0625rem;
   border: none;

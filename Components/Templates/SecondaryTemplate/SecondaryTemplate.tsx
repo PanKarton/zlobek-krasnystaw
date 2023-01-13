@@ -11,11 +11,11 @@ type Props = {
 
 export const SecondaryTemplate = ({ children, heading, returnHref }: Props) => (
   <>
-    {/* <Header isSecondary /> */}
+    <Header isSecondary />
     <main>
       {heading && <PageHeading className="page-heading" headingText={heading} returnHref={returnHref}></PageHeading>}
       {children}
     </main>
-    {/* <Footer /> */}
+    <Footer />
   </>
 );

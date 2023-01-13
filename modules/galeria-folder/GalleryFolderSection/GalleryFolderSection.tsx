@@ -33,7 +33,7 @@ export const GalleryFolderSection = ({ images, returnHref, publishDate }: Props)
               <ImageTile
                 onClick={() => handleOpenModal(index)}
                 imgPath={buildURL(image.attributes.url)}
-                altText={image.attributes.alternativeText || 'Alt text'}
+                altText={image.attributes.alternativeText || `Zdjęcie ${index} z ${images.length}`}
               />
             </li>
           ))}

@@ -8,7 +8,7 @@ type Props = {
   onClick?: () => void;
 };
 
-export const ImageTile = ({ imgPath, altText = 'zdjecie', onClick }: Props) => {
+export const ImageTile = ({ imgPath, altText, onClick }: Props) => {
   return (
     <StyledWrapper onClick={onClick}>
       <Image src={imgPath} alt={altText} fill style={{ objectFit: 'cover' }} sizes="(max-width: 650px) 50vw, (max-width: 1550px) 360px), 270px" />

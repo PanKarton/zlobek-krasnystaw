@@ -15,7 +15,7 @@ export const StyledWrapper = styled.div`
     top: 0rem;
     left: 0rem;
     background-color: ${({ theme }) => theme.color.primary};
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     color: ${({ theme }) => theme.color.contrast};
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
@@ -50,7 +50,7 @@ export const StyledWrapper = styled.div`
     justify-content: center;
     padding-block: 0.25rem;
     span {
-      font-family: var(--font-primary);
+      font-family: ${({ theme }) => theme.fontFamily.primary};
       color: ${({ theme }) => theme.color.contrast};
       font-size: ${({ theme }) => theme.fontSize.textLG};
       font-weight: 500;

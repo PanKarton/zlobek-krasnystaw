@@ -7,7 +7,7 @@ export const StyledTextArea = styled.textarea`
   border: 0.0625rem solid ${({ theme }) => theme.color.contrast};
   padding: 1rem;
   color: ${({ theme }) => theme.color.contrast};
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.textBase};
 
   font-weight: 500;

@@ -49,5 +49,5 @@ export const getMonthsSinceDate = (fromDate: Date) => {
     }
   }
 
-  return months;
+  return months.reverse();
 };

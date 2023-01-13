@@ -25,7 +25,7 @@ export const StyledList = styled.ul`
 `;
 
 export const PublishDate = styled.div`
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   font-weight: 500;
   border-bottom: 0.0625rem solid #ccc;
   padding-bottom: 0.25rem;

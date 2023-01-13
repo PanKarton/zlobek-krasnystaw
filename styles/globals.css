@@ -1,137 +1,134 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-:root {
-  --font-primary: 'Montserrat';
-} */
 
 html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: none;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.ReactModal__Body--open {
-  overflow: hidden;
-}
-
-input,
-textarea,
-button,
-select,
-a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-strong {
-  font-weight: 600;
-}
-
-*:focus,
-*::before:focus,
-*::after:focus {
-  outline: 0.0625rem solid #aaa;
-}
-
-.call-button-hover:hover {
-  color: #555 !important;
-}
-
-/* Max width */
-
-.max-width-1440 {
-  width: min(100%, 40rem);
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-@media screen and (min-width: 62.5rem) {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ReactModal__Body--open {
+    overflow: hidden;
+  }
+  
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  strong {
+    font-weight: 600;
+  }
+  
+  *:focus,
+  *::before:focus,
+  *::after:focus {
+    outline: 0.0625rem solid #aaa;
+  }
+  
+  .call-button-hover:hover {
+    color: #555 !important;
+  }
+  
+  /* Max width */
+  
   .max-width-1440 {
-    padding-inline: 0;
-    width: min(90%, 70rem);
+    width: min(100%, 40rem);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
   }
-}
-
-@media screen and (min-width: 96.875rem) {
-  .max-width-1440 {
-    width: 90rem;
+  @media screen and (min-width: 62.5rem) {
+    .max-width-1440 {
+      padding-inline: 0;
+      width: min(90%, 70rem);
+    }
   }
-}
-
-/* Page loader */
-
-#loader-wrapper {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-#loader {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  margin-left: 10%;
-  transform: translate3d(-50%, -50%, 0);
-}
-.loader-dot {
-  width: 1.5rem;
-  height: 1.5rem;
-  background: #3ac;
-  border-radius: 100%;
-  display: inline-block;
-  animation: slide 1s infinite;
-}
-.loader-dot:nth-child(1) {
-  animation-delay: 0.1s;
-  background: #32aacc;
-}
-.loader-dot:nth-child(2) {
-  animation-delay: 0.2s;
-  background: #64aacc;
-}
-.loader-dot:nth-child(3) {
-  animation-delay: 0.3s;
-  background: #96aacc;
-}
-.loader-dot:nth-child(4) {
-  animation-delay: 0.4s;
-  background: #c8aacc;
-}
-.loader-dot:nth-child(5) {
-  animation-delay: 0.5s;
-  background: #faaacc;
-}
-@keyframes slide {
-  0% {
-    scale: 1;
+  
+  @media screen and (min-width: 96.875rem) {
+    .max-width-1440 {
+      width: 90rem;
+    }
   }
-  50% {
-    opacity: 0.3;
-    scale: 2;
+  
+  /* Page loader */
+  
+  #loader-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
   }
-  100% {
-    scale: 1;
+  
+  #loader {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    margin-left: 10%;
+    transform: translate3d(-50%, -50%, 0);
   }
-}
+  .loader-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #3ac;
+    border-radius: 100%;
+    display: inline-block;
+    animation: slide 1s infinite;
+  }
+  .loader-dot:nth-child(1) {
+    animation-delay: 0.1s;
+    background: #32aacc;
+  }
+  .loader-dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background: #64aacc;
+  }
+  .loader-dot:nth-child(3) {
+    animation-delay: 0.3s;
+    background: #96aacc;
+  }
+  .loader-dot:nth-child(4) {
+    animation-delay: 0.4s;
+    background: #c8aacc;
+  }
+  .loader-dot:nth-child(5) {
+    animation-delay: 0.5s;
+    background: #faaacc;
+  }
+  @keyframes slide {
+    0% {
+      scale: 1;
+    }
+    50% {
+      opacity: 0.3;
+      scale: 2;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+  
+  

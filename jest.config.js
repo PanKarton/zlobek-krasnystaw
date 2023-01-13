@@ -1,4 +1,4 @@
-// To mock env variables
+// To mock env variables during tests
 require('dotenv').config();
 
 const nextJest = require('next/jest');

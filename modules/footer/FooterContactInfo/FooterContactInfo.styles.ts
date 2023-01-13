@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   margin-block: 2rem 1.5rem;
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   flex-basis: 18rem;
   color: ${({ theme }) => theme.color.contrast};
 

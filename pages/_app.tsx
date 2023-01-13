@@ -2,11 +2,8 @@ import NextNProgress from 'nextjs-progressbar';
 import { Loader } from 'Components/Organisms/Loader/Loader';
 import { AppProvider } from 'providers/AppProvider';
 import Head from 'next/head';
-import '../styles/globals.css';
 import { AppProps } from 'next/app';
-import localFont from '@next/font/local';
-
-const montserrat = localFont({ src: '../public/fonts/montserrat.woff', variable: '--font-primary', weight: '400, 500, 600' });
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,9 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Loader />
       <AppProvider>
         <NextNProgress height={5} options={{ showSpinner: false }} />
-        <main className={montserrat.className}>
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} />
       </AppProvider>
     </>
   );

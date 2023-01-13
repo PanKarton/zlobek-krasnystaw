@@ -37,7 +37,7 @@ export const StyledHeader = styled.header<Props>`
       display: block;
       height: 100%;
       color: ${({ theme }) => theme.color.contrast};
-      font-family: var(--font-primary);
+      font-family: ${({ theme }) => theme.fontFamily.primary};
     }
   }
 
@@ -72,7 +72,7 @@ export const StyledHeader = styled.header<Props>`
     width: min(calc(100% - 3rem), 30rem);
     text-align: center;
     color: ${({ theme }) => theme.color.contrast};
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     background-color: ${({ theme }) => theme.color.primary};
     padding-block: clamp(1.5rem, 5vw, 2rem);
     padding-inline: 1rem;

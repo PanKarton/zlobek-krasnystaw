@@ -55,6 +55,16 @@ export const NewsPostsProvider = ({ children }: Props) => {
             page: nextPagePointer,
             pageSize,
           },
+          updateQuery: (previousResult) => {
+            const previousData = previousResult.newsPosts.data;
+
+            return {
+              newsPosts: {
+                __typename: 'NewsPostEntityResponseCollection',
+                data: [...previousData],
+              },
+            };
+          },
         });
 
         // Hide button when there are no posts to fetch
