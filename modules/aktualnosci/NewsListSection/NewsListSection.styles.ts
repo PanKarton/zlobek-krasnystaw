@@ -14,7 +14,7 @@ export const Styledwrapper = styled.div`
     margin-top: 1rem;
   }
   .no-posts-message {
-    width: 100%;
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;

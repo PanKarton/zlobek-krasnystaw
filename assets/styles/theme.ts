@@ -1,7 +1,7 @@
 export const theme = {
   color: {
-    primary: '#fff',
-    primaryDark: '#e8eaed',
+    primary: '#FFF',
+    primaryDark: '#E8EAED',
     primaryTransparent: 'hsla(0, 100%, 100%, 0.5)',
     // Black
     contrast: '#2D2D2F',
@@ -17,19 +17,17 @@ export const theme = {
     accentSecondary: '#FE9FBF',
     accentSecondaryDarker: '#BF3160',
     // Error
-    error: 'red',
+    error: '#FF0000',
     errorTransparent: 'hsla(0, 100%, 50%, 0.05)',
     // Border dividers
-    borderDivider: '#ccc',
+    borderDivider: '#CCC',
   },
 
   fontFamily: {
-    primary: `var(--font-primary)`,
+    primary: `'Montserrat', sans-serif`,
   },
 
   fontSize: {
-    pageHeadingRegular: '100rem',
-    sectionHeading: '100rem',
     textXS: '0.75rem',
     textSM: '0.875rem',
     textBase: '1rem',
@@ -42,7 +40,6 @@ export const theme = {
     text6XL: '3.75rem',
     text7XL: '4.5rem',
     text8XL: '6rem',
-    text9XL: '8rem',
   },
   lineHeight: {
     pageHeadingRegular: '100rem',
@@ -57,8 +54,5 @@ export const theme = {
     text4XL: '2.5rem',
     text5XL: '2.75rem',
     text6XL: '3rem',
-    text7XL: '1',
-    text8XL: '1',
-    text9XL: '1',
   },
 };
