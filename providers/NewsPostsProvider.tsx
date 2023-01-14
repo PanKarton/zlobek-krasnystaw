@@ -67,7 +67,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
           },
         });
 
-        // Hide button when there are no posts to fetch
+        // Hide button when there are no more posts to fetch
         if (!response.data.newsPosts.data.length) setIsAllDataDisplayed(false);
       } catch (error) {
         console.log('Additional news posts fetch error', { error });
@@ -88,7 +88,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
       const nextPagePointer = postsNumber / pageSize + 1;
 
       const response = await fetchMore({
-        // Update page variable based on current data length
+        // Update page graphql variable based on current data length
         variables: {
           page: nextPagePointer,
           pageSize,

@@ -8,6 +8,8 @@ type Props = {
 
 type Context = {
   isModalOpen: boolean;
+  isRightArrowVisible: boolean;
+  isLeftArrowVisible: boolean;
   currentImage: GalleryImage | null;
   currentImageIndex: number;
   imagesNumber: number;
@@ -57,6 +59,8 @@ export const GalleryProvider = ({ children, imagesData }: Props) => {
 
   const context = {
     isModalOpen,
+    isRightArrowVisible: currentImageIndex !== imagesData.data.length - 1,
+    isLeftArrowVisible: currentImageIndex !== 0,
     currentImageIndex,
     imagesNumber: imagesData.data.length,
     currentImage: images.data[currentImageIndex],
