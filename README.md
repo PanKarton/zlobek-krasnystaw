@@ -49,6 +49,7 @@ My first website for real client with real problems to solve. I gave my best and
 
 List of more or less fancy features:
 
+- Staticly generated pages
 - Lazy loaded images
 - Email contact form with validation and error handler
 - Google map
@@ -58,6 +59,7 @@ List of more or less fancy features:
 - Archives list that loads news posts from particular month
 - Links for downloading documents
 - Gallery divided by groups / folders of group / images of folder of group
+- Gallery image modal
 
 ## Screenshots
 
@@ -101,7 +103,7 @@ Project is: _in progress_
 ### Technically
 
 - Lots of basic and advanced concepts of NextJS
-- SSR, SSG, ISR
+- SSR, SSG, ISR concepts
 - Environment variables
 - Images optimization
 - Using API from libraries without making extra 172487 states
