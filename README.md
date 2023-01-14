@@ -49,6 +49,7 @@ My first website for real client with real problems to solve. I gave my best and
 
 List of more or less fancy features:
 
+- Fully responsive layouts
 - Staticly generated pages
 - Lazy loaded images
 - Email contact form with validation and error handler
