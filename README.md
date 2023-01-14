@@ -38,6 +38,7 @@ My first website for real client with real problems to solve. I gave my best and
 - @react-google-maps/api - version 2.13.1
 - @apollo/client - version 3.7.1,
 - graphql - version 16.6.0
+- sharp - 0.31.3
 - JEST - version 29.3.0
 - React Testing Library - version 13.4.0
 - dotenv - version 16.0.3
@@ -70,9 +71,6 @@ First, install all neccesary dependencies:
 npm install
 ```
 
-Next run Strapi CMS from another repo:
-https://github.com/PanKarton/zlobek-krasnystaw-strapi
-
 Then, run the development server:
 
 ```bash
@@ -98,6 +96,24 @@ Project is: _in progress_
 - Bad theme variable naming convention will eventually knock to your door
 - Well tested code will tell you that you messed up a thing you didn't mean to mess up
 - Sometimes docs do not happen to cover every single thing so you have to be creative and patient
+- TypeScript is your friend, not enemy
+
+### Technically
+
+- Lots of basic and advanced concepts of NextJS
+- SSR, SSG, ISR
+- Environment variables
+- Images optimization
+- Using API from libraries without making extra 172487 states
+- Unit and integration tests basics with Jest and RTL
+- Typescript basics
+- Lighthouse from Chrome
+- Copying to clipboard
+- Downloading files from anchor
+- Data modeling in Strapi
+- Advanced usage of React Hook Form
+- Graphql with variables, filtering and pagination
+- Apollo Client usage and mocking it during tests
 
 ## Room for Improvement
 
@@ -107,4 +123,3 @@ To do:
 
 - Replace ORIGINAL and LEGAL images
 - Optional: Add decorative images to parent sites
-- Add image popup with arrows

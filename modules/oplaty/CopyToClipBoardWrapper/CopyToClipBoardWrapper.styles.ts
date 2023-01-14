@@ -32,7 +32,7 @@ export const StyledWrapper = styled.div`
     font-weight: 400;
     text-align: center;
     font-size: inherit;
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     display: flex;
     align-items: center;
     justify-content: center;

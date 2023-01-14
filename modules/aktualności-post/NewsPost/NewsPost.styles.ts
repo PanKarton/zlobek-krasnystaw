@@ -5,7 +5,7 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StyledArticle = styled.article`
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   font-weight: 500;
   .publish-date-wrapper {
     border-bottom: 0.0625rem solid #aaa;

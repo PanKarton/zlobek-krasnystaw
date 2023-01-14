@@ -14,14 +14,14 @@ export const Styledwrapper = styled.div`
     margin-top: 1rem;
   }
   .no-posts-message {
-    width: 100%;
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     h3 {
       font-size: ${({ theme }) => theme.fontSize.textXL};
       color: ${({ theme }) => theme.color.accentPrimaryDarker};

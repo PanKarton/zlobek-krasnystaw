@@ -6,7 +6,7 @@ export const StyledAnchor = styled.a`
   gap: 0.5rem;
   padding: 0.25rem 2rem 0.25rem 0;
   font-size: ${({ theme }) => theme.fontSize.textBase};
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   color: ${({ theme }) => theme.color.contrast};
   font-weight: 500;
   @media screen and (min-width: 96.875rem) {

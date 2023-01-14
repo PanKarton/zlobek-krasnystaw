@@ -41,7 +41,7 @@ export const StyledWrapper = styled.div`
     }
   }
   .no-folders-message {
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     color: ${({ theme }) => theme.color.contrast};
     font-size: ${({ theme }) => theme.fontSize.textLG};
     font-weight: 500;

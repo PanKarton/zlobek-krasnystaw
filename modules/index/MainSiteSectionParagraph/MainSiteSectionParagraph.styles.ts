@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledParagraph = styled.p`
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.textBase};
   line-height: ${({ theme }) => theme.lineHeight.textLG};
   font-weight: 500;

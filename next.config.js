@@ -6,6 +6,10 @@ const nextConfig = {
     locales: ['pl'],
     defaultLocale: 'pl',
   },
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
   images: {
     remotePatterns: [
       {

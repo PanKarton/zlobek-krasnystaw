@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledArticle = styled.article`
   max-width: 65rem;
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   animation: fade-in 0.5s;
   .flex-wrapper {
     display: flex;

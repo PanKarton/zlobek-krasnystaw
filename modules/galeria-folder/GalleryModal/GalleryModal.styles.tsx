@@ -20,7 +20,7 @@ export const StyledWrapper = styled.div`
       justify-content: center;
       align-items: center;
       color: ${({ theme }) => theme.color.primary};
-      font-family: var(--font-primary);
+      font-family: ${({ theme }) => theme.fontFamily.primary};
     }
 
     .close-button-wrapper {

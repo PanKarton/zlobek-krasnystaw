@@ -13,7 +13,7 @@ export const StyledWrapper = styled.section`
     flex-direction: column;
     gap: 1.5rem;
     p.description {
-      font-family: var(--font-primary);
+      font-family: ${({ theme }) => theme.fontFamily.primary};
       font-size: ${({ theme }) => theme.fontSize.textBase};
       line-height: ${({ theme }) => theme.lineHeight.textBase};
       color: ${({ theme }) => theme.color.contast};

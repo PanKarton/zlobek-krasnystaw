@@ -8,6 +8,8 @@ type Props = {
 
 type Context = {
   isModalOpen: boolean;
+  isRightArrowVisible: boolean;
+  isLeftArrowVisible: boolean;
   currentImage: GalleryImage | null;
   currentImageIndex: number;
   imagesNumber: number;
@@ -44,14 +46,10 @@ export const GalleryProvider = ({ children, imagesData }: Props) => {
   useEffect(() => {
     const handleKeyUp = (event: KeyboardEvent) => {
       // Prevent when it is first image displayed
-      if ((event.key === 'ArrowLeft' || event.key === 'a') && currentImageIndex !== 0) {
-        handlePreviousImage();
-      }
+      if ((event.key === 'ArrowLeft' || event.key === 'a') && currentImageIndex !== 0) handlePreviousImage();
 
       // Prevent when it is last image displayed
-      if ((event.key === 'ArrowRight' || event.key === 'd') && currentImageIndex !== imagesData.data.length - 1) {
-        handleNextImage();
-      }
+      if ((event.key === 'ArrowRight' || event.key === 'd') && currentImageIndex !== imagesData.data.length - 1) handleNextImage();
     };
 
     window.addEventListener('keyup', handleKeyUp);
@@ -61,6 +59,8 @@ export const GalleryProvider = ({ children, imagesData }: Props) => {
 
   const context = {
     isModalOpen,
+    isRightArrowVisible: currentImageIndex !== imagesData.data.length - 1,
+    isLeftArrowVisible: currentImageIndex !== 0,
     currentImageIndex,
     imagesNumber: imagesData.data.length,
     currentImage: images.data[currentImageIndex],

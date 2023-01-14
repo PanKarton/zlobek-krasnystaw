@@ -12,7 +12,7 @@ export const StyledWrapper = styled.button`
     color: ${({ theme }) => theme.color.accentSecondaryDarker} !important;
   }
   a {
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     font-weight: 400;
     color: ${({ theme }) => theme.color.contrast};
     font-size: ${({ theme }) => theme.fontSize.textLG};

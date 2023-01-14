@@ -37,7 +37,7 @@ export const StyledArticle = styled.article`
           p,
           span {
             display: block;
-            font-family: var(--font-primary);
+            font-family: ${({ theme }) => theme.fontFamily.primary};
             color: ${({ theme }) => theme.color.contrast};
             font-size: ${({ theme }) => theme.fontSize.textBase};
             font-weight: 500;
@@ -68,7 +68,7 @@ export const StyledContactFormWrapper = styled.div`
   }
   .heading-wrapper {
     color: ${({ theme }) => theme.color.contrast};
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     width: min(100%, 55rem);
     h3 {
       font-size: ${({ theme }) => theme.fontSize.text4XL};
@@ -85,7 +85,7 @@ export const StyledContactFormWrapper = styled.div`
   .information-clause-wrapper {
     margin-top: 1.5rem;
     color: ${({ theme }) => theme.color.contrast};
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     width: min(100%, 55rem);
     font-weight: 500;
     h3 {

@@ -31,7 +31,7 @@ export const NewsPost = ({ articleData }: Props) => {
               <div className="img-wrapper">
                 <Image
                   src={buildURL(imageData?.attributes.url)}
-                  alt={imageData?.attributes?.alternativeText}
+                  alt={imageData?.attributes?.alternativeText || 'Miniatura artykułu'}
                   fill
                   sizes="(max-width: 1000px) 100vw, 340px"
                 />

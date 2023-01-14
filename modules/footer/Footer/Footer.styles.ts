@@ -80,7 +80,7 @@ export const StyledFooter = styled.footer`
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: var(--font-primary);
+      font-family: ${({ theme }) => theme.fontFamily.primary};
       h2 {
         font-size: ${({ theme }) => theme.fontSize.textBase};
         font-weight: 400;
@@ -91,7 +91,7 @@ export const StyledFooter = styled.footer`
       }
     }
     .nav-copyrights {
-      font-family: var(--font-primary);
+      font-family: ${({ theme }) => theme.fontFamily.primary};
       font-size: ${({ theme }) => theme.fontSize.textBase};
       max-width: 40ch;
       @media screen and (min-width: 62.5rem) {

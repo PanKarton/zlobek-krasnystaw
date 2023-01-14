@@ -7,15 +7,21 @@ import { useGallery } from 'providers/GalleryProvider';
 import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md';
 
 export const GalleryModal = () => {
-  const { isModalOpen, currentImage, currentImageIndex, imagesNumber, handleCloseModal, handleNextImage, handlePreviousImage } = useGallery();
+  const {
+    isModalOpen,
+    isLeftArrowVisible,
+    isRightArrowVisible,
+    currentImage,
+    currentImageIndex,
+    imagesNumber,
+    handleCloseModal,
+    handleNextImage,
+    handlePreviousImage,
+  } = useGallery();
 
   if (!currentImage) return null;
 
   const { alternativeText, url } = currentImage?.attributes;
-
-  // Booleans that get true when it its first or/and last image
-  const isLeftArrowVisible = currentImageIndex !== 0;
-  const isRightArrowVisible = currentImageIndex !== imagesNumber - 1;
 
   return (
     <Modal isOpen={isModalOpen} shouldCloseOnOverlayClick={true} style={customStyles} onRequestClose={handleCloseModal} preventScroll={false}>

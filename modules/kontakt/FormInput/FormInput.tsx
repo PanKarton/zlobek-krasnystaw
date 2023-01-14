@@ -7,7 +7,7 @@ export const StyledInput = styled.input`
   border: 0.0625rem solid ${({ theme }) => theme.color.contrast};
   padding: 1rem;
   color: ${({ theme }) => theme.color.contrast};
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.textBase};
   border-radius: 0.1875rem;
   font-weight: 500;

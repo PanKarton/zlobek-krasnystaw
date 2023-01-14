@@ -6,7 +6,7 @@ type Props = {
 
 export const StyledNavSpan = styled.span<Props>`
   position: relative;
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   color: ${({ theme }) => theme.color.contrast};
   font-size: ${({ theme }) => theme.fontSize.textLG};
   font-weight: 400;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHeading = styled.h3`
-  font-family: var(--font-primary);
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   color: ${({ theme }) => theme.color.contrast};
   font-weight: 600;
   font-size: ${({ theme }) => theme.fontSize.text3XL};

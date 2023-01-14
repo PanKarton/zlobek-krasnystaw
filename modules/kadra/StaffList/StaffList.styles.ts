@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledListWrapper = styled.div`
-  font-family: var(--font-primary);
-
+  font-family: ${({ theme }) => theme.fontFamily.primary};
   h3 {
     color: ${({ theme }) => theme.color.accentPrimaryDarker};
     font-size: ${({ theme }) => theme.fontSize.textXL};

@@ -2,8 +2,8 @@ import NextNProgress from 'nextjs-progressbar';
 import { Loader } from 'Components/Organisms/Loader/Loader';
 import { AppProvider } from 'providers/AppProvider';
 import Head from 'next/head';
-import '../styles/globals.css';
 import { AppProps } from 'next/app';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
