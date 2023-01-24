@@ -29,5 +29,6 @@ export const StyledForm = styled.form`
     font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     color: ${({ theme }) => theme.color.contrast};
+    margin-bottom: 0.5rem;
   }
 `;

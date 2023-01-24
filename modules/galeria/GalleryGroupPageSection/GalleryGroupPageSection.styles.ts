@@ -22,7 +22,7 @@ export const StyledWrapper = styled.div`
       flex-basis: 100%;
     }
 
-    @media screen and (min-width: 56.25rem) {
+    @media screen and (min-width: 62.5rem) {
       li {
         flex-basis: calc(50% - 1rem);
       }
@@ -36,7 +36,7 @@ export const StyledWrapper = styled.div`
     }
     @media screen and (min-width: 96.875rem) {
       li {
-        flex-basis: calc(25% - 1.5rem);
+        flex-basis: calc(25% - 2.25rem);
       }
     }
   }
@@ -47,7 +47,7 @@ export const StyledWrapper = styled.div`
     font-weight: 500;
     margin-top: 4rem;
     text-align: center;
-    @media screen and (min-width: 56.25rem) {
+    @media screen and (min-width: 62.5rem) {
       font-size: ${({ theme }) => theme.fontSize.textXL};
       letter-spacing: 0.0625rem;
       text-align: left;

@@ -7,50 +7,50 @@ export const Styledwrapper = styled.div`
   padding-bottom: 2rem;
   translate: 0.125rem 0;
 
-  &:has(.no-posts-message) {
+  &:has(.no-posts-message),
+  &:has(.spinner-wrapper) {
     padding-bottom: 3rem;
   }
-  & > button {
-    margin-top: 1rem;
-  }
-  .no-posts-message {
-    flex-grow: 1;
+
+  .content-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-    font-family: ${({ theme }) => theme.fontFamily.primary};
-    h3 {
-      font-size: ${({ theme }) => theme.fontSize.textXL};
-      color: ${({ theme }) => theme.color.accentPrimaryDarker};
-      font-weight: 500;
-      @media screen and (min-width: 96.875rem) {
-        font-size: ${({ theme }) => theme.fontSize.text3XL};
+    align-items: flex-start;
+    flex-basis: 100%;
+    gap: 3rem;
+
+    &:has(.no-posts-message) {
+      align-items: center;
+      justify-content: center;
+    }
+    &:has(.spinner-wrapper) {
+      justify-content: center;
+    }
+    .spinner-wrapper {
+      align-self: center;
+      svg {
+        color: ${({ theme }) => theme.color.accentPrimaryDarker};
+        font-size: 2rem;
       }
     }
-    p {
-      font-size: ${({ theme }) => theme.fontSize.textBase};
-      font-weight: 500;
-      @media screen and (min-width: 96.875rem) {
-        font-size: ${({ theme }) => theme.fontSize.textLG};
-      }
+    button {
+      align-self: center;
     }
+    @media screen and (min-width: 96.875rem) {
+      margin-top: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 62.5rem) {
+    padding-bottom: 3rem;
   }
   @media screen and (min-width: 96.875rem) {
     flex-direction: row-reverse;
-
-    &:has(.no-posts-message) {
-      padding-bottom: 4rem;
-    }
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
     gap: 10rem;
-    & > button {
-      position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      translate: -95% 0;
+    &:has(.spinner-wrapper),
+    &:has(.no-posts-message) {
+      padding-bottom: 3rem;
     }
   }
 `;

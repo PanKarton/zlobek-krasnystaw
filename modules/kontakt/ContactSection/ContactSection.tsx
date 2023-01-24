@@ -32,7 +32,7 @@ export const ContactSection = () => {
             </li>
             <li>
               <ContactSectionListItem src="/images/contact-icon-mail.svg" altText="ikonka koperty na niebieskim kwiatku">
-                {/* <p>{email}</p> */}
+                <p>{email}</p>
               </ContactSectionListItem>
             </li>
           </ul>

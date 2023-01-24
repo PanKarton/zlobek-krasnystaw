@@ -70,7 +70,7 @@ export const ContactForm = () => {
           <ErrorMessage errors={errors} name="message" />
         </p>
       </div>
-      <p className="submit-message">{submitMessage} </p>
+      {submitMessage && <p className="submit-message">{submitMessage}</p>}
       <FormButton type="submit" isLoading={isSubmitting} isDisabled={isSubmitting} />
     </StyledForm>
   );
