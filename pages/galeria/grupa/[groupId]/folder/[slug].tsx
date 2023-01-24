@@ -5,7 +5,7 @@ import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../../graphql/apolloClient';
 import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
-import { GalleryGroupsResponse, GalleryImage, ImageFoldersDataAttributes } from 'types/galleryResponse';
+import { GalleryGroupsResponse, ImageFoldersDataAttributes } from 'types/galleryResponse';
 import { GalleryProvider } from 'providers/GalleryProvider';
 import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
 import { useRouter } from 'next/router';

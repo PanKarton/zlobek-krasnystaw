@@ -2,14 +2,26 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "extends": ["prettier", "plugin:react/recommended", "plugin:react-hooks/recommended", "plugin:jsx-a11y/strict", "next", "next/core-web-vitals"],
-  "plugins": ["jsx-a11y", "react-hooks", "@typescript-eslint/eslint-plugin", "prettier", "eslint-plugin-prettier"],
+  "plugins": ["jsx-a11y", "react-hooks", "@typescript-eslint/eslint-plugin", "prettier", "eslint-plugin-prettier", "import"],
   "env": {
     "es6": true,
     "browser": true,
     "jest": true,
     "node": true
   },
-  "rules": {},
+  "rules": {
+    "import/no-unused-modules": [1, { "unusedExports": true }],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        // Allows to add underscore top params in function types like ( _index ) => void to prevent 'is defined but never used' error
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module"

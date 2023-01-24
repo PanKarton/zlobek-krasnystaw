@@ -7,7 +7,7 @@ import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import Head from 'next/head';
 
-export interface Props {
+interface Props {
   fees: FeesDataAttributes;
   contactInfo: ContactInfoDataAttributes;
 }

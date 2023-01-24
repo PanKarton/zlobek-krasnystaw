@@ -13,7 +13,7 @@ type Context = {
   currentImage: GalleryImage | null;
   currentImageIndex: number;
   imagesNumber: number;
-  handleOpenModal: (index: number) => void;
+  handleOpenModal: (_index: number) => void;
   handleCloseModal: () => void;
   handleNextImage: () => void;
   handlePreviousImage: () => void;
@@ -23,7 +23,6 @@ const GalleryContext = createContext<Context | null>(null);
 
 export const GalleryProvider = ({ children, imagesData }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [images, setImages] = useState<GalleryImages>(imagesData);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   const handleOpenModal = useCallback((index: number) => {
@@ -63,7 +62,7 @@ export const GalleryProvider = ({ children, imagesData }: Props) => {
     isLeftArrowVisible: currentImageIndex !== 0,
     currentImageIndex,
     imagesNumber: imagesData.data.length,
-    currentImage: images.data[currentImageIndex],
+    currentImage: imagesData.data[currentImageIndex],
     handleOpenModal,
     handleCloseModal,
     handleNextImage,

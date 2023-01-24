@@ -1,5 +1,4 @@
 import { StyledButton } from './ArchivesListItem.styles';
-import { MonthData } from '../../../helpers/getMonthsSinceDate';
 
 type Props = {
   children: string;
