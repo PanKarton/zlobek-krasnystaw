@@ -13,7 +13,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'localhost',
+        hostname: 'aoyqlmmxvd.cfolks.pl',
       },
     ],
   },

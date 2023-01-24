@@ -7,6 +7,14 @@ export const StyledWrapper = styled.div`
   @media screen and (min-width: 56.25rem) {
     padding-bottom: 5rem;
   }
+
+  .date-adnonation {
+    margin-bottom: 2rem;
+    @media screen and (min-width: 56.25rem) {
+      margin-bottom: 3rem;
+    }
+  }
+
   h3 {
     font-size: ${({ theme }) => theme.fontSize.text2XL};
     font-weight: 500;
@@ -31,13 +39,11 @@ export const StyledStepsList = styled.ul`
   display: flex;
   flex-direction: column;
   max-width: 70rem;
-  margin-bottom: 2rem;
   @media screen and (min-width: 56.25rem) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 1rem;
-    margin-bottom: 3rem;
     li {
       flex-basis: calc(50% - 0.5rem);
     }

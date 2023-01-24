@@ -16,9 +16,8 @@ export const StyledWrapper = styled.div`
     flex-direction: column-reverse;
     align-items: center;
     gap: 4rem;
-    @media screen and (min-width: 56.25rem) {
+    @media screen and (min-width: 62.5rem) {
       flex-direction: row;
-      align-items: flex-start;
       gap: 8rem;
     }
     @media screen and (min-width: 96.875rem) {
@@ -26,7 +25,7 @@ export const StyledWrapper = styled.div`
     }
     ul {
       width: 100%;
-      @media screen and (min-width: 56.25rem) {
+      @media screen and (min-width: 62.5rem) {
         width: min(100%, 31rem);
       }
       li + li {
@@ -38,7 +37,7 @@ export const StyledWrapper = styled.div`
           gap: 0.5rem;
           font-size: ${({ theme }) => theme.fontSize.textBase};
           line-height: ${({ theme }) => theme.lineHeight.textBase};
-          @media screen and (min-width: 56.25rem) {
+          @media screen and (min-width: 62.5rem) {
             font-size: ${({ theme }) => theme.fontSize.textLG};
           }
           .hour-span {
@@ -53,7 +52,7 @@ export const StyledWrapper = styled.div`
       position: relative;
       width: 10rem;
       aspect-ratio: 0.82;
-      @media screen and (min-width: 56.25rem) {
+      @media screen and (min-width: 62.5rem) {
         width: 15rem;
       }
       @media screen and (min-width: 96.875rem) {

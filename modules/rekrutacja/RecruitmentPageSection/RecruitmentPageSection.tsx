@@ -37,7 +37,7 @@ export const RecruitmentPageSection = () => (
           </div>
           <div className="text-wrapper">
             <h4>Złóż formularz do placówki</h4>
-            <p>w dogodnym dla Ciebie terminie i pytaj śmiało o szczegóły oferty.</p>
+            <p>w dogodnym dla Ciebie terminie* i pytaj śmiało o szczegóły oferty.</p>
           </div>
         </li>
         <li>
@@ -50,6 +50,8 @@ export const RecruitmentPageSection = () => (
           </div>
         </li>
       </StyledStepsList>
+      <p className="date-adnonation">* Maksymalnie do 30 kwietnia</p>
+
       <h3>Dokumenty do pobrania:</h3>
 
       <ul className="download-files-list">
