@@ -6,6 +6,7 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   staff: StaffDataAttributes;
@@ -14,11 +15,16 @@ type PageProps = {
 
 const Staff: NextPage<PageProps> = ({ staff, contactInfo }) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Nasza załoga">
-        <StaffListPageSection staffData={staff} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - kadra</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading="Nasza załoga">
+          <StaffListPageSection staffData={staff} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 

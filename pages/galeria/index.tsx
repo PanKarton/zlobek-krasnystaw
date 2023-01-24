@@ -2,6 +2,7 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { GalleryGroupsSection } from 'modules/galeria/GalleryGroupsSection/GalleryGroupsSection';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../graphql/apolloClient';
@@ -11,11 +12,16 @@ type PageProps = {
 };
 
 const Gallery: NextPage<PageProps> = ({ contactInfo }) => (
-  <ContactDataProvider contactData={contactInfo}>
-    <SecondaryTemplate heading="Nasze zdjęcia">
-      <GalleryGroupsSection />
-    </SecondaryTemplate>
-  </ContactDataProvider>
+  <>
+    <Head>
+      <title>Żłobek Miejski w Krasnystawie - grupy</title>
+    </Head>
+    <ContactDataProvider contactData={contactInfo}>
+      <SecondaryTemplate heading="Nasze zdjęcia">
+        <GalleryGroupsSection />
+      </SecondaryTemplate>
+    </ContactDataProvider>
+  </>
 );
 
 export default Gallery;

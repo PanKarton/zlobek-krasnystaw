@@ -5,17 +5,23 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
 const GDPR: NextPage<PageProps> = ({ contactInfo }) => (
-  <ContactDataProvider contactData={contactInfo}>
-    <SecondaryTemplate heading="Ochrona danych osobowych">
-      <GDPRSection />
-    </SecondaryTemplate>
-  </ContactDataProvider>
+  <>
+    <Head>
+      <title>Żłobek Miejski w Krasnystawie - RODO</title>
+    </Head>
+    <ContactDataProvider contactData={contactInfo}>
+      <SecondaryTemplate heading="Ochrona danych osobowych">
+        <GDPRSection />
+      </SecondaryTemplate>
+    </ContactDataProvider>
+  </>
 );
 
 export default GDPR;

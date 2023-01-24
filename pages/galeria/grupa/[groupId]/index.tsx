@@ -8,6 +8,7 @@ import { GalleryGroupsResponse, GroupsDataAttributes } from 'types/galleryRespon
 import { GalleryGroupPageSection } from 'modules/galeria/GalleryGroupPageSection/GalleryGroupPageSection';
 import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
@@ -21,11 +22,16 @@ const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo, grou
   if (router.isFallback) return <FallbackLoader />;
 
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading={`${groupName} - galeria`} returnHref="/galeria">
-        <GalleryGroupPageSection galleryGroupInfo={galleryGroupInfo} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - foldery zdjęć</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading={`${groupName} - galeria`} returnHref="/galeria">
+          <GalleryGroupPageSection galleryGroupInfo={galleryGroupInfo} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 

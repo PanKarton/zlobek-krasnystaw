@@ -6,6 +6,7 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   daySchedule: DayScheduleElement[];
@@ -14,11 +15,16 @@ type PageProps = {
 
 const Schedule: NextPage<PageProps> = ({ daySchedule, contactInfo }) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Nasz plan dnia">
-        <DayScheduleSection daySchedule={daySchedule} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - plan dnia</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading="Nasz plan dnia">
+          <DayScheduleSection daySchedule={daySchedule} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 

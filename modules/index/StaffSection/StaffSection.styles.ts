@@ -63,7 +63,6 @@ export const StyledSection = styled.section`
       height: 10.625rem;
       aspect-ratio: 1;
       animation: floater 15s infinite ease-in-out;
-      /* z-index: 1; */
       &:nth-child(1) {
         /* Icon C */
         display: none;

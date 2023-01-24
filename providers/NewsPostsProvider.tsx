@@ -15,8 +15,10 @@ type Context = {
   newsPostsState: NewsPostData[];
   handleLoadMoreNewsPosts: () => Promise<void>;
   getPostsByMonth: (queryData: MonthData) => Promise<void>;
+  getInitPosts: () => Promise<void>;
   isLoading: boolean;
   isAllDataDisplayed: boolean;
+  isLoadMoreButtonVisible: boolean;
   errorMessage: ErrorMessage;
   archivesErrorMessage: ErrorMessage;
   error: ApolloError | undefined;
@@ -27,7 +29,7 @@ const NewsPostsContext = createContext<Context | null>(null);
 const pageSize = 2;
 
 export const NewsPostsProvider = ({ children }: Props) => {
-  const [isAllDataDisplayed, setIsAllDataDisplayed] = useState(true);
+  const [isAllDataDisplayed, setIsAllDataDisplayed] = useState(false);
   const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
   const [archivesErrorMessage, setArchivesErrorMessage] = useState<ErrorMessage>('');
   const { data, loading, error, fetchMore } = useQuery<NewsPostsListResponse>(GET_NEWS_POSTS, {
@@ -36,6 +38,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
       pageSize,
     },
   });
+  const isLoadMoreButtonVisible = !(isAllDataDisplayed || !!error || data?.newsPosts.data.length === 0 || loading);
 
   useEffect(() => {
     // Additional fetch to check if there is more data waiting on server
@@ -48,7 +51,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
         const nextPagePointer = postsNumber / pageSize + 1;
 
         // Hide button when nextPagePointer is float
-        if (!Number.isInteger(nextPagePointer)) return setIsAllDataDisplayed(false);
+        if (!Number.isInteger(nextPagePointer)) return setIsAllDataDisplayed(true);
 
         const response = await fetchMore({
           variables: {
@@ -67,8 +70,7 @@ export const NewsPostsProvider = ({ children }: Props) => {
           },
         });
 
-        // Hide button when there are no more posts to fetch
-        if (!response.data.newsPosts.data.length) setIsAllDataDisplayed(false);
+        if (response.data.newsPosts.data.length === 0) setIsAllDataDisplayed(true);
       } catch (error) {
         console.log('Additional news posts fetch error', { error });
       }
@@ -76,6 +78,30 @@ export const NewsPostsProvider = ({ children }: Props) => {
 
     fetchData();
   }, [data, fetchMore]);
+
+  const getInitPosts = useCallback(async () => {
+    try {
+      await fetchMore({
+        variables: {
+          page: 1,
+          pageSize,
+        },
+        updateQuery: (_, { fetchMoreResult }) => {
+          const newData = fetchMoreResult.newsPosts.data;
+
+          return {
+            newsPosts: {
+              __typename: 'NewsPostEntityResponseCollection',
+              data: [...newData],
+            },
+          };
+        },
+      });
+      setIsAllDataDisplayed(false);
+    } catch {
+      setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
+    }
+  }, [fetchMore]);
 
   const handleLoadMoreNewsPosts = useCallback(async () => {
     try {
@@ -130,18 +156,18 @@ export const NewsPostsProvider = ({ children }: Props) => {
             pageSize: 100,
           },
           updateQuery: (_, { fetchMoreResult }) => {
-            const data = fetchMoreResult.newsPosts.data;
+            const newData = fetchMoreResult.newsPosts.data;
 
             return {
               newsPosts: {
                 __typename: 'NewsPostEntityResponseCollection',
-                data,
+                data: newData,
               },
             };
           },
         });
 
-        setIsAllDataDisplayed(false);
+        setIsAllDataDisplayed(true);
       } catch (err) {
         setArchivesErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
       }
@@ -153,8 +179,10 @@ export const NewsPostsProvider = ({ children }: Props) => {
     newsPostsState: data ? data.newsPosts.data : [],
     handleLoadMoreNewsPosts,
     getPostsByMonth,
+    getInitPosts,
     isLoading: loading,
     isAllDataDisplayed,
+    isLoadMoreButtonVisible,
     errorMessage,
     archivesErrorMessage,
     error,

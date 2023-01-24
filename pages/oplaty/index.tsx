@@ -5,6 +5,7 @@ import { FeesDataAttributes, FeesResponse } from 'types/feesResponse';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
+import Head from 'next/head';
 
 export interface Props {
   fees: FeesDataAttributes;
@@ -13,11 +14,16 @@ export interface Props {
 
 const Fees = ({ fees, contactInfo }: Props) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Cennik">
-        <FeesSection feesData={fees} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - opłaty</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading="Cennik">
+          <FeesSection feesData={fees} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 

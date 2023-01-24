@@ -1,9 +1,12 @@
-import { getMonthsSinceDate } from 'helpers/getMonthsSinceDate';
+import { getMonthsSinceDate, MonthData } from 'helpers/getMonthsSinceDate';
+import { useNewsPosts } from 'providers/NewsPostsProvider';
 import { useCallback, useState } from 'react';
 
 export const useArchives = () => {
   const [areAllVisible, setAreAllVisible] = useState(false);
+  // Index -1 means first initial posts
   const [activeMonth, setActiveMonth] = useState<number | null>(null);
+  const { getPostsByMonth, getInitPosts } = useNewsPosts();
 
   const releaseDate = '2022-11-01';
 
@@ -15,12 +18,26 @@ export const useArchives = () => {
 
   const handleToggleMonthsList = useCallback(() => setAreAllVisible((prevValue) => !prevValue), []);
 
+  const handleLoadInitPosts = useCallback(() => {
+    getInitPosts();
+    setActiveMonth(null);
+  }, [getInitPosts]);
+
+  const handleLoadPostsOfMonth = useCallback(
+    (monthData: MonthData, monthIndex: number) => {
+      getPostsByMonth(monthData);
+      setActiveMonth(monthIndex);
+    },
+    [getPostsByMonth],
+  );
+
   return {
     months,
     isButtonVisible,
     areAllVisible,
     activeMonth,
     handleToggleMonthsList,
-    setActiveMonth,
+    handleLoadPostsOfMonth,
+    handleLoadInitPosts,
   };
 };

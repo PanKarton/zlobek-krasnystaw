@@ -5,17 +5,23 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
 };
 
 const Contact: NextPage<PageProps> = ({ contactInfo }) => (
-  <ContactDataProvider contactData={contactInfo}>
-    <SecondaryTemplate heading="Skontaktuj się z nami">
-      <ContactSection />
-    </SecondaryTemplate>
-  </ContactDataProvider>
+  <>
+    <Head>
+      <title>Żłobek Miejski w Krasnystawie - kontakt</title>
+    </Head>
+    <ContactDataProvider contactData={contactInfo}>
+      <SecondaryTemplate heading="Skontaktuj się z nami">
+        <ContactSection />
+      </SecondaryTemplate>
+    </ContactDataProvider>
+  </>
 );
 
 export default Contact;

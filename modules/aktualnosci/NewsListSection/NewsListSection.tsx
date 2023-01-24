@@ -7,9 +7,7 @@ import { useNewsPosts } from 'providers/NewsPostsProvider';
 import { LoadingSpinner } from 'Components/Atoms/LoadingSpinner/LoadingSpinner';
 
 export const NewsListSection = () => {
-  const { handleLoadMoreNewsPosts, isLoading, isAllDataDisplayed, errorMessage, error, newsPostsState } = useNewsPosts();
-
-  const isLoadMoreButtonVisible = isAllDataDisplayed && !error && newsPostsState.length !== 0 && !isLoading;
+  const { handleLoadMoreNewsPosts, isLoading, errorMessage, error, isLoadMoreButtonVisible } = useNewsPosts();
 
   return (
     <SectionWithStars>
