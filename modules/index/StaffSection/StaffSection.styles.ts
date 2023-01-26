@@ -7,6 +7,16 @@ export const StyledSection = styled.section`
   /* Padding top + bottom wave height  */
   padding-bottom: calc(clamp(5rem, 8vw, 9rem) + 100vw / 11.5);
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background-color: ${({ theme }) => theme.color.primaryDark};
+  }
+
   .flex-wrapper {
     position: relative;
     width: 100%;
@@ -167,8 +177,7 @@ export const StyledArticle = styled.article`
 
 export const WaveDivider = styled.div`
   position: absolute;
-  bottom: -0.25rem;
-  left: 0;
-  right: 0;
+  bottom: -0rem;
+  width: 100%;
   aspect-ratio: 11.5;
 `;
