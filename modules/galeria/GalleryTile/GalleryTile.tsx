@@ -19,8 +19,6 @@ export const GalleryTile = ({ name, href, altText, imgPath, publishDate }: Props
             src={imgPath}
             alt={altText}
             fill
-            placeholder="blur"
-            blurDataURL={imgPath}
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 900px) 100vw,
               350px"
