@@ -54,10 +54,8 @@ export const StyledWrapper = styled.div`
 export const StyledWaveDivider = styled.div`
   position: absolute;
   bottom: -0.125rem;
-  left: 50%;
-  translate: -50% 0;
-  width: 100vw;
-
+  left: 0;
+  width: 100%;
   aspect-ratio: 15.28;
 `;
 

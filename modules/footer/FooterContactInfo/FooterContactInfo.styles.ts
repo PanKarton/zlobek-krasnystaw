@@ -64,36 +64,41 @@ export const StyledSection = styled.section`
       }
       /* BIP */
       .nav-bip-wrapper {
-        position: relative;
-        width: 100%;
-        margin-left: 1.75rem;
-        padding-top: 1.5rem;
-        @media screen and (min-width: 34rem) {
-          padding-top: 0;
-        }
-        &::after {
-          position: absolute;
-          content: '';
-          width: 80%;
-          left: 0;
-          top: 0;
-          border-top: 0.0625rem solid ${({ theme }) => theme.color.borderDivider};
-          @media screen and (min-width: 34rem) {
-            display: none;
-          }
-        }
-        .bip-button-wrapper {
-          position: relative;
-          aspect-ratio: 2.81;
-          width: 75%;
-          margin-top: 0.75rem;
-          a {
-            display: block;
-            position: relative;
-            height: 100%;
-          }
-        }
       }
+    }
+  }
+`;
+
+export const BIPWrapper = styled.section`
+  position: relative;
+  margin-left: 1.75rem;
+  padding-top: 1.5rem;
+  @media screen and (min-width: 34rem) {
+    padding-top: 0;
+  }
+  @media screen and (min-width: 62.5rem) {
+    width: 100%;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    width: 80%;
+    left: 0;
+    top: 0;
+    border-top: 0.0625rem solid ${({ theme }) => theme.color.borderDivider};
+    @media screen and (min-width: 34rem) {
+      display: none;
+    }
+  }
+  .bip-button-wrapper {
+    position: relative;
+    aspect-ratio: 2.81;
+    width: 75%;
+    margin-top: 0.75rem;
+    a {
+      display: block;
+      position: relative;
+      height: 100%;
     }
   }
 `;

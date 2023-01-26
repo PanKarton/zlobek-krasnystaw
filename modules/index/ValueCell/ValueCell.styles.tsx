@@ -23,6 +23,7 @@ export const StyledWrapper = styled.div`
     font-family: ${({ theme }) => theme.fontFamily.primary};
     font-weight: 500;
     text-align: center;
+
     @media screen and (min-width: 43.75rem) {
       font-size: ${({ theme }) => theme.fontSize.text3XL};
     }
