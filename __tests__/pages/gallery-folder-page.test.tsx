@@ -1,9 +1,10 @@
 import '@testing-library/jest-dom';
 import { client } from '../../graphql/apolloClient';
-import { render, screen } from 'testHelpers/test-utils';
+import { render } from 'testHelpers/test-utils';
 import { apolloContactInfoMockResponse, apolloImagesFolderInfoMockSuccess } from 'testHelpers/mocked-responses';
 import 'next-router-mock';
 import GalleryFolder, { getStaticProps } from 'pages/galeria/grupa/[groupId]/folder/[slug]';
+import { testGalleryFolderPage } from 'testHelpers/screen-elements-test-functions';
 
 jest.mock('next/router', () => require('next-router-mock'));
 
@@ -38,9 +39,6 @@ describe('Gallery images folder page', () => {
       />,
     );
 
-    screen.getByText(/Test group name - Test folder name/);
-    screen.getByText(/wtorek, 10.01.2023/);
-    screen.getByAltText(/test alt 1/);
-    screen.getByAltText(/test alt 2/);
+    testGalleryFolderPage();
   });
 });

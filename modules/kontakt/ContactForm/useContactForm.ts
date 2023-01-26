@@ -40,9 +40,9 @@ export const useContactForm = (formRef: React.RefObject<HTMLFormElement>) => {
     try {
       if (formRef.current === null) return;
 
-      const serviceId = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID);
-      const templateId = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID);
-      const publicKey = getEnvVariable(process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY);
+      const serviceId = getEnvVariable(process.env.NEXT_PUBLIC_EMAILJS_YOUR_SERVICE_ID);
+      const templateId = getEnvVariable(process.env.NEXT_PUBLIC_EMAILJS_YOUR_TEMPLATE_ID);
+      const publicKey = getEnvVariable(process.env.NEXT_PUBLIC_EMAILJS_YOUR_PUBLIC_KEY);
 
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
 

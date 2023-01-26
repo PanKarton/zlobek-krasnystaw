@@ -69,3 +69,10 @@ export const testGalleryGroupPage = () => {
   screen.getByText(/wtorek, 10.01.2023/);
   screen.getByAltText(/test alt text/);
 };
+
+export const testGalleryFolderPage = () => {
+  screen.getByText(/Test group name - Test folder name/);
+  screen.getByText(/wtorek, 10.01.2023/);
+  screen.getByAltText(/test alt 1/);
+  screen.getByAltText(/test alt 2/);
+};
