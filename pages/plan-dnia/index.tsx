@@ -33,12 +33,14 @@ export default Schedule;
 export const getStaticProps = async () => {
   const dayScheduleRes = await client.query<DayScheduleResponse>({
     query: GET_DAY_SCHEDULE,
+    fetchPolicy: 'network-only',
   });
 
   const daySchedule = dayScheduleRes.data.daySchedule.data.attributes.planDnia;
 
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfo.data.contactInfo.data.attributes;
@@ -48,5 +50,6 @@ export const getStaticProps = async () => {
       daySchedule,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

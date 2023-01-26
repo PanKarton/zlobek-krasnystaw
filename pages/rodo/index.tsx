@@ -29,6 +29,7 @@ export default GDPR;
 export const getStaticProps = async () => {
   const ContactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfoRes.data.contactInfo.data.attributes;
@@ -37,5 +38,6 @@ export const getStaticProps = async () => {
     props: {
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

@@ -33,12 +33,14 @@ export default Staff;
 export const getStaticProps = async () => {
   const staffRes = await client.query<StaffResponse>({
     query: GET_STAFF_LISTS,
+    fetchPolicy: 'network-only',
   });
 
   const staff = staffRes.data.staff.data.attributes;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -48,5 +50,6 @@ export const getStaticProps = async () => {
       staff,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

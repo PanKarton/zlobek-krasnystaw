@@ -10,7 +10,6 @@
     "node": true
   },
   "rules": {
-    "import/no-unused-modules": [1, { "unusedExports": true }],
     "no-unused-vars": [
       "error",
       {

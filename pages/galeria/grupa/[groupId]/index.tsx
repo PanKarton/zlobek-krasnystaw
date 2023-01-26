@@ -67,12 +67,14 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   const groupFoldersRes = await client.query<GalleryGroupsResponse>({
     query: GET_GALLERY_FOLDERS_OF_GROUP,
+    fetchPolicy: 'network-only',
     variables: {
       groupNumber,
     },
@@ -87,5 +89,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       galleryGroupInfo,
       groupName,
     },
+    revalidate: 3600,
   };
 };

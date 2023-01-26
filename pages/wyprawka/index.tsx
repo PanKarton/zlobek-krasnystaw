@@ -33,12 +33,14 @@ export default Layette;
 export const getStaticProps = async () => {
   const layetteRes = await client.query<LayetteResponse>({
     query: GET_LAYETTE,
+    fetchPolicy: 'network-only',
   });
 
   const layette = layetteRes.data.layette.data.attributes.elementyWyprawki;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -48,5 +50,6 @@ export const getStaticProps = async () => {
       layette,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

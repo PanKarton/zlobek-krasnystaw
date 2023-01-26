@@ -29,6 +29,7 @@ export default ErrorPage;
 export const getStaticProps = async () => {
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfo.data.contactInfo.data.attributes;
@@ -37,5 +38,6 @@ export const getStaticProps = async () => {
     props: {
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

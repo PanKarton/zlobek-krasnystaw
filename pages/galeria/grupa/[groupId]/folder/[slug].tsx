@@ -89,12 +89,14 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   const groupFoldersRes = await client.query<GalleryGroupsResponse>({
     query: GET_IMAGES_FOLDER_OF_GROUP,
+    fetchPolicy: 'network-only',
     variables: {
       groupNumber,
       slug,
@@ -105,6 +107,11 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
   const groupName = groupFolder.nazwaGrupy;
   const imagesFolderAttributes = groupFolder.foldery_zdjec.data[0].attributes;
 
+  if (!groupFolder || !contactInfo)
+    return {
+      notFound: true,
+    };
+
   return {
     props: {
       contactInfo,
@@ -112,5 +119,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       groupName,
       groupNumber,
     },
+    revalidate: 3600,
   };
 };

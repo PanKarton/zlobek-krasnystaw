@@ -61,6 +61,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const newsPostRes = await client.query<NewsPostResponse>({
     query: GET_SINGLE_POST_BY_ID,
+    fetchPolicy: 'network-only',
     variables: {
       id: params.postId,
     },
@@ -70,6 +71,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -84,5 +86,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       contactInfo,
       newsPost,
     },
+    revalidate: 3600,
   };
 };

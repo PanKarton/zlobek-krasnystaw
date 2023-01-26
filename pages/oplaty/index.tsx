@@ -32,12 +32,14 @@ export default Fees;
 export const getStaticProps = async () => {
   const feesRes = await client.query<FeesResponse>({
     query: GET_FEES,
+    fetchPolicy: 'network-only',
   });
 
   const fees = feesRes.data.fee.data.attributes;
 
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfo.data.contactInfo.data.attributes;
@@ -47,5 +49,6 @@ export const getStaticProps = async () => {
       fees,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };
