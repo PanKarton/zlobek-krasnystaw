@@ -32,7 +32,7 @@ export const Header = ({ isSecondary }: Props) => {
         />
       </HeroImage>
       <WaveDivider>
-        <Image src="/images/hero-wave-test-higher.png" alt="Biała fala dekoracyjna" fill sizes="100vw" />
+        <Image src="/images/hero-wave-white.png" alt="Biała fala dekoracyjna" fill sizes="100vw" />
       </WaveDivider>
       <div className="max-width-1440">
         <Nav />
