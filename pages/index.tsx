@@ -4,6 +4,7 @@ import { NurseryDescription } from 'modules/index/NurseryDescription/NurseryDesc
 import { OurValues } from 'modules/index/OurValues/OurValues';
 import { StaffSection } from 'modules/index/StaffSection/StaffSection';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { HomeTemplate } from '../Components/Templates/HomeTemplate/HomeTemplate';
@@ -14,23 +15,28 @@ type PageProps = {
 };
 
 const Home: NextPage<PageProps> = ({ contactInfo }) => (
-    <>
-      <ContactDataProvider contactData={contactInfo}>
-        <HomeTemplate>
-          <OurValues />
-          <AboutUsSection />
-          <StaffSection />
-          <NurseryDescription />
-        </HomeTemplate>
-      </ContactDataProvider>
-    </>
-  );
+  <>
+    <Head>
+      <title>Żłobek Miejski w Krasnystawie</title>
+    </Head>
+    <ContactDataProvider contactData={contactInfo}>
+      <HomeTemplate>
+        <OurValues />
+        <AboutUsSection />
+        <StaffSection />
+        <NurseryDescription />
+      </HomeTemplate>
+    </ContactDataProvider>
+  </>
+);
 
 export default Home;
 
 export const getStaticProps = async () => {
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    // This does unlock revalidate getting blocked by caching
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -39,5 +45,6 @@ export const getStaticProps = async () => {
     props: {
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

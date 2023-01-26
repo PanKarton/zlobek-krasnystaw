@@ -6,6 +6,7 @@ import { GET_CONTACT_INFO } from 'graphql/queries';
 import { NewsPostsProvider } from 'providers/NewsPostsProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
@@ -13,13 +14,18 @@ type PageProps = {
 
 const News: NextPage<PageProps> = ({ contactInfo }) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <NewsPostsProvider>
-        <SecondaryTemplate heading="Nasze nowości">
-          <NewsListSection />
-        </SecondaryTemplate>
-      </NewsPostsProvider>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - aktualności</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <NewsPostsProvider>
+          <SecondaryTemplate heading="Nasze nowości">
+            <NewsListSection />
+          </SecondaryTemplate>
+        </NewsPostsProvider>
+      </ContactDataProvider>
+    </>
   );
 };
 
@@ -28,6 +34,7 @@ export default News;
 export const getStaticProps = async () => {
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -36,5 +43,6 @@ export const getStaticProps = async () => {
     props: {
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

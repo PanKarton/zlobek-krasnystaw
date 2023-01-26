@@ -6,16 +6,23 @@ import { useArchives } from './useArchives';
 
 export const ArchivesList = () => {
   const { archivesErrorMessage } = useNewsPosts();
-  const { months, isButtonVisible, areAllVisible, activeMonth, handleToggleMonthsList, setActiveMonth } = useArchives();
+  const { months, isButtonVisible, areAllVisible, activeMonth, handleToggleMonthsList, handleLoadPostsOfMonth, handleLoadInitPosts } = useArchives();
 
   return (
     <StyledWrapper>
       <h3 className="heading">Archiwum</h3>
       <ul className="list">
+        <li className="list-item">
+          <ArchivesListItem isActive={activeMonth === null} onClick={() => handleLoadInitPosts()}>
+            Najnowsze
+          </ArchivesListItem>
+        </li>
         {months &&
           months.map((month, index) => (
             <li key={index} className="list-item">
-              <ArchivesListItem isActive={index === activeMonth} monthData={month} setActiveMonth={() => setActiveMonth(index)} />
+              <ArchivesListItem
+                isActive={index === activeMonth}
+                onClick={() => handleLoadPostsOfMonth(month, index)}>{`${month.monthName} ${month.year}`}</ArchivesListItem>
             </li>
           ))}
       </ul>

@@ -2,6 +2,7 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO } from 'graphql/queries';
 import { RecruitmentPageSection } from 'modules/rekrutacja/RecruitmentPageSection/RecruitmentPageSection';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
@@ -12,11 +13,16 @@ type PageProps = {
 };
 
 const Recruitment: NextPage<PageProps> = ({ contactInfo }) => (
-  <ContactDataProvider contactData={contactInfo}>
-    <SecondaryTemplate heading="Informacje o rekrutacji">
-      <RecruitmentPageSection/>
-    </SecondaryTemplate>
-  </ContactDataProvider>
+  <>
+    <Head>
+      <title>Żłobek Miejski w Krasnystawie - rekrutacja</title>
+    </Head>
+    <ContactDataProvider contactData={contactInfo}>
+      <SecondaryTemplate heading="Informacje o rekrutacji">
+        <RecruitmentPageSection />
+      </SecondaryTemplate>
+    </ContactDataProvider>
+  </>
 );
 
 export default Recruitment;
@@ -24,6 +30,7 @@ export default Recruitment;
 export const getStaticProps = async () => {
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfo.data.contactInfo.data.attributes;
@@ -32,5 +39,6 @@ export const getStaticProps = async () => {
     props: {
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

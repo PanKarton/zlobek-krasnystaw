@@ -6,6 +6,7 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   daySchedule: DayScheduleElement[];
@@ -14,11 +15,16 @@ type PageProps = {
 
 const Schedule: NextPage<PageProps> = ({ daySchedule, contactInfo }) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Nasz plan dnia">
-        <DayScheduleSection daySchedule={daySchedule} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - plan dnia</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading="Nasz plan dnia">
+          <DayScheduleSection daySchedule={daySchedule} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 
@@ -27,12 +33,14 @@ export default Schedule;
 export const getStaticProps = async () => {
   const dayScheduleRes = await client.query<DayScheduleResponse>({
     query: GET_DAY_SCHEDULE,
+    fetchPolicy: 'network-only',
   });
 
   const daySchedule = dayScheduleRes.data.daySchedule.data.attributes.planDnia;
 
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfo.data.contactInfo.data.attributes;
@@ -42,5 +50,6 @@ export const getStaticProps = async () => {
       daySchedule,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

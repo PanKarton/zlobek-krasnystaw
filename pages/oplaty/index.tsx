@@ -5,19 +5,25 @@ import { FeesDataAttributes, FeesResponse } from 'types/feesResponse';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
+import Head from 'next/head';
 
-export interface Props {
+interface Props {
   fees: FeesDataAttributes;
   contactInfo: ContactInfoDataAttributes;
 }
 
 const Fees = ({ fees, contactInfo }: Props) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Cennik">
-        <FeesSection feesData={fees} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - opłaty</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading="Cennik">
+          <FeesSection feesData={fees} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 
@@ -26,12 +32,14 @@ export default Fees;
 export const getStaticProps = async () => {
   const feesRes = await client.query<FeesResponse>({
     query: GET_FEES,
+    fetchPolicy: 'network-only',
   });
 
   const fees = feesRes.data.fee.data.attributes;
 
   const ContactInfo = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = ContactInfo.data.contactInfo.data.attributes;
@@ -41,5 +49,6 @@ export const getStaticProps = async () => {
       fees,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

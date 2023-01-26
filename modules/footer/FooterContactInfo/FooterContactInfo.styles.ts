@@ -19,7 +19,7 @@ export const StyledSection = styled.section`
     gap: 2rem;
     @media screen and (min-width: 34rem) {
       grid-template-columns: 1fr 1fr;
-      column-gap: 2rem;
+      column-gap: 1rem;
       row-gap: 3rem;
     }
 

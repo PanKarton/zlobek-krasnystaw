@@ -100,6 +100,7 @@ Project is: _in progress_
 - Well tested code will tell you that you messed up a thing you didn't mean to mess up
 - Sometimes docs do not happen to cover every single thing so you have to be creative and patient
 - TypeScript is your friend, not enemy
+- Always tidy up dead code!
 
 ### Technically
 

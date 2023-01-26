@@ -6,6 +6,7 @@ import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDat
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 type PageProps = {
   staff: StaffDataAttributes;
@@ -14,11 +15,16 @@ type PageProps = {
 
 const Staff: NextPage<PageProps> = ({ staff, contactInfo }) => {
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading="Nasza załoga">
-        <StaffListPageSection staffData={staff} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - kadra</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading="Nasza załoga">
+          <StaffListPageSection staffData={staff} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 
@@ -27,12 +33,14 @@ export default Staff;
 export const getStaticProps = async () => {
   const staffRes = await client.query<StaffResponse>({
     query: GET_STAFF_LISTS,
+    fetchPolicy: 'network-only',
   });
 
   const staff = staffRes.data.staff.data.attributes;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -42,5 +50,6 @@ export const getStaticProps = async () => {
       staff,
       contactInfo,
     },
+    revalidate: 3600,
   };
 };

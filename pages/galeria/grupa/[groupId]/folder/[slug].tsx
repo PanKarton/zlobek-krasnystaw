@@ -5,10 +5,11 @@ import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { client } from '../../../../../graphql/apolloClient';
 import { GalleryFolderSection } from 'modules/galeria-folder/GalleryFolderSection/GalleryFolderSection';
-import { GalleryGroupsResponse, GalleryImage, ImageFoldersDataAttributes } from 'types/galleryResponse';
+import { GalleryGroupsResponse, ImageFoldersDataAttributes } from 'types/galleryResponse';
 import { GalleryProvider } from 'providers/GalleryProvider';
 import { FallbackLoader } from 'Components/Atoms/FallbackLoader/FallbackLoader';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
@@ -25,13 +26,18 @@ const GalleryFolder: NextPage<PageProps> = ({ contactInfo, groupNumber, groupNam
   const { nazwaFolderu: folderName, zdjecia: images, publishedAt } = imagesFolderAttributes;
 
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <GalleryProvider imagesData={images}>
-        <SecondaryTemplate heading={`${groupName} - ${folderName}`}>
-          <GalleryFolderSection images={images.data} returnHref={`/galeria/grupa/${groupNumber}`} publishDate={publishedAt} />
-        </SecondaryTemplate>
-      </GalleryProvider>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - zdjęcia</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <GalleryProvider imagesData={images}>
+          <SecondaryTemplate heading={`${groupName} - ${folderName}`}>
+            <GalleryFolderSection images={images.data} returnHref={`/galeria/grupa/${groupNumber}`} publishDate={publishedAt} />
+          </SecondaryTemplate>
+        </GalleryProvider>
+      </ContactDataProvider>
+    </>
   );
 };
 
@@ -83,12 +89,14 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
   const groupFoldersRes = await client.query<GalleryGroupsResponse>({
     query: GET_IMAGES_FOLDER_OF_GROUP,
+    fetchPolicy: 'network-only',
     variables: {
       groupNumber,
       slug,
@@ -99,6 +107,11 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
   const groupName = groupFolder.nazwaGrupy;
   const imagesFolderAttributes = groupFolder.foldery_zdjec.data[0].attributes;
 
+  if (!groupFolder || !contactInfo)
+    return {
+      notFound: true,
+    };
+
   return {
     props: {
       contactInfo,
@@ -106,5 +119,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       groupName,
       groupNumber,
     },
+    revalidate: 3600,
   };
 };

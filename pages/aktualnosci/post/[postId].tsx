@@ -3,6 +3,7 @@ import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/Second
 import { GET_CONTACT_INFO, GET_NEWS_POSTS, GET_SINGLE_POST_BY_ID } from 'graphql/queries';
 import { NewsPost } from 'modules/aktualności-post/NewsPost/NewsPost';
 import { GetStaticPropsContext, NextPage } from 'next';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
@@ -21,11 +22,16 @@ const NewsArticle: NextPage<PageProps> = ({ contactInfo, newsPost }) => {
   if (router.isFallback) return <FallbackLoader />;
 
   return (
-    <ContactDataProvider contactData={contactInfo}>
-      <SecondaryTemplate heading={newsPost.attributes.tytul}>
-        <NewsPost articleData={newsPost} />
-      </SecondaryTemplate>
-    </ContactDataProvider>
+    <>
+      <Head>
+        <title>Żłobek Miejski w Krasnystawie - artykuł</title>
+      </Head>
+      <ContactDataProvider contactData={contactInfo}>
+        <SecondaryTemplate heading={newsPost.attributes.tytul}>
+          <NewsPost articleData={newsPost} />
+        </SecondaryTemplate>
+      </ContactDataProvider>
+    </>
   );
 };
 
@@ -55,6 +61,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const newsPostRes = await client.query<NewsPostResponse>({
     query: GET_SINGLE_POST_BY_ID,
+    fetchPolicy: 'network-only',
     variables: {
       id: params.postId,
     },
@@ -64,6 +71,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
 
   const contactInfoRes = await client.query<ContactInfoResponse>({
     query: GET_CONTACT_INFO,
+    fetchPolicy: 'network-only',
   });
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
@@ -78,5 +86,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       contactInfo,
       newsPost,
     },
+    revalidate: 3600,
   };
 };
