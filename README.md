@@ -108,7 +108,7 @@ Project is: _in progress_
 - SSR, SSG, ISR concepts
 - Environment variables
 - Images optimization
-- Using API from libraries without making extra 172487 states
+- Using API and its flags/properties from libraries without making extra 172487 states
 - Unit and integration tests basics with Jest and RTL
 - Typescript basics
 - Lighthouse from Chrome
@@ -123,6 +123,8 @@ Project is: _in progress_
 
 Room for improvement:
 
+-
+
 To do:
 
-- Replace placeholder images with ORIGINAL and LEGAL images from customer
+-
