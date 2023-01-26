@@ -64,9 +64,9 @@ List of more or less fancy features:
 - Gallery divided by groups / folders of group / images of folder of group
 - Gallery image modal
 
-## Screenshots
+## Live version
 
-![Example screenshot](./img/screenshot.png)
+[Check by yourself](https://zlobek-krasnystaw-7yux-chyx4e6ke-pankarton.vercel.app/)
 
 ## Setup
 
