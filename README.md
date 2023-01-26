@@ -88,7 +88,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Status
 
-Project is: _in progress_
+Project is: _Done, added for review_
 
 ## What did I learn?
 
