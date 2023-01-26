@@ -21,6 +21,7 @@ My first website for real client with real problems to solve. I gave my best and
 - Website simplifies communication between parents and the nursery and vice versa
 - The aim of the project was to gain commercial experience in working with a real client and solving their problems, domain and hosting purchase, and real deployment.
 - Website is fully accessible meeting WCAG 2.1 standards
+- Owner can easily add/remove/edit news posts and gallery and easily change data like contact info, layette list, staff list, pricing or day schedule
 
 ## Technologies Used - What's inside?
 
@@ -49,6 +50,7 @@ My first website for real client with real problems to solve. I gave my best and
 
 List of more or less fancy features:
 
+- Incremental static generation with revalidate set on 1 hour
 - Fully responsive layouts
 - Staticly generated pages
 - Lazy loaded images
