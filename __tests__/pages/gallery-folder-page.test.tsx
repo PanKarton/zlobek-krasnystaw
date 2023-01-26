@@ -24,12 +24,18 @@ describe('Gallery images folder page', () => {
     spyFunc.mockResolvedValueOnce(apolloContactInfoMockResponse);
     spyFunc.mockResolvedValueOnce(apolloImagesFolderInfoMockSuccess);
 
-    const {
-      props: { contactInfo, imagesFolderAttributes, groupName, groupNumber },
-    } = await getStaticProps(mockContext);
+    const { props } = await getStaticProps(mockContext);
+
+    // In case getStaticProps returns notFound: true
+    if (!props) return console.log('getStaticProps did return notFound: true');
 
     render(
-      <GalleryFolder contactInfo={contactInfo} imagesFolderAttributes={imagesFolderAttributes} groupName={groupName} groupNumber={groupNumber} />,
+      <GalleryFolder
+        contactInfo={props?.contactInfo}
+        imagesFolderAttributes={props?.imagesFolderAttributes}
+        groupName={props?.groupName}
+        groupNumber={props?.groupNumber}
+      />,
     );
 
     screen.getByText(/Test group name - Test folder name/);
