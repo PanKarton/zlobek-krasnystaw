@@ -2,6 +2,7 @@ import { PageHeading } from 'Components/Atoms/PageHeading/PageHeading';
 import { Footer } from 'modules/footer/Footer/Footer';
 import { Header } from 'modules/header/Header/Header';
 import { ReactNode } from 'react';
+import { StyledMain } from './SecondaryTemplate.styles';
 
 type Props = {
   children: ReactNode;
@@ -12,10 +13,10 @@ type Props = {
 export const SecondaryTemplate = ({ children, heading, returnHref }: Props) => (
   <>
     <Header isSecondary />
-    <main>
+    <StyledMain>
       {heading && <PageHeading className="page-heading" headingText={heading} returnHref={returnHref}></PageHeading>}
       {children}
-    </main>
+    </StyledMain>
     <Footer />
   </>
 );

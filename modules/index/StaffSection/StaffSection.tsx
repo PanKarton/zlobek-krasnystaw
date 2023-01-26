@@ -1,27 +1,27 @@
 import { MainSiteSectionHeading } from 'modules/index/MainSiteSectionHeading/MainSiteSectionHeading';
 import { MainSiteSectionParagraph } from 'modules/index/MainSiteSectionParagraph/MainSiteSectionParagraph';
 import Image from 'next/image';
-import { StyledArticle, StyledSection } from './StaffSection.styles';
+import { StyledArticle, StyledSection, WaveDivider, FloatingIconsContainer, FloatingIconWrapper } from './StaffSection.styles';
 
 export const StaffSection = () => {
   return (
     <StyledSection>
       <div className="max-width-1440">
         <div className="flex-wrapper">
-          <div className="floating-icons-container">
-            <div className="floating-icon-wrapper">
+          <FloatingIconsContainer>
+            <FloatingIconWrapper>
               <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" fill sizes="120px" />
-            </div>
-            <div className="floating-icon-wrapper">
+            </FloatingIconWrapper>
+            <FloatingIconWrapper>
               <Image src="/images/floating-icon2.svg" alt="Półkole ozdobne" fill sizes="120px" />
-            </div>
-            <div className="floating-icon-wrapper">
+            </FloatingIconWrapper>
+            <FloatingIconWrapper>
               <Image src="/images/floating-icon5.svg" alt="Półkole ozdobne" fill sizes="120px" />
-            </div>
-            <div className="floating-icon-wrapper">
+            </FloatingIconWrapper>
+            <FloatingIconWrapper>
               <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" fill sizes="120px" />
-            </div>
-          </div>
+            </FloatingIconWrapper>
+          </FloatingIconsContainer>
           <div className="staff-image-wrapper">
             <Image src="/images/staff.jpg" alt="Opiekunka bawiąca się z dwójką dzieci" fill sizes="(max-width: 1550px) 550px, 700px" />
           </div>
@@ -37,9 +37,9 @@ export const StaffSection = () => {
           </StyledArticle>
         </div>
       </div>
-      <div className="bottom-waves-wrapper">
+      <WaveDivider>
         <Image src="/images/blue-wave.svg" alt="Niebieska fala dekoracyjna" fill sizes="100vw" />
-      </div>
+      </WaveDivider>
     </StyledSection>
   );
 };

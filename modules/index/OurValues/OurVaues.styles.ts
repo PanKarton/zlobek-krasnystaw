@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
+  position: relative;
   background-color: ${({ theme }) => theme.color.white};
   padding-bottom: 2rem;
+
+  /* It hides weird 1px height line between this section and wave divider above which I have no idea  */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background-color: ${({ theme }) => theme.color.primary};
+  }
+
   & > .max-width-1440 {
     display: flex;
     justify-content: center;

@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const StyledDiv = styled.div`
   position: absolute;
   top: -4rem;
-  width: 100vw;
+  width: 100%;
   bottom: 1rem;
   z-index: -1;
 
+  /* White-transparent gradients for top and bottom edges  */
   &::after {
     content: '';
     position: absolute;

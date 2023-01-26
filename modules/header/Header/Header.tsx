@@ -1,6 +1,6 @@
 import { Nav } from 'modules/header/Nav/Nav';
 import Image from 'next/image';
-import { StyledHeader } from './Header.styles';
+import { StyledHeader, WaveDivider, HeroText, HeroImage, SkipAnchor } from './Header.styles';
 
 export type Props = {
   isSecondary?: boolean;
@@ -11,18 +11,18 @@ export const Header = ({ isSecondary }: Props) => {
 
   return (
     <StyledHeader isSecondary={isSecondary}>
-      <div className="skip-button-wrapper">
+      <SkipAnchor>
         <a href="#main-content">Przejdź do głównej treści</a>
-      </div>
+      </SkipAnchor>
       {isSecondary || (
-        <div className="hero-text-wrapper">
+        <HeroText isSecondary={isSecondary}>
           <h2>
             Zadbaj z nami o <br /> przyszłość <br /> <span className="text-pink">swojego dziecka!</span>
           </h2>
           <p>Zapraszamy dzieci w wieku od 1 do 3 lat!</p>
-        </div>
+        </HeroText>
       )}
-      <div className="hero-image-wrapper">
+      <HeroImage isSecondary={isSecondary}>
         <Image
           priority
           src={heroImageURL}
@@ -30,10 +30,10 @@ export const Header = ({ isSecondary }: Props) => {
           fill
           style={{ objectFit: 'cover', objectPosition: '50% 100%' }}
         />
-      </div>
-      <div className="bottom-wave-wrapper">
-        <Image src="/images/hero-wave-test.png" alt="Biała fala dekoracyjna" fill sizes="100vw" />
-      </div>
+      </HeroImage>
+      <WaveDivider>
+        <Image src="/images/hero-wave-test-higher.png" alt="Biała fala dekoracyjna" fill sizes="100vw" />
+      </WaveDivider>
       <div className="max-width-1440">
         <Nav />
       </div>

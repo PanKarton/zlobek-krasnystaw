@@ -1,6 +1,6 @@
 import { BsCalendarDateFill, BsFillTelephoneFill } from 'react-icons/bs';
 import { FiMapPin } from 'react-icons/fi';
-import { StyledSection } from './FooterContactInfo.styles';
+import { StyledSection, BIPWrapper } from './FooterContactInfo.styles';
 import { BipButton } from 'modules/footer/BipButton/BipButton';
 import { useContactData } from 'providers/ContactDataProvider';
 
@@ -56,13 +56,13 @@ export const FooterContactInfo = () => {
           </a>
         </li>
         <li>
-          <section className="nav-bip-wrapper">
+          <BIPWrapper>
             <h3>Bądź z nami</h3>
             <p>Informacje i aktualności </p>
             <div className="bip-button-wrapper">
               <BipButton />
             </div>
-          </section>
+          </BIPWrapper>
         </li>
       </ul>
     </StyledSection>
