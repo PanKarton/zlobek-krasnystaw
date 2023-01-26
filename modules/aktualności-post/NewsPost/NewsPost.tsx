@@ -34,6 +34,8 @@ export const NewsPost = ({ articleData }: Props) => {
                   alt={imageData?.attributes?.alternativeText || 'Miniatura artykułu'}
                   fill
                   sizes="(max-width: 1000px) 100vw, 340px"
+                  placeholder="blur"
+                  blurDataURL={buildURL(imageData?.attributes.url)}
                 />
               </div>
             )}
