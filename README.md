@@ -125,5 +125,4 @@ Room for improvement:
 
 To do:
 
-- Replace ORIGINAL and LEGAL images
-- Optional: Add decorative images to parent sites
+- Replace placeholder images with ORIGINAL and LEGAL images from customer
