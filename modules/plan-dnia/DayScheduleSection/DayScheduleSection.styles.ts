@@ -26,14 +26,15 @@ export const StyledWrapper = styled.div`
     ul {
       width: 100%;
       @media screen and (min-width: 62.5rem) {
-        width: min(100%, 31rem);
+        width: min(100%, 34rem);
       }
       li + li {
         margin-top: 1rem;
       }
       li {
         p {
-          display: flex;
+          display: grid;
+          grid-template-columns: 7rem 0.25rem 1fr;
           gap: 0.5rem;
           font-size: ${({ theme }) => theme.fontSize.textBase};
           line-height: ${({ theme }) => theme.lineHeight.textBase};
@@ -41,9 +42,18 @@ export const StyledWrapper = styled.div`
             font-size: ${({ theme }) => theme.fontSize.textLG};
           }
           .hour-span {
+            grid-column: 1;
             /* Prevents breaklines */
             white-space: nowrap;
             font-weight: 600;
+            text-align: right;
+          }
+          .divider {
+            grid-column: 2;
+          }
+          .task-name {
+            grid-column: 3;
+            display: block;
           }
         }
       }

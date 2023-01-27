@@ -1,4 +1,5 @@
 import { useLoader } from './useLoader';
+import styles from './Loader.module.css';
 
 export const Loader = () => {
   const { isLoading } = useLoader();
@@ -6,13 +7,13 @@ export const Loader = () => {
   return (
     <>
       {isLoading && (
-        <div id="loader-wrapper">
-          <div id="loader">
-            <div className="loader-dot" />
-            <div className="loader-dot" />
-            <div className="loader-dot" />
-            <div className="loader-dot" />
-            <div className="loader-dot" />
+        <div className={styles.loaderWrapper}>
+          <div className={styles.loader}>
+            <div className={styles.loaderDot} />
+            <div className={styles.loaderDot} />
+            <div className={styles.loaderDot} />
+            <div className={styles.loaderDot} />
+            <div className={styles.loaderDot} />
           </div>
         </div>
       )}
