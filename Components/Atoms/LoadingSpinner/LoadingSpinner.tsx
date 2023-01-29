@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { StyledSpinnerWrapper } from './LoadingSpinner.styled';
 

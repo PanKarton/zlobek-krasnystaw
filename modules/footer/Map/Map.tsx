@@ -1,6 +1,5 @@
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
 import { getEnvVariable } from 'helpers/getEnvVariable';
-import React from 'react';
 
 export const Map = () => {
   const { isLoaded } = useLoadScript({

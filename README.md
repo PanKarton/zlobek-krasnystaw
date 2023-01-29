@@ -125,7 +125,7 @@ Project is: _Done, added for review_
 
 Room for improvement:
 
-- Remove React useless imports
+- 
 
 To do:
 

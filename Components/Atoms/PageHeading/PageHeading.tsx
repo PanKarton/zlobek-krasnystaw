@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReturnAnchor } from '../ReturnAnchor/ReturnAnchor';
 import { StyledPageHeading, StyledWrapper } from './PageHeading.styles';
 
