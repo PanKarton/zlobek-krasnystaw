@@ -1,5 +1,5 @@
 import NextNProgress from 'nextjs-progressbar';
-import { Loader } from 'Components/Organisms/Loader/Loader';
+import { Loader } from 'Components/Molecules/Loader/Loader';
 import { AppProvider } from 'providers/AppProvider';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
