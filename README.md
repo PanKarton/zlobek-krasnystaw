@@ -66,7 +66,7 @@ List of more or less fancy features:
 
 ## Live version
 
-[Check by yourself](https://zlobek-krasnystaw-7yux-chyx4e6ke-pankarton.vercel.app/)
+[Check by yourself](https://zlobek-krasnystaw-7yux-hb6fvzts5-pankarton.vercel.app)
 
 ## Setup
 
