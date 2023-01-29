@@ -10,6 +10,7 @@ export const StyledWrapper = styled.section`
   padding-block: 1.5rem;
   padding-left: 1.5rem;
   border-left: 0.0625rem solid #aaa;
+  overflow-y: scroll;
 
   /* Hide and show menu */
   translate: 100% 0;
@@ -21,7 +22,7 @@ export const StyledWrapper = styled.section`
   }
 
   /* Change padding for side menu */
-  @media screen and (min-width: 43.75rem) {
+  @media screen and (min-width: 46.875rem) {
     top: 5rem;
     padding: 0.5rem 1rem 1.25rem 1.5rem;
     border-bottom-left-radius: 0.3125rem;
@@ -70,7 +71,7 @@ export const StyledList = styled.ul`
   }
 
   /* Hide news and home page  */
-  @media screen and (min-width: 43.75rem) {
+  @media screen and (min-width: 46.875rem) {
     & > :nth-child(1),
     & > :nth-child(2) {
       display: none;

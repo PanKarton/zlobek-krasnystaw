@@ -17,7 +17,9 @@ export const DayScheduleSection = ({ daySchedule }: Props) => {
               daySchedule.map(({ godziny: hours, nazwa: name, id }) => (
                 <li key={id}>
                   <p>
-                    <span className="hour-span">{hours}</span> - <span>{name}</span>
+                    <span className="hour-span">{hours}</span>
+                    <span className="divider">-</span>
+                    <span className="task-name">{name}</span>
                   </p>
                 </li>
               ))}
