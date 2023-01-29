@@ -1,4 +1,3 @@
-import React from 'react';
 import { RiSmartphoneLine } from 'react-icons/ri';
 import { StyledWrapper } from './CallmobileButton.styles';
 

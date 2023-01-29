@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledBurger } from './HamburgerButton.styles';
 
 export type Props = {
