@@ -1,6 +1,9 @@
 import { ValueCell } from 'modules/index/ValueCell/ValueCell';
 import Image from 'next/image';
 import { StyledSection } from './OurVaues.styles';
+import ourValueImageOne from 'public/images/our-value1.svg';
+import ourValueImageTwo from 'public/images/our-value2.svg';
+import ourValueImageThree from 'public/images/our-value3.svg';
 
 export const OurValues = () => (
   <StyledSection>
@@ -9,7 +12,7 @@ export const OurValues = () => (
         <li>
           <ValueCell>
             <div>
-              <Image src="/images/our-value1.svg" alt="dłoń z sercem" fill sizes="(max-width: 700px) 130px, 160px" />
+              <Image src={ourValueImageOne} alt="dłoń z sercem" fill sizes="(max-width: 700px) 130px, 160px" />
             </div>
             <span>Szacunek i słuchanie</span>
           </ValueCell>
@@ -17,7 +20,7 @@ export const OurValues = () => (
         <li>
           <ValueCell>
             <div>
-              <Image src="/images/our-value2.svg" alt="Książka z żarówką" fill sizes="(max-width: 700px) 130px, 160px" />
+              <Image src={ourValueImageTwo} alt="Książka z żarówką" fill sizes="(max-width: 700px) 130px, 160px" />
             </div>
             <span>Edukacja i odkrywanie świata</span>
           </ValueCell>
@@ -25,7 +28,7 @@ export const OurValues = () => (
         <li>
           <ValueCell>
             <div>
-              <Image src="/images/our-value3.svg" alt="Trzy popiersia na okręgu" fill sizes="(max-width: 700px) 130px, 160px" />
+              <Image src={ourValueImageThree} alt="Trzy popiersia na okręgu" fill sizes="(max-width: 700px) 130px, 160px" />
             </div>
             <span>Równość i przynależność</span>
           </ValueCell>

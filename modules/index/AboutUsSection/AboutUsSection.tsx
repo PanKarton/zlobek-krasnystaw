@@ -6,6 +6,10 @@ import { SunImage } from 'modules/index/SunImage/SunImage';
 import Image from 'next/image';
 import { StyledArticle, StyledWrapper, StyledWaveDivider } from './AboutUsSection.styles';
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import grayWaveDivider from 'public/images/gray-wave.svg';
+import happyKidImageOne from 'public/images/happy-kid2.jpg';
+import happyKidImageTwo from 'public/images/happy-kid1.jpg';
+import happyKidImageThree from 'public/images/happy-kid3.jpg';
 
 export const AboutUsSection = () => (
   <SectionWithStars>
@@ -34,9 +38,9 @@ export const AboutUsSection = () => (
           </ul>
         </StyledArticle>
         <div className="images-wrapper">
-          <CircleBorderImage url="/images/happy-kid2.jpg" altText="Dziecko ukladajace klocki" />
-          <CircleBorderImage url="/images/happy-kid1.jpg" altText="Uśmiechnięte dziecko jedzące posiłek" />
-          <CircleBorderImage url="/images/happy-kid3.jpg" altText="Dziecko cieszące się z zabawy klockami" />
+          <CircleBorderImage image={happyKidImageOne} altText="Dziecko ukladajace klocki" />
+          <CircleBorderImage image={happyKidImageTwo} altText="Uśmiechnięte dziecko jedzące posiłek" />
+          <CircleBorderImage image={happyKidImageThree} altText="Dziecko cieszące się z zabawy klockami" />
           <div className="sun-wrapper">
             <SunImage />
           </div>
@@ -44,7 +48,7 @@ export const AboutUsSection = () => (
       </div>
     </StyledWrapper>
     <StyledWaveDivider>
-      <Image src="/images/gray-wave.svg" alt="Szara fala ozdobna" fill sizes="100vw" />
+      <Image src={grayWaveDivider} alt="Szara fala ozdobna" fill sizes="100vw" />
     </StyledWaveDivider>
   </SectionWithStars>
 );

@@ -77,7 +77,7 @@ export const GET_CONTACT_INFO = gql`
         attributes {
           numerTelefonu
           email
-          dniPracy
+          dniOtwarte
           adres {
             miasto
             nazwa
@@ -177,7 +177,7 @@ export const GET_GROUPS_SLUGS = gql`
       data {
         attributes {
           numerGrupy
-          foldery_zdjec {
+          foldery_zdjecs {
             data {
               attributes {
                 slug
@@ -197,7 +197,7 @@ export const GET_GALLERY_FOLDERS_OF_GROUP = gql`
         attributes {
           nazwaGrupy
           numerGrupy
-          foldery_zdjec {
+          foldery_zdjecs {
             data {
               id
               attributes {
@@ -228,7 +228,7 @@ export const GET_IMAGES_FOLDER_OF_GROUP = gql`
         attributes {
           nazwaGrupy
           numerGrupy
-          foldery_zdjec(filters: { slug: { eq: $slug } }) {
+          foldery_zdjecs(filters: { slug: { eq: $slug } }) {
             data {
               id
               attributes {

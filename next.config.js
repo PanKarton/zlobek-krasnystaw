@@ -6,6 +6,7 @@ const nextConfig = {
     locales: ['pl'],
     defaultLocale: 'pl',
   },
+  trailingSlash: true,
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
@@ -13,7 +14,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'aoyqlmmxvd.cfolks.pl',
+        hostname: 'admin.zlobek-krasnystaw.pl',
       },
     ],
   },

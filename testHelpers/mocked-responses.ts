@@ -8,7 +8,7 @@ export const apolloContactInfoMockResponse = {
           typename: 'test',
           numerTelefonu: '123',
           email: 'test@test.pl',
-          dniPracy: 'mon - fri',
+          dniOtwarte: 'mon - fri',
           adres: { typename: 'test', miasto: 'Hajduszoboszlo', nazwa: 'testName', ulica: 'testStreet' },
           godzinyPracy: {
             typename: 'test',

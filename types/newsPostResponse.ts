@@ -19,7 +19,7 @@ export interface NewsPostDataAttributes {
 }
 
 export interface PostImage {
-  data: PostImageData[];
+  data: PostImageData;
 }
 
 export interface PostImageData {

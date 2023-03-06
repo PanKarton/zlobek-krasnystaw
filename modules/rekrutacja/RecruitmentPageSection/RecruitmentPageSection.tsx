@@ -2,6 +2,10 @@ import { DownloadFileAnchor } from 'Components/Atoms/DownloadFileAnchor/Download
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import Image from 'next/image';
 import { StyledStepsList, StyledWrapper } from './RecruitmentPageSection.styles';
+import recruitmentStepOne from 'public/images/recruitment-step1.svg';
+import recruitmentStepTwo from 'public/images/recruitment-step2.svg';
+import recruitmentStepThree from 'public/images/recruitment-step3.svg';
+import recruitmentStepFour from 'public/images/recruitment-step4.svg';
 
 export const RecruitmentPageSection = () => (
   <SectionWithStars>
@@ -10,7 +14,7 @@ export const RecruitmentPageSection = () => (
       <StyledStepsList>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step1.svg" alt="Ikona rodziców z dzieckiem" fill sizes="70px" />
+            <Image src={recruitmentStepOne} alt="Ikona rodziców z dzieckiem" fill sizes="70px" />
           </div>
           <div className="text-wrapper">
             <h4>Podejmij decyzję wraz z rodziną</h4>
@@ -19,7 +23,7 @@ export const RecruitmentPageSection = () => (
         </li>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step2.svg" alt="Ikona formularza" fill sizes="70px" />
+            <Image src={recruitmentStepTwo} alt="Ikona formularza" fill sizes="70px" />
           </div>
           <div className="text-wrapper">
             <h4>
@@ -33,7 +37,7 @@ export const RecruitmentPageSection = () => (
         </li>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step3.svg" alt="Ikona budydnku z tęczą" fill sizes="70px" />
+            <Image src={recruitmentStepThree} alt="Ikona budydnku z tęczą" fill sizes="70px" />
           </div>
           <div className="text-wrapper">
             <h4>Złóż formularz do placówki</h4>
@@ -42,7 +46,7 @@ export const RecruitmentPageSection = () => (
         </li>
         <li>
           <div className="icon-wrapper">
-            <Image src="/images/recruitment-step4.svg" alt="Ikona zaciśniętych w zgodzie dłoni" fill sizes="70px" />
+            <Image src={recruitmentStepFour} alt="Ikona zaciśniętych w zgodzie dłoni" fill sizes="70px" />
           </div>
           <div className="text-wrapper">
             <h4>Podpisz umowę i gotowe.</h4>

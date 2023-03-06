@@ -8,8 +8,8 @@ type Props = {
 
 export const HomeTemplate = ({ children }: Props) => (
   <>
-    <Header />
-    <main id="main-content">{children}</main>
+    {/* <Header /> */}
+    {/* <main id="main-content">{children}</main> */}
     <Footer />
   </>
 );

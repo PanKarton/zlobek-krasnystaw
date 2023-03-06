@@ -2,6 +2,7 @@ import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionW
 import Image from 'next/image';
 import { DayScheduleElement } from 'types/dayScheduleResponse';
 import { StyledWrapper } from './DayScheduleSection.styles';
+import dayScheduleImage from 'public/images/day-schedule-vector.svg';
 
 type Props = {
   daySchedule: DayScheduleElement[];
@@ -25,12 +26,7 @@ export const DayScheduleSection = ({ daySchedule }: Props) => {
               ))}
           </ul>
           <div className="img-wrapper">
-            <Image
-              src="/images/day-schedule-vector.svg"
-              alt="opiekunka i jedzące dzieci"
-              fill
-              sizes="(max-width: 900px) 160px, (max-width: 1550px) 200px, 320px"
-            />
+            <Image src={dayScheduleImage} alt="opiekunka i jedzące dzieci" fill sizes="(max-width: 900px) 160px, (max-width: 1550px) 200px, 320px" />
           </div>
         </div>
       </StyledWrapper>

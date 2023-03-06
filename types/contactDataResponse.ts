@@ -12,20 +12,19 @@ export interface ContactInfoData {
 
 export interface ContactInfoDataAttributes {
   numerTelefonu: string;
-  email:         string;
-  dniPracy:      string;
-  adres:         Adres;
-  godzinyPracy:  GodzinyPracy;
+  email: string;
+  dniOtwarte: string;
+  adres: Adres;
+  godzinyPracy: GodzinyPracy;
 }
 
 export interface Adres {
   miasto: string;
-  nazwa:  string;
-  ulica:  string;
+  nazwa: string;
+  ulica: string;
 }
 
 export interface GodzinyPracy {
-  godzinaOtwarcia:   string;
+  godzinaOtwarcia: string;
   godzinaZamkniecia: string;
 }
-

@@ -2,6 +2,7 @@ import { MainSiteSectionHeading } from 'modules/index/MainSiteSectionHeading/Mai
 import { MainSiteSectionParagraph } from 'modules/index/MainSiteSectionParagraph/MainSiteSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection } from './NurseryDescription.styles';
+import solarSystemImage from 'public/images/description-solar-system.svg';
 
 export const NurseryDescription = () => {
   return (
@@ -23,12 +24,7 @@ export const NurseryDescription = () => {
             </div>
           </StyledArticle>
           <div className="description-image-wrapper">
-            <Image
-              src="/images/description-solar-system.svg"
-              alt="Układ planetarny z dłońmi wskazujacymi na jego środek"
-              fill
-              sizes="(max-width: 1550px) 620px, 800px"
-            />
+            <Image src={solarSystemImage} alt="Układ planetarny z dłońmi wskazujacymi na jego środek" fill sizes="(max-width: 1550px) 620px, 800px" />
           </div>
         </div>
       </div>

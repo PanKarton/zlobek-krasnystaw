@@ -9,6 +9,7 @@ import { AiFillClockCircle } from 'react-icons/ai';
 import { FaEnvelope } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
+import facebookIcon from 'public/images/facebook-icon.svg';
 import { useContactData } from 'providers/ContactDataProvider';
 
 export const Nav = () => {
@@ -18,7 +19,7 @@ export const Nav = () => {
     email,
     godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime },
     numerTelefonu: phoneNumber,
-    dniPracy: openDays,
+    dniOtwarte: openDays,
   } = useContactData();
 
   return (
@@ -53,7 +54,7 @@ export const Nav = () => {
       </div>
       <div className="fb-icon">
         <FbButton>
-          <Image src="/images/facebook-icon.svg" alt="Ikonka facebook" width="36" height="36" />
+          <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
         </FbButton>
       </div>
       <div className="main-logo-wrapper">

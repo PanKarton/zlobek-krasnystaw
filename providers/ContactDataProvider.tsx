@@ -9,7 +9,7 @@ type Props = {
 const initialContext = {
   numerTelefonu: '',
   email: '',
-  dniPracy: '',
+  dniOtwarte: '',
   adres: {
     miasto: '',
     nazwa: '',

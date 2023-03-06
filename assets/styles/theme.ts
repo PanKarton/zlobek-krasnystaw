@@ -21,6 +21,8 @@ export const theme = {
     errorTransparent: 'hsla(0, 100%, 50%, 0.05)',
     // Border dividers
     borderDivider: '#CCC',
+    // Founds
+    maluchPlus: '#04acf3',
   },
 
   fontFamily: {

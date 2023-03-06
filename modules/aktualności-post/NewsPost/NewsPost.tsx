@@ -16,10 +16,11 @@ export const NewsPost = ({ articleData }: Props) => {
   const formatedDate = formatDate(articleData.attributes.publishedAt);
   const dayName = getDayName(articleData.attributes.publishedAt);
 
-  const imageData = articleData.attributes.opcjonalneZdjecie.data?.[0];
+  const imageData = articleData.attributes.opcjonalneZdjecie.data;
+
 
   return (
-    <SectionWithStars>
+  <SectionWithStars>
       <StyledWrapper>
         <StyledArticle>
           <div className="publish-date-wrapper">
@@ -30,7 +31,7 @@ export const NewsPost = ({ articleData }: Props) => {
             {imageData?.attributes && (
               <div className="img-wrapper">
                 <Image
-                  src={buildURL(imageData?.attributes.url)}
+                  src={buildURL(`/${imageData?.attributes.url}`)}
                   alt={imageData?.attributes?.alternativeText || 'Miniatura artykułu'}
                   fill
                   sizes="(max-width: 1000px) 100vw, 340px"
@@ -46,3 +47,5 @@ export const NewsPost = ({ articleData }: Props) => {
     </SectionWithStars>
   );
 };
+
+

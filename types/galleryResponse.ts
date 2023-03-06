@@ -13,7 +13,7 @@ export interface GroupsData {
 export interface GroupsDataAttributes {
   nazwaGrupy: string;
   numerGrupy: string;
-  foldery_zdjec: ImageFolders;
+  foldery_zdjecs: ImageFolders;
 }
 
 export interface ImageFolders {

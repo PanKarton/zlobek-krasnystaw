@@ -1,16 +1,16 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import { StyledCirculareWrapper } from './CircleBorderImage.styles';
 
 type Props = {
-  url: string;
+  image: StaticImageData;
   altText: string;
 };
 
-export const CircleBorderImage = ({ url, altText }: Props) => (
+export const CircleBorderImage = ({ image, altText }: Props) => (
   <StyledCirculareWrapper>
     <div className="image-wrapper">
-      <Image src={url} alt={altText} fill sizes="25vw" />
+      <Image src={image} alt={altText} fill sizes="25vw" />
     </div>
   </StyledCirculareWrapper>
 );

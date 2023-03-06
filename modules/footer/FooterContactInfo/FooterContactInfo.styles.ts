@@ -3,15 +3,10 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
   margin-block: 2rem 1.5rem;
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  flex-basis: 18rem;
   color: ${({ theme }) => theme.color.contrast};
 
-  @media screen and (min-width: 34rem) {
-    flex-basis: 38rem;
-  }
   @media screen and (min-width: 62.5rem) {
-    flex-basis: 27rem;
-    flex-shrink: 0;
+    grid-area: 1 / 1 / 2 / 2;
   }
 
   ul.flex-list {

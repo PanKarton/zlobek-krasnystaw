@@ -8,7 +8,7 @@ export const FooterContactInfo = () => {
   const {
     godzinyPracy: { godzinaOtwarcia: openTime, godzinaZamkniecia: closeTime },
     numerTelefonu: phoneNumber,
-    dniPracy: openDays,
+    dniOtwarte: openDays,
     adres: { nazwa: name, miasto: city, ulica: street },
   } = useContactData();
 

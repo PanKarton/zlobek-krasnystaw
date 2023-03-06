@@ -1,13 +1,16 @@
 import { Nav } from 'modules/header/Nav/Nav';
 import Image from 'next/image';
 import { StyledHeader, WaveDivider, HeroText, HeroImage, SkipAnchor } from './Header.styles';
+import primaryHeroImage from 'public/images/hero-image.jpg';
+import secondaryHeroImage from 'public/images/hero-image-secondary.jpg';
+import whiteWaveDivider from 'public/images/hero-wave-white.png';
 
 export type Props = {
   isSecondary?: boolean;
 };
 
 export const Header = ({ isSecondary }: Props) => {
-  const heroImageURL = isSecondary ? '/images/hero-image-secondary.jpg' : '/images/hero-image.jpg';
+  const heroImageURL = isSecondary ? secondaryHeroImage : primaryHeroImage;
 
   return (
     <StyledHeader isSecondary={isSecondary}>
@@ -32,7 +35,7 @@ export const Header = ({ isSecondary }: Props) => {
         />
       </HeroImage>
       <WaveDivider>
-        <Image src="/images/hero-wave-white.png" alt="Biała fala dekoracyjna" fill sizes="100vw" />
+        <Image src={whiteWaveDivider} alt="Biała fala dekoracyjna" fill sizes="100vw" />
       </WaveDivider>
       <div className="max-width-1440">
         <Nav />

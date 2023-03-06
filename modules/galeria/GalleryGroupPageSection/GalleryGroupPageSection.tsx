@@ -12,7 +12,7 @@ type Props = {
 
 export const GalleryGroupPageSection = ({ galleryGroupInfo }: Props) => {
   // Rename polish names to english
-  const { numerGrupy: groupId, foldery_zdjec: groupGalleryFolders } = galleryGroupInfo;
+  const { numerGrupy: groupId, foldery_zdjecs: groupGalleryFolders } = galleryGroupInfo;
 
   const folders = groupGalleryFolders.data;
 

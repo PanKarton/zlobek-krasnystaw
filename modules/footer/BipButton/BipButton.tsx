@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import bipImage from 'public/images/bip.jpg';
 
 export const BipButton = () => (
   <a
@@ -7,7 +8,7 @@ export const BipButton = () => (
     rel="noreferrer"
     aria-label="Przycisk przekierowujący do biuletynu informacji publicznej">
     <div style={{ position: 'relative', height: '100%' }}>
-      <Image src="/images/bip.jpg" alt="Czerwono białe logo biuletynu informacji publicznej" fill sizes="167px" />
+      <Image src={bipImage} alt="Czerwono białe logo biuletynu informacji publicznej" fill sizes="167px" />
     </div>
   </a>
 );

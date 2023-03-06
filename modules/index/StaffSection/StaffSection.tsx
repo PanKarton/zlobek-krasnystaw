@@ -2,6 +2,12 @@ import { MainSiteSectionHeading } from 'modules/index/MainSiteSectionHeading/Mai
 import { MainSiteSectionParagraph } from 'modules/index/MainSiteSectionParagraph/MainSiteSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection, WaveDivider, FloatingIconsContainer, FloatingIconWrapper } from './StaffSection.styles';
+import floatingIconOne from 'public/images/floating-icon1.svg';
+import floatingIconTwo from 'public/images/floating-icon2.svg';
+import floatingIconThree from 'public/images/floating-icon3.svg';
+import floatingIconFour from 'public/images/floating-icon4.svg';
+import staffImage from 'public/images/staff.jpg';
+import blueWaveDivider from 'public/images/blue-wave.svg';
 
 export const StaffSection = () => {
   return (
@@ -10,20 +16,20 @@ export const StaffSection = () => {
         <div className="flex-wrapper">
           <FloatingIconsContainer>
             <FloatingIconWrapper>
-              <Image src="/images/floating-icon1.svg" alt="Półkole ozdobne" fill sizes="120px" />
+              <Image src={floatingIconOne} alt="Półkole ozdobne" fill sizes="120px" />
             </FloatingIconWrapper>
             <FloatingIconWrapper>
-              <Image src="/images/floating-icon2.svg" alt="Półkole ozdobne" fill sizes="120px" />
+              <Image src={floatingIconTwo} alt="Półkole ozdobne" fill sizes="120px" />
             </FloatingIconWrapper>
             <FloatingIconWrapper>
-              <Image src="/images/floating-icon5.svg" alt="Półkole ozdobne" fill sizes="120px" />
+              <Image src={floatingIconThree} alt="Półkole ozdobne" fill sizes="120px" />
             </FloatingIconWrapper>
             <FloatingIconWrapper>
-              <Image src="/images/floating-icon4.svg" alt="Półkole ozdobne" fill sizes="120px" />
+              <Image src={floatingIconFour} alt="Półkole ozdobne" fill sizes="120px" />
             </FloatingIconWrapper>
           </FloatingIconsContainer>
           <div className="staff-image-wrapper">
-            <Image src="/images/staff.jpg" alt="Opiekunka bawiąca się z dwójką dzieci" fill sizes="(max-width: 1550px) 550px, 700px" />
+            <Image src={staffImage} alt="Opiekunka bawiąca się z dwójką dzieci" fill sizes="(max-width: 1550px) 550px, 700px" />
           </div>
           <StyledArticle>
             <div className="flex-wrapper">
@@ -38,7 +44,7 @@ export const StaffSection = () => {
         </div>
       </div>
       <WaveDivider>
-        <Image src="/images/blue-wave.svg" alt="Niebieska fala dekoracyjna" fill sizes="100vw" />
+        <Image src={blueWaveDivider} alt="Niebieska fala dekoracyjna" fill sizes="100vw" />
       </WaveDivider>
     </StyledSection>
   );
