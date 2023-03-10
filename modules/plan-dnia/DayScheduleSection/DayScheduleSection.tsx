@@ -2,7 +2,7 @@ import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionW
 import Image from 'next/image';
 import { DayScheduleElement } from 'types/dayScheduleResponse';
 import { StyledWrapper } from './DayScheduleSection.styles';
-import dayScheduleImage from 'public/images/day-schedule-vector.svg';
+import dayScheduleImage from 'public/images/day-schedule-vector.png';
 
 type Props = {
   daySchedule: DayScheduleElement[];

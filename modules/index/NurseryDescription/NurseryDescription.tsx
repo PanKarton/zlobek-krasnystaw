@@ -2,7 +2,7 @@ import { MainSiteSectionHeading } from 'modules/index/MainSiteSectionHeading/Mai
 import { MainSiteSectionParagraph } from 'modules/index/MainSiteSectionParagraph/MainSiteSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection } from './NurseryDescription.styles';
-import solarSystemImage from 'public/images/description-solar-system.svg';
+import solarSystemImage from 'public/images/description-solar-system.png';
 
 export const NurseryDescription = () => {
   return (

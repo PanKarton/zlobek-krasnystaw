@@ -78,6 +78,7 @@ export const apolloScheduleMockResponse = {
   loading: false,
   networkStatus: 7,
 };
+
 export const apolloFeesMockResponse = {
   data: {
     fee: {
@@ -87,37 +88,6 @@ export const apolloFeesMockResponse = {
           wyzywienie: 'test7',
           nazwaBanku: 'test BS Krasnystaw',
           numerKonta: 'test 36 8200 0008 2001 0010 3567 0006',
-        },
-      },
-    },
-  },
-  loading: false,
-  networkStatus: 7,
-};
-
-export const apolloStaffMockResponse = {
-  data: {
-    staff: {
-      data: {
-        attributes: {
-          dyrektorzy: [
-            {
-              id: 1,
-              imieNazwisko: 'Test director',
-            },
-          ],
-          pracownicyAdministracjiOrazObslugi: [
-            {
-              id: 1,
-              imieNazwisko: 'Test service worker',
-            },
-          ],
-          opiekunki: [
-            {
-              id: 1,
-              imieNazwisko: 'Test babysitter',
-            },
-          ],
         },
       },
     },

@@ -8,7 +8,7 @@ export const useArchives = () => {
   const [activeMonth, setActiveMonth] = useState<number | null>(null);
   const { getPostsByMonth, getInitPosts } = useNewsPosts();
 
-  const releaseDate = '2022-11-01';
+  const releaseDate = '2023-03-01';
 
   const monthsData = getMonthsSinceDate(new Date(releaseDate));
 

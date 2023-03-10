@@ -70,15 +70,16 @@ export const FloatingIconWrapper = styled.div`
   &:nth-child(1) {
     /* Icon C */
     display: none;
+    aspect-ratio: 0.69;
     top: -35%;
     left: -5%;
     rotate: 210deg;
     scale: 0.75;
-    height: 8.125rem;
+    height: 7.125rem;
     @media screen and (min-width: 102.5rem) {
       display: block;
-      top: -20%;
-      left: -6%;
+      top: -16%;
+      left: -4%;
     }
   }
   &:nth-child(2) {

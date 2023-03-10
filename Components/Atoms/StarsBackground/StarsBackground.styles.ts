@@ -6,6 +6,9 @@ export const StyledDiv = styled.div`
   width: 100%;
   bottom: 1rem;
   z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   /* White-transparent gradients for top and bottom edges  */
   &::after {

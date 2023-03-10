@@ -23,6 +23,21 @@ export const StyledArticle = styled.article`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @media screen and (min-width: 62.5rem) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      li {
+        flex-basis: 25rem;
+      }
+    }
+    @media screen and (min-width: 96.875rem) {
+      display: flex;
+      flex-direction: column;
+      li {
+        flex-basis: auto;
+      }
+    }
     li {
       .li-flex-wrapper {
         display: flex;
@@ -63,6 +78,9 @@ export const StyledContactFormWrapper = styled.div`
   align-items: center;
   gap: 0.5rem;
   width: 100%;
+  @media screen and (min-width: 62.5rem) {
+    align-items: flex-start;
+  }
   @media screen and (min-width: 96.875rem) {
     flex-basis: 50%;
   }

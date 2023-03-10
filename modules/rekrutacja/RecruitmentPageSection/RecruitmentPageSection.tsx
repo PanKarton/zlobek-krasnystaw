@@ -2,10 +2,11 @@ import { DownloadFileAnchor } from 'Components/Atoms/DownloadFileAnchor/Download
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import Image from 'next/image';
 import { StyledStepsList, StyledWrapper } from './RecruitmentPageSection.styles';
-import recruitmentStepOne from 'public/images/recruitment-step1.svg';
-import recruitmentStepTwo from 'public/images/recruitment-step2.svg';
-import recruitmentStepThree from 'public/images/recruitment-step3.svg';
-import recruitmentStepFour from 'public/images/recruitment-step4.svg';
+import recruitmentStepOne from 'public/images/recruitment-step1.png';
+import recruitmentStepTwo from 'public/images/recruitment-step2.png';
+import recruitmentStepThree from 'public/images/recruitment-step3.png';
+import recruitmentStepFour from 'public/images/recruitment-step4.png';
+import { buildDownloadPdfURL } from 'helpers/buildDownloadPdfURL';
 
 export const RecruitmentPageSection = () => (
   <SectionWithStars>
@@ -28,7 +29,7 @@ export const RecruitmentPageSection = () => (
           <div className="text-wrapper">
             <h4>
               Pobierz i wypelnij{' '}
-              <a href="/download/karta-zgłoszenia.pdf" download>
+              <a href={buildDownloadPdfURL('karta-zgłoszenia.pdf')} download>
                 kartę zgłoszenia
               </a>
             </h4>
@@ -60,18 +61,18 @@ export const RecruitmentPageSection = () => (
 
       <ul className="download-files-list">
         <li>
-          <DownloadFileAnchor href="/download/karta-zgłoszenia.pdf">karta-zgłoszenia.pdf (332kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href={buildDownloadPdfURL('karta-zgłoszenia.pdf')}>karta-zgłoszenia.pdf (332kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/zasady-rekrutacji.pdf">zasady-rekrutacji.pdf (193kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href={buildDownloadPdfURL('zasady-rekrutacji.pdf')}>zasady-rekrutacji.pdf (193kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/deklaracja-o-kontynuowaniu-opieki.pdf">
+          <DownloadFileAnchor href={buildDownloadPdfURL('deklaracja-o-kontynuowaniu-opieki.pdf')}>
             deklaracja-o-kontynuowaniu-opieki.pdf (110kb)
           </DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/regulamin-rekrutacji.pdf">regulamin-rekrutacji.pdf (216kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href={buildDownloadPdfURL('regulamin-rekrutacji.pdf')}>regulamin-rekrutacji.pdf (216kb)</DownloadFileAnchor>
         </li>
       </ul>
     </StyledWrapper>

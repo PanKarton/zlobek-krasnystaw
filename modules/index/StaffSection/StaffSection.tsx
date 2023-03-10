@@ -2,10 +2,10 @@ import { MainSiteSectionHeading } from 'modules/index/MainSiteSectionHeading/Mai
 import { MainSiteSectionParagraph } from 'modules/index/MainSiteSectionParagraph/MainSiteSectionParagraph';
 import Image from 'next/image';
 import { StyledArticle, StyledSection, WaveDivider, FloatingIconsContainer, FloatingIconWrapper } from './StaffSection.styles';
-import floatingIconOne from 'public/images/floating-icon1.svg';
-import floatingIconTwo from 'public/images/floating-icon2.svg';
-import floatingIconThree from 'public/images/floating-icon3.svg';
-import floatingIconFour from 'public/images/floating-icon4.svg';
+import floatingIconOne from 'public/images/floating-icon1.png';
+import floatingIconTwo from 'public/images/floating-icon2.png';
+import floatingIconThree from 'public/images/floating-icon3.png';
+import floatingIconFour from 'public/images/floating-icon4.png';
 import staffImage from 'public/images/staff.jpg';
 import blueWaveDivider from 'public/images/blue-wave.svg';
 
