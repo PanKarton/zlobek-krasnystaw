@@ -1,24 +1,7 @@
 import styled from 'styled-components';
 
-export const StyledWrapper = styled.div`
-  padding-bottom: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 5rem;
-  @media screen and (min-width: 96.875rem) {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 5rem;
-  }
-  @media screen and (min-width: 96.875rem) {
-    gap: 14.5rem;
-    padding-bottom: 4rem;
-  }
-`;
-
 export const StyledArticle = styled.article`
+  padding-block: 1rem 4rem;
   ul {
     display: flex;
     flex-direction: column;
@@ -32,12 +15,9 @@ export const StyledArticle = styled.article`
       }
     }
     @media screen and (min-width: 96.875rem) {
-      display: flex;
-      flex-direction: column;
-      li {
-        flex-basis: auto;
-      }
+      max-width: 53rem;
     }
+
     li {
       .li-flex-wrapper {
         display: flex;
@@ -68,52 +48,6 @@ export const StyledArticle = styled.article`
           }
         }
       }
-    }
-  }
-`;
-
-export const StyledContactFormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  @media screen and (min-width: 62.5rem) {
-    align-items: flex-start;
-  }
-  @media screen and (min-width: 96.875rem) {
-    flex-basis: 50%;
-  }
-  .heading-wrapper {
-    color: ${({ theme }) => theme.color.contrast};
-    font-family: ${({ theme }) => theme.fontFamily.primary};
-    width: min(100%, 55rem);
-    h3 {
-      font-size: ${({ theme }) => theme.fontSize.text4XL};
-      line-height: ${({ theme }) => theme.lineHeight.text2XL};
-      font-weight: 500;
-    }
-    p {
-      font-size: ${({ theme }) => theme.fontSize.textBase};
-      font-weight: 500;
-      margin-left: 0.125rem;
-      margin-top: 0.25rem;
-    }
-  }
-  .information-clause-wrapper {
-    margin-top: 1.5rem;
-    color: ${({ theme }) => theme.color.contrast};
-    font-family: ${({ theme }) => theme.fontFamily.primary};
-    width: min(100%, 55rem);
-    font-weight: 500;
-    h3 {
-      font-size: ${({ theme }) => theme.fontSize.text2XL};
-      font-weight: inherit;
-    }
-    p {
-      font-size: ${({ theme }) => theme.fontSize.textBase};
-      line-height: ${({ theme }) => theme.lineHeight.text3XL};
-      margin-top: 0.5rem;
     }
   }
 `;
