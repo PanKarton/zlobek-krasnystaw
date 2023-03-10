@@ -1,11 +1,12 @@
 import { ContactSection } from 'modules/kontakt/ContactSection/ContactSection';
 import { SecondaryTemplate } from 'Components/Templates/SecondaryTemplate/SecondaryTemplate';
-import { GET_CONTACT_INFO } from 'graphql/queries';
+import { GET_CONTACT_INFO, GET_HEADMASTER_NAME } from 'graphql/queries';
 import { ContactInfoDataAttributes, ContactInfoResponse } from 'types/contactDataResponse';
 import { ContactDataProvider } from 'providers/ContactDataProvider';
 import { client } from '../../graphql/apolloClient';
 import { NextPage } from 'next';
 import Head from 'next/head';
+import { HeadmasterResponse } from 'types/headmasterResponse';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
@@ -35,12 +36,12 @@ export const getStaticProps = async () => {
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
-  // const staffRes = await client.query<StaffResponse>({
-  //   query: GET_STAFF_LISTS,
-  //   fetchPolicy: 'network-only',
-  // });
+  const headmasterRes = await client.query<HeadmasterResponse>({
+    query: GET_HEADMASTER_NAME,
+    fetchPolicy: 'network-only',
+  });
 
-  const headmasterName = 'Beata Szydło';
+  const headmasterName = headmasterRes.data.headmaster.data.attributes.imieNazwisko;
 
   return {
     props: {
