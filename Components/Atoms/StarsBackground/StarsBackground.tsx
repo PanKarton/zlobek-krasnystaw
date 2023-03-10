@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import starsBackground from '../../../public/images/stars-background.svg';
+import starsBackground from '../../../public/images/stars-background.png';
 import { StyledDiv } from './StarsBackground.styles';
 
 type Props = {

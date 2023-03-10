@@ -1,9 +1,9 @@
 import { ValueCell } from 'modules/index/ValueCell/ValueCell';
 import Image from 'next/image';
 import { StyledSection } from './OurVaues.styles';
-import ourValueImageOne from 'public/images/our-value1.svg';
-import ourValueImageTwo from 'public/images/our-value2.svg';
-import ourValueImageThree from 'public/images/our-value3.svg';
+import ourValueImageOne from 'public/images/our-value1.png';
+import ourValueImageTwo from 'public/images/our-value2.png';
+import ourValueImageThree from 'public/images/our-value3.png';
 
 export const OurValues = () => (
   <StyledSection>

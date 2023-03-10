@@ -1,6 +1,9 @@
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
 import { GalleryTile } from '../GalleryTile/GalleryTile';
 import { StyledSection } from './GalleryGroupsSection.styles';
+import beesImage from 'public/images/bees.png';
+import owlsImage from 'public/images/owls.png';
+import ladybugsImage from 'public/images/ladybugs.png';
 
 export const GalleryGroupsSection = () => {
   const groups = [
@@ -8,19 +11,19 @@ export const GalleryGroupsSection = () => {
       id: 1,
       name: 'Grupa I - Pszczółki',
       altText: 'Ilustracja pszczół',
-      imgPath: '/images/bees.png',
+      imgPath: beesImage.src,
     },
     {
       id: 2,
       name: 'Grupa II - Sowy',
       altText: 'Ilustracja sów',
-      imgPath: '/images/owls.png',
+      imgPath: owlsImage.src,
     },
     {
       id: 3,
       name: 'Grupa III - Biedronki',
       altText: 'Ilustracja biedronek',
-      imgPath: '/images/ladybugs.png',
+      imgPath: ladybugsImage.src,
     },
   ];
 

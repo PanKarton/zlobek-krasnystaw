@@ -1,5 +1,6 @@
 import { DownloadFileAnchor } from 'Components/Atoms/DownloadFileAnchor/DownloadFileAnchor';
 import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import { buildDownloadPdfURL } from 'helpers/buildDownloadPdfURL';
 import { StyledWrapper } from './GDPRSection.styles';
 
 export const GDPRSection = () => (
@@ -16,13 +17,13 @@ export const GDPRSection = () => (
       <h3>Obowiązki informacyjne w formie plików do pobrania:</h3>
       <ul>
         <li>
-          <DownloadFileAnchor href="/download/odbiór-dziecka.pdf">odbiór-dziecka.pdf (134kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href={buildDownloadPdfURL('odbiór-dziecka.pdf')}>odbiór-dziecka.pdf (134kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/umowa.pdf">umowa.pdf (159kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href={buildDownloadPdfURL('umowa.pdf')}>umowa.pdf (159kb)</DownloadFileAnchor>
         </li>
         <li>
-          <DownloadFileAnchor href="/download/przepis-prawa.pdf">przepis-prawa.pdf (86kb)</DownloadFileAnchor>
+          <DownloadFileAnchor href={buildDownloadPdfURL('przepis-prawa.pdf')}>przepis-prawa.pdf (86kb)</DownloadFileAnchor>
         </li>
       </ul>
     </StyledWrapper>

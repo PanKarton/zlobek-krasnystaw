@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import mainLogo from 'public/images/main-logo.svg';
+import mainLogo from 'public/images/main-logo.png';
 
 export const MainLogo = () => (
   <h1>

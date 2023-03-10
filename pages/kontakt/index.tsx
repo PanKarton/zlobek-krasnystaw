@@ -9,16 +9,17 @@ import Head from 'next/head';
 
 type PageProps = {
   contactInfo: ContactInfoDataAttributes;
+  headmasterName: string;
 };
 
-const Contact: NextPage<PageProps> = ({ contactInfo }) => (
+const Contact: NextPage<PageProps> = ({ contactInfo, headmasterName }) => (
   <>
     <Head>
       <title>Żłobek Miejski w Krasnystawie - kontakt</title>
     </Head>
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading="Skontaktuj się z nami">
-        <ContactSection />
+        <ContactSection headmasterName={headmasterName} />
       </SecondaryTemplate>
     </ContactDataProvider>
   </>
@@ -34,9 +35,17 @@ export const getStaticProps = async () => {
 
   const contactInfo = contactInfoRes.data.contactInfo.data.attributes;
 
+  // const staffRes = await client.query<StaffResponse>({
+  //   query: GET_STAFF_LISTS,
+  //   fetchPolicy: 'network-only',
+  // });
+
+  const headmasterName = 'Beata Szydło';
+
   return {
     props: {
       contactInfo,
+      headmasterName,
     },
     revalidate: 3600,
   };

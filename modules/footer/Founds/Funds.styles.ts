@@ -34,13 +34,16 @@ export const Found = styled.div`
   .img-wrapper {
     position: relative;
     aspect-ratio: 1;
-    flex-basis: 3.5rem;
+    flex-basis: 2.5rem;
     flex-shrink: 0;
+    @media screen and (min-width: 96.875rem) {
+      flex-basis: 3.5rem;
+    }
   }
 
   p {
     font-family: ${({ theme }) => theme.fontFamily.primary};
-    font-size: ${({ theme }) => theme.fontSize.textLG};
+    font-size: ${({ theme }) => theme.fontSize.textBase};
     font-weight: 500;
     @media screen and (min-width: 62.5rem) {
       text-align: left;
