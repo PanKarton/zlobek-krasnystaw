@@ -5,6 +5,7 @@ export const StyledWrapper = styled.section`
   right: 0;
   top: 0;
   height: 100vh;
+  max-height: 100vh;
   width: max(13rem, 80%);
   background-color: ${({ theme }) => theme.color.primary};
   padding-block: 1.5rem;
@@ -28,6 +29,7 @@ export const StyledWrapper = styled.section`
     border-bottom-left-radius: 0.3125rem;
     height: min-content;
     width: max(25%, 15rem);
+    max-height: calc(100vh - 5rem);
     border-bottom: 0.0625rem solid #aaa;
     .close-button-wrapper {
       display: none;
@@ -78,7 +80,7 @@ export const StyledList = styled.ul`
     }
   }
   /* Hide galery  */
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 59.375rem) {
     & > :nth-child(3) {
       display: none;
     }

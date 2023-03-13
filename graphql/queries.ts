@@ -15,24 +15,12 @@ export const GET_FEES = gql`
   }
 `;
 
-export const GET_STAFF_LISTS = gql`
+export const GET_HEADMASTER_NAME = gql`
   query {
-    staff {
+    headmaster {
       data {
         attributes {
-          dyrektorzy {
-            id
-            imieNazwisko
-          }
-          opiekunki {
-            id
-            imieNazwisko
-          }
-          pracownicyAdministracjiOrazObslugi {
-            id
-            stanowisko
-            imieNazwisko
-          }
+          imieNazwisko
         }
       }
     }
