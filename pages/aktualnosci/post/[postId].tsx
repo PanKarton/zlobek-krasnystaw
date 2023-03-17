@@ -86,6 +86,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       contactInfo,
       newsPost,
     },
-    revalidate: 3600,
+    revalidate: 30,
   };
 };

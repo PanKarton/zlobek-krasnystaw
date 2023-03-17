@@ -14,7 +14,7 @@ type ErrorMessage = '' | 'Ups, coś poszło nie tak. Spróbuj ponownie! :)';
 type Context = {
   newsPostsState: NewsPostData[];
   handleLoadMoreNewsPosts: () => Promise<void>;
-  getPostsByMonth: (queryData: MonthData) => Promise<void>;
+  getPostsByMonth: (_queryData: MonthData) => Promise<void>;
   getInitPosts: () => Promise<void>;
   isLoading: boolean;
   isAllDataDisplayed: boolean;
@@ -40,44 +40,44 @@ export const NewsPostsProvider = ({ children }: Props) => {
   });
   const isLoadMoreButtonVisible = !(isAllDataDisplayed || !!error || data?.newsPosts.data.length === 0 || loading);
 
+  const checkIfIsMorePostsAvaliable = useCallback(async () => {
+    try {
+      if (!data) return;
+
+      const postsNumber = data.newsPosts.data.length;
+
+      const nextPagePointer = postsNumber / pageSize + 1;
+
+      // Hide button when nextPagePointer is float
+      if (!Number.isInteger(nextPagePointer)) return setIsAllDataDisplayed(true);
+
+      const response = await fetchMore({
+        variables: {
+          page: nextPagePointer,
+          pageSize,
+        },
+        updateQuery: (previousResult) => {
+          const previousData = previousResult.newsPosts.data;
+
+          return {
+            newsPosts: {
+              __typename: 'NewsPostEntityResponseCollection',
+              data: [...previousData],
+            },
+          };
+        },
+      });
+
+      response.data.newsPosts.data.length === 0 ? setIsAllDataDisplayed(true) : setIsAllDataDisplayed(false);
+    } catch (error) {
+      console.log('Additional news posts fetch error', { error });
+    }
+  }, [data, fetchMore]);
+
   useEffect(() => {
     // Additional fetch to check if there is more data waiting on server
-    const fetchData = async () => {
-      try {
-        if (!data) return;
-
-        const postsNumber = data.newsPosts.data.length;
-
-        const nextPagePointer = postsNumber / pageSize + 1;
-
-        // Hide button when nextPagePointer is float
-        if (!Number.isInteger(nextPagePointer)) return setIsAllDataDisplayed(true);
-
-        const response = await fetchMore({
-          variables: {
-            page: nextPagePointer,
-            pageSize,
-          },
-          updateQuery: (previousResult) => {
-            const previousData = previousResult.newsPosts.data;
-
-            return {
-              newsPosts: {
-                __typename: 'NewsPostEntityResponseCollection',
-                data: [...previousData],
-              },
-            };
-          },
-        });
-
-        if (response.data.newsPosts.data.length === 0) setIsAllDataDisplayed(true);
-      } catch (error) {
-        console.log('Additional news posts fetch error', { error });
-      }
-    };
-
-    fetchData();
-  }, [data, fetchMore]);
+    checkIfIsMorePostsAvaliable();
+  }, [checkIfIsMorePostsAvaliable]);
 
   const getInitPosts = useCallback(async () => {
     try {
@@ -97,11 +97,11 @@ export const NewsPostsProvider = ({ children }: Props) => {
           };
         },
       });
-      setIsAllDataDisplayed(false);
+      checkIfIsMorePostsAvaliable();
     } catch {
       setErrorMessage('Ups, coś poszło nie tak. Spróbuj ponownie! :)');
     }
-  }, [fetchMore]);
+  }, [fetchMore, checkIfIsMorePostsAvaliable]);
 
   const handleLoadMoreNewsPosts = useCallback(async () => {
     try {

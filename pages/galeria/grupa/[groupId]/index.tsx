@@ -89,6 +89,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<Params>) 
       galleryGroupInfo,
       groupName,
     },
-    revalidate: 3600,
+    revalidate: 30,
   };
 };
