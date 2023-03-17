@@ -11,7 +11,7 @@ export const StyledWrapper = styled.section`
   .list-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     p.description {
       font-family: ${({ theme }) => theme.fontFamily.primary};
       font-size: ${({ theme }) => theme.fontSize.textBase};

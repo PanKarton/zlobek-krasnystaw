@@ -9,9 +9,7 @@ export interface Staff {
 export interface StaffData {
   attributes: StaffDataAttributes;
 }
-
 export interface StaffDataAttributes {
-  dyrektorzy: Employee[];
   opiekunki: Employee[];
   pracownicyAdministracjiOrazObslugi: Employee[];
 }

@@ -63,18 +63,14 @@ export const GET_STAFF_LISTS = gql`
     staff {
       data {
         attributes {
-          dyrektorzy {
-            id
-            imieNazwisko
-          }
           opiekunki {
-            id
             imieNazwisko
+            id
           }
           pracownicyAdministracjiOrazObslugi {
             id
-            stanowisko
             imieNazwisko
+            stanowisko
           }
         }
       }

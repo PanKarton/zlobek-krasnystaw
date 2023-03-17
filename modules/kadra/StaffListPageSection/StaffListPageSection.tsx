@@ -5,15 +5,16 @@ import { StyledWrapper } from './StaffListPageSection.styles';
 
 type Props = {
   staffData: StaffDataAttributes;
+  headmasterName: string;
 };
 
-export const StaffListPageSection = ({ staffData }: Props) => {
-  const { dyrektorzy: directors, pracownicyAdministracjiOrazObslugi: serviceWorkers, opiekunki: babysitters } = staffData;
+export const StaffListPageSection = ({ staffData, headmasterName }: Props) => {
+  const { pracownicyAdministracjiOrazObslugi: serviceWorkers, opiekunki: babysitters } = staffData;
 
   return (
     <SectionWithStars>
       <StyledWrapper>
-        <StaffList isDirector heading={directors.length === 0 ? 'Dyrektor' : 'Dyrektorzy'} staffArray={directors} />
+        <StaffList isDirector heading={'Dyrektor'} headmasterName={headmasterName} />
         <div className="list-wrapper">
           <StaffList heading="Pracownicy administracji i obsługi" staffArray={serviceWorkers} />
           <p className="description">

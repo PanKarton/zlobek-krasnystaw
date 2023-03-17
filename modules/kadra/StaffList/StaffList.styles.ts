@@ -21,24 +21,24 @@ export const StyledListWrapper = styled.div`
     li + li {
       margin-top: 1rem;
     }
-    li {
-      p {
-        color: ${({ theme }) => theme.color.contrast};
-        font-size: ${({ theme }) => theme.fontSize.textBase};
-        font-weight: 500;
-        @media screen and (min-width: 56.25rem) {
-          font-size: ${({ theme }) => theme.fontSize.textXL};
-        }
-        .job {
-          font-weight: 400;
-        }
-        &.big {
-          font-size: ${({ theme }) => theme.fontSize.textXL};
-          @media screen and (min-width: 56.25rem) {
-            font-size: ${({ theme }) => theme.fontSize.text2XL};
-          }
-        }
-      }
+  }
+`;
+
+export const StyledParagraph = styled.p`
+  color: ${({ theme }) => theme.color.contrast};
+  font-size: ${({ theme }) => theme.fontSize.textBase};
+  font-weight: 500;
+  @media screen and (min-width: 56.25rem) {
+    font-size: ${({ theme }) => theme.fontSize.textXL};
+  }
+  .job {
+    font-weight: 400;
+  }
+  &.big {
+    font-size: ${({ theme }) => theme.fontSize.textXL};
+    margin-top: 0.5rem;
+    @media screen and (min-width: 56.25rem) {
+      font-size: ${({ theme }) => theme.fontSize.text2XL};
     }
   }
 `;

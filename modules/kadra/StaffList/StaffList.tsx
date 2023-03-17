@@ -1,27 +1,31 @@
 import { Employee } from 'types/staffResponse';
-import { StyledListWrapper } from './StaffList.styles';
+import { StyledListWrapper, StyledParagraph } from './StaffList.styles';
 
 type Props = {
-  heading: 'Dyrektor' | 'Dyrektorzy' | 'Pracownicy administracji i obsługi' | 'Opekunki';
+  heading: 'Dyrektor' | 'Pracownicy administracji i obsługi' | 'Opekunki';
   isDirector?: boolean;
-  staffArray: Employee[];
+  staffArray?: Employee[];
+  headmasterName?: string;
 };
 
-export const StaffList = ({ heading, staffArray, isDirector }: Props) => (
+export const StaffList = ({ heading, staffArray, isDirector, headmasterName }: Props) => (
   <StyledListWrapper>
     <h3 className={isDirector ? 'big' : ''}>{`${heading}:`}</h3>
-    <ul>
-      {staffArray.map(({ imieNazwisko: name, stanowisko: job, id }) => (
-        <li key={id}>
-          {job ? (
-            <p>
-              {name} - <span className="job">{job}</span>
-            </p>
-          ) : (
-            <p className={isDirector ? 'big' : ''}>{name}</p>
-          )}
-        </li>
-      ))}
-    </ul>
+    {staffArray && (
+      <ul>
+        {staffArray.map(({ imieNazwisko: name, stanowisko: job, id }) => (
+          <li key={id}>
+            {job ? (
+              <StyledParagraph>
+                {name} - <span className="job">{job}</span>
+              </StyledParagraph>
+            ) : (
+              <StyledParagraph>{name}</StyledParagraph>
+            )}
+          </li>
+        ))}
+      </ul>
+    )}
+    {headmasterName && <StyledParagraph className="big">{headmasterName}</StyledParagraph>}
   </StyledListWrapper>
 );
