@@ -23,6 +23,37 @@ export const apolloContactInfoMockResponse = {
   networkStatus: 7,
 };
 
+export const apolloStaffMockResponse = {
+  data: {
+    staff: {
+      data: {
+        attributes: {
+          dyrektorzy: [
+            {
+              id: 1,
+              imieNazwisko: 'Test director',
+            },
+          ],
+          pracownicyAdministracjiOrazObslugi: [
+            {
+              id: 1,
+              imieNazwisko: 'Test service worker',
+            },
+          ],
+          opiekunki: [
+            {
+              id: 1,
+              imieNazwisko: 'Test babysitter',
+            },
+          ],
+        },
+      },
+    },
+  },
+  loading: false,
+  networkStatus: 7,
+};
+
 export const apolloLeyetteMockResponse = {
   data: {
     layette: {
