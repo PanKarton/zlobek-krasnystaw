@@ -38,8 +38,6 @@ export const getStaticProps = async () => {
     fetchPolicy: 'network-only',
   });
 
-  console.log(staffRes);
-
   const staff = staffRes.data.staff.data.attributes;
 
   const contactInfoRes = await client.query<ContactInfoResponse>({

@@ -39,6 +39,11 @@ export const DesktopNavList = () => (
               Plan dnia
             </NavLink>
           </li>
+          <li>
+            <NavLink hasNarrowHitbox direction="kadra">
+              Nasza kadra
+            </NavLink>
+          </li>
         </ul>
       </li>
       <li>
