@@ -58,6 +58,26 @@ export const GET_DAY_SCHEDULE = gql`
   }
 `;
 
+export const GET_STAFF_LISTS = gql`
+  query {
+    staff {
+      data {
+        attributes {
+          opiekunki {
+            imieNazwisko
+            id
+          }
+          pracownicyAdministracjiOrazObslugi {
+            id
+            imieNazwisko
+            stanowisko
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const GET_CONTACT_INFO = gql`
   query {
     contactInfo {

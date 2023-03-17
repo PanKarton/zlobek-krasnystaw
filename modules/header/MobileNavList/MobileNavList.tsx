@@ -55,7 +55,11 @@ export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
                 Plan dnia
               </NavLink>
             </li>
-           
+            <li>
+              <NavLink hasNarrowHitbox direction="kadra">
+                Nasza kadra
+              </NavLink>
+            </li>
           </ul>
         </li>
         <li>

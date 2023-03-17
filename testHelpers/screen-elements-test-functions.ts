@@ -41,6 +41,12 @@ export const testFees = () => {
   screen.getByText(/test 36 8200 0008 2001 0010 3567 0006/i);
 };
 
+export const testStaff = () => {
+  screen.getByText(/Test director/i);
+  screen.getByText(/Test service worker/i);
+  screen.getByText(/Test babysitter/i);
+};
+
 export const testNewsPosts = async () => {
   expect(await screen.findByText(/Test title 1/i)).toBeInTheDocument();
   expect(await screen.findByText(/Test content 1/i)).toBeInTheDocument();
