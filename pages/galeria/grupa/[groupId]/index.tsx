@@ -19,6 +19,7 @@ type PageProps = {
 const GroupGallery: NextPage<PageProps> = ({ contactInfo, galleryGroupInfo, groupName }) => {
   const router = useRouter();
 
+
   if (router.isFallback) return <FallbackLoader />;
 
   return (

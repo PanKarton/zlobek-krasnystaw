@@ -12,8 +12,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="description" content="Żłobek miejski w Krasnymstawie" />
+        <meta name="keywords" content="żłobek, miejski, krasnystaw, publiczny"></meta>
         <link rel="icon" type="image/svg+xml" href={faviconSvg.src} />
         <link rel="icon" type="image/png" href={faviconPng.src} />
+        <meta name="google-site-verification" content="MetfkT1tSETY89stTsq8wjYl4Oa3UAuJ2pxyy5HVkE0" />
       </Head>
       <Loader />
       <AppProvider>
