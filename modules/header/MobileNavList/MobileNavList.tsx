@@ -5,15 +5,19 @@ import Image from 'next/image';
 import { CallMobileButton } from '../CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
+import { useRef } from 'react';
+import { useToggleMobileNavList } from './useToggleMobileNavList';
 
 type Props = {
-  isVisible: boolean;
   handleCloseMenu: () => void;
 };
 
-export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
+export const MobileNavList = ({ handleCloseMenu }: Props) => {
+  const mobileNavRef = useRef<HTMLUListElement>(null);
+  useToggleMobileNavList(mobileNavRef, handleCloseMenu);
+
   return (
-    <StyledWrapper className={isVisible ? 'visible' : ''}>
+    <StyledWrapper ref={mobileNavRef}>
       <div className="close-button-wrapper">
         <CloseButton onClick={handleCloseMenu} />
       </div>

@@ -60,7 +60,7 @@ export const Nav = () => {
       <div className="main-logo-wrapper">
         <MainLogo />
       </div>
-      <MobileNavList isVisible={isSecondaryVisible} handleCloseMenu={handleCloseMenu} />
+      {isSecondaryVisible && <MobileNavList handleCloseMenu={handleCloseMenu} />}
     </StyledNav>
   );
 };

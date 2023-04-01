@@ -12,14 +12,17 @@ export const StyledWrapper = styled.section`
   padding-left: 1.5rem;
   border-left: 0.0625rem solid #aaa;
   overflow-y: scroll;
+  animation: slideIn 0.25s ease-in-out;
 
-  /* Hide and show menu */
-  translate: 100% 0;
-  visibility: hidden;
-  &.visible {
-    transition: all 0.25s ease-in-out;
-    visibility: visible;
-    translate: 0 0;
+  @keyframes slideIn {
+    from {
+      translate: 100% 0;
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+      translate: 0 0;
+    }
   }
 
   /* Change padding for side menu */
