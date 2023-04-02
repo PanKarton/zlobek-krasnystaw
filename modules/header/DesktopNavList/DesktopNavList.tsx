@@ -1,19 +1,8 @@
 import { NavLink } from 'modules/header/NavLink/NavLink';
-import { StyledNavSpan } from 'modules/header/NavLink/NavLink.styles';
 import { StyledList, StyledWrapper } from './DesktopNavList.styles';
-import { useState, useCallback } from 'react';
-import { SecondaryMenuList } from './../SecondaryMenuList/SecondaryMenuList';
+import { SecondaryDesktopMenu } from '../SecondaryDesktopMenu/SecondaryDesktopMenu';
 
 export const DesktopNavList = () => {
-  const [isSecondaryMenuVisible, setIsSecondaryMenuVisible] = useState(false);
-
-  const handleOpenMenu = () => {
-    setIsSecondaryMenuVisible(true);
-  };
-  const handleCloseMenu = useCallback(() => {
-    setIsSecondaryMenuVisible(false);
-  }, []);
-
   return (
     <StyledWrapper>
       <StyledList className="left">
@@ -29,10 +18,7 @@ export const DesktopNavList = () => {
       </StyledList>
       <StyledList className="right">
         <li className="secondary-menu">
-          <StyledNavSpan className="secondary-menu-trigger" onClick={handleOpenMenu}>
-            Dla rodzica
-          </StyledNavSpan>
-          {isSecondaryMenuVisible && <SecondaryMenuList handleCloseMenu={handleCloseMenu} />}
+          <SecondaryDesktopMenu />
         </li>
         <li>
           <NavLink direction="rodo">Ochrona danych</NavLink>

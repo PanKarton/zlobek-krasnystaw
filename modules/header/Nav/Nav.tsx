@@ -11,9 +11,11 @@ import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { useContactData } from 'providers/ContactDataProvider';
+import { useRef } from 'react';
 
 export const Nav = () => {
   const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
+  const navRef = useRef<HTMLElement>(null);
   // Rename polish object keys to english in destructuring
   const {
     email,
@@ -23,7 +25,7 @@ export const Nav = () => {
   } = useContactData();
 
   return (
-    <StyledNav className={isNavVisible ? '' : 'hidden'}>
+    <StyledNav className={isNavVisible ? '' : 'hidden'} ref={navRef}>
       <div className="mobile-icons-wrapper">
         <HamburgerButton onClick={handleToggleMenu} isActive={isSecondaryVisible}></HamburgerButton>
       </div>
@@ -60,7 +62,7 @@ export const Nav = () => {
       <div className="main-logo-wrapper">
         <MainLogo />
       </div>
-      {isSecondaryVisible && <MobileNavList handleCloseMenu={handleCloseMenu} />}
+      {isSecondaryVisible && <MobileNavList navRef={navRef} handleCloseMenu={handleCloseMenu} />}
     </StyledNav>
   );
 };

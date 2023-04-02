@@ -1,6 +1,6 @@
 import { useEffect, RefObject, useCallback } from 'react';
 
-export const useCloseAlternatively = (ref: RefObject<HTMLUListElement>, handleCloseMenu: () => void) => {
+export const useCloseAlternatively = (ref: RefObject<HTMLElement>, handleCloseMenu: () => void) => {
   const handleCloseMenuAlternativly = useCallback(
     (e: KeyboardEvent | MouseEvent) => {
       if (e instanceof KeyboardEvent) {

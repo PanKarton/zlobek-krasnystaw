@@ -7,8 +7,8 @@ export type Props = {
 
 export const HamburgerButton = ({ onClick, isActive }: Props) => (
   <StyledBurger onClick={onClick} isActive={isActive} tabIndex={0} aria-label="Przycisk włączajacy i wyłączający menu">
-    <div />
-    <div />
-    <div />
+    <span />
+    <span />
+    <span />
   </StyledBurger>
 );

@@ -5,19 +5,19 @@ import Image from 'next/image';
 import { CallMobileButton } from '../CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
-import { useRef } from 'react';
 import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
+import { RefObject } from 'react';
 
 type Props = {
   handleCloseMenu: () => void;
+  navRef: RefObject<HTMLElement>;
 };
 
-export const MobileNavList = ({ handleCloseMenu }: Props) => {
-  const mobileNavRef = useRef<HTMLUListElement>(null);
-  useCloseAlternatively(mobileNavRef, handleCloseMenu);
+export const MobileNavList = ({ handleCloseMenu, navRef }: Props) => {
+  useCloseAlternatively(navRef, handleCloseMenu);
 
   return (
-    <StyledWrapper ref={mobileNavRef}>
+    <StyledWrapper>
       <div className="close-button-wrapper">
         <CloseButton onClick={handleCloseMenu} />
       </div>
