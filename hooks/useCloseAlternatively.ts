@@ -1,6 +1,6 @@
-import { useCallback, RefObject, useEffect } from 'react';
+import { useEffect, RefObject, useCallback } from 'react';
 
-export const useToggleMobileNavList = (ref: RefObject<HTMLUListElement>, handleCloseMenu: () => void) => {
+export const useCloseAlternatively = (ref: RefObject<HTMLUListElement>, handleCloseMenu: () => void) => {
   const handleCloseMenuAlternativly = useCallback(
     (e: KeyboardEvent | MouseEvent) => {
       if (e instanceof KeyboardEvent) {
@@ -28,6 +28,4 @@ export const useToggleMobileNavList = (ref: RefObject<HTMLUListElement>, handleC
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [handleCloseMenuAlternativly, handleClickOutside]);
-
-  return {};
 };

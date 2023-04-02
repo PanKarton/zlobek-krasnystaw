@@ -10,12 +10,8 @@ export const DesktopNavList = () => {
   const handleOpenMenu = () => {
     setIsSecondaryMenuVisible(true);
   };
-  const handleCloseMenu = useCallback((e: KeyboardEvent | MouseEvent) => {
-    if (e instanceof KeyboardEvent) {
-      if (e.key === 'Escape') setIsSecondaryMenuVisible(false);
-    } else if (e instanceof MouseEvent) {
-      setIsSecondaryMenuVisible(false);
-    }
+  const handleCloseMenu = useCallback(() => {
+    setIsSecondaryMenuVisible(false);
   }, []);
 
   return (

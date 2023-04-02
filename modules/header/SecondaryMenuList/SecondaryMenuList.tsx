@@ -1,15 +1,15 @@
 import { NavLink } from 'modules/header/NavLink/NavLink';
 import { useRef } from 'react';
 import { StyledList } from './SecondaryMenuList.styles';
-import { useToggleSecondaryMenuList } from './useToggleSecondaryMenuList';
+import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
 
 type Props = {
-  handleCloseMenu: (_e: KeyboardEvent | MouseEvent) => void;
+  handleCloseMenu: () => void;
 };
 
 export const SecondaryMenuList = ({ handleCloseMenu }: Props) => {
   const secondaryMenuRef = useRef<HTMLUListElement>(null);
-  const {} = useToggleSecondaryMenuList(secondaryMenuRef, handleCloseMenu);
+  useCloseAlternatively(secondaryMenuRef, handleCloseMenu);
 
   return (
     <StyledList ref={secondaryMenuRef}>

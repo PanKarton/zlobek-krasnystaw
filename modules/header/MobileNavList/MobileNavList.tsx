@@ -6,7 +6,7 @@ import { CallMobileButton } from '../CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { useRef } from 'react';
-import { useToggleMobileNavList } from './useToggleMobileNavList';
+import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
 
 type Props = {
   handleCloseMenu: () => void;
@@ -14,7 +14,7 @@ type Props = {
 
 export const MobileNavList = ({ handleCloseMenu }: Props) => {
   const mobileNavRef = useRef<HTMLUListElement>(null);
-  useToggleMobileNavList(mobileNavRef, handleCloseMenu);
+  useCloseAlternatively(mobileNavRef, handleCloseMenu);
 
   return (
     <StyledWrapper ref={mobileNavRef}>
