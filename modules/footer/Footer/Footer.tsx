@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { StyledFooter } from './Footer.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { Founds } from '../Founds/Founds';
+import { Annoation } from 'Components/Atoms/Annoation/Annoation';
 
 export const Footer = () => (
   <StyledFooter>
@@ -15,16 +16,21 @@ export const Footer = () => (
       </div>
       <Founds />
     </div>
-    <section className="nav-copyrights-wrapper">
+    <section className="footer-copyrights-wrapper">
       <div className="max-width-1440">
         <div className="flex-wrapper">
-          <FbButton>
-            <div className="nav-facebook-wrapper">
-              <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
-              <h2>Odwiedź nas na Facebooku :)</h2>
+          <div className="fb-button-wrapper">
+            <FbButton>
+              <div className="footer-facebook-wrapper">
+                <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
+                <h2>Odwiedź nas na Facebooku :)</h2>
+              </div>
+            </FbButton>
+            <div className="annotation-wrapper">
+              <Annoation message="Otwiera się w nowej karcie." isPink />
             </div>
-          </FbButton>
-          <p className="nav-copyrights">
+          </div>
+          <p className="footer-copyrights">
             Copyright 2021 &copy; | <span className="text-pink">Żłobek Miejski w Krasnymstawie</span> | Wszelkie prawa zastrzeżone.
           </p>
         </div>
