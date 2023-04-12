@@ -5,6 +5,8 @@ import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
 import { StyledNavSpan } from '../NavLink/NavLink.styles';
 import { useState, useCallback } from 'react';
 import { BiCaretDown } from 'react-icons/bi';
+
+
 export const SecondaryDesktopMenu = () => {
   const secondaryListWrapper = useRef<HTMLDivElement>(null);
   const [isSecondaryMenuVisible, setIsSecondaryMenuVisible] = useState(false);

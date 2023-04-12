@@ -128,6 +128,10 @@ export const StyledNav = styled.nav`
         display: flex;
         align-items: center;
         gap: 0.5rem;
+
+        &.accessibility-declaration-link-wrapper {
+          gap: 0.125rem;
+        }
       }
     }
   }

@@ -8,15 +8,18 @@ import { useNav } from './useNav';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { FaEnvelope } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
+import { MdOutlineAccessibility } from 'react-icons/md';
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { useContactData } from 'providers/ContactDataProvider';
 import { useRef } from 'react';
 import { Annoation } from 'Components/Atoms/Annoation/Annoation';
+import Link from 'next/link';
 
 export const Nav = () => {
   const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
   const navRef = useRef<HTMLElement>(null);
+
   // Rename polish object keys to english in destructuring
   const {
     email,
@@ -51,7 +54,11 @@ export const Nav = () => {
         <div className="nav-contact-info right">
           <div className="flex-row">
             <FaEnvelope />
-            <span>{`Napisz: ${email}`}</span>
+            <span>{email}</span>
+          </div>
+          <div className="flex-row accessibility-declaration-link-wrapper">
+            <MdOutlineAccessibility />
+            <Link href="/deklaracja-dostepnosci">Deklaracja dostępności</Link>
           </div>
         </div>
       </div>
