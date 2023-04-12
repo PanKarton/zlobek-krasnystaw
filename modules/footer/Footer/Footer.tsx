@@ -12,7 +12,6 @@ export const Footer = () => (
   <StyledFooter>
     <div className="grid-wrapper max-width-1440">
       <FooterContactInfo />
-      <SiteMap />
 
       <div className="map-wrapper map-wrapper--parent">
         <Map />
@@ -21,7 +20,9 @@ export const Footer = () => (
     </div>
     <section className="footer-copyrights-wrapper">
       <div className="max-width-1440">
-        <div className="flex-wrapper">
+        <div className="grid-flex-wrapper">
+          <SiteMap />
+
           <div className="fb-button-wrapper">
             <FbButton>
               <div className="footer-facebook-wrapper">
