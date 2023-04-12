@@ -78,6 +78,11 @@ export const MobileNavList = ({ handleCloseMenu, navRef }: Props) => {
           </NavLink>
         </li>
         <li>
+          <NavLink hasNarrowHitbox direction="deklaracja-dostepnosci">
+            Deklaracja dostępności
+          </NavLink>
+        </li>
+        <li>
           <CallMobileButton />
         </li>
         <li>

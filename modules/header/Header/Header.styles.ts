@@ -24,6 +24,9 @@ export const StyledHeader = styled.header<Props>`
   @media screen and (min-width: 90rem) and (orientation: portrait) {
     height: ${({ isSecondary }) => (isSecondary ? '26.5rem' : '90vh')};
   }
+  @media screen and (min-width: 90rem) and (orientation: landscape) {
+    height: ${({ isSecondary }) => (isSecondary ? '26.5rem' : '90vh')};
+  }
 
   .max-width-wrapper {
     height: 100%;

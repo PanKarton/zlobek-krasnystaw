@@ -4,6 +4,8 @@ import { StyledList } from './SecondaryDesktopMenu.styles';
 import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
 import { StyledNavSpan } from '../NavLink/NavLink.styles';
 import { useState, useCallback } from 'react';
+import { BiCaretDown } from 'react-icons/bi';
+
 
 export const SecondaryDesktopMenu = () => {
   const secondaryListWrapper = useRef<HTMLDivElement>(null);
@@ -22,9 +24,10 @@ export const SecondaryDesktopMenu = () => {
     <div ref={secondaryListWrapper}>
       <StyledNavSpan className="secondary-menu-trigger" onClick={handleToggleMenu}>
         Dla rodzica
+        <BiCaretDown className="drop-arrow" />
       </StyledNavSpan>
       {isSecondaryMenuVisible && (
-        <StyledList >
+        <StyledList>
           <li>
             <NavLink hasNarrowHitbox direction="rekrutacja">
               Rekrutacja
