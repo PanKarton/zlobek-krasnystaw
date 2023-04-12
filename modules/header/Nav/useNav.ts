@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export const useNav = () => {
-  const [isSecondaryVisible, setIsVisible] = useState(false);
+  const [isSecondaryVisible, setIsSecondaryVisible] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
-  const handleToggleMenu = useCallback(() => setIsVisible((prevState) => !prevState), []);
-  const handleCloseMenu = useCallback(() => setIsVisible(false), []);
+  const handleToggleMenu = useCallback(() => setIsSecondaryVisible((prevState) => !prevState), []);
+  const handleCloseMenu = useCallback(() => setIsSecondaryVisible(false), []);
 
   const handleScroll = useCallback(() => {
     if (window.innerWidth >= 1440) return;

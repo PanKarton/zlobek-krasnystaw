@@ -7,6 +7,9 @@ export const StyledSection = styled.section`
 
   @media screen and (min-width: 62.5rem) {
     grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   ul.flex-list {

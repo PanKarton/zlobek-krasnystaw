@@ -138,6 +138,17 @@ export const StyledNav = styled.nav`
     right: 2rem;
     top: 50%;
     translate: 0 -50%;
+    .annotation-wrapper {
+      position: absolute;
+      top: 0;
+      right: -0.25rem;
+      translate: 100% 0;
+      p {
+        top: -0.25rem;
+        right: 0;
+        translate: 0 -100%;
+      }
+    }
     @media screen and (min-width: 90rem) {
       display: block;
     }

@@ -11,9 +11,12 @@ import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { useContactData } from 'providers/ContactDataProvider';
+import { useRef } from 'react';
+import { Annoation } from 'Components/Atoms/Annoation/Annoation';
 
 export const Nav = () => {
   const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
+  const navRef = useRef<HTMLElement>(null);
   // Rename polish object keys to english in destructuring
   const {
     email,
@@ -23,7 +26,7 @@ export const Nav = () => {
   } = useContactData();
 
   return (
-    <StyledNav className={isNavVisible ? '' : 'hidden'}>
+    <StyledNav className={isNavVisible ? '' : 'hidden'} ref={navRef}>
       <div className="mobile-icons-wrapper">
         <HamburgerButton onClick={handleToggleMenu} isActive={isSecondaryVisible}></HamburgerButton>
       </div>
@@ -56,11 +59,14 @@ export const Nav = () => {
         <FbButton>
           <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
         </FbButton>
+        <div className="annotation-wrapper">
+          <Annoation message="Otwiera się w nowej karcie." isPink />
+        </div>
       </div>
       <div className="main-logo-wrapper">
         <MainLogo />
       </div>
-      <MobileNavList isVisible={isSecondaryVisible} handleCloseMenu={handleCloseMenu} />
+      {isSecondaryVisible && <MobileNavList navRef={navRef} handleCloseMenu={handleCloseMenu} />}
     </StyledNav>
   );
 };

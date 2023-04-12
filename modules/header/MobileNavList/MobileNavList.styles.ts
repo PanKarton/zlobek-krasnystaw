@@ -12,14 +12,17 @@ export const StyledWrapper = styled.section`
   padding-left: 1.5rem;
   border-left: 0.0625rem solid #aaa;
   overflow-y: scroll;
+  animation: slideIn 0.25s ease-in-out;
 
-  /* Hide and show menu */
-  translate: 100% 0;
-  visibility: hidden;
-  &.visible {
-    transition: all 0.25s ease-in-out;
-    visibility: visible;
-    translate: 0 0;
+  @keyframes slideIn {
+    from {
+      translate: 100% 0;
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+      translate: 0 0;
+    }
   }
 
   /* Change padding for side menu */
@@ -59,6 +62,21 @@ export const StyledList = styled.ul`
   justify-content: center;
   gap: 0.5rem;
 
+  .fb-icon {
+    position: relative;
+    .annotation-wrapper {
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      translate: 100% -60%;
+      p {
+        top: -1.5rem;
+        left: -4rem;
+        translate: 0% -50%;
+      }
+    }
+  }
+
   /* Position secondary list as part of primary one */
   & .secondary-menu {
     ul {
@@ -68,7 +86,7 @@ export const StyledList = styled.ul`
     }
   }
   /* Add margin to all li   */
-  * + * {
+  li + li {
     margin-top: 0.5rem;
   }
 

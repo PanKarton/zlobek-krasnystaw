@@ -5,15 +5,20 @@ import Image from 'next/image';
 import { CallMobileButton } from '../CallMobileButton/CallMobileButton';
 import { StyledList, StyledWrapper } from './MobileNavList.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
+import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
+import { RefObject } from 'react';
+import { Annoation } from 'Components/Atoms/Annoation/Annoation';
 
 type Props = {
-  isVisible: boolean;
   handleCloseMenu: () => void;
+  navRef: RefObject<HTMLElement>;
 };
 
-export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
+export const MobileNavList = ({ handleCloseMenu, navRef }: Props) => {
+  useCloseAlternatively(navRef, handleCloseMenu);
+
   return (
-    <StyledWrapper className={isVisible ? 'visible' : ''}>
+    <StyledWrapper>
       <div className="close-button-wrapper">
         <CloseButton onClick={handleCloseMenu} />
       </div>
@@ -80,6 +85,9 @@ export const MobileNavList = ({ isVisible, handleCloseMenu }: Props) => {
             <FbButton>
               <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
             </FbButton>
+            <div className="annotation-wrapper">
+              <Annoation message="Otwiera się w nowej karcie." isPink />
+            </div>
           </div>
         </li>
       </StyledList>

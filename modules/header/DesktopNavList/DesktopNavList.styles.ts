@@ -74,37 +74,8 @@ export const StyledList = styled.ul`
     .secondary-menu {
       position: relative;
       z-index: 2;
-      &:hover > ul {
-        scale: 1 1;
-        translate: 0 0;
-      }
       .secondary-menu-trigger {
         padding-block: 1.75rem;
-      }
-      ul {
-        display: flex;
-        position: absolute;
-        flex-direction: column;
-        gap: 1.5rem;
-        top: 3.125rem;
-        left: -1.25rem;
-        padding: 0 0 1.5rem 1.25rem;
-        min-width: 13rem;
-        border: 0.0625rem solid #aaa;
-        border-top: none;
-        border-bottom-left-radius: 0.625rem;
-        border-bottom-right-radius: 0.625rem;
-        background-color: ${({ theme }) => theme.color.primary};
-        scale: 1 0;
-        z-index: 0;
-        translate: 0 -50%;
-        @media screen and (min-width: 90rem) {
-          top: 2.875rem;
-        }
-        &:focus-within {
-          scale: 1 1;
-          translate: 0 0;
-        }
       }
     }
   }

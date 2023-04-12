@@ -64,7 +64,7 @@ export const StyledFooter = styled.footer`
       }
     }
   }
-  .nav-copyrights-wrapper {
+  .footer-copyrights-wrapper {
     position: relative;
     padding-block: 1.5rem;
     display: flex;
@@ -85,21 +85,38 @@ export const StyledFooter = styled.footer`
         }
       }
     }
-    .nav-facebook-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: ${({ theme }) => theme.fontFamily.primary};
-      h2 {
-        font-size: ${({ theme }) => theme.fontSize.textBase};
-        font-weight: 400;
-        color: ${({ theme }) => theme.color.accentSecondaryDarker};
-        @media screen and (min-width: 62.5rem) {
-          font-size: ${({ theme }) => theme.fontSize.textLG};
+    .fb-button-wrapper {
+      position: relative;
+      .footer-facebook-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: ${({ theme }) => theme.fontFamily.primary};
+        h2 {
+          font-size: ${({ theme }) => theme.fontSize.textBase};
+          font-weight: 400;
+          color: ${({ theme }) => theme.color.accentSecondaryDarker};
+          @media screen and (min-width: 62.5rem) {
+            font-size: ${({ theme }) => theme.fontSize.textLG};
+          }
+        }
+      }
+      .annotation-wrapper {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        translate: 100% -50%;
+        @media screen and (min-width: 20.625rem) {
+          right: -0.25rem;
+        }
+        p {
+          top: -0.25rem;
+          right: 0;
+          translate: 0 -100%;
         }
       }
     }
-    .nav-copyrights {
+    .footer-copyrights {
       font-family: ${({ theme }) => theme.fontFamily.primary};
       font-size: ${({ theme }) => theme.fontSize.textBase};
       max-width: 40ch;

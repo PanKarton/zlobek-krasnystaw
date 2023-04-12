@@ -43,7 +43,7 @@ export const StyledArticle = styled.article`
     -webkit-box-orient: vertical;
   }
 
-  span.read-more {
+  div.read-more {
     background-color: transparent;
     color: ${({ theme }) => theme.color.accentPrimaryDarker};
     display: flex;

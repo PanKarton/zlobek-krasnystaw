@@ -6,11 +6,22 @@ export const StyledHeader = styled.header<Props>`
   height: ${({ isSecondary }) => (isSecondary ? '15rem' : '75vh')};
   overflow-y: hidden;
 
-  @media screen and (min-width: 43.75rem) {
+  /* 0 to 43.75rem | landscape */
+  @media screen and (orientation: landscape) {
+    height: ${({ isSecondary }) => (isSecondary ? '15rem' : 'calc(75vh + 10rem)')};
+  }
+
+  /* 43.75rem - 90rem */
+  @media screen and (min-width: 43.75rem) and (orientation: portrait) {
     height: ${({ isSecondary }) => (isSecondary ? '18rem' : '90vh')};
     margin-top: 0rem;
   }
-  @media screen and (min-width: 90rem) {
+  @media screen and (min-width: 43.75rem) and (orientation: landscape) {
+    height: ${({ isSecondary }) => (isSecondary ? '18rem' : 'calc(100vh + 5rem)')};
+  }
+
+  /* 90rem - rest */
+  @media screen and (min-width: 90rem) and (orientation: portrait) {
     height: ${({ isSecondary }) => (isSecondary ? '26.5rem' : '90vh')};
   }
 
@@ -44,6 +55,10 @@ export const HeroText = styled.div<Props>`
   background-color: ${({ theme }) => theme.color.primary};
   padding-block: clamp(1.5rem, 5vw, 2rem);
   padding-inline: 1rem;
+
+  @media screen and (orientation: landscape) {
+    /* top: calc(50% +); */
+  }
 
   @media screen and (min-width: 43.75rem) {
     left: 0;

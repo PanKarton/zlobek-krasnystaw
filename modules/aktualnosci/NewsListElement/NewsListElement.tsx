@@ -5,6 +5,7 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 import ReactMarkdown from 'react-markdown';
 import { NewsPostDataAttributes } from 'types/newsPostResponse';
 import { StyledArticle } from './NewsListElement.styles';
+import { ScreenReaderMessage } from 'Components/Atoms/ScreenReaderMessage/ScreenReaderMessage';
 
 type Props = {
   postId: string;
@@ -24,9 +25,11 @@ export const NewsListElement = ({ postId, attributes }: Props) => {
         <p className="publishDate">{`${dayName}, ${formatedDate}`}</p>
         <ReactMarkdown className="content">{attributes.tresc}</ReactMarkdown>
         <Link href={`/aktualnosci/post/${postId}`}>
-          <span className="read-more">
-            Czytaj cały post <BiRightArrowAlt />
-          </span>
+          <div className="read-more">
+            Czytaj cały post
+            <ScreenReaderMessage>{`o tytule ${attributes.tytul}`}</ScreenReaderMessage>
+            <BiRightArrowAlt />
+          </div>
         </Link>
       </div>
     </StyledArticle>
