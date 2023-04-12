@@ -4,7 +4,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 15rem;
+  max-width: 20rem;
 
   @media screen and (min-width: 34rem) {
     flex-direction: row;
