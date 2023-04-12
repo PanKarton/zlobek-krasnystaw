@@ -1,20 +1,10 @@
-import styled from 'styled-components';
-
-export const StyledSection = styled.section`
-  color: ${({ theme }) => theme.color.contrast};
-  font-size: ${({ theme }) => theme.fontSize.textBase};
-  font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-weight: 500;
-  line-height: ${({ theme }) => theme.lineHeight.text2XL};
-
-  .a11y-wstep {
-  }
-`;
+import { SectionWithStars } from 'Components/Molecules/SectionWithStars/SectionWithStars';
+import { StyledWrapper } from './AccessibilityDeclarationSection.styles';
 
 export const AccessibilityDeclarationSection = () => {
   return (
-    <StyledSection>
-      <div className="max-width-1440">
+    <SectionWithStars>
+      <StyledWrapper className="max-width-1440">
         <div id="a11y-wstep">
           <span id="a11y-podmiot">Żłobek Miejski w Krasnymstawie</span> zobowiązuje się zapewnić dostępność swojej strony internetowej zgodnie z
           ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych. Oświadczenie w
@@ -55,7 +45,7 @@ export const AccessibilityDeclarationSection = () => {
         <h2 id="a11y-kontakt">Informacje zwrotne i dane kontaktowe</h2>
         <p>
           W przypadku problemów z dostępnością strony internetowej prosimy o kontakt. Osobą kontaktową jest
-          <span id="a11y-osoba">Justyna Piotrowska</span>, <span id="a11y-email">zlobek.krasnystaw@gmail.com</span>. Kontaktować można się także
+          <span id="a11y-osoba"> Justyna Piotrowska</span>, <span id="a11y-email">zlobek.krasnystaw@gmail.com</span>. Kontaktować można się także
           dzwoniąc na numer telefonu <span id="a11y-telefon">82 576 31 82</span>. Tą samą drogą można składać wnioski o udostępnienie informacji
           niedostępnej oraz składać żądania zapewnienia dostępności.
         </p>
@@ -91,7 +81,7 @@ export const AccessibilityDeclarationSection = () => {
         </ol>
         <h2 id="a11y-aplikacje">Aplikacje mobilne</h2>
         <p>Brak aplikacji mobilnych.</p>{' '}
-      </div>
-    </StyledSection>
+      </StyledWrapper>
+    </SectionWithStars>
   );
 };

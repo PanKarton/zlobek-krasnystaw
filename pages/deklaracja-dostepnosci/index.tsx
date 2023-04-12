@@ -18,7 +18,7 @@ const AccesibilityDeclaration: NextPage<PageProps> = ({ contactInfo }) => (
     </Head>
     <ContactDataProvider contactData={contactInfo}>
       <SecondaryTemplate heading="Deklaracja dostępności">
-        {/* <AccessibilityDeclarationSection /> */}
+        <AccessibilityDeclarationSection />
       </SecondaryTemplate>
     </ContactDataProvider>
   </>
