@@ -104,8 +104,16 @@ export const StyledFooter = styled.footer`
       .annotation-wrapper {
         position: absolute;
         top: 50%;
-        right: -0.25rem;
+        right: 0;
         translate: 100% -50%;
+        @media screen and (min-width: 20.625rem) {
+          right: -0.25rem;
+        }
+        p {
+          top: -0.25rem;
+          right: 0;
+          translate: 0 -100%;
+        }
       }
     }
     .footer-copyrights {

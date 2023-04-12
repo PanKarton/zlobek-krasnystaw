@@ -12,6 +12,7 @@ import { FbButton } from 'Components/Atoms/FbButton/FbButton';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { useContactData } from 'providers/ContactDataProvider';
 import { useRef } from 'react';
+import { Annoation } from 'Components/Atoms/Annoation/Annoation';
 
 export const Nav = () => {
   const { isNavVisible, isSecondaryVisible, handleToggleMenu, handleCloseMenu } = useNav();
@@ -58,6 +59,9 @@ export const Nav = () => {
         <FbButton>
           <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
         </FbButton>
+        <div className="annotation-wrapper">
+          <Annoation message="Otwiera się w nowej karcie." isPink />
+        </div>
       </div>
       <div className="main-logo-wrapper">
         <MainLogo />

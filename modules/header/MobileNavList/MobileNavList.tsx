@@ -7,6 +7,7 @@ import { StyledList, StyledWrapper } from './MobileNavList.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { useCloseAlternatively } from 'hooks/useCloseAlternatively';
 import { RefObject } from 'react';
+import { Annoation } from 'Components/Atoms/Annoation/Annoation';
 
 type Props = {
   handleCloseMenu: () => void;
@@ -84,6 +85,9 @@ export const MobileNavList = ({ handleCloseMenu, navRef }: Props) => {
             <FbButton>
               <Image src={facebookIcon} alt="Ikonka facebook" width="36" height="36" />
             </FbButton>
+            <div className="annotation-wrapper">
+              <Annoation message="Otwiera się w nowej karcie." isPink />
+            </div>
           </div>
         </li>
       </StyledList>

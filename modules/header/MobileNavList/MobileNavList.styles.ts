@@ -62,6 +62,21 @@ export const StyledList = styled.ul`
   justify-content: center;
   gap: 0.5rem;
 
+  .fb-icon {
+    position: relative;
+    .annotation-wrapper {
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      translate: 100% -60%;
+      p {
+        top: -1.5rem;
+        left: -4rem;
+        translate: 0% -50%;
+      }
+    }
+  }
+
   /* Position secondary list as part of primary one */
   & .secondary-menu {
     ul {
@@ -71,7 +86,7 @@ export const StyledList = styled.ul`
     }
   }
   /* Add margin to all li   */
-  * + * {
+  li + li {
     margin-top: 0.5rem;
   }
 
