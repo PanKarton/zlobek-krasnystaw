@@ -1,21 +1,18 @@
 import styled from 'styled-components';
 
-type Props = {
+type StyledNavSpanProps = {
   hasNarrowHitbox?: boolean;
 };
 
-export const StyledNavSpan = styled.span<Props>`
+export const StyledNavSpan = styled.span<StyledNavSpanProps>`
   position: relative;
   font-family: ${({ theme }) => theme.fontFamily.primary};
   color: ${({ theme }) => theme.color.contrast};
   font-size: ${({ theme }) => theme.fontSize.textLG};
   font-weight: 400;
   text-transform: uppercase;
-  padding-block: ${({ hasNarrowHitbox }) => (hasNarrowHitbox ? '0' : '1.5rem')};
-  @media screen and (min-width: 43.75rem) {
-    font-weight: 500;
-  }
   cursor: pointer;
+  padding-block: ${({ hasNarrowHitbox }) => (hasNarrowHitbox ? '0' : '1.5rem')};
   &::after {
     position: absolute;
     content: '';
@@ -33,5 +30,16 @@ export const StyledNavSpan = styled.span<Props>`
   &:hover::after {
     translate: 0 0;
     scale: 1;
+  }
+
+  .drop-arrow {
+    position: absolute;
+    top: 50%;
+    right: -1.125rem;
+    translate: 0 -50%;
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    font-weight: 500;
   }
 `;
