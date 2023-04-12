@@ -6,11 +6,14 @@ import { StyledFooter } from './Footer.styles';
 import facebookIcon from 'public/images/facebook-icon.svg';
 import { Founds } from '../Founds/Founds';
 import { Annoation } from 'Components/Atoms/Annoation/Annoation';
+import { SiteMap } from '../SiteMap/SiteMap';
 
 export const Footer = () => (
   <StyledFooter>
     <div className="grid-wrapper max-width-1440">
       <FooterContactInfo />
+      <SiteMap />
+
       <div className="map-wrapper map-wrapper--parent">
         <Map />
       </div>

@@ -11,14 +11,14 @@ export const StyledFooter = styled.footer`
 
     @media screen and (min-width: 62.5rem) {
       grid-template-columns: 27rem 1fr;
-      grid-template-rows: 27rem 5rem;
+      grid-template-rows: 27rem 8rem;
       column-gap: 4rem;
       padding-block: 4rem;
     }
 
     @media screen and (min-width: 96.875rem) {
       grid-template-columns: 27rem 1fr 50rem;
-      grid-template-rows: 31.25rem 5rem;
+      grid-template-rows: 31.25rem 8rem;
       justify-content: space-between;
       padding-block: 5rem;
     }
